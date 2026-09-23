@@ -38,7 +38,9 @@ All 12 category choices match. One synthetic example via OpenRouter, replayed fr
 
 **Astra plans. Jev chooses the actions. The Ender Dragon goes down.**
 
-[Watch the demo ↗](https://x.com/rronak_/status/2101544156757950697) · [Source code](https://github.com/rmalde/minecraft-agent)
+[![Play: Jev and Astra take down the Minecraft Ender Dragon](https://pbs.twimg.com/amplify_video_thumb/2101542497042481152/img/edco8P9wl-DUp5z8.jpg)](https://video.twimg.com/amplify_video/2101542497042481152/vid/avc1/1280x720/bpYI_EL7c3mp10Oq.mp4)
+
+[▶ Play video](https://video.twimg.com/amplify_video/2101542497042481152/vid/avc1/1280x720/bpYI_EL7c3mp10Oq.mp4) · [Original post](https://x.com/rronak_/status/2101544156757950697) · [Source code](https://github.com/rmalde/minecraft-agent)
 
 Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-surveyed seed in Peaceful mode.
 
