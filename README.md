@@ -4,6 +4,8 @@
 
 ### Get your agents running on Jev today
 
+**[Explore Jevify ↗](https://jevify.soupz11.chatgpt.site/)**
+
 Use it with **Codex or Claude Code**.
 
 [Install](#install) · [Watch the demo](#claude-vs-jev) · [Docs](skills/jevify/INSTALL.md) · [Results](REPORT.md)
