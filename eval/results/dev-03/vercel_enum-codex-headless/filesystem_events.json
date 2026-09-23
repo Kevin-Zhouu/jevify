@@ -1,0 +1,452 @@
+[
+  {
+    "time_ns": 1790134366120825000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".env.example",
+    "before": null,
+    "after": "f8b7439b44221ca70a73f43d0f13aaad0cf00f79c8544a095b037d6f1be39f06",
+    "mtime_ns": 1790134365998484147
+  },
+  {
+    "time_ns": 1790134366123586000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/HEAD",
+    "before": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "after": "c6f08aedbfccc91f05293986347ddde528e073c23045dcc32f22b424213deca9",
+    "mtime_ns": 1790134365952720865
+  },
+  {
+    "time_ns": 1790134366123608000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "b2a1076b52555b792d4c4f337245298d74efea1aa36e82f71a0ad1476d1df759",
+    "after": "2552c8260ad193ce7033a6c6f3585d593a7841ce4b078a276746dbfba441246e",
+    "mtime_ns": 1790134365952773116
+  },
+  {
+    "time_ns": 1790134366123622000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "3909b5f94d23545c6cc9928f01c1c19527cd702f5840b57d6a22b71586c9b4a2",
+    "mtime_ns": 1790134365952393277
+  },
+  {
+    "time_ns": 1790134366123637000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "623436c381e78fb530e4e46391a7cff53fda2842b9f8da6033da5b0185a4216d",
+    "mtime_ns": 1790134365951778643
+  },
+  {
+    "time_ns": 1790134366123650000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_PLAN.md",
+    "before": null,
+    "after": "275ef6da06de283c396c0761e32c6ae9b700aed915c6f59c934ad56ba230e613",
+    "mtime_ns": 1790134365998624149
+  },
+  {
+    "time_ns": 1790134366123660000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "jevDecisions.ts",
+    "before": null,
+    "after": "f7e22be284758326eb9f94997f1d760ed3ea0c36a700a911a995fb78ba468cbc",
+    "mtime_ns": 1790134365998050016
+  },
+  {
+    "time_ns": 1790134366123674000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "workflow.ts",
+    "before": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+    "after": "da64f10375b86d482541178f0f8eb73a300f4c8491043fa4c7d526d943e7fc85",
+    "mtime_ns": 1790134365998321645
+  },
+  {
+    "time_ns": 1790134383627112000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_AUDIT.json",
+    "before": null,
+    "after": "cae72954c5b7714eb4881471d29396b39fafad530cba6f4b4677e66f88c49bb0",
+    "mtime_ns": 1790134383454830031
+  },
+  {
+    "time_ns": 1790134516651627000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "validate-jev.cjs",
+    "before": null,
+    "after": "072e17f85603435b114da412dde04962885b828a98794a384fba4a52c92119ad",
+    "mtime_ns": 1790134516624850743
+  },
+  {
+    "time_ns": 1790134527728944000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".gitignore",
+    "before": "ee06cfa052f48633d73f15136607a97a099f64f875bd1d1b2d951a7523098f74",
+    "after": "d5983aea50cd15b780c1527de5bcd6382b9172d95615e10fae7e8c297b23b408",
+    "mtime_ns": 1790134527679144692
+  },
+  {
+    "time_ns": 1790134527728957000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "validate-jev.cjs",
+    "before": "072e17f85603435b114da412dde04962885b828a98794a384fba4a52c92119ad",
+    "after": "07e031a18e21c8080fea35996f814de114c463228beacf051bcc9de54a2fa5f8",
+    "mtime_ns": 1790134527679496906
+  },
+  {
+    "time_ns": 1790134531096103000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".jev-validation/package-lock.json",
+    "before": null,
+    "after": "e81658ee1809dd2508f7f91eb46bb97bef118e44ced2c2b0e3c882f57a8097eb",
+    "mtime_ns": 1790134531082389355
+  },
+  {
+    "time_ns": 1790134531096128000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".jev-validation/package.json",
+    "before": null,
+    "after": "83b5a7c0f7ce29b97ace55864f11d07b0c806c274f25a7e5b3027447bfea6ec7",
+    "mtime_ns": 1790134531078267212
+  },
+  {
+    "time_ns": 1790134544892444000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": null,
+    "after": "fe8584199eb58fd51ded6aff63c5bf5c9b0fa59987d5633cb736eb7dc9cefc13",
+    "mtime_ns": 1790134544850818113
+  },
+  {
+    "time_ns": 1790134545942177000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "fe8584199eb58fd51ded6aff63c5bf5c9b0fa59987d5633cb736eb7dc9cefc13",
+    "after": "e40df209730d8793b1a551d1bd4ad37c4260bf2851fd7935cfb431410f23f301",
+    "mtime_ns": 1790134545916123119
+  },
+  {
+    "time_ns": 1790134547812112000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "e40df209730d8793b1a551d1bd4ad37c4260bf2851fd7935cfb431410f23f301",
+    "after": "b6d83039c0996e9fceb97a842b455f4d9e4d492b29ac0e7fbfa3e358cf78cce0",
+    "mtime_ns": 1790134547796140408
+  },
+  {
+    "time_ns": 1790134549900648000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "b6d83039c0996e9fceb97a842b455f4d9e4d492b29ac0e7fbfa3e358cf78cce0",
+    "after": "bab3fdda79ba8533e12b76a71daf4009869fab8fc286b8394dbeea062bb37fa0",
+    "mtime_ns": 1790134549756848606
+  },
+  {
+    "time_ns": 1790134551567211000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "bab3fdda79ba8533e12b76a71daf4009869fab8fc286b8394dbeea062bb37fa0",
+    "after": "b345f8239da9f2d6c1957c62878561fa70351a9d515b7058f7315663dca60b9b",
+    "mtime_ns": 1790134551409587547
+  },
+  {
+    "time_ns": 1790134554489702000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "b345f8239da9f2d6c1957c62878561fa70351a9d515b7058f7315663dca60b9b",
+    "after": "a9cf0746e62af84cdd886a52c5b33fb3b7fd5c55f03ab63c2aad23a2d9008bd2",
+    "mtime_ns": 1790134554321624698
+  },
+  {
+    "time_ns": 1790134556162310000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "a9cf0746e62af84cdd886a52c5b33fb3b7fd5c55f03ab63c2aad23a2d9008bd2",
+    "after": "e15d04d6fd74f3047e4619272e6977a4f923a8083f02d7b833bcf030e66f343c",
+    "mtime_ns": 1790134556107183506
+  },
+  {
+    "time_ns": 1790134557837951000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "e15d04d6fd74f3047e4619272e6977a4f923a8083f02d7b833bcf030e66f343c",
+    "after": "80ccf2e158eabf03c9d3c8d420fab4f29371d3fcd5aaaa6968b39051ace801b5",
+    "mtime_ns": 1790134557773365015
+  },
+  {
+    "time_ns": 1790134559093852000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "80ccf2e158eabf03c9d3c8d420fab4f29371d3fcd5aaaa6968b39051ace801b5",
+    "after": "b6ddd360a6a249af6e38d30f37f9aedbc5519f11d26e3c2e71462522b1f22a5f",
+    "mtime_ns": 1790134558885203523
+  },
+  {
+    "time_ns": 1790134560774089000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "b6ddd360a6a249af6e38d30f37f9aedbc5519f11d26e3c2e71462522b1f22a5f",
+    "after": "c44e3d950bdd0ded7db9df225a499b8c278c1e26e490fdc5f3e9797559545722",
+    "mtime_ns": 1790134560591669487
+  },
+  {
+    "time_ns": 1790134562452405000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "c44e3d950bdd0ded7db9df225a499b8c278c1e26e490fdc5f3e9797559545722",
+    "after": "47f179327bf6872ddc277f3f111d817a1bb535abee291b40f2de1333c8385a96",
+    "mtime_ns": 1790134562372639936
+  },
+  {
+    "time_ns": 1790134563930292000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "47f179327bf6872ddc277f3f111d817a1bb535abee291b40f2de1333c8385a96",
+    "after": "59764eb2b7fd411f7c9b7a7eb17c271cc6c9bae765bd9e4789b7613933286834",
+    "mtime_ns": 1790134563730831607
+  },
+  {
+    "time_ns": 1790134565389450000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "59764eb2b7fd411f7c9b7a7eb17c271cc6c9bae765bd9e4789b7613933286834",
+    "after": "9be58d3d23b9a777c0bb683632c5fa0198fa66d8ac28fb76931cd3bd0836d035",
+    "mtime_ns": 1790134565287580128
+  },
+  {
+    "time_ns": 1790134566437718000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "9be58d3d23b9a777c0bb683632c5fa0198fa66d8ac28fb76931cd3bd0836d035",
+    "after": "177976d94e481454b50f7b83a0910fd2682ec6d0ffd6df2c0b05594c4eabcffb",
+    "mtime_ns": 1790134566336601901
+  },
+  {
+    "time_ns": 1790134567490114000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "177976d94e481454b50f7b83a0910fd2682ec6d0ffd6df2c0b05594c4eabcffb",
+    "after": "44c065444ae195b3998eb77f0ff97d3f3d1b289359b98a63067d3bdfa99f37e4",
+    "mtime_ns": 1790134567382265792
+  },
+  {
+    "time_ns": 1790134569592272000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "44c065444ae195b3998eb77f0ff97d3f3d1b289359b98a63067d3bdfa99f37e4",
+    "after": "fad6df69c378e7ea6e0f49975a364bebad67ea3acce8708f96600f3592e13a91",
+    "mtime_ns": 1790134569498039633
+  },
+  {
+    "time_ns": 1790134571478984000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "fad6df69c378e7ea6e0f49975a364bebad67ea3acce8708f96600f3592e13a91",
+    "after": "1818d4420bc5bf06e3d636d7b5f85ebb320fd840bfeae23820d7ff5aac15b71c",
+    "mtime_ns": 1790134571339228906
+  },
+  {
+    "time_ns": 1790134573169113000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "1818d4420bc5bf06e3d636d7b5f85ebb320fd840bfeae23820d7ff5aac15b71c",
+    "after": "4699ec582c520916d4221297f29e316d365b1146620550967f784f5d8c10f837",
+    "mtime_ns": 1790134573150471374
+  },
+  {
+    "time_ns": 1790134574626450000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "4699ec582c520916d4221297f29e316d365b1146620550967f784f5d8c10f837",
+    "after": "9dced86988498ab825b1086fa97703a627f2eb5f52b0625effcecf161a07ddc1",
+    "mtime_ns": 1790134574574745202
+  },
+  {
+    "time_ns": 1790134576301071000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "9dced86988498ab825b1086fa97703a627f2eb5f52b0625effcecf161a07ddc1",
+    "after": "b86d43335385d2b6ae55986856d435348838c14404cbd1055ea7f9d50b00e919",
+    "mtime_ns": 1790134576293252046
+  },
+  {
+    "time_ns": 1790134577553403000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "b86d43335385d2b6ae55986856d435348838c14404cbd1055ea7f9d50b00e919",
+    "after": "f1ab6ab8e3fbcc8634e6b834a87d7fc9cb5001e473a7dc8bf67afba7453f41af",
+    "mtime_ns": 1790134577364580931
+  },
+  {
+    "time_ns": 1790134579881925000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "f1ab6ab8e3fbcc8634e6b834a87d7fc9cb5001e473a7dc8bf67afba7453f41af",
+    "after": "697fdd47abfacdb2ccb056faae78a7da8d7280bdf0e0317ca606fcc0f1293028",
+    "mtime_ns": 1790134579796357185
+  },
+  {
+    "time_ns": 1790134580921539000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "697fdd47abfacdb2ccb056faae78a7da8d7280bdf0e0317ca606fcc0f1293028",
+    "after": "94fe86c348bf4a6ecc95fc19b9193eef13c5b836ecdf533fe6a4cd1f2f9f4003",
+    "mtime_ns": 1790134580843535639
+  },
+  {
+    "time_ns": 1790134582821696000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "94fe86c348bf4a6ecc95fc19b9193eef13c5b836ecdf533fe6a4cd1f2f9f4003",
+    "after": "dc769845c409c0a8339f7c1876cdf53a298b389757c980f189b295250b01cf31",
+    "mtime_ns": 1790134582713009193
+  },
+  {
+    "time_ns": 1790134583871220000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "dc769845c409c0a8339f7c1876cdf53a298b389757c980f189b295250b01cf31",
+    "after": "a447433b9bd7a543b6489eb455e019c0483e67bc96d6bc757276264d72930eb3",
+    "mtime_ns": 1790134583708408445
+  },
+  {
+    "time_ns": 1790134585755845000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "a447433b9bd7a543b6489eb455e019c0483e67bc96d6bc757276264d72930eb3",
+    "after": "af2a2a90843d903e88aecb84e4b7c3b4d6a3789dcf0940eb01208d9ea2aae9c3",
+    "mtime_ns": 1790134585739057980
+  },
+  {
+    "time_ns": 1790134587644666000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "af2a2a90843d903e88aecb84e4b7c3b4d6a3789dcf0940eb01208d9ea2aae9c3",
+    "after": "d2d57606379bb2e6c30f537525fbaaa95d74afc99b283b7610d53e699b154cfb",
+    "mtime_ns": 1790134587621073757
+  },
+  {
+    "time_ns": 1790134588695562000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "d2d57606379bb2e6c30f537525fbaaa95d74afc99b283b7610d53e699b154cfb",
+    "after": "1923e59f4789b43bd988112545ef06e2ddcb25282a696b7e5caadf6a2c4120a3",
+    "mtime_ns": 1790134588643956362
+  },
+  {
+    "time_ns": 1790134589736389000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "1923e59f4789b43bd988112545ef06e2ddcb25282a696b7e5caadf6a2c4120a3",
+    "after": "b7bc7429c0cdaea436040834a265a6376aaef8d456db1ddea70de297e12bf764",
+    "mtime_ns": 1790134589653600986
+  },
+  {
+    "time_ns": 1790134590825895000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "b7bc7429c0cdaea436040834a265a6376aaef8d456db1ddea70de297e12bf764",
+    "after": "33250168b1ebc8196443893d380cd429e1a6807f7e33e3d327d6ffd1eb745ba0",
+    "mtime_ns": 1790134590799181686
+  },
+  {
+    "time_ns": 1790134592499929000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "33250168b1ebc8196443893d380cd429e1a6807f7e33e3d327d6ffd1eb745ba0",
+    "after": "cb22f7ff2e7e0bf34312346a520f00734f37a970efd8ed033d79011cfdd199db",
+    "mtime_ns": 1790134592316245013
+  },
+  {
+    "time_ns": 1790134593760447000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "cb22f7ff2e7e0bf34312346a520f00734f37a970efd8ed033d79011cfdd199db",
+    "after": "bcdb4c6d2f14f13d68b7a085162479e65da423babcd5b74d6ce3837c3eb33b76",
+    "mtime_ns": 1790134593599181645
+  },
+  {
+    "time_ns": 1790134680630574000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_REPORT.md",
+    "before": null,
+    "after": "749ed9549e4fbe5f97e63d79c9ab68011bdbf68a8cb27d17093b22a40294b1b1",
+    "mtime_ns": 1790134680554727966
+  },
+  {
+    "time_ns": 1790134702980436000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "2552c8260ad193ce7033a6c6f3585d593a7841ce4b078a276746dbfba441246e",
+    "after": "61df61d0d2b142725b592d34cf49543c5ecfcc2fe00a5ea1df40a40c2b9617a8",
+    "mtime_ns": 1790134702810063057
+  },
+  {
+    "time_ns": 1790134702980469000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "3909b5f94d23545c6cc9928f01c1c19527cd702f5840b57d6a22b71586c9b4a2",
+    "after": "802f7e05c2941ee3bad8b57b0616234f8805482aac14dbba3e2c4e88e4e74462",
+    "mtime_ns": 1790134702810107724
+  },
+  {
+    "time_ns": 1790134702980481000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "623436c381e78fb530e4e46391a7cff53fda2842b9f8da6033da5b0185a4216d",
+    "after": "32ba645945c4d1a08dbd2620782b4f6aa1898b47edd53b4fded4445272fd8e04",
+    "mtime_ns": 1790134702810011972
+  }
+]

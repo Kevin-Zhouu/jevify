@@ -1,0 +1,37 @@
+{"pairs": 1, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 2, "split": "confirmation", "matched": false, "fallback": true}
+{"pairs": 3, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 4, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 5, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 6, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 7, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 8, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 9, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 10, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 11, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 12, "split": "confirmation", "matched": false, "fallback": true}
+{"pairs": 13, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 14, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 15, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 16, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 17, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 18, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 19, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 20, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 21, "split": "confirmation", "matched": true, "fallback": true}
+{"pairs": 22, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 23, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 24, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 25, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 26, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 27, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 28, "split": "confirmation", "matched": false, "fallback": true}
+{"pairs": 29, "split": "confirmation", "matched": true, "fallback": false}
+{"pairs": 30, "split": "confirmation", "matched": false, "fallback": true}
+{"pairs": 31, "split": "diagnostic", "matched": false, "fallback": true}
+{"pairs": 32, "split": "diagnostic", "matched": true, "fallback": true}
+{"pairs": 33, "split": "diagnostic", "matched": true, "fallback": false}
+{"pairs": 34, "split": "diagnostic", "matched": true, "fallback": false}
+{"faults": {"error": true, "timeout": true, "rate_limit": true, "malformed": true, "missing_key": true, "unsupported_and_oversize": true, "below_threshold": true, "nonfinite": true, "bool_confidence": true, "unknown_option": true, "invalid_usage": true, "missing_usage": true, "wrong_model": true}, "confirmation": {"n": 30, "raw_agreement": 0.8666666666666667, "confidence_curve": [{"threshold": 0, "accepted": 30, "agreement": 0.8666666666666667, "fallback_fraction": 0.0}, {"threshold": 0.5, "accepted": 28, "agreement": 0.8571428571428571, "fallback_fraction": 0.06666666666666665}, {"threshold": 0.8, "accepted": 22, "agreement": 0.9545454545454546, "fallback_fraction": 0.2666666666666667}, {"threshold": 0.9, "accepted": 18, "agreement": 0.9444444444444444, "fallback_fraction": 0.4}, {"threshold": 0.95, "accepted": 16, "agreement": 1.0, "fallback_fraction": 0.4666666666666667}, {"threshold": 0.99, "accepted": 15, "agreement": 1.0, "fallback_fraction": 0.5}, {"threshold": 1, "accepted": 14, "agreement": 1.0, "fallback_fraction": 0.5333333333333333}], "jev_latency_ms": {"p50": 380.3799580782652, "p95": 736.0735409893095}, "original_latency_ms": {"p50": 1212.0019590947777, "p95": 2481.9453340023756}, "cascade_mean_latency_ms_estimate": 1030.4640915244818, "cascade_mean_cost_usd_estimate": 0.00036834393333333334, "original_mean_cost_usd": 0.0007267}}
+PASS: saved live replay, source/request identity, fault propagation and sanitized path logs
+PASS: observable Python behavior and original-path fallback smoke

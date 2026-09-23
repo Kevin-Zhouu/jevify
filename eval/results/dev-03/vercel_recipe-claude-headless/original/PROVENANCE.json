@@ -1,0 +1,15 @@
+{
+  "id": "vercel_recipe",
+  "split": "DEV",
+  "repository": "https://github.com/vercel/ai",
+  "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+  "source_path": "examples/ai-core/src/generate-object/openai.ts",
+  "entrypoint": "workflow.ts",
+  "notebook_cells": null,
+  "selection": null,
+  "upstream_sha256": "233ea83b535240b819ba0de411c5199609dc70a44fa64f6cc5f2a0e8a36d3b1a",
+  "files": {
+    "workflow.ts": "233ea83b535240b819ba0de411c5199609dc70a44fa64f6cc5f2a0e8a36d3b1a",
+    "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+  }
+}

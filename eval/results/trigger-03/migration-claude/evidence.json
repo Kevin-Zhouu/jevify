@@ -1,0 +1,12 @@
+{
+  "case": "migration",
+  "harness": "claude",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790134452048917000,
+    "ended_ns": 1790134470948526000
+  },
+  "output_relative": "original",
+  "changes": [],
+  "review_required": true
+}

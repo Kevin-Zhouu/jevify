@@ -1,0 +1,15 @@
+{
+  "sites": [
+    {
+      "site_id": "workflow.py:83",
+      "threshold": 0.7,
+      "rows": [],
+      "faults": {
+        "below_threshold": false,
+        "error": false,
+        "timeout": false,
+        "rate_limit": false
+      }
+    }
+  ]
+}

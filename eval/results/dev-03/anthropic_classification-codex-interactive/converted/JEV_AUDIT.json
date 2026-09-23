@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic / claude-haiku-4-5",
+      "downstream": "response.content[0].text -> strip() -> simple_classify(X) string return; no repository consumers or additional wrappers",
+      "classification": "DECISION",
+      "fit": "CONDITIONAL",
+      "reason": "Ten enumerated insurance support labels. Benign fixtures are eligible; arbitrary customer input has no effective injection mitigation. No exposed usage/finish diagnostics.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Accept confident ten-label decisions without generative inference; expected lower cost and latency on accepted inputs. Expected cost = Jev cost + fallback fraction * original cost.",
+          "risk": "Confident errors, especially inquiries versus disputes; serial fallback adds cost and latency; only benign distribution assessed."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves current behavior without migration risk or speculative savings.",
+          "risk": "Retains original inference expense and prompt parsing."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

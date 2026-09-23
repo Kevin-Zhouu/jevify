@@ -13,3 +13,7 @@ These observations are provisional until independent reviews and grading finish.
 ## DEV02
 
 14/24 full passes. Every Codex run passes; Claude passes routing headless and recipe headless. Remaining failures: source reads before Phase0, omitted shared wrapper, skipped requested branch, wrong artifact names or missing negative conclusion, duplicated evaluator policies, manually reconstructed baselines, invented successful inference fault payloads, 401 mislabeled 429, missing answering-model logs, malformed-response and exception propagation defects. Four Codex positive runs have valid live paired evidence; Claude positive measurements are retained but not accepted as proof. Version3 repairs only the skill.
+
+## DEV03 stop
+
+Codex completes 12/12 passing runs. Three completed Claude positive runs still fail source-faithful parity or fault proof; nine Claude runs are interrupted/prevented by extra-usage exhaustion. Some real numerical comparisons exceed 90% but are rejected because proxy baselines, rewritten evaluators, fabricated successful fault payloads or untested integration cannot prove the actual conversion. Setup source-read boundary improved in both harnesses. Supplemental probes expose setup wording, missing-approval extra artifacts and double fallback on original exceptions. Stop per user condition, keeping HELD-OUT sealed. Proposed helper drafts are retained separately and are not active skill code or evaluated repairs.

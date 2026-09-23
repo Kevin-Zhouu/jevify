@@ -1,0 +1,77 @@
+{
+  "pairs": 36,
+  "errors": [],
+  "faults": {
+    "error": true,
+    "timeout": true,
+    "rate_limit": true,
+    "original_exception_identity": true,
+    "missing_key": true,
+    "malformed": true,
+    "below_threshold": true,
+    "invalid_fields": true
+  },
+  "summary": {
+    "n": 36,
+    "raw_agreement": 0.8055555555555556,
+    "curve": [
+      {
+        "threshold": 0,
+        "accepted": 36,
+        "agreement": 0.8055555555555556,
+        "fallback_rate": 0.0
+      },
+      {
+        "threshold": 0.5,
+        "accepted": 33,
+        "agreement": 0.8787878787878788,
+        "fallback_rate": 0.08333333333333337
+      },
+      {
+        "threshold": 0.7,
+        "accepted": 28,
+        "agreement": 0.8928571428571429,
+        "fallback_rate": 0.2222222222222222
+      },
+      {
+        "threshold": 0.8,
+        "accepted": 25,
+        "agreement": 0.96,
+        "fallback_rate": 0.3055555555555556
+      },
+      {
+        "threshold": 0.9,
+        "accepted": 22,
+        "agreement": 0.9545454545454546,
+        "fallback_rate": 0.38888888888888884
+      },
+      {
+        "threshold": 0.95,
+        "accepted": 18,
+        "agreement": 1.0,
+        "fallback_rate": 0.5
+      },
+      {
+        "threshold": 0.99,
+        "accepted": 17,
+        "agreement": 1.0,
+        "fallback_rate": 0.5277777777777778
+      }
+    ],
+    "metrics": {
+      "latency_ms": {
+        "p50": 399.3325416231528,
+        "p95": 667.4592918716371
+      },
+      "original_latency_ms": {
+        "p50": 1061.1231254879385,
+        "p95": 2276.734499959275
+      },
+      "mean_original_cost_usd": 0.0007208888888888889,
+      "mean_cascade_cost_usd": 0.0003096883888888889,
+      "mean_cascade_latency_ms_estimate": 960.6209560103404
+    },
+    "costs_known": true,
+    "split": "Fixed provisional threshold before all confirmation samples; no calibration or retuning."
+  }
+}

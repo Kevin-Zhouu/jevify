@@ -1,0 +1,182 @@
+[
+  {
+    "time_ns": 1790134580262208000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/HEAD",
+    "before": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "after": "c6f08aedbfccc91f05293986347ddde528e073c23045dcc32f22b424213deca9",
+    "mtime_ns": 1790134580209309281
+  },
+  {
+    "time_ns": 1790134580263130000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "b2a1076b52555b792d4c4f337245298d74efea1aa36e82f71a0ad1476d1df759",
+    "after": "77c3228ee7784f569bbc6599df7d1bd42cc72c8192490cd7e0c196e024723839",
+    "mtime_ns": 1790134580209380199
+  },
+  {
+    "time_ns": 1790134580263150000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "138bab4dd47a79a604ea40eaa579e900905fc271a8d5e50158bc992b4d2dd8d8",
+    "mtime_ns": 1790134580208751940
+  },
+  {
+    "time_ns": 1790134580263163000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "623436c381e78fb530e4e46391a7cff53fda2842b9f8da6033da5b0185a4216d",
+    "mtime_ns": 1790134580207921345
+  },
+  {
+    "time_ns": 1790134607986271000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "jevDecisions.ts",
+    "before": null,
+    "after": "c28e490a62e890016877409d4890c6a96495b16ddf19978e024b32035021747a",
+    "mtime_ns": 1790134607895956781
+  },
+  {
+    "time_ns": 1790134611756219000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "workflow.ts",
+    "before": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+    "after": "dd50f30cbc30a79ab9efe3ee519525ee040540dbf2c100a158f7ccb63697d425",
+    "mtime_ns": 1790134611602535716
+  },
+  {
+    "time_ns": 1790134613219883000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".env.example",
+    "before": null,
+    "after": "1f3175b7e58735a07823e6848f195f16c6a6327271af83c2b8637276be10abc4",
+    "mtime_ns": 1790134613171520997
+  },
+  {
+    "time_ns": 1790134634929499000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_AUDIT.json",
+    "before": null,
+    "after": "1fcc388e13fbce2c7ff42e2e3fb2880acb7762a76fde688416ba9fe25c01b65a",
+    "mtime_ns": 1790134634874740826
+  },
+  {
+    "time_ns": 1790134660936347000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_PLAN.md",
+    "before": null,
+    "after": "5d80d0cca58ab2ade0d036f4d13bf8fe13d3f6115fd30dea8a42f789ac3123dd",
+    "mtime_ns": 1790134660910520204
+  },
+  {
+    "time_ns": 1790134782004088000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "validate_parity.cjs",
+    "before": null,
+    "after": "26d8c1df9c6b260cc0b3acac321117cfeaa0520426d98732913ae9a919de6ce1",
+    "mtime_ns": 1790134781922493085
+  },
+  {
+    "time_ns": 1790134828424641000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": null,
+    "after": "48eac85d8a57abed071b78e39fcb17210e659edabb3d793afafec5efb4c6104f",
+    "mtime_ns": 1790134828274872422
+  },
+  {
+    "time_ns": 1790134869354010000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "jevDecisions.ts",
+    "before": "c28e490a62e890016877409d4890c6a96495b16ddf19978e024b32035021747a",
+    "after": "9a41e5cb824409e29bcc039a86a217a72177df7d79c6567a099abfa80f2f29ca",
+    "mtime_ns": 1790134869284733623
+  },
+  {
+    "time_ns": 1790134923559248000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "48eac85d8a57abed071b78e39fcb17210e659edabb3d793afafec5efb4c6104f",
+    "after": "9b446d33c041adf4195cb6bf5e6eda4cd7e275a873f7852c09f6862ee17dd7dc",
+    "mtime_ns": 1790134923381729258
+  },
+  {
+    "time_ns": 1790134968276894000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_REPORT.md",
+    "before": null,
+    "after": "1b85afc31dd1fb9283b311169c713e7e12af34c2ccf64a9ffdb3a2932d23eeb6",
+    "mtime_ns": 1790134968213131920
+  },
+  {
+    "time_ns": 1790134991247743000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "77c3228ee7784f569bbc6599df7d1bd42cc72c8192490cd7e0c196e024723839",
+    "after": "5fcb3c764e6ea65047a8063fbc71c7f348647272153572cbd7150000515bea2f",
+    "mtime_ns": 1790134991085248035
+  },
+  {
+    "time_ns": 1790134991247770000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "138bab4dd47a79a604ea40eaa579e900905fc271a8d5e50158bc992b4d2dd8d8",
+    "after": "162b01aadba430b156fdb1494d1e20f1ebac2fe24ab19a1d724f87488bd4ef35",
+    "mtime_ns": 1790134991085282244
+  },
+  {
+    "time_ns": 1790134991247780000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "623436c381e78fb530e4e46391a7cff53fda2842b9f8da6033da5b0185a4216d",
+    "after": "8052337e39b6712a6f3b8e42d70b6fc01b0a39fef155d9722f7912def69599d5",
+    "mtime_ns": 1790134991085207243
+  },
+  {
+    "time_ns": 1790134997413425000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "5fcb3c764e6ea65047a8063fbc71c7f348647272153572cbd7150000515bea2f",
+    "after": "2aec6e740b2b47a6e494b8f3fbc7f9751fb9dbac5f12f3bfef37dfb7aa688cb2",
+    "mtime_ns": 1790134997263330962
+  },
+  {
+    "time_ns": 1790134997413438000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "162b01aadba430b156fdb1494d1e20f1ebac2fe24ab19a1d724f87488bd4ef35",
+    "after": "e9d4eebd32fc3aec239bfbfd2afd643e1c2dafb217f940535f310e3d15005392",
+    "mtime_ns": 1790134997263367087
+  },
+  {
+    "time_ns": 1790134997413449000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "8052337e39b6712a6f3b8e42d70b6fc01b0a39fef155d9722f7912def69599d5",
+    "after": "899c13d11fc75ea760602dd0d991b5d1e8007dbc6dbf4528647a6245aea26021",
+    "mtime_ns": 1790134997263289045
+  }
+]

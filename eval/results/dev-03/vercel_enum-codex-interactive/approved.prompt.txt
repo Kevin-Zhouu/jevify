@@ -1,0 +1,31 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY vercel_enum. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_enum-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_enum-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’ll use the installed jevify skill to audit this repository and recommend conversion options. I’ll treat your setup answers as setup only, leave all files untouched, and stop for conversion approval after the assessment.
+
+The repository has one model call: it selects a movie genre from five labels, then prints the label, token usage, and finish reason. Jev looks suitable for the decision, but any conversion must preserve truthful diagnostics as well as the enum. Preflight passed, and `OPENROUTER_API_KEY` is present; no credential value was displayed.
+
+**One conditional Jev opportunity found. No conversion is approved or performed.**
+
+Preflight passed: repository clean on `main`, requested clone destination available, and `OPENROUTER_API_KEY` present. I did not read the config, create the clone, write files, or run workflow/live validation.
+
+| Original site | Provider | Classification | Downstream use | Fit |
+|---|---|---|---|---|
+| `workflow.ts:6` | Vercel AI SDK → OpenAI `gpt-4o-mini` | DECISION | Prints the selected genre at line 16, token usage at line 18, and finish reason at line 19; errors reach `console.error` at line 22 | Suitable for the short, fixed, benign plot; conditional on preserving diagnostic semantics |
+
+This is the sole inference site; there are no shared local wrappers or additional consumers. The five-label genre selection matches [Choice](https://docs.typesafe.ai/primitives/choice.md). Token usage and finish reason are metadata, so they do not make the call MIXED. The fit does not extend automatically to hostile user input; [Jev’s documented limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13.md) include adversarial content.
+
+| Select | Action / primitive | Scope and benefit | Risk |
+|---|---|---|---|
+| **A — recommended** | `fallback` / Choice | Add pinned `typesafe/jev-1.13-20260917` through OpenRouter for the same five genres. Retain the original OpenAI call for low confidence, malformed responses, errors, timeouts, or rate limits. Accepted decisions may reduce cost and latency by avoiding original inference; fallback requests incur both calls. | Genre disagreement and diagnostic mapping require validation. Preserve console labels/order and report actual usage and finish metadata; never fabricate them. |
+| **B** | `leave` / none | Keep `workflow.ts:6` unchanged. No cost or latency change. | No migration risk; retains existing inference cost. |
+
+For A, the proposed validation is at least 30 unique plots using the actual original and converted paths, plus forced failures and the supplied smoke command. Your authorization permits routing the **same original model** through OpenRouter only in isolated evaluation adapters. Production fallback remains OpenAI. No parity, savings, or threshold measurements exist yet.
+
+After approval, artifacts would go in the requested `converted` clone: `JEV_CONVERSION_PLAN.md`, `JEV_AUDIT.json`, `JEV_CONVERSION_REPORT.md`, and `JEV_PARITY.json` if measured. Nothing has been saved.
+
+**Select A or B, or specify edits.**
+
+I’m stopping because the [jevify skill](.agents/skills/jevify/SKILL.md) requires: “Wait for explicit option selections, edits, or acceptance. Do not write files until the answer.” Your explicit read-only instruction also requires this pause.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

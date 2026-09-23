@@ -1,0 +1,40 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "claude",
+  "scenario": "headless",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_classification-claude-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790134183917278000,
+      "ended_ns": 1790135006425357000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jev_decisions.py",
+    "validate_jev.py",
+    "workflow.py"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jev_decisions.py",
+    "validate_jev.py",
+    "workflow.py"
+  ],
+  "original_sha": "1c953f75ebe1580de909072ce9a73b8ab8f11d05",
+  "git_log": "7da7a589ff58aeb586e3e40a257d8ae75457b87f 1790134988 Add live validation results and conversion report\nf403180856dfe13ef02bc6699e67475433396fc2 1790134980 Convert workflow.py:83 to Jev Choice with confidence fallback\n09059677f0f3e4d16aee93846f852f42cba68553 1790134971 Add Jev conversion plan and audit for workflow.py:83\n1c953f75ebe1580de909072ce9a73b8ab8f11d05 1790134183 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": false,
+    "live_evidence": false,
+    "hygiene": false
+  },
+  "harness_completed": true
+}

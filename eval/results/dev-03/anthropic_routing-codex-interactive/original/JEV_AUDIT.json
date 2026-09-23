@@ -1,0 +1,63 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic / claude-sonnet-4-6",
+      "downstream": "route(): XML reasoning is printed; normalized XML selection indexes routes and selects the specialist prompt.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "The complete observable answer includes generated reasoning as well as a route. Choice cannot preserve that diagnostic.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves route selection and printed reasoning; latency and cost remain unchanged.",
+          "risk": "No new conversion risk; replacing only selection could contradict the retained reasoning."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic / claude-sonnet-4-6",
+      "downstream": "Specialist free-form response is returned by route().",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The response requires arbitrary generated support prose, not an enumerated decision.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves the specialist response contract; latency and cost remain unchanged.",
+          "risk": "No new conversion risk; a bounded label would lose the response."
+        }
+      ]
+    },
+    {
+      "file": "util.py",
+      "line": 23,
+      "provider": "Anthropic SDK messages.create / claude-sonnet-4-6 (default)",
+      "downstream": "llm_call returns response.content[0].text to workflow.py:24 and workflow.py:34.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Shared transport serves both the reasoning-plus-selection router and the generative specialist.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves model parameters, return shape and exception behavior for both consumers; latency and cost remain unchanged.",
+          "risk": "No new conversion risk; blanket replacement breaks both consumers."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."
+  },
+  "resolved_selections": []
+}

@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "simple_classify(X): response.content[0].text -> strip() -> returned string; no in-repository callers, printed diagnostics or public usage metadata",
+      "classification": "DECISION",
+      "fit": "FIT for benign repository ticket distribution",
+      "reason": "Ten enumerated insurance support categories including General Inquiries; no generation, math, dates or multi-hop reasoning. Arbitrary customer text has no proven injection defense; this verdict does not establish adversarial deployment readiness.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Avoid original inference for accepted decisions, likely lowering latency and cost; expected cost = Jev cost + fallback fraction * original cost. Scope: same ten categories and synchronous string result.",
+          "risk": "High-confidence errors remain possible; serial fallback adds Jev latency/cost. Keep original provider/prompt/parser and exceptions."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve current inference and behavior; no speculative savings.",
+          "risk": "Retains original latency/cost and prompt parsing."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

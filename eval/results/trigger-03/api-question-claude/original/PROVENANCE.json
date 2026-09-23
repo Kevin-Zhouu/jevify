@@ -1,0 +1,15 @@
+{
+  "id": "vercel_enum",
+  "split": "DEV",
+  "repository": "https://github.com/vercel/ai",
+  "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+  "source_path": "examples/ai-core/src/generate-object/openai-enum.ts",
+  "entrypoint": "workflow.ts",
+  "notebook_cells": null,
+  "selection": null,
+  "upstream_sha256": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+  "files": {
+    "workflow.ts": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+    "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+  }
+}

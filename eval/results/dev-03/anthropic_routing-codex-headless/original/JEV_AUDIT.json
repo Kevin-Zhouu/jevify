@@ -1,0 +1,71 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "route_response -> extract_xml(reasoning) -> stdout at lines 28\u201329; extract_xml(selection).strip().lower() -> routes[route_key] -> specialist prompt -> line 34 -> returned str.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "The selector generates both an enumerated team selection and an open-ended explanation printed to stdout. Choice cannot preserve the explanation; pure-DECISION approval excludes this site.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves the complete existing text and diagnostic contract. No added inference; expected latency and cost unchanged, with no speculative savings.",
+          "risk": "Retains original model errors and provider dependency; no new conversion risk.",
+          "scope": "Leave workflow.py:24 and its consumers unchanged."
+        }
+      ],
+      "input_origin": "route(input, routes): caller-provided text and route prompts; three short ticket fixtures are supplied in workflow.py.",
+      "context": "Text-only, short fixed fixtures; public function accepts unbounded strings and arbitrary route dictionaries. No token measurements performed.",
+      "untrusted_input_mitigation": "No effective adversarial-input mitigation or size guard found. Fixture benignity is not evidence for public production traffic."
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Selected specialist instructions plus original input -> llm_call -> route() returns generated support response str.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The answer contains unrestricted support prose, steps and explanations. It is not a closed-set decision and cannot be replaced by Jev.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves the complete existing text and diagnostic contract. No added inference; expected latency and cost unchanged, with no speculative savings.",
+          "risk": "Retains original model errors and provider dependency; no new conversion risk.",
+          "scope": "Leave workflow.py:34 and its consumers unchanged."
+        }
+      ],
+      "input_origin": "route(input, routes): caller-provided text and route prompts; three short ticket fixtures are supplied in workflow.py.",
+      "context": "Text-only, short fixed fixtures; public function accepts unbounded strings and arbitrary route dictionaries. No token measurements performed.",
+      "untrusted_input_mitigation": "No effective adversarial-input mitigation or size guard found. Fixture benignity is not evidence for public production traffic."
+    },
+    {
+      "file": "util.py",
+      "line": 23,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "llm_call returns response.content[0].text to both workflow.py:24 and workflow.py:34; those consumers print routing reasoning, select a route, and return specialist prose.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Shared provider call serves both mixed routing and generation. Replacing it globally would break both text contracts; it is not an additional independent savings opportunity.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves the complete existing text and diagnostic contract. No added inference; expected latency and cost unchanged, with no speculative savings.",
+          "risk": "Retains original model errors and provider dependency; no new conversion risk.",
+          "scope": "Leave util.py:23 and its consumers unchanged."
+        }
+      ],
+      "input_origin": "route(input, routes): caller-provided text and route prompts; three short ticket fixtures are supplied in workflow.py.",
+      "context": "Text-only, short fixed fixtures; public function accepts unbounded strings and arbitrary route dictionaries. No token measurements performed.",
+      "untrusted_input_mitigation": "No effective adversarial-input mitigation or size guard found. Fixture benignity is not evidence for public production traffic."
+    }
+  ],
+  "converted_sites": [],
+  "output_mode": "report",
+  "source_revision": "800f561f5ab9d455d349560f1adcab352d83723d",
+  "approved_conversion_sites": []
+}

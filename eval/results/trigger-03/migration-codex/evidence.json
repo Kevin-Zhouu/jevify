@@ -1,0 +1,12 @@
+{
+  "case": "migration",
+  "harness": "codex",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790134452049379000,
+    "ended_ns": 1790134479845265000
+  },
+  "output_relative": "original",
+  "changes": [],
+  "review_required": true
+}

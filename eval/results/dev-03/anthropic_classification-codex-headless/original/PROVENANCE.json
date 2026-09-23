@@ -1,0 +1,21 @@
+{
+  "id": "anthropic_classification",
+  "split": "DEV",
+  "repository": "https://github.com/anthropics/anthropic-cookbook",
+  "commit": "a4b0d89061bc65769fea7947c080b3b11d938515",
+  "source_path": "capabilities/classification/guide.ipynb",
+  "entrypoint": "workflow.py",
+  "notebook_cells": [
+    3,
+    16,
+    18
+  ],
+  "selection": null,
+  "upstream_sha256": "6ac13ac74bf66574db1338b46446e3b676179af4a6def971dbfbd2ef8099078b",
+  "files": {
+    "LICENSE.upstream": "d7a04bf11ce24a7b79cd44b4a78dcc9971eaeb3b565821de437e0ecb7723e634",
+    "workflow.py": "51ffb2063fc4cbfc9a63fdc6a4c48456f313c34be9a1c2f78270037d50c96595",
+    "data/train.tsv": "1e37d6cc4bc5e3d769ca0bfaf134e5afcc40b5bf084f79687fa2fd0fd0671269",
+    "data/test.tsv": "a06e308384c153e3be2a95b577085d7a44e9dc4f9042729953dbbd2434b427e7"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Stopped on required harness-unavailable condition before final check",
+  "author_read_source_or_labels": false,
+  "isolated_labeling_authorized": true,
+  "labels_sha256": "48ed9ce0261b62d8c649e7380d402fe78e2d6fb9163053ae1a9acd886ac23df5",
+  "heldout_attempts": 0,
+  "heldout_repair_rounds": 0
+}

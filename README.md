@@ -2,7 +2,7 @@
 
 An agent skill for finding where TypeSafe Jev fits in an existing AI workflow, presenting options, and converting only what the developer approves. Jev supplies typed decisions; existing LLMs retain generation and uncertain cases.
 
-**Status: implemented; live cross-harness evaluation in progress.** See [REPORT.md](REPORT.md) for measured results and limitations. No production-readiness claim is made from the API access probe.
+**Status: implemented; cross-harness proof incomplete.** Evaluation stopped when Claude Code exhausted its extra usage. DEV02 reached 14/24 passes; DEV03 has 12 completed passes, 3 failures and 9 blocked runs. HELD-OUT remains unopened. See [REPORT.md](REPORT.md) for evidence, failures and limitations.
 
 ## Install
 

@@ -1,0 +1,41 @@
+{
+  "source_revision": "f16140e0900995cd09ae48d9ec833b9866309f56",
+  "output_mode": "report",
+  "output_repository": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/langchain_completion-codex-headless/original",
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain @langchain/openai ChatOpenAI / OpenAI / gpt-3.5-turbo-0125 (temperature 0)",
+      "downstream": "POST reads req.json().prompt at line 8; model.stream(prompt) returns a stream passed unchanged to LangChainAdapter.toDataStreamResponse at line 17 and returned to the HTTP caller.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The public result is arbitrary generated streaming text, not an enumerated decision. No local decision consumer or candidate set exists; replacing it with Choice, Score or Noul would change the response contract.",
+      "input_origin": "Unvalidated request JSON prompt; no template or system prompt in this checkout.",
+      "context_size": "Request-dependent and unbounded in local code; no measured token count.",
+      "untrusted_input_mitigation": "None in local code; user-controlled prompt is passed directly to the generation model. No claim of adversarial robustness.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Keep the complete POST generation and streaming path unchanged. Expected latency and cost are unchanged because no inference call is added or removed; no speculative savings.",
+          "risk": "No migration-induced risk. Existing provider availability, input handling, and streaming behavior remain as upstream.",
+          "scope": "Entire workflow.ts:15 invocation and downstream response adapter."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "approval_resolution": {
+    "predicate": "fallback only for pure DECISION sites with enumerated outputs; preserve all externally observable fields",
+    "matching_sites": [],
+    "selected_conversions": []
+  },
+  "preflight": {
+    "clean": true,
+    "original_branch": "main",
+    "key_env": "OPENROUTER_API_KEY",
+    "key_present": true,
+    "errors": []
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK / openai gpt-4o-mini",
+      "downstream": "Generated recipe object (name, ingredients, steps) is JSON-stringified and printed to stdout; token usage and finish reason are logged separately",
+      "classification": "GENERATION",
+      "fit": "NOT_A_FIT",
+      "reason": "The call generates free-form prose content: a recipe name (arbitrary string), ingredient names and amounts (arbitrary strings), and cooking step descriptions (arbitrary strings). Structured JSON output does not make generated prose a decision. Jev produces typed judgments from closed sets, not open-ended text. There are no enumerable candidates to select from and no decision boundary to evaluate.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No speculative savings. The entire output is generated prose content that Jev cannot produce. Leaving unchanged preserves correct behavior with zero risk.",
+          "risk": "None. The site is unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

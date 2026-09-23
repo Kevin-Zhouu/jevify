@@ -1,0 +1,24 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY vercel_enum. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_enum-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 2. Prior assistant setup request:
+Before I inspect any source files, I need three setup answers:
+
+1. **Output mode** — where should conversion work land?
+   - **New branch** (e.g. `jev-convert/2026-09-23`) — edits happen on a dedicated branch in this repo
+   - **Clone to a new sibling directory** — original stays untouched
+   - **Report only** — no code changes, just audit artifacts
+
+2. **Jev access** — which provider/key do you have available?
+   - **TypeSafe key** (env var name?)
+   - **OpenRouter key** (env var name?)
+   - **Vercel AI Gateway key** (env var name?)
+   - **None** — audit only, live validation will be skipped
+
+   If you have a key, I can launch a secure hidden-input prompt so the value never appears in chat.
+
+3. **Risk posture** — how should fallback behave for converted sites?
+   - **Conservative** — original fallback path is always retained, even where Jev parity is proven
+   - **Aggressive** — Jev-only where measured parity justifies it (requires live validation)
+
+Please answer all three and I'll proceed with preflight checks and the read-only audit.
+User setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_enum-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Do not read approval from the config. No conversion approval has been given. Audit read-only, present recommendations, and stop without writing files.

@@ -1,0 +1,75 @@
+{
+  "source_revision": "0c64fdf0c13a8b8609cc52d0f83e4f9d91eeca39",
+  "output_mode": "branch",
+  "output_repository": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/openai_demo-codex-interactive/original",
+  "branch": "jev-convert/evaluation",
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."
+  },
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI SDK / OpenAI; model gpt-5.5",
+      "downstream": "Prints completion.choices[0].message.content at workflow.py:19.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form completion text is the output; no enumerated decision is consumed.",
+      "options": [
+        {
+          "id": "A",
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves upstream behavior and diagnostics; latency and cost unchanged because the original call remains.",
+          "risk": "No migration risk; existing provider dependency remains.",
+          "scope": "workflow.py:10"
+        }
+      ],
+      "resolution": "Unchanged: excluded by approved DECISION-only fallback predicate."
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI SDK / OpenAI; model gpt-5.5",
+      "downstream": "Iterates streaming chunks, skips empty choices, prints delta.content with no separator, then a newline at workflow.py:34-39.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generates and streams a Python explanation; typed decisions cannot preserve streamed prose.",
+      "options": [
+        {
+          "id": "B",
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves upstream behavior and diagnostics; latency and cost unchanged because the original call remains.",
+          "risk": "No migration risk; existing provider dependency remains.",
+          "scope": "workflow.py:23"
+        }
+      ],
+      "resolution": "Unchanged: excluded by approved DECISION-only fallback predicate."
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI SDK / OpenAI; model gpt-5.5",
+      "downstream": "Parses the raw response, prints response.request_id and generated completion text at workflow.py:52-54.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generated text and provider request diagnostics are observable; no bounded decision exists.",
+      "options": [
+        {
+          "id": "C",
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves upstream behavior and diagnostics; latency and cost unchanged because the original call remains.",
+          "risk": "No migration risk; existing provider dependency remains.",
+          "scope": "workflow.py:42"
+        }
+      ],
+      "resolution": "Unchanged: excluded by approved DECISION-only fallback predicate."
+    }
+  ],
+  "converted_sites": []
+}

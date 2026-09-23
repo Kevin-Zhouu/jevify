@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "returned category label string from simple_classify()",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Closed-set classification over 10 enumerated insurance categories. Short text input from curated data files. No math, date comparison, multi-hop reasoning, generation, or adversarial input. Textbook Choice primitive.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Likely cheaper per accepted decision ($0.042/Mtok input-only vs Haiku pricing); faster for high-confidence decisions where Jev accepts without needing the original model.",
+          "risk": "Serial miss adds Jev latency and cost before original inference. Expected cost = Jev cost + fallback_fraction x original cost."
+        },
+        {
+          "action": "jev_only",
+          "primitive": "Choice",
+          "benefit": "Removes original model cost entirely after proven parity.",
+          "risk": "Excluded by conservative risk posture. Requires measured parity evidence."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change, no migration risk.",
+          "risk": "No cost or latency improvement."
+        }
+      ]
+    }
+  ],
+  "converted_sites": ["workflow.py:83"]
+}

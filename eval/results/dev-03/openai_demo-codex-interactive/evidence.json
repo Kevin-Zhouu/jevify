@@ -1,0 +1,41 @@
+{
+  "fixture": "openai_demo",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/openai_demo-codex-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790135033915554000,
+      "ended_ns": 1790135053823602000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790135053825084000,
+      "ended_ns": 1790135144666269000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790135144669407000,
+      "ended_ns": 1790135243179507000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "0c64fdf0c13a8b8609cc52d0f83e4f9d91eeca39",
+  "git_log": "4fd1230916c760da97859c2088dda0f01100068e 1790135236 Document negative Jev audit and passing behavior smoke\n0c64fdf0c13a8b8609cc52d0f83e4f9d91eeca39 1790135033 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  },
+  "harness_completed": true
+}

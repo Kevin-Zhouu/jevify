@@ -1,0 +1,23 @@
+{
+  "status": "live validation skipped: provider none",
+  "sites": [
+    {
+      "site_id": "workflow.py:83",
+      "primitive": "Choice",
+      "threshold": 0.95,
+      "rows": [],
+      "faults": {
+        "below_threshold": true,
+        "error": true,
+        "timeout": true,
+        "rate_limit": true
+      },
+      "fault_proof": "test_jev_fallback.py executed via unittest; injected control flow only, no live inference",
+      "accepted_path": "skipped: no genuine live capture",
+      "agreement": null,
+      "fallback_rate": null,
+      "latency_ms": null,
+      "cost_usd": null
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic Messages API / claude-haiku-4-5",
+      "downstream": "Returns category label string to caller of simple_classify()",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Selects one of 10 enumerated insurance support categories from a closed set. No math, dates, multi-hop reasoning, generation, or non-text input. Benign fixed-fixture distribution.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Jev is faster and cheaper per-call for classification; expected cost = Jev cost + fallback fraction * original Anthropic cost; net savings on high-confidence inputs",
+          "risk": "Low — conservative fallback retains original Anthropic call for uncertain inputs; no key means Jev path always falls back until configured"
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No integration effort required",
+          "risk": "None"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

@@ -1,0 +1,2248 @@
+{
+  "source_revision": "4bc5e23750b6af7d32147d2480a5bde33bb935cb",
+  "status": "measured confirmation passed",
+  "threshold_policy": "0.9 frozen before confirmation; no tuning",
+  "sites": [
+    {
+      "site_id": "workflow.ts:6",
+      "primitive": "Choice",
+      "threshold": 0.9,
+      "rows": [
+        {
+          "input": "A group of astronauts travel through a wormhole in search of a new habitable planet for humanity.",
+          "provenance": "repo",
+          "source": "workflow.ts:12-13 (original)",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134543-VGZ2UFBl45yRzr18nIHO",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 1132.360584,
+          "cost_usd": 0.000014784,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1046.557459,
+          "original_cost_usd": 0.00001665,
+          "original_request_id": "gen-1790134543-3VsYstbslbvOBSPQG9PS",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "action": 0,
+                  "comedy": 0,
+                  "sci-fi": 1,
+                  "horror": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 352,
+              "output_tokens": 60,
+              "cost": 0.000014784
+            },
+            "id": "gen-dec-1790134543-VGZ2UFBl45yRzr18nIHO",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 83,
+            "completion_tokens": 7,
+            "total_tokens": 90,
+            "cost": 0.00001665,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001665,
+              "upstream_inference_prompt_cost": 0.00001245,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A retired soldier fights a cartel to rescue a kidnapped child.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134545-OYz4SXlMwyT96jyp13Zh",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 307.0510830000003,
+          "cost_usd": 0.000014406,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 754.2057920000002,
+          "original_cost_usd": 0.00001425,
+          "original_request_id": "gen-1790134544-VAl6RyWfJeN5DQiD51TQ",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "sci-fi": 0,
+                  "action": 1,
+                  "horror": 0,
+                  "comedy": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 58,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790134545-OYz4SXlMwyT96jyp13Zh",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 5,
+            "total_tokens": 80,
+            "cost": 0.00001425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001425,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "Two inept burglars accidentally become the guests of honor at a police banquet.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134547-vM7q1oUeifnEO5brWeyX",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 314.4108329999999,
+          "cost_usd": 0.000014574,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1561.9385419999999,
+          "original_cost_usd": 0.00001545,
+          "original_request_id": "gen-1790134545-Wh1toKywFzvydJHsoChX",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "sci-fi": 0,
+                  "comedy": 1,
+                  "horror": 0,
+                  "action": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 347,
+              "output_tokens": 59,
+              "cost": 0.000014574
+            },
+            "id": "gen-dec-1790134547-vM7q1oUeifnEO5brWeyX",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 79,
+            "completion_tokens": 6,
+            "total_tokens": 85,
+            "cost": 0.00001545,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001545,
+              "upstream_inference_prompt_cost": 0.00001185,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "An estranged father and daughter rebuild their relationship after a funeral.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134549-EaeU3mktz34sp8G8JmFk",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 333.2542080000003,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1623.6507499999998,
+          "original_cost_usd": 0.000015,
+          "original_request_id": "gen-1790134547-PReB6ta1dq4NBW1mbzX8",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "action": 0,
+                  "horror": 0,
+                  "drama": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134549-EaeU3mktz34sp8G8JmFk",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A family moves into a house whose mirrors trap the souls of its residents.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134551-kUVcgG7ApA0VG6YktqSt",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 281.04170800000065,
+          "cost_usd": 0.000014532,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1367.7864169999993,
+          "original_cost_usd": 0.0000153,
+          "original_request_id": "gen-1790134549-7pSRoRmxavvGDY386jTj",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "action": 0,
+                  "comedy": 0,
+                  "drama": 0,
+                  "horror": 1,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 346,
+              "output_tokens": 60,
+              "cost": 0.000014532
+            },
+            "id": "gen-dec-1790134551-kUVcgG7ApA0VG6YktqSt",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 6,
+            "total_tokens": 84,
+            "cost": 0.0000153,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000153,
+              "upstream_inference_prompt_cost": 0.0000117,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A scientist builds a time machine and meets a future version of herself.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134554-eR2IDSVcEgvvaXEnkEIp",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 285.1357079999998,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 2620.9455830000006,
+          "original_cost_usd": 0.00001575,
+          "original_request_id": "gen-1790134552-wPhhzimfqwAHnRKZF8KN",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "sci-fi": 1,
+                  "comedy": 0,
+                  "horror": 0,
+                  "drama": 0,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 60,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134554-eR2IDSVcEgvvaXEnkEIp",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 7,
+            "total_tokens": 84,
+            "cost": 0.00001575,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001575,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A courier races through a city while mercenaries pursue the secret package.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134555-mO3xL8V0D7CRTu02YHCG",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 260.0292499999996,
+          "cost_usd": 0.000014532,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1521.149042000001,
+          "original_cost_usd": 0.0000147,
+          "original_request_id": "gen-1790134554-aIqzorceVv5AGL748aw2",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "drama": 0,
+                  "comedy": 0,
+                  "action": 1,
+                  "sci-fi": 0,
+                  "horror": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 346,
+              "output_tokens": 58,
+              "cost": 0.000014532
+            },
+            "id": "gen-dec-1790134555-mO3xL8V0D7CRTu02YHCG",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 5,
+            "total_tokens": 83,
+            "cost": 0.0000147,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000147,
+              "upstream_inference_prompt_cost": 0.0000117,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A timid accountant is mistaken for a famous comedian and must perform on stage.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134557-CsYWIcn4yOEspnTztUOh",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 347.76254100000006,
+          "cost_usd": 0.000014532,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1314.7290830000002,
+          "original_cost_usd": 0.0000153,
+          "original_request_id": "gen-1790134556-rwYrGLZYdF6MjPVG2TLP",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "action": 0,
+                  "comedy": 1,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 346,
+              "output_tokens": 59,
+              "cost": 0.000014532
+            },
+            "id": "gen-dec-1790134557-CsYWIcn4yOEspnTztUOh",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 6,
+            "total_tokens": 84,
+            "cost": 0.0000153,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000153,
+              "upstream_inference_prompt_cost": 0.0000117,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A teacher helps a grieving student return to school while facing her own loss.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134558-KJRDGxFrhDo0vufGIaxo",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 380.41029100000014,
+          "cost_usd": 0.000014532,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 727.2588340000002,
+          "original_cost_usd": 0.0000153,
+          "original_request_id": "gen-1790134557-O2jQmRpUUL5H94SMujDw",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "drama": 1,
+                  "comedy": 0,
+                  "action": 0,
+                  "horror": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 346,
+              "output_tokens": 59,
+              "cost": 0.000014532
+            },
+            "id": "gen-dec-1790134558-KJRDGxFrhDo0vufGIaxo",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 6,
+            "total_tokens": 84,
+            "cost": 0.0000153,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000153,
+              "upstream_inference_prompt_cost": 0.0000117,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "Campers hear their own voices calling from an abandoned mine at night.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134560-6Yql05mWWl3wKdu9jJIR",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 274.08254099999976,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1428.7686670000003,
+          "original_cost_usd": 0.00001515,
+          "original_request_id": "gen-1790134558-3EepyKElswdZVaEcqNAA",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "action": 0,
+                  "horror": 1,
+                  "sci-fi": 0,
+                  "comedy": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 60,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134560-6Yql05mWWl3wKdu9jJIR",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "An android discovers that its memories were implanted by a distant civilization.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134562-MPd4JojwkaEB19RV1mC9",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 335.90612500000134,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1441.229374999999,
+          "original_cost_usd": 0.0000156,
+          "original_request_id": "gen-1790134560-6chG0Phwy07dZ5IWFQSz",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "comedy": 0,
+                  "drama": 0,
+                  "action": 0,
+                  "horror": 0,
+                  "sci-fi": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 60,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134562-MPd4JojwkaEB19RV1mC9",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 7,
+            "total_tokens": 83,
+            "cost": 0.0000156,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000156,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A firefighter battles armed invaders in a burning skyscraper.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134563-L6lptA47RQT3lWeyM8HG",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 278.0981670000001,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1073.9125000000022,
+          "original_cost_usd": 0.00001425,
+          "original_request_id": "gen-1790134562-zqR1eYKc7PWov55yqMF4",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "drama": 0,
+                  "comedy": 0,
+                  "action": 1,
+                  "sci-fi": 0,
+                  "horror": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 58,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134563-L6lptA47RQT3lWeyM8HG",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 5,
+            "total_tokens": 80,
+            "cost": 0.00001425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001425,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "Rival wedding planners sabotage each other with increasingly ridiculous pranks.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134564-yYi0whMQZNNciHtvnOgE",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 303.4572500000031,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1248.3836669999982,
+          "original_cost_usd": 0.000015,
+          "original_request_id": "gen-1790134563-zwAqEe2XZJraYrclW8kK",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "drama": 0,
+                  "action": 0,
+                  "comedy": 1,
+                  "sci-fi": 0,
+                  "horror": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134564-yYi0whMQZNNciHtvnOgE",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A musician loses her hearing and learns how to reconnect with her family.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134566-uDsXsdP8e65TeTwu99hT",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 333.3091670000031,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 710.3604580000028,
+          "original_cost_usd": 0.00001515,
+          "original_request_id": "gen-1790134565-GVYSIUgNdjngulYqWMZv",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0,
+                  "drama": 1,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 59,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134566-uDsXsdP8e65TeTwu99hT",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "An unseen creature stalks the last occupants of an isolated hospital.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134567-2Ova0AdUVRgvAdLmspAS",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 289.7910410000004,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 752.0259579999984,
+          "original_cost_usd": 0.000015,
+          "original_request_id": "gen-1790134566-5K8kqTzI8JuFFXVEMrCP",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "action": 0,
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "horror": 1,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 60,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134567-2Ova0AdUVRgvAdLmspAS",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "Colonists on Mars discover a machine that can rewrite human memories.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134569-KAX2Krwog7JRSwQ1IUyH",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 313.26220900000044,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1797.9598339999975,
+          "original_cost_usd": 0.0000156,
+          "original_request_id": "gen-1790134567-6zamyC8ruwrosAFejPM0",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "action": 0,
+                  "horror": 0,
+                  "comedy": 0,
+                  "sci-fi": 1,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 60,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134569-KAX2Krwog7JRSwQ1IUyH",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 7,
+            "total_tokens": 83,
+            "cost": 0.0000156,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000156,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "An undercover agent attempts to stop an armored train carrying stolen weapons.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134571-ff4KwTpM7X7wfIKYZZEt",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 286.85120800000004,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1551.064459000001,
+          "original_cost_usd": 0.0000144,
+          "original_request_id": "gen-1790134569-48ZkFq295ugY51rDA0ym",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "comedy": 0,
+                  "horror": 0,
+                  "drama": 0,
+                  "action": 1,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 58,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134571-ff4KwTpM7X7wfIKYZZEt",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 5,
+            "total_tokens": 81,
+            "cost": 0.0000144,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000144,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "Three neighbors enter a cooking contest despite being unable to boil water.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134572-CSygJR805Hwi24mxI1Tv",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 383.68087500000183,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1422.6774579999983,
+          "original_cost_usd": 0.000015,
+          "original_request_id": "gen-1790134571-OxR9LWL2sRmWsBZbpOa5",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "comedy": 1,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "action": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134572-CSygJR805Hwi24mxI1Tv",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "Two siblings struggle over whether to sell their late mother’s farm.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134574-lB08QrPyADzz2x2kijE8",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 282.76654199999757,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1137.3662089999998,
+          "original_cost_usd": 0.000015,
+          "original_request_id": "gen-1790134573-hnWG4WEaw6xSz718G8qa",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0,
+                  "action": 0,
+                  "drama": 1,
+                  "sci-fi": 0,
+                  "horror": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134574-lB08QrPyADzz2x2kijE8",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A cursed doll appears beside a different sleeping child every night.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134575-CXj9yAi0PoSZJEQ86ENO",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 354.30016700000124,
+          "cost_usd": 0.000014406,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1360.1472079999985,
+          "original_cost_usd": 0.00001485,
+          "original_request_id": "gen-1790134574-g6AuygQggqlXHFmvvG7d",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "action": 0,
+                  "horror": 1,
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 60,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790134575-CXj9yAi0PoSZJEQ86ENO",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A crew travels to a simulated universe to repair its failing physical laws.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134577-hGfZMMhyg9Zk7ApaWGdE",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 306.0142500000002,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 761.6699169999993,
+          "original_cost_usd": 0.00001575,
+          "original_request_id": "gen-1790134576-6GAZlWm707yjNGU7QGm3",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "comedy": 0,
+                  "horror": 0,
+                  "sci-fi": 1,
+                  "drama": 0,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 60,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134577-hGfZMMhyg9Zk7ApaWGdE",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 7,
+            "total_tokens": 84,
+            "cost": 0.00001575,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001575,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A soldier protects a village from a band of heavily armed raiders.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134579-DD08oXMooH8Sbe50nlvL",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 448.5089170000065,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1978.8397919999989,
+          "original_cost_usd": 0.00001455,
+          "original_request_id": "gen-1790134577-Unt5sZlqEjJi8wOYQFQp",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "drama": 0,
+                  "action": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 58,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134579-DD08oXMooH8Sbe50nlvL",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 5,
+            "total_tokens": 82,
+            "cost": 0.00001455,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001455,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A pompous boss swaps jobs with a janitor and causes a series of absurd disasters.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134580-wqdu6t0S518SKBvfo7Ya",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 346.36995800000295,
+          "cost_usd": 0.000014658,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 696.9277920000022,
+          "original_cost_usd": 0.00001575,
+          "original_request_id": "gen-1790134579-SjAoSlGpE13VrnDSObUR",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "drama": 0,
+                  "comedy": 1,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 349,
+              "output_tokens": 59,
+              "cost": 0.000014658
+            },
+            "id": "gen-dec-1790134580-wqdu6t0S518SKBvfo7Ya",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 81,
+            "completion_tokens": 6,
+            "total_tokens": 87,
+            "cost": 0.00001575,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001575,
+              "upstream_inference_prompt_cost": 0.00001215,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A nurse confronts a difficult choice between her career and caring for her father.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134582-BnqGHdAazHJmn70yuTsh",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 297.8495829999956,
+          "cost_usd": 0.000014616,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1565.164125000003,
+          "original_cost_usd": 0.00001545,
+          "original_request_id": "gen-1790134580-E9EBwg2ZB90zUaSNeLqN",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "drama": 1,
+                  "action": 0,
+                  "comedy": 0,
+                  "horror": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 348,
+              "output_tokens": 59,
+              "cost": 0.000014616
+            },
+            "id": "gen-dec-1790134582-BnqGHdAazHJmn70yuTsh",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 79,
+            "completion_tokens": 6,
+            "total_tokens": 85,
+            "cost": 0.00001545,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001545,
+              "upstream_inference_prompt_cost": 0.00001185,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A radio host receives calls from victims who have not yet been murdered.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134583-hYxcQTZXvOga2cqlvzv8",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 0.94,
+          "fallback_taken": false,
+          "latency_ms": 407.7670419999995,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 583.430207999998,
+          "original_cost_usd": 0.00001515,
+          "original_request_id": "gen-1790134582-NGbURKh0iUn9uUKcVVB9",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "comedy": 0.02,
+                  "horror": 0.96,
+                  "sci-fi": 0,
+                  "drama": 0.02,
+                  "action": 0
+                },
+                "confidence": 0.94
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 60,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134583-hYxcQTZXvOga2cqlvzv8",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A robot lawyer defends the first artificial mind accused of a crime.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134585-7fuT9UsDf4C7QXj3WcOd",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 522.1732090000005,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1501.5988750000033,
+          "original_cost_usd": 0.00001575,
+          "original_request_id": "gen-1790134583-RvgEEXhbeDaUoR3Kjbjk",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "comedy": 0,
+                  "horror": 0,
+                  "drama": 0,
+                  "sci-fi": 1,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 60,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134585-7fuT9UsDf4C7QXj3WcOd",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 7,
+            "total_tokens": 84,
+            "cost": 0.00001575,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001575,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A space rescue mission turns into a desperate firefight with pirates.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134587-xncZmljNLeiMMosn5uiW",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 0.44,
+          "fallback_taken": true,
+          "latency_ms": 293.63595799999894,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1582.4278750000012,
+          "original_cost_usd": 0.0000156,
+          "original_request_id": "gen-1790134585-PWhLyJ5p4aIWqsPi6bud",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "drama": 0,
+                  "horror": 0,
+                  "comedy": 0,
+                  "action": 0.45,
+                  "sci-fi": 0.55
+                },
+                "confidence": 0.44
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 60,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134587-xncZmljNLeiMMosn5uiW",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 7,
+            "total_tokens": 83,
+            "cost": 0.0000156,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000156,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A family of friendly ghosts runs a hotel and keeps embarrassing the guests.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134588-8RVAKRhN9kOvK9K3odx8",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 287.3562499999971,
+          "cost_usd": 0.00001449,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 731.1248329999944,
+          "original_cost_usd": 0.00001515,
+          "original_request_id": "gen-1790134587-RPfUlMlJB5ZXIvGpl4Ph",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "comedy": 1,
+                  "drama": 0,
+                  "horror": 0,
+                  "action": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 345,
+              "output_tokens": 59,
+              "cost": 0.00001449
+            },
+            "id": "gen-dec-1790134588-8RVAKRhN9kOvK9K3odx8",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "An aging actor reflects on regrets during one quiet afternoon with an old friend.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134589-4SJedIlBZd3SyaGLDWa6",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 250.62233299999934,
+          "cost_usd": 0.000014532,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 755.4437079999989,
+          "original_cost_usd": 0.0000153,
+          "original_request_id": "gen-1790134588-QMe7GaSvXM993hFjwPAJ",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "action": 0,
+                  "horror": 0,
+                  "drama": 1,
+                  "sci-fi": 0,
+                  "comedy": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 346,
+              "output_tokens": 59,
+              "cost": 0.000014532
+            },
+            "id": "gen-dec-1790134589-4SJedIlBZd3SyaGLDWa6",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 6,
+            "total_tokens": 84,
+            "cost": 0.0000153,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000153,
+              "upstream_inference_prompt_cost": 0.0000117,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A documentary follows the migration of birds across a continent.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134590-DaN1Ndl6yxSR0IpUQcT0",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 0.99,
+          "fallback_taken": false,
+          "latency_ms": 348.08670800000255,
+          "cost_usd": 0.000014364,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 794.1977499999994,
+          "original_cost_usd": 0.0000147,
+          "original_request_id": "gen-1790134589-Ifffh8Tm0IwRX82NQvOc",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 0.01,
+                  "drama": 0.99,
+                  "action": 0,
+                  "horror": 0
+                },
+                "confidence": 0.99
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 59,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790134590-DaN1Ndl6yxSR0IpUQcT0",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 74,
+            "completion_tokens": 6,
+            "total_tokens": 80,
+            "cost": 0.0000147,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000147,
+              "upstream_inference_prompt_cost": 0.0000111,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "Two people wait at a bus stop and talk about the weather.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134592-Z8ARzZc1gWYGgnsXtOZY",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "comedy",
+          "confidence": 0.74,
+          "fallback_taken": true,
+          "latency_ms": 245.66083299999445,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 1267.5397920000032,
+          "original_cost_usd": 0.000015,
+          "original_request_id": "gen-1790134590-lw4Dbfyh13L7PF01nwZo",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "sci-fi": 0,
+                  "comedy": 0.2,
+                  "action": 0,
+                  "drama": 0.8,
+                  "horror": 0
+                },
+                "confidence": 0.74
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134592-Z8ARzZc1gWYGgnsXtOZY",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        },
+        {
+          "input": "A comedian grieves for his brother while preparing a final performance.",
+          "provenance": "synthetic",
+          "source": "validate-jev.cjs cases",
+          "split": "confirmation",
+          "live": true,
+          "request_id": "gen-dec-1790134593-BiuVd26WTDbJPecrfl8p",
+          "model": "typesafe/jev-1.13-20260917",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 0.79,
+          "fallback_taken": true,
+          "latency_ms": 347.6386249999996,
+          "cost_usd": 0.000014448,
+          "original_model": "openai/gpt-4o-mini",
+          "original_latency_ms": 929.4043749999983,
+          "original_cost_usd": 0.000015,
+          "original_request_id": "gen-1790134592-mcTO73KKNQKaaw8y4YAg",
+          "response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "action": 0,
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "comedy": 0.16,
+                  "drama": 0.84
+                },
+                "confidence": 0.79
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790134593-BiuVd26WTDbJPecrfl8p",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost; null means unavailable"
+        }
+      ],
+      "faults": {
+        "error": true,
+        "timeout": true,
+        "rate_limit": true,
+        "malformed": true,
+        "below_threshold": true,
+        "unknown_option": true,
+        "missing_usage": true,
+        "invalid_confidence": true,
+        "wrong_model": true,
+        "malformed_usage": true,
+        "missing_key": true
+      },
+      "errors": [],
+      "gate_predicates_passed": true,
+      "agreement_curve": [
+        {
+          "threshold": 0,
+          "accepted": 32,
+          "agreement": 0.96875,
+          "fallback_fraction": 0
+        },
+        {
+          "threshold": 0.5,
+          "accepted": 31,
+          "agreement": 0.967741935483871,
+          "fallback_fraction": 0.03125
+        },
+        {
+          "threshold": 0.7,
+          "accepted": 31,
+          "agreement": 0.967741935483871,
+          "fallback_fraction": 0.03125
+        },
+        {
+          "threshold": 0.9,
+          "accepted": 29,
+          "agreement": 1,
+          "fallback_fraction": 0.09375
+        },
+        {
+          "threshold": 0.95,
+          "accepted": 28,
+          "agreement": 1,
+          "fallback_fraction": 0.125
+        },
+        {
+          "threshold": 1,
+          "accepted": 27,
+          "agreement": 1,
+          "fallback_fraction": 0.15625
+        }
+      ],
+      "latency": {
+        "latency_ms": {
+          "p50": 307.0510830000003,
+          "p95": 522.1732090000005
+        },
+        "original_latency_ms": {
+          "p50": 1267.5397920000032,
+          "p95": 1978.8397919999989
+        }
+      },
+      "expected_cascade_latency_ms": 467.4380376875003,
+      "expected_cascade_cost_usd": 0.00001592025
+    }
+  ],
+  "first_jev_latency_ms": 1132.360584,
+  "first_jev_response": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "genre": {
+        "type": "choice",
+        "choice": "sci-fi",
+        "probabilities": {
+          "action": 0,
+          "comedy": 0,
+          "sci-fi": 1,
+          "horror": 0,
+          "drama": 0
+        },
+        "confidence": 1
+      }
+    },
+    "usage": {
+      "input_tokens": 352,
+      "output_tokens": 60,
+      "cost": 0.000014784
+    },
+    "id": "gen-dec-1790134543-VGZ2UFBl45yRzr18nIHO",
+    "provider": "TypeSafe"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain ChatOpenAI / OpenAI / gpt-3.5-turbo-0125 (temperature 0)",
+      "downstream": "POST request JSON prompt -> model.stream(prompt) -> LangChainAdapter.toDataStreamResponse(stream) at workflow.ts:17 -> HTTP response",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Unrestricted streaming text completion has no enumerated decision outputs. Replacing it with typed judgments would change the HTTP response contract. Input length is unrestricted and no untrusted-input mitigation is present.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves all streaming response semantics and diagnostics; cost and latency remain unchanged because no inference is replaced.",
+          "risk": "No new migration risk; existing provider and input risks remain."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

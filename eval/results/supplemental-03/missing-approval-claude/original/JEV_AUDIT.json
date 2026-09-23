@@ -1,0 +1,28 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "stripped label string returned to caller; no metadata consumed",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "bounded semantic classification over 10 named insurance categories from trusted text; no math, dates, multi-hop reasoning, or generation",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Lower per-decision cost (~$0.042/Mtok input-only vs Claude Haiku input+output pricing) and likely lower latency for accepted decisions. Expected cost = Jev cost + fallback_fraction × original cost.",
+          "risk": "Parity unproven without live measurement; conservative fallback retains original path for low-confidence decisions. Serial misses add Jev latency before original inference."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No integration risk, no new dependency.",
+          "risk": "No cost or latency improvement."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

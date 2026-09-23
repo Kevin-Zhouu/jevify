@@ -1,0 +1,14 @@
+{
+  "sites": [{
+    "file": "workflow.ts", "line": 6,
+    "provider": "Vercel AI SDK / OpenAI gpt-4o-mini",
+    "downstream": "main prints object at original line 16, usage at 18, finishReason at 19; errors reach console.error at 22",
+    "classification": "DECISION", "fit": "CONDITIONAL",
+    "reason": "One five-label genre decision over a fixed short benign plot; metadata must be mapped truthfully. Not validated for hostile input.",
+    "options": [
+      {"action":"fallback","primitive":"Choice","benefit":"Accepted decisions avoid original inference cost and latency; serial fallback incurs both calls.","risk":"Genre disagreement; validate confidence and diagnostic mapping; original fallback retained."},
+      {"action":"leave","primitive":"none","benefit":"Retains existing behavior and costs.","risk":"No migration risk; no inference savings."}
+    ]
+  }],
+  "converted_sites": ["workflow.ts:6"]
+}

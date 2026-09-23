@@ -1,0 +1,30 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_routing. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_routing-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_routing-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’m using the installed jevify skill to assess the workflow read-only. I’ll use your setup answers, preserve the original semantics and diagnostics, and stop at recommendations without writing files or converting code.
+
+The router returns both a team selection and generated reasoning that it prints. That makes it a mixed call; replacing it with a Jev choice would lose an observable diagnostic. The specialist response also requires generation. Preflight passed: the repository is clean, the requested branch is available, and `OPENROUTER_API_KEY` is present.
+
+**No good Jev opportunities here under the requirement to preserve source semantics and diagnostics.** I recommend leaving all three sites unchanged.
+
+All sites use Anthropic’s `claude-sonnet-4-6`:
+
+| Original site | Classification | Downstream use and fit | Selectable recommendation |
+|---|---|---|---|
+| `workflow.py:24` | MIXED | XML selection chooses the specialist; generated reasoning is printed. **Not a fit as a complete replacement.** | **A — `leave`, primitive `none`:** preserve selection and reasoning. Cost/latency unchanged; avoids losing diagnostics or printing reasoning inconsistent with a substituted route. |
+| `workflow.py:34` | GENERATION | Produces the specialist’s free-form response returned by `route()`. **Not a fit.** | **B — `leave`, primitive `none`:** preserve response generation. Cost/latency unchanged; avoids reducing the response to a bounded label. |
+| `util.py:23` | MIXED | Shared provider transport for both calls above; returns `response.content[0].text`. **Not a fit for blanket replacement.** | **C — `leave`, primitive `none`:** preserve the wrapper, model parameters, return shape and exceptions. Cost/latency unchanged; avoids breaking both consumers. |
+
+The wrapper is shared infrastructure, not a third independent savings opportunity.
+
+The selection alone resembles a Choice task, but retaining the original call for its printed reasoning removes the main savings opportunity. Substituting another selection can also contradict that reasoning. Jev supplies typed judgments rather than generated explanations. [TypeSafe documentation](https://docs.typesafe.ai/introduction/coding-agents.md)
+
+The three bundled tickets are short, benign text fixtures. The public function accepts unrestricted input and route dictionaries, with no context bound or effective injection mitigation; fixture suitability would not establish production suitability. Confidence alone does not resolve adversarial-input risk. [Jev limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13.md)
+
+Preflight passed: clean repository on `main`, requested branch available, and credential presence verified without exposing its value. Branch mode targets this repository; the inactive clone path is unused. I did not read the config, create a branch, write files, execute the workflow/smoke, or measure live parity.
+
+Accepting **A+B+C** would authorize documenting this negative audit on `jev-convert/evaluation`, writing `JEV_CONVERSION_PLAN.md`, `JEV_AUDIT.json` with `converted_sites: []`, and `JEV_CONVERSION_REPORT.md`, then running the supplied smoke command.
+
+I’m stopping for your selection because the [jevify skill](.agents/skills/jevify/SKILL.md) requires: “Wait for explicit option selections, edits, or acceptance. Do not write files until the answer.”
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

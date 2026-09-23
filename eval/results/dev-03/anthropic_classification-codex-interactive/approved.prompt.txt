@@ -1,0 +1,38 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_classification. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_classification-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_classification-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’ll use the installed jevify skill to audit this repository read-only and present conversion options. I won’t write files or convert code without separate approval.
+
+The repository has one model call: a classifier returning one of ten insurance-support labels. Preflight passed, and `OPENROUTER_API_KEY` is present. Choice with the original Anthropic fallback looks promising for the supplied ticket data; arbitrary customer input needs separate scrutiny because the current function has no input limits or injection mitigation.
+
+**One promising Jev opportunity:** the ten-label support-ticket classifier, with the original Anthropic path retained as fallback.
+
+Preflight passed: repository clean, requested clone path available, and `OPENROUTER_API_KEY` present. No files were written, no clone was created, and no workflow or live parity tests were run. I did not read the config.
+
+| Original site | Provider | Classification | Downstream use | Fit |
+|---|---|---|---|---|
+| `workflow.py:83` | Anthropic / `claude-haiku-4-5` | DECISION | `response.content[0].text` → `.strip()` → return from `simple_classify(X)` | Good candidate for the supplied benign ticket distribution; conditional for unrestricted customer input |
+
+This is the only provider call. No repository callers of `simple_classify` or additional wrappers were found. The two TSV datasets each contain 68 unique tickets covering all ten labels; the longest ticket is 352 characters. The function returns no generated explanation and exposes no usage or finish-reason diagnostics.
+
+The bounded answer matches [Choice](https://docs.typesafe.ai/primitives/choice.md). However, the function accepts unrestricted text without length checks or an effective injection defense. Jev’s documented [adversarial-input limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13.md) mean confidence alone cannot establish suitability for hostile input.
+
+| Select | Action / primitive | Scope and expected benefit | Risk |
+|---|---|---|---|
+| **A — recommended** | `fallback` / **Choice** | Convert `workflow.py:83` using the existing ten labels and definitions, pinned to `typesafe/jev-1.13-20260917`. Retain Anthropic for low confidence, malformed responses, errors, timeouts, rate limits, and inputs exceeding Jev’s budget. Accepted decisions are expected to cost less and finish faster by avoiding generative inference. | Confident misclassification remains possible, especially between inquiries and disputes. Fallback requests add Jev latency and cost before Anthropic. Suitability initially limited to the benign example distribution. |
+| **B** | `leave` / **none** | Keep the entire classifier unchanged. No change in latency or cost. | Retains current inference expense and prompt-and-parse behavior. |
+
+For A, expected cost is **Jev cost + fallback fraction × original cost**; savings and latency improvements remain unmeasured.
+
+After approval, the plan would be to:
+
+1. Create the requested `converted` clone and branch `jev-convert/evaluation`.
+2. Preserve the public signature, string return, original fallback prompt, assistant prefill, stop sequence, parsing, and exception behavior. Keep Jev configuration in one decisions module.
+3. Run the supplied smoke command and attempt paired live validation on at least 30 unique tickets. Use the **same original Claude model** through OpenRouter only in isolated evaluation adapters, as authorized; preserve production Anthropic fallback.
+4. Save `JEV_CONVERSION_PLAN.md`, `JEV_AUDIT.json`, and `JEV_CONVERSION_REPORT.md`; record actual live evidence in `JEV_PARITY.json`. No push or PR.
+
+**Select A, B, or request edits.**
+
+Approval is required by the [installed skill](.agents/skills/jevify/SKILL.md): “Wait for explicit option selections, edits, or acceptance. Do not write files until the answer.” Your explicit read-only instruction also requires stopping here.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

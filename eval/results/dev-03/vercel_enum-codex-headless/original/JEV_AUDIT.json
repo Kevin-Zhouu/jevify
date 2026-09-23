@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "Vercel AI SDK generateObject / OpenAI gpt-4o-mini",
+      "downstream": "main prints result.object, blank line, result.usage and result.finishReason at original lines 16-19",
+      "classification": "DECISION",
+      "fit": "FIT for fixed trusted fixture",
+      "reason": "Five enumerated genres from a short benign English plot; no generation or multi-hop reasoning. Observable token usage and completion status require truthful metadata adapter. No public adversarial input entrypoint.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Accepted typed decisions may avoid generative inference latency and cost; expected cost is Jev cost plus fallback fraction times original cost. Scope: enum with truthful usage/status adapter.",
+          "risk": "Genre ambiguity and confident errors remain; serial fallback adds Jev latency/cost. Keep original on low confidence, invalid metadata and failures."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve current behavior, latency and cost with no migration; no speculative savings.",
+          "risk": "Retains original generative inference expense and misses a bounded decision opportunity."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.ts:6"
+  ]
+}

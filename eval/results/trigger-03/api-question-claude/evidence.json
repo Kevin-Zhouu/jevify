@@ -1,0 +1,12 @@
+{
+  "case": "api-question",
+  "harness": "claude",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790134480093033000,
+    "ended_ns": 1790134506059593000
+  },
+  "output_relative": "original",
+  "changes": [],
+  "review_required": true
+}

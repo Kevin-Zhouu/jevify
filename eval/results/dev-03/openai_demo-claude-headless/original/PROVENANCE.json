@@ -1,0 +1,15 @@
+{
+  "id": "openai_demo",
+  "split": "DEV",
+  "repository": "https://github.com/openai/openai-python",
+  "commit": "cbde8a5691f9aef5d268bd506cd46f9fabec0ced",
+  "source_path": "examples/demo.py",
+  "entrypoint": "workflow.py",
+  "notebook_cells": null,
+  "selection": null,
+  "upstream_sha256": "245a051d360a187e25df51ff0131de235310dd182f31045bf1178543da31c870",
+  "files": {
+    "LICENSE.upstream": "636eb7d79da9bb6d515a4b3fd417aa26679eb3cf16396ddab4bc55fa74e616e4",
+    "workflow.py": "245a051d360a187e25df51ff0131de235310dd182f31045bf1178543da31c870"
+  }
+}

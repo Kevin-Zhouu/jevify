@@ -1,0 +1,50 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_classification-claude-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790134183930592000,
+      "ended_ns": 1790134204378081000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790134204379267000,
+      "ended_ns": 1790134379499470000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790134379503870000,
+      "ended_ns": 1790135033387857000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jev_decisions.py",
+    "validate_parity.py",
+    "workflow.py"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jev_decisions.py",
+    "validate_parity.py",
+    "workflow.py"
+  ],
+  "original_sha": "1c953f75ebe1580de909072ce9a73b8ab8f11d05",
+  "git_log": "bf218103857086276f8d6573a77e0cd7e5f28ec1 1790135007 Add live parity validation and conversion report\n211ff47a07478380da0cfff17a6f343b91158202 1790135000 Add Jev Choice fallback for simple_classify (workflow.py:83)\n1c953f75ebe1580de909072ce9a73b8ab8f11d05 1790134183 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": false,
+    "live_evidence": false,
+    "hygiene": false
+  },
+  "harness_completed": true
+}

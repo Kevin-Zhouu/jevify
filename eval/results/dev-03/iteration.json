@@ -1,0 +1,136 @@
+{
+  "iteration": "dev-03",
+  "skill_commit": "dfd9854",
+  "runs": 24,
+  "frozen_artifact_passes": 13,
+  "completed_run_statuses": {
+    "PASS": 12,
+    "FAIL": 3,
+    "BLOCKED": 9
+  },
+  "statuses": [
+    {
+      "run": "anthropic_classification-claude-headless",
+      "status": "FAIL",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "anthropic_classification-claude-interactive",
+      "status": "FAIL",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "anthropic_classification-codex-headless",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "anthropic_classification-codex-interactive",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "anthropic_routing-claude-headless",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "anthropic_routing-claude-interactive",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "anthropic_routing-codex-headless",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "anthropic_routing-codex-interactive",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "langchain_completion-claude-headless",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "langchain_completion-claude-interactive",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "langchain_completion-codex-headless",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "langchain_completion-codex-interactive",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "openai_demo-claude-headless",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "openai_demo-claude-interactive",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "openai_demo-codex-headless",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "openai_demo-codex-interactive",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "vercel_enum-claude-headless",
+      "status": "FAIL",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "vercel_enum-claude-interactive",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "vercel_enum-codex-headless",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "vercel_enum-codex-interactive",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "vercel_recipe-claude-headless",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "vercel_recipe-claude-interactive",
+      "status": "BLOCKED",
+      "frozen_artifact_grade_pass": false
+    },
+    {
+      "run": "vercel_recipe-codex-headless",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    },
+    {
+      "run": "vercel_recipe-codex-interactive",
+      "status": "PASS",
+      "frozen_artifact_grade_pass": true
+    }
+  ],
+  "stop_reason": "Claude Code extra-usage limit prevents headless execution; user stop condition invoked",
+  "quota_message": "You're out of extra usage \u00b7 resets 3:40pm (Australia/Melbourne)",
+  "heldout_opened": false
+}

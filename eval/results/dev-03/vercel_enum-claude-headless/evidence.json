@@ -1,0 +1,40 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "claude",
+  "scenario": "headless",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_enum-claude-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790134183918787000,
+      "ended_ns": 1790135018919419000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jevDecisions.ts",
+    "validate_parity.cjs",
+    "workflow.ts"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jevDecisions.ts",
+    "validate_parity.cjs",
+    "workflow.ts"
+  ],
+  "original_sha": "4bc5e23750b6af7d32147d2480a5bde33bb935cb",
+  "git_log": "294e98b6a12b56178b5d8a5046eafb3b0fc7cfd8 1790134997 Add live parity validation and conversion report\n1a4dd092876bc9fee324c8ef01f272fd78670784 1790134991 Convert genre classification to Jev Choice with conservative fallback\n4bc5e23750b6af7d32147d2480a5bde33bb935cb 1790134183 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": false,
+    "live_evidence": false,
+    "hygiene": true
+  },
+  "harness_completed": true
+}

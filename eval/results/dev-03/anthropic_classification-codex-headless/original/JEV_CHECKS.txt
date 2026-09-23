@@ -1,0 +1,8 @@
+{
+  "shape_valid": true,
+  "errors": [],
+  "notice": "Shape only; manually verify live provenance, contracts, confidence agreement and approval evidence."
+}
+PASS: observable Python behavior and original-path fallback smoke
+git diff --check: PASS
+Credential-value scan of approved artifacts: PASS

@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+  "stderr": "{\"jev_decision\": \"original\", \"model\": \"claude-haiku-4-5\", \"reason\": \"timeout_or_network\"}\n"
+}

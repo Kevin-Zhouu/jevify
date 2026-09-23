@@ -1,0 +1,29 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK generateObject / @ai-sdk/openai / gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "main() awaits result; line 24 prints JSON.stringify(result.object.recipe, null, 2); line 25 prints a blank line; lines 26-27 print result.usage and result.finishReason. main().catch(console.error) at line 30 handles rejection.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The schema contains open-ended recipe name, ingredient names and amounts, and step strings. There are no enumerated outputs or candidate recipes to select. Structured JSON does not make this a decision. Jev cannot generate these values; replacing them with fixed candidates would change source semantics.",
+      "input_origin": "Fixed source literal at workflow.ts:21: Generate a lasagna recipe.",
+      "context_size": "Short fixed prompt plus recipe schema; exact serialized token count not measured.",
+      "untrusted_input_mitigation": "No external input enters this fixed example. No production adversarial-input robustness claim.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves the original generation, parsing, stdout diagnostics and error handling. No additional inference cost or latency; no savings claimed because generation remains necessary.",
+          "risk": "Existing generative-model correctness, availability, latency and cost risks remain; no migration risk introduced.",
+          "scope": "Leave the complete workflow.ts:7 call and every consumer unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "output_mode": "report",
+  "source_revision": "df9cf64b2eb36e4e5bd3f1b428191d06d8366cbf",
+  "approved_conversion_sites": []
+}

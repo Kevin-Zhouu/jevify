@@ -1,0 +1,25 @@
+{
+  "output": {
+    "mode": "branch",
+    "branch": "jev-convert/evaluation",
+    "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/langchain_completion-codex-interactive/converted"
+  },
+  "access": {
+    "provider": "openrouter",
+    "key_env": "OPENROUTER_API_KEY",
+    "model": "typesafe/jev-1.13-20260917"
+  },
+  "risk": "conservative",
+  "headless": false,
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."
+  },
+  "validation": {
+    "baseline_provider": "openrouter",
+    "baseline_routing_authorized": true,
+    "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."
+  }
+}

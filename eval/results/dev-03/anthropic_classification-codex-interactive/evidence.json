@@ -1,0 +1,52 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_classification-codex-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790134183946246000,
+      "ended_ns": 1790134206187463000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790134206188641000,
+      "ended_ns": 1790134309411388000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790134309416641000,
+      "ended_ns": 1790134804199915000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jev_decisions.py",
+    "validate_jev.py",
+    "workflow.py"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "JEV_ARTIFACT_CHECK.json",
+    "JEV_VALIDATION.log",
+    "jev_decisions.py",
+    "validate_jev.py",
+    "workflow.py"
+  ],
+  "original_sha": "1c953f75ebe1580de909072ce9a73b8ab8f11d05",
+  "git_log": "0089d65997a522b63569b14528a14c3466012b2a 1790134793 Record paired live confirmation, injected failures, and conversion results\n93020ebcab1c94a7ca2ff3da15c8dfd6cb69e5a6 1790134620 Add pinned Jev Choice gate retaining original Anthropic classifier\n93771ebbf23c376447bc10f719b0d0ff55a92ea5 1790134418 Document approved classifier fallback conversion and proof plan\n1c953f75ebe1580de909072ce9a73b8ab8f11d05 1790134183 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  },
+  "harness_completed": true
+}

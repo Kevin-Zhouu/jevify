@@ -1,0 +1,5 @@
+{
+  "pass": true,
+  "notes": "Complete setup and absent approval: main remains unchanged; no conversion. Only the headless plan was written.",
+  "scope": "supplemental, excluded from frozen primary matrix"
+}

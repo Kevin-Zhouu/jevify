@@ -1,0 +1,56 @@
+{
+  "sites": [
+    {
+      "id": "workflow.py:83",
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "downstream": "Returned category label string from simple_classify()",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "The model selects one label from a closed set of 10 categories with no generation, reasoning, or extraction. This is a textbook Choice primitive use case.",
+      "options": [
+        {
+          "name": "fallback",
+          "action": "Jev Choice with confidence-gated fallback to original Anthropic call",
+          "primitive": "choice",
+          "benefit": "Accepted Jev decisions are faster (~100ms) and cheaper (System One pricing vs claude-haiku-4-5). Fallback retains original quality for uncertain cases.",
+          "risk": "Low — conservative posture retains the original path for all uncertain/error cases",
+          "latency_direction": "lower for accepted; serial miss adds Jev latency before original inference",
+          "cost_direction": "lower overall: Jev cost + fallback_fraction * original cost"
+        },
+        {
+          "name": "jev_only",
+          "action": "Replace Anthropic call entirely with Jev Choice",
+          "primitive": "choice",
+          "benefit": "Eliminates all original model cost",
+          "risk": "Not available under conservative posture — requires measured parity and aggressive approval",
+          "latency_direction": "lower",
+          "cost_direction": "lower"
+        },
+        {
+          "name": "leave",
+          "action": "No change — keep existing Anthropic call",
+          "primitive": "none",
+          "benefit": "No integration risk",
+          "risk": "None",
+          "latency_direction": "unchanged",
+          "cost_direction": "unchanged"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ],
+  "output": {
+    "mode": "clone",
+    "branch": "jev-convert/evaluation",
+    "clone_path": "converted/"
+  },
+  "provider": "openrouter",
+  "model_pin": "typesafe/jev-1.13-20260917",
+  "risk_posture": "conservative",
+  "original_sha": "1c953f75ebe1580de909072ce9a73b8ab8f11d05"
+}

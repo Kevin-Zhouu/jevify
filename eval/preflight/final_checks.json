@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-09-23T03:55:25.652377+00:00",
+  "frozen_manifest_verified": true,
+  "frozen_manifest_sha256": "432949127ac45dabcf5558858f4cd08fb4591b479dd148b09d417a56d604087a",
+  "secret_scan": {
+    "command": "python3 tools/scan_secrets.py skills corpus eval tools README.md REPORT.md KEY_SETUP.md",
+    "files_scanned": 8507,
+    "files_with_credential_shaped_values": 0,
+    "exit_code": 0
+  },
+  "git_diff_check_exit_code": 0,
+  "report_local_links_missing": [],
+  "local_tests": {
+    "count": 18,
+    "exit_code": 0,
+    "timing": "Executed before DEV03; active skill helper code has not changed since"
+  },
+  "active_skill_commit": "dfd9854",
+  "heldout_status": "NOT_RUN",
+  "evaluation_stop": "Claude extra-usage limit prevents headless runs",
+  "draft_repair_helpers_active": false
+}

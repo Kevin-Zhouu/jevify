@@ -1,0 +1,62 @@
+{
+  "sites": [
+    {
+      "file": "util.py",
+      "line": 22,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Shared wrapper; consumers are workflow.py:24 (route selector, prints reasoning and uses selection as dict key) and workflow.py:34 (generates prose support response returned to caller)",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Shared wrapper serving both DECISION (routing) and GENERATION (support response) consumers. The wrapper itself inherits the classification of its entire observed usage, which is MIXED. Cannot be converted as a unit.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; avoids altering shared infrastructure that serves both decision and generation consumers",
+          "risk": "None — preserves current behavior exactly"
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic SDK / claude-sonnet-4-6 (via llm_call wrapper)",
+      "downstream": "Extracts <reasoning> (printed to stdout at line 29) and <selection> (used as route key for support_routes dict lookup at line 33). Both outputs are consumed.",
+      "classification": "MIXED",
+      "fit": "CONDITIONAL",
+      "reason": "The routing selection from {billing, technical, account, product} is a strong fit for Jev Choice — closed set, semantic intent classification, trusted internal input. However, the same call also generates explanatory reasoning text that is printed to stdout, making the site MIXED. A decompose option could split the decision (Jev Choice) from the reasoning (retained LLM call), but decompose is outside the approved action set.",
+      "options": [
+        {
+          "action": "decompose",
+          "primitive": "Choice",
+          "benefit": "Routing decision via Jev Choice (~100ms, ~$0.00004/call) replaces one Claude Sonnet call for route selection; reasoning could use a cheaper/faster model or be dropped. Latency improvement for the routing step; cost reduction proportional to routing call savings.",
+          "risk": "Changes observable stdout output — reasoning text would need a separate LLM call or removal, altering the diagnostic contract. Requires approval for MIXED site decomposition."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves current routing analysis output including printed reasoning, which may serve debugging or audit purposes",
+          "risk": "None — current behavior is unchanged"
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic SDK / claude-sonnet-4-6 (via llm_call wrapper)",
+      "downstream": "Generates specialized support response prose returned as the function's return value to the caller",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Pure prose generation — produces full support response text (billing explanations, technical steps, account recovery instructions, product guidance). Jev is not trained for text generation and cannot replace this call.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves full prose generation capability required by the support response workflow",
+          "risk": "None — generation sites are never Jev candidates"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

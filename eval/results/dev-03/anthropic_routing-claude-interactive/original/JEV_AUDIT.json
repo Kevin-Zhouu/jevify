@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "repository": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_routing-claude-interactive/original",
+  "baseline_sha": "344276b",
+  "provider": "openrouter",
+  "model_pin": "typesafe/jev-1.13-20260917",
+  "risk_posture": "conservative",
+  "sites": [
+    {
+      "id": "util.py:22",
+      "file": "util.py",
+      "line": 22,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "downstream": "Returns response.content[0].text to all consumers (shared wrapper)",
+      "classification": "MIXED",
+      "fit": "N/A (wrapper — follows consumers)",
+      "reason": "Shared transport wrapper serving both DECISION-bearing and GENERATION consumers. No independent conversion target.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "Wrapper follows consumers. Site 3 still needs it. No independent conversion possible.",
+          "risk": "None.",
+          "primitive": null
+        }
+      ]
+    },
+    {
+      "id": "workflow.py:24",
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "downstream": "Two outputs: (1) <reasoning> printed to stdout (observable generation), (2) <selection> stripped/lowercased, used as dict key to select specialist prompt",
+      "classification": "MIXED",
+      "fit": "CONDITIONAL",
+      "reason": "The selection component is a textbook 4-way Choice (billing, technical, account, product). However, the same call also produces reasoning text printed to stdout and verified by the smoke test. This makes the site MIXED, not pure DECISION. Jev path would suppress reasoning output — an observable contract change.",
+      "options": [
+        {
+          "action": "decompose",
+          "benefit": "On high-confidence Jev hits: ~10-50x cheaper per routing decision. Faster routing latency on accepted decisions.",
+          "risk": "Reasoning output suppressed on Jev path — changes observable stdout behavior. Smoke test asserts reasoning is printed. Untrusted user input without existing adversarial mitigation.",
+          "primitive": "Choice(billing, technical, account, product)"
+        },
+        {
+          "action": "leave",
+          "benefit": "No risk. Reasoning output preserved. No observable behavior change.",
+          "risk": "None. No cost or latency savings on routing.",
+          "primitive": null
+        }
+      ]
+    },
+    {
+      "id": "workflow.py:34",
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "downstream": "Returned as route() return value — free-form support response prose",
+      "classification": "GENERATION",
+      "fit": "NOT_A_FIT",
+      "reason": "Pure generation site. Produces free-form prose (billing support responses, technical walkthroughs, etc.). Jev does not generate prose, code, or explanations.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "No speculative savings. Pure generation — Jev cannot produce support response prose.",
+          "risk": "None.",
+          "primitive": null
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "conversion_summary": {
+    "total_sites": 3,
+    "sites_converted": 0,
+    "reason": "User approval scoped to 'only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged.' All sites are classified MIXED, GENERATION, or wrapper — none qualify as pure DECISION. No conversion performed."
+  },
+  "approval": {
+    "actions": ["fallback"],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fixture": "langchain_completion",
+  "harness": "claude",
+  "scenario": "headless",
+  "mode": "report",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/langchain_completion-claude-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 1,
+      "started_ns": 1790135056977870000,
+      "ended_ns": 1790135058673499000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": false,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "b3896bf9092c5482525ef67d435fd229a9e5fbab",
+  "git_log": "b3896bf9092c5482525ef67d435fd229a9e5fbab 1790135056 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": false,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  },
+  "harness_completed": false,
+  "infrastructure_block": "Claude Code extra usage exhausted; CLI states reset 3:40pm Australia/Melbourne"
+}

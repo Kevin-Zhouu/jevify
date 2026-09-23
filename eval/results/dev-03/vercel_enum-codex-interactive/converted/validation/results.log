@@ -1,0 +1,85 @@
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"error"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"error"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"timeout"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"timeout"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"rate_limit"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"rate_limit"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"missing_key"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"missing_key"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"error"}
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 1 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 2 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 3 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 4 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 5 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 6 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 7 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 8 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 9 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 10 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 11 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 12 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 13 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 14 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 15 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 16 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 17 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 18 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 19 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 20 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 21 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 22 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 23 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 24 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 25 complete
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"low_confidence"}
+Live pair 26 complete
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"low_confidence"}
+Live pair 27 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 28 complete
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+Live pair 29 complete
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"low_confidence"}
+Live pair 30 complete
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"low_confidence"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"low_confidence"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"original","model":"gpt-4o-mini","jev_model":"typesafe/jev-1.13-20260917","reason":"malformed"}
+{"path":"jev","model":"typesafe/jev-1.13-20260917","reason":"accepted"}
+{"n":30,"raw_agreement":0.9666666666666667,"curve":[{"threshold":0,"accepted":30,"agreement":0.9666666666666667,"fallback_fraction":0},{"threshold":0.5,"accepted":28,"agreement":1,"fallback_fraction":0.06666666666666665},{"threshold":0.7,"accepted":28,"agreement":1,"fallback_fraction":0.06666666666666665},{"threshold":0.9,"accepted":27,"agreement":1,"fallback_fraction":0.09999999999999998},{"threshold":0.95,"accepted":27,"agreement":1,"fallback_fraction":0.09999999999999998},{"threshold":1,"accepted":26,"agreement":1,"fallback_fraction":0.1333333333333333}],"jev_latency_ms":{"p50":337.73141699999906,"p95":487.8221659999981},"original_latency_ms":{"p50":898.8194169999988,"p95":1614.1061250000057},"mean_expected_cascade_latency_ms":462.79908053333327,"mean_original_cost_usd":0.000015249999999999998,"mean_expected_cascade_cost_usd":0.0000160292}

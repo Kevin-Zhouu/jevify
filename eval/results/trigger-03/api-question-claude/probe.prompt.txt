@@ -1,0 +1,1 @@
+What is the difference between Jev Choice and Noul? This is only an API concept question; do not audit or modify this repository. Restrict any file inspection to this repository and public documentation. Do not read sibling directories or search for credentials. If you need answers from me, ask and stop.

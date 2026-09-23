@@ -1,0 +1,13 @@
+{
+  "command": "npx --yes skills add Kevin-Zhouu/jevify --skill jevify --agent codex claude-code --yes --copy --json",
+  "scope": "fresh temporary project; no global install",
+  "exit_code": 0,
+  "stdout": "[\n  {\n    \"name\": \"jevify\",\n    \"status\": \"installed\",\n    \"source\": \"Kevin-Zhouu/jevify\",\n    \"ref\": null,\n    \"hash\": \"7b7b4a99adaf6376c2ea14a4519d1f82e7cab3dc50a515056fd73b03f9985be6\",\n    \"path\": \"/private/var/folders/h4/2fjsj8sd4jv7sx6d6qb9xgfc0000gn/T/jevify-install-zt2c8wme/.agents/skills/jevify\",\n    \"scope\": \"project\",\n    \"agents\": [\n      \"Codex\",\n      \"Claude Code\"\n    ],\n    \"mode\": \"copy\",\n    \"security\": null\n  }\n]\n",
+  "stderr": "\n\u2502\n\u25cf   codex  Agent detected \u2014 installing non-interactively\n\u2502\n\u25cf  Selected 1 skill: jevify\n\n\u2502\n\u25c7  Installation Summary \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502                               \u2502\n\u2502  ./.agents/skills/jevify      \u2502\n\u2502    copy \u2192 Codex, Claude Code  \u2502\n\u2502                               \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n",
+  "installed_skill_hashes": {
+    ".claude/skills/jevify/SKILL.md": "5265c4c0a21bc09dbe9b2d0d0a1a4594d6dd1ff155fa3c729eeb0646e59fe5cd",
+    ".agents/skills/jevify/SKILL.md": "5265c4c0a21bc09dbe9b2d0d0a1a4594d6dd1ff155fa3c729eeb0646e59fe5cd"
+  },
+  "codex_path_present": true,
+  "claude_path_present": true
+}

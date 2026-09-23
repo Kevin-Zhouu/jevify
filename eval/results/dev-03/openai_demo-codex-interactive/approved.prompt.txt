@@ -1,0 +1,24 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY openai_demo. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/openai_demo-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/openai_demo-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’ll use the installed jevify skill to audit the workflow read-only, then present recommendations for approval. I won’t write files or convert any sites in this turn.
+The workflow has three direct OpenAI calls: two print generated text, and one streams a generated Python explanation. None returns a bounded decision. Preflight passed: the repository is clean, the requested branch is available, and the OpenRouter key is present. I’m checking Jev’s documented limits before finalizing the recommendations.
+**No good Jev opportunities here.** All three calls generate text; none supplies a bounded decision. Jev’s documented generation limitations make replacement unsuitable. [Jev 1.13 limits](https://docs.typesafe.ai/model-jaggedness/jev-1.13.md#generation)
+
+All sites use the OpenAI SDK with `gpt-5.5`.
+
+| Original site | Classification / fit | Downstream behavior | Recommended option |
+|---|---|---|---|
+| `workflow.py:10` | GENERATION / NOT A FIT | Prints completion text at line 19 | **A: leave**, primitive `none`. Preserve the standard-request demonstration; cost/latency unchanged; no migration risk. |
+| `workflow.py:23` | GENERATION / NOT A FIT | Streams a Python explanation, skips empty choices, prints deltas and final newline | **B: leave**, primitive `none`. Preserve streaming behavior; cost/latency unchanged; no migration risk. |
+| `workflow.py:42` | GENERATION / NOT A FIT | Parses the raw response, prints its request ID and generated text | **C: leave**, primitive `none`. Preserve response parsing and truthful diagnostics; cost/latency unchanged; no migration risk. |
+
+There are no shared local wrappers or additional workflow call sites. Inputs are short, fixed literals. Adding a router or guardrail would introduce behavior and overhead without an existing decision to replace.
+
+Preflight passed: clean `main`, requested branch available, `OPENROUTER_API_KEY` present. No files or branches were created, no workflow/smoke execution occurred, and no live parity was measured. I did not read the config.
+
+Approve **A+B+C** to finalize the negative audit on `jev-convert/evaluation`, write `JEV_CONVERSION_PLAN.md`, `JEV_AUDIT.json` with `converted_sites: []`, and `JEV_CONVERSION_REPORT.md`, and run the supplied smoke check?
+
+I’m stopping because you explicitly required approval, and the [jevify skill](.agents/skills/jevify/SKILL.md) says: “Do not write files until the answer.”
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

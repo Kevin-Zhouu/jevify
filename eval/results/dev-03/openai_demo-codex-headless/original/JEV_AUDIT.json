@@ -1,0 +1,85 @@
+{
+  "source_revision": "8b1da0a4d7505b22c1f92283ef848616de773eab",
+  "output_mode": "report",
+  "output_repository": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/openai_demo-codex-headless/original",
+  "preflight": {
+    "original_branch": "main",
+    "clean": true,
+    "provider": "openrouter",
+    "key_env": "OPENROUTER_API_KEY",
+    "key_present": true,
+    "errors": []
+  },
+  "approval_resolution": {
+    "predicate": "fallback only for pure DECISION sites with enumerated outputs; preserve externally observable fields",
+    "eligible_sites": [],
+    "selected_conversion_sites": [],
+    "reason": "All three sites are GENERATION; report mode independently prohibits source conversion."
+  },
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "completion.choices[0].message.content is printed at workflow.py:19, after the standard-request banner at line 9.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "A literal request to say a phrase still consumes generated message text; there is no enumerated label or decision consumer. A one-option Choice would replace the SDK demonstration rather than preserve it.",
+      "input_origin": "Fixed repository literal: Say this is a test",
+      "context_size": "18 characters of user text; token count not measured.",
+      "untrusted_input_mitigation": "No runtime external input: fixed benign repository text. No general adversarial mitigation is present or inferred.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original generation and diagnostics. Expected latency and cost unchanged because the original request remains; no speculative Jev savings.",
+          "risk": "Existing OpenAI dependency remains; replacing the call with a canned phrase or Choice would change the demonstrated completion behavior.",
+          "scope": "Leave workflow.py:10 and all its consumers unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "The stream is iterated at lines 33\u201337; empty choices are skipped, delta.content is printed with end=\"\", then a newline at line 38.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The response is open-ended Python guidance/code delivered through native streaming deltas. Jev cannot supply prose/code or preserve this streaming contract.",
+      "input_origin": "Fixed repository literal: How do I output all files in a directory using Python?",
+      "context_size": "54 characters of user text; token count not measured.",
+      "untrusted_input_mitigation": "No runtime external input: fixed benign repository text. No general adversarial mitigation is present or inferred.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original generation and diagnostics. Expected latency and cost unchanged because the original request remains; no speculative Jev savings.",
+          "risk": "Existing OpenAI dependency remains; a typed answer or synthetic stream would lose generated guidance and native delta semantics.",
+          "scope": "Leave workflow.py:23 and all its consumers unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "with_raw_response.create returns a response parsed at line 51; response.request_id is printed at line 52 and completion text at line 53.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generated content and a real original-provider request ID are both observable. Typed decisions cannot replace the text or faithfully stand in for the raw OpenAI response demonstration.",
+      "input_origin": "Fixed repository literal: Say this is a test",
+      "context_size": "18 characters of user text; token count not measured.",
+      "untrusted_input_mitigation": "No runtime external input: fixed benign repository text. No general adversarial mitigation is present or inferred.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original generation and diagnostics. Expected latency and cost unchanged because the original request remains; no speculative Jev savings.",
+          "risk": "Existing OpenAI dependency remains; fabricating request IDs or changing the raw response/parser would corrupt observable diagnostics.",
+          "scope": "Leave workflow.py:42 and all its consumers unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

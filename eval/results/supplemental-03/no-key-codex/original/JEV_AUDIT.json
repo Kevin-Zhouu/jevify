@@ -1,0 +1,32 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "simple_classify(X) returns response.content[0].text.strip(); no repository callers or metadata consumers",
+      "classification": "DECISION",
+      "fit": "CONDITIONAL",
+      "reason": "Ten closed categories; short trusted text only. Arbitrary caller input lacks adversarial mitigation, so provider and trusted-input policy default disabled.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Accepted decisions may reduce cost and latency; rejected decisions add Jev latency and cost before unchanged Anthropic fallback.",
+          "risk": "Unmeasured semantic agreement; conditional trusted-input scope, no injection robustness claim.",
+          "scope": "workflow.py:83 only; preserve original synchronous string result and fallback."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Unchanged cost and latency; no speculative savings.",
+          "risk": "Original model cost and existing limitations remain.",
+          "scope": "Leave classifier unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

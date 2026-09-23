@@ -1,0 +1,1 @@
+Where could Jev replace LLM calls in this workflow? I have not chosen an output mode or provider yet. Restrict any file inspection to this repository and public documentation. Do not read sibling directories or search for credentials. If you need answers from me, ask and stop.

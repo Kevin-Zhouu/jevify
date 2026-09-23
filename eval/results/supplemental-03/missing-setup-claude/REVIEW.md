@@ -1,0 +1,3 @@
+# Supplemental review
+
+Only skill/configuration files read; no workflow source reads, filesystem changes, inferred setup or approval. Incomplete plan appears in final response because no destination was authorized.

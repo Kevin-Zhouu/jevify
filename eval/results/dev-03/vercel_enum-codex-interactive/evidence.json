@@ -1,0 +1,58 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_enum-codex-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790134183901440000,
+      "ended_ns": 1790134205735036000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790134205736142000,
+      "ended_ns": 1790134302879263000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790134302884262000,
+      "ended_ns": 1790134801148224000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jevDecisions.ts",
+    "validation/replay.cjs",
+    "validation/validate.cjs",
+    "workflow.ts"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    ".gitignore",
+    "jevDecisions.ts",
+    "package-lock.json",
+    "package.json",
+    "validation/artifact-check.json",
+    "validation/replay-results.log",
+    "validation/replay.cjs",
+    "validation/results.log",
+    "validation/validate.cjs",
+    "workflow.ts"
+  ],
+  "original_sha": "4bc5e23750b6af7d32147d2480a5bde33bb935cb",
+  "git_log": "23c889cc8de79044bdc22a8a93dda9e6879c8a42 1790134793 Validate genre fallback with 30 live pairs and document measured tradeoffs\n46951e3abcce47c047272f30f40c7126315c08b9 1790134438 Add approved Jev genre decision with original OpenAI fallback\n4bc5e23750b6af7d32147d2480a5bde33bb935cb 1790134183 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  },
+  "harness_completed": true
+}

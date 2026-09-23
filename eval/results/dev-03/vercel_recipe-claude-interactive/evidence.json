@@ -1,0 +1,42 @@
+{
+  "fixture": "vercel_recipe",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_recipe-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790135006955452000,
+      "ended_ns": 1790135021186430000
+    },
+    {
+      "exit_code": 1,
+      "started_ns": 1790135021187108000,
+      "ended_ns": 1790135047158820000
+    },
+    {
+      "exit_code": 1,
+      "started_ns": 1790135047160733000,
+      "ended_ns": 1790135048881867000
+    }
+  ],
+  "mode_verified": false,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "e5e3a629fb6b701c291eb0d4545bdbd2b0cbb776",
+  "git_log": "e5e3a629fb6b701c291eb0d4545bdbd2b0cbb776 1790135006 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": false,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  },
+  "harness_completed": false,
+  "infrastructure_block": "Claude Code extra usage exhausted; CLI states reset 3:40pm Australia/Melbourne"
+}

@@ -1,0 +1,6 @@
+{
+  "trigger_match": true,
+  "no_files_changed": true,
+  "ux_fully_matches": false,
+  "notes": "Natural migration request automatically selected jevify and asked the three setup questions before workflow-source reads or writes. UX defect: the question describes neither-key access as audit/report only, although the skill supports approved code with skipped live validation."
+}

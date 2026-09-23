@@ -1,0 +1,33 @@
+{
+  "fixture": "anthropic_routing",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "audit_agreement": 1.0,
+  "checks": {
+    "audit_agreement": true,
+    "audit_evidence": true,
+    "recommendations": false,
+    "fit_review": true,
+    "no_generation_jev_only": true,
+    "gating": true,
+    "output_mode": false,
+    "smoke": true,
+    "plan": false,
+    "report": false,
+    "negative_control": true,
+    "centralization": true,
+    "contracts": true,
+    "model_pinned": true,
+    "parity": true,
+    "hygiene": true,
+    "conversion_coverage": true
+  },
+  "failures": {
+    "recommendations": "Every site needs 1\u20133 concrete options with benefit, risk, primitive and action",
+    "output_mode": "Output isolation, original refs, or no-push invariant failed",
+    "plan": "Missing saved plan",
+    "report": "Missing report"
+  },
+  "pass": false
+}

@@ -27,3 +27,7 @@ clone path is a mode failure even though the automatic original-tree check passe
 This supplements (rather than weakens) the required transcript/filesystem review.
 Additional missing-answer/no-key prompt probes exercise product edge cases outside
 the frozen primary matrix; they do not replace or inflate its scores.
+
+- Added supplemental automatic-discovery probes (migration request vs general Jev API question). These record real harness transcripts and filesystem changes separately; they do not modify the frozen primary grader, labels, corpus, thresholds or matrix.
+
+- DEV03 reporting adds a separate harness-completion status because the frozen grader does not require a successful CLI exit. One quota-interrupted run passes artifact checks; it is reported BLOCKED, not a completed pass. Frozen checks/thresholds remain unchanged.

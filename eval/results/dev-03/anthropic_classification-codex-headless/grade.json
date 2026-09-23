@@ -1,0 +1,28 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "codex",
+  "scenario": "headless",
+  "mode": "branch",
+  "audit_agreement": 1.0,
+  "checks": {
+    "audit_agreement": true,
+    "audit_evidence": true,
+    "recommendations": true,
+    "fit_review": true,
+    "no_generation_jev_only": true,
+    "gating": true,
+    "output_mode": true,
+    "smoke": true,
+    "plan": true,
+    "report": true,
+    "negative_control": true,
+    "centralization": true,
+    "contracts": true,
+    "model_pinned": true,
+    "parity": true,
+    "hygiene": true,
+    "conversion_coverage": true
+  },
+  "failures": {},
+  "pass": true
+}

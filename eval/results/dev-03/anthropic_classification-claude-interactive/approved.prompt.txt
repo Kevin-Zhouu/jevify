@@ -1,0 +1,94 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_classification. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_classification-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/anthropic_classification-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I now have a complete picture. Here is the audit and recommendation.
+
+---
+
+## Jev Audit — `anthropic_classification`
+
+### Preflight Summary
+
+| Field | Value |
+|---|---|
+| Repository | `original/` (SHA `1c953f7`) |
+| Status | Clean |
+| Output mode | Clone → `converted/` |
+| Provider | OpenRouter (`OPENROUTER_API_KEY` present) |
+| Model pin | `typesafe/jev-1.13-20260917` |
+| Risk posture | Conservative |
+
+---
+
+### Site Inventory
+
+There is **one** LLM call site in this project:
+
+#### Site 1: `workflow.py:83` — `client.messages.create`
+
+| Field | Detail |
+|---|---|
+| **SDK / Provider** | Anthropic SDK / `claude-haiku-4-5` |
+| **Input origin** | Caller-supplied string `X` (customer support ticket text) |
+| **Prompt** | Classifies a support ticket into one of 10 insurance categories |
+| **Output** | Returns a single category label string (stripped) |
+| **Downstream** | Return value from `simple_classify()` — the label is the entire contract |
+| **Context size** | Fixed category XML (~1.5 KB) + one ticket. Well within Jev limits |
+| **Untrusted input** | Ticket text is quoted inside `<ticket>` tags. Input is customer text, not adversarial by design, but not sanitized. For a benign fixture distribution this is acceptable; a public-facing service would need further evaluation |
+| **Classification** | **DECISION** |
+| **Fit** | **FIT** |
+
+**Reasoning:** The model's substantive answer is a single label selected from a closed set of 10 categories. No reasoning, explanation, or free-form text is returned — only the bare label. This is a textbook Choice primitive use case. The 10 categories have distinct semantic definitions. Jev 1.13's jaggedness profile shows strong performance on semantic judgment and classification. No math, date comparison, multi-hop reasoning, or generation is involved.
+
+---
+
+### Recommendation Table
+
+| Site | Provider | Downstream | Class | Fit | Options |
+|---|---|---|---|---|---|
+| `workflow.py:83` | Anthropic / claude-haiku-4-5 | Returned category label string | DECISION | FIT | 1–3 below |
+
+#### Option 1: `fallback` — Choice with confidence-gated fallback (recommended)
+
+| Field | Detail |
+|---|---|
+| **Primitive** | Choice (10 categories as criteria) |
+| **Action** | Try Jev Choice first; if confidence < threshold or any error, fall back to original Anthropic call |
+| **Benefit** | Accepted Jev decisions are faster (~100ms vs LLM inference) and cheaper (System One pricing vs claude-haiku-4-5). Expected cost = Jev cost + fallback_fraction × original cost |
+| **Latency** | Jev ~100ms for accepted; serial miss adds Jev latency before original inference |
+| **Risk** | Low — conservative posture retains the original path for all uncertain/error cases. Mismatch risk is mitigated by confidence gating and the fallback. Threshold needs tuning on representative data |
+| **Scope** | New `jev_decisions.py` module with question definition, threshold, and model pin. Modify `simple_classify()` to try Jev first, fall back on low confidence/errors. Add diagnostic logging (path, model, reason) to stderr |
+
+#### Option 2: `jev_only` — Choice without fallback
+
+| Field | Detail |
+|---|---|
+| **Primitive** | Choice |
+| **Action** | Replace Anthropic call entirely with Jev Choice |
+| **Benefit** | Eliminates all original model cost; simpler code path |
+| **Risk** | **Not available under conservative posture.** Would require measured parity proof and aggressive risk approval. Residual errors and outage policy unaddressed |
+| **Scope** | N/A — excluded by risk posture |
+
+#### Option 3: `leave` — No change
+
+| Field | Detail |
+|---|---|
+| **Primitive** | none |
+| **Action** | Keep existing Anthropic call unchanged |
+| **Benefit** | No integration risk; no new dependency |
+| **Risk** | None — status quo |
+| **Scope** | No changes |
+
+---
+
+### Summary
+
+This is a clean, single-site DECISION workflow — an ideal Jev candidate. The `simple_classify` function selects one label from a fixed 10-category taxonomy with no generation, reasoning, or extraction. The Choice primitive maps directly to this use case.
+
+**Recommended path:** Option 1 (`fallback`) — Jev Choice with confidence-gated fallback to the original Anthropic call. Under conservative posture, the original path is always retained.
+
+---
+
+**No files have been written.** Conversion approval has not been given. To proceed, select an option for `workflow.py:83` (e.g., "approve option 1 for workflow.py:83") or request changes to the plan.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

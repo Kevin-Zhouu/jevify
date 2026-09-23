@@ -1,0 +1,33 @@
+{
+  "sites": [
+    {
+      "site_id": "workflow.ts:6",
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "@ai-sdk/openai/gpt-4o-mini",
+      "downstream": "result.object → console.log (genre label); result.usage → console.log (token counts); result.finishReason → console.log",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Single selection from a closed set of 5 genre labels over trusted, short text. No math, dates, multi-hop reasoning, generation, adversarial input, or large irrelevant state. Textbook Choice primitive scenario.",
+      "options": [
+        {
+          "option": "A",
+          "action": "fallback",
+          "benefit": "Accepted decisions use Jev (~100ms, ~$0.042/M tokens vs gpt-4o-mini ~$0.15/M input + $0.60/M output). Latency improves on accepted decisions.",
+          "risk": "Low confidence or Jev errors fall through to existing generateObject path. Conservative posture retains this fallback permanently. Usage/finishReason diagnostics are adapter-mapped on Jev path.",
+          "primitive": "Choice"
+        },
+        {
+          "option": "B",
+          "action": "leave",
+          "benefit": "No conversion work or risk. Original behavior preserved exactly.",
+          "risk": "None.",
+          "primitive": "none"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.ts:6"
+  ]
+}

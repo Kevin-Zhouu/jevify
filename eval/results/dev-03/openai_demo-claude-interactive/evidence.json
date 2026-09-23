@@ -1,0 +1,42 @@
+{
+  "fixture": "openai_demo",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/openai_demo-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 1,
+      "started_ns": 1790135050865378000,
+      "ended_ns": 1790135052525257000
+    },
+    {
+      "exit_code": 1,
+      "started_ns": 1790135052525974000,
+      "ended_ns": 1790135054525691000
+    },
+    {
+      "exit_code": 1,
+      "started_ns": 1790135054526171000,
+      "ended_ns": 1790135056483633000
+    }
+  ],
+  "mode_verified": false,
+  "gating_verified": false,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "471b7721d3e21bc71cff7afa8d79ab41f191a854",
+  "git_log": "471b7721d3e21bc71cff7afa8d79ab41f191a854 1790135050 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": false,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  },
+  "harness_completed": false,
+  "infrastructure_block": "Claude Code extra usage exhausted; CLI states reset 3:40pm Australia/Melbourne"
+}

@@ -1,0 +1,42 @@
+{
+  "fixture": "langchain_completion",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/langchain_completion-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 1,
+      "started_ns": 1790135058782482000,
+      "ended_ns": 1790135060788328000
+    },
+    {
+      "exit_code": 1,
+      "started_ns": 1790135060789327000,
+      "ended_ns": 1790135062513776000
+    },
+    {
+      "exit_code": 1,
+      "started_ns": 1790135062514644000,
+      "ended_ns": 1790135064635441000
+    }
+  ],
+  "mode_verified": false,
+  "gating_verified": false,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "4f944c64361ea7e8bf76c3a6ac79647b176f5797",
+  "git_log": "4f944c64361ea7e8bf76c3a6ac79647b176f5797 1790135058 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": false,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  },
+  "harness_completed": false,
+  "infrastructure_block": "Claude Code extra usage exhausted; CLI states reset 3:40pm Australia/Melbourne"
+}

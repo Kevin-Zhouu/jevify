@@ -1,0 +1,51 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-03/vercel_enum-claude-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790134183903814000,
+      "ended_ns": 1790134206868888000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790134206869846000,
+      "ended_ns": 1790134416253569000
+    },
+    {
+      "exit_code": 1,
+      "started_ns": 1790134416257164000,
+      "ended_ns": 1790135073082133000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jevDecisions.ts",
+    "validate_parity.py",
+    "workflow.ts"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jevDecisions.ts",
+    "validate_parity.py",
+    "workflow.ts"
+  ],
+  "original_sha": "4bc5e23750b6af7d32147d2480a5bde33bb935cb",
+  "git_log": "4bc5e23750b6af7d32147d2480a5bde33bb935cb 1790134183 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": false,
+    "live_evidence": false,
+    "hygiene": true
+  },
+  "harness_completed": false,
+  "infrastructure_block": "Claude Code extra usage exhausted; CLI states reset 3:40pm Australia/Melbourne"
+}

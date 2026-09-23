@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK generateObject / OpenAI gpt-4o-mini",
+      "downstream": "Prints result.object.recipe as formatted JSON, blank line, result.usage and result.finishReason; main().catch(console.error) reports errors.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Recipe name, ingredient names and amounts, and steps are arbitrary generated strings. No enumerated outputs or decision consumer exists. Structured JSON is not a bounded decision.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "Preserves the complete recipe generation and observable diagnostics; latency and cost stay unchanged, with no speculative savings.",
+          "risk": "No migration risk; existing model behavior remains.",
+          "primitive": "none"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}
