@@ -60,3 +60,7 @@ Video: 1280 × 720, 30 fps, H.264, silent. Defaults use macOS Arial and Menlo. F
 One small synthetic batch, one gateway route, one machine, no warmup or statistical latency study. This demo does not prove general speed, quality, calibrated Claude confidence, production reliability, or skill conversion correctness. The Claude model comparison is separate from Claude Code's coding-agent evaluation. See the [full skill report](../../REPORT.md), including remaining failures and unopened HELD-OUT.
 
 TypeSafe also publishes [official structured-decision, Doom, and Wikiracing demos](https://typesafe.ai/blog/introducing-system-one-models-and-jev). Those remain attributed to TypeSafe and are not represented as Jevify results.
+
+## Minecraft community preview
+
+`minecraft-preview.gif` is an animated preview of [Ronak Malde’s original demo](https://x.com/rronak_/status/2101544156757950697), linked to the original hosted video in the root README. It preserves the full 39.1-second clip at its published speed, resized to 560px and sampled at 8 fps for GitHub. It is a community showcase, not a Jevify conversion or an unaccelerated recording of the full Minecraft run.
