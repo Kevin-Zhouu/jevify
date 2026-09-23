@@ -34,6 +34,14 @@ Just exploring? `/jevify audit this repo` — no API key needed.
 
 All 12 category choices match. One synthetic example via OpenRouter, replayed from real stream timestamps—not a general benchmark. [Watch video](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4) · [Raw data](docs/demos/README.md)
 
+## Built with Jev · Minecraft
+
+**Astra plans. Jev chooses the actions. The Ender Dragon goes down.**
+
+[Watch the demo ↗](https://x.com/rronak_/status/2101544156757950697) · [Source code](https://github.com/rmalde/minecraft-agent)
+
+Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-surveyed seed in Peaceful mode.
+
 ## How it works
 
 **Audit → Recommend → You approve → Convert → Validate**
@@ -53,7 +61,7 @@ No Jev key? Audit and approved code changes still work; live validation is skipp
 
 ## Status
 
-**Codex:** all 12 DEV runs passed in each of the last two rounds. **Claude Code:** known validation failures remain, and later runs hit a usage limit. HELD-OUT is untested; equal reliability across both agents is not yet proven. [Full evaluation →](REPORT.md)
+Works with **Codex and Claude Code**. [Evaluation results →](REPORT.md)
 
 <details>
 <summary><strong>Installation, headless usage, and development</strong></summary>
