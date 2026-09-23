@@ -1,162 +1,79 @@
 <div align="center">
 
-# jevify
+<img src="docs/brand/jevify-logo.png" alt="jevify" width="300" />
 
-### Bring Jev to your existing AI agents and workflows.
+### Turn your existing AI agents and workflows into Jev-powered workflows.
 
-Find the decision steps. Convert them with your approval. Keep the rest of your workflow.
+An agent skill for **Codex & Claude Code**. Convert suitable LLM decision calls to Jev—with your approval and an LLM fallback.
 
-**Review the plan. Approve the changes. Keep a fallback.**
-
-[Get started](#try-it-in-your-repo) · [Watch the demos](#see-the-speed-difference) · [Results](#what-weve-measured) · [Installation guide](skills/jevify/INSTALL.md)
+[Install](#install) · [Watch the demo](#claude-vs-jev) · [Docs](skills/jevify/INSTALL.md) · [Results](REPORT.md)
 
 </div>
 
----
-
-Your agent may use a full language model just to choose a route, assign a label, or return a yes/no answer. **Jevify finds those calls, explains the tradeoffs, and helps you move the right ones to TypeSafe's Jev decision model.**
-
-It is an agent skill you run inside **Codex or Claude Code**. It audits your existing workflow, proposes changes, and waits for your approval before converting anything. Your LLM stays available for generation and uncertain decisions.
-
-> **Start small:** ask for a report-only audit. See where Jev could help before changing a line of application code. No API key is needed for the audit.
-
-## See the speed difference
-
-[![Claude streams a long JSON response while Jev returns all structured decisions at once](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
-
-**[Watch Claude vs Jev →](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)** · 12 questions · 136 lines of JSON
-
-**Jev: 0.44s. Claude Haiku 4.5: 5.11s.** All 12 category choices match.
-
-<sub>Fresh API captures replayed at 1×, including Claude's actual stream events. One synthetic support-ticket example via OpenRouter; not a general benchmark. Probabilities and confidence values differ. [Raw data and method](docs/demos/README.md).</sub>
-
-## Try it in your repo
-
-### 1. Install the skill
-
-From your project directory:
+## Install
 
 ```sh
 npx skills add Kevin-Zhouu/jevify
 ```
 
-Choose **jevify** and your coding agent in the installer. [Manual installation and Claude plugin options →](skills/jevify/INSTALL.md)
-
-### 2. Ask for an audit
-
-Open Codex or Claude Code in your project and paste:
+Then ask your coding agent:
 
 ```text
-Use jevify to find where Jev could replace LLM calls in this workflow.
-Start with a report-only audit. Keep the original LLM as a fallback.
+Use jevify to convert this workflow to Jev. Show me the plan first.
 ```
 
-Jevify asks for three choices before auditing:
+Just exploring? Ask for a **report-only audit**. No API key needed.
 
-| Choice | Your options |
-| --- | --- |
-| **Where should the work go?** | A new branch, a separate clone, or a report only |
-| **How will you access Jev?** | TypeSafe key, OpenRouter key, or neither |
-| **How cautious should it be?** | Keep LLM fallbacks, or use Jev alone where parity is proven |
+## Claude vs Jev
 
-### 3. Pick the changes you want
+[![Claude streams JSON while Jev returns the structured decisions](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
 
-Review the recommendations by call site. Approve individual options, edit the plan, or leave everything as is. For an approved conversion, Jevify groups the decision policy in one module per language, preserves the existing interfaces, and runs validation.
+**12 questions. 136 lines of JSON. Jev: 0.44s. Claude Haiku 4.5: 5.11s.**
 
-You get **`JEV_CONVERSION_PLAN.md`** and **`JEV_CONVERSION_REPORT.md`** with the choices, changes, results, and undo instructions.
+All 12 category choices match. One synthetic example via OpenRouter, replayed from real stream timestamps—not a general benchmark. [Watch video](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4) · [Raw data](docs/demos/README.md)
 
-## What is a good fit?
+## How it works
 
-| Your workflow does this… | Jevify can recommend… |
-| --- | --- |
-| Assigns one of ten support categories | A **Choice** question with a confidence gate |
-| Selects a specialist or tool | A Jev router in front of the existing LLM |
-| Rates text against an ordered rubric | A **Score** question |
-| Makes a bounded yes/no judgment | A **Noul** question; Noul has no confidence field |
-| Mixes classification with a written response | Separate the decision and keep the generation path |
-| Writes prose or code, counts, compares dates, or needs multi-hop reasoning | Leave the call as is and explain why |
+**Audit → Recommend → You approve → Convert → Validate**
 
-**Jev is a decision model.** It doesn't replace free-form generation. Extraction is only a Choice candidate when the possible answers can be enumerated first. Unsupported inputs and unmitigated adversarial cases are screened out during the audit.
+- **Your codebase:** finds call sites and traces how their outputs are used.
+- **Your choice:** new branch, separate clone, or report only.
+- **Your safety net:** keeps generation with your LLM and adds fallback for uncertain decisions.
+- **Your evidence:** runs tests and, with a key, compares live outputs, latency, and cost.
 
-## Add your API key when you're ready
+Decisions such as routing, classification, and rubric scoring are candidates. Free-form generation stays with your LLM. You get a conversion plan and a results report.
 
-Use your normal environment or secret manager:
+## Bring your key
 
-| Access | Environment variable |
-| --- | --- |
-| TypeSafe | `TYPESAFE_API_KEY` |
-| OpenRouter | `OPENROUTER_API_KEY` |
+Use `TYPESAFE_API_KEY` or `OPENROUTER_API_KEY` through your environment or the [hidden-input launcher](skills/jevify/references/credentials.md). Keep your original provider key for fallback.
 
-For a hidden-input prompt, run the bundled launcher from the installed skill directory. For example, with a project-local Codex installation:
+No Jev key? Audit and approved code changes still work; live validation is skipped.
 
-```sh
-python3 .agents/skills/jevify/scripts/with_jev_key.py --provider openrouter -- codex
-```
+## Status
 
-For a project-local Claude Code installation:
-
-```sh
-python3 .claude/skills/jevify/scripts/with_jev_key.py --provider typesafe -- claude
-```
-
-The launcher passes the key to the coding agent without saving it or putting it in command arguments. Keep your original provider's credentials available for fallback. With no Jev key, you can still audit and approve code changes; live validation is explicitly skipped.
-
-[Full key setup, personal install paths, and Vercel caveats →](skills/jevify/references/credentials.md)
-
-## What we've measured
-
-In one **36-input insurance-classification check**, with a preset **0.90 confidence gate**:
-
-| Measurement | Result |
-| --- | ---: |
-| Agreement with Claude among accepted Jev decisions | **21/22 · 95.5%** |
-| Requests sent to the original fallback | **14/36 · 38.9%** |
-| Median standalone request time: Jev / Claude | **399 ms / 1,061 ms** |
-| Estimated total API cost with fallback included | **57.0% lower** on this set |
-
-These are small-sample results, not a production guarantee. One accepted Jev answer disagreed with Claude. The set uses 30 public fixture inputs and six labeled synthetic inputs. Cost estimates sum provider-reported costs; fallback adds latency and cost. Other examples in the evaluation had **higher** estimated costs after conversion. [Full measurement report →](eval/results/dev-03/anthropic_classification-codex-headless/original/JEV_CONVERSION_REPORT.md)
-
-### Current validation status
-
-- **Codex:** all 12 DEV runs passed in each of the last two rounds, across six workflows in headless and simulated interactive use.
-- **Claude Code:** installation and execution were exercised, but conversion and validation failures remain. Later runs were blocked by its usage limit.
-- **HELD-OUT:** unopened and untested. Identical reliability across both coding agents is **not yet proven**.
-
-The demo's **Claude model baseline** is separate from the **Claude Code coding-agent evaluation**. [All results, failures, and limitations →](REPORT.md)
+**Codex:** all 12 DEV runs passed in each of the last two rounds. **Claude Code:** known validation failures remain, and later runs hit a usage limit. HELD-OUT is untested; equal reliability across both agents is not yet proven. [Full evaluation →](REPORT.md)
 
 <details>
-<summary><strong>Headless runs and configuration</strong></summary>
+<summary><strong>Installation, headless usage, and development</strong></summary>
 
-Supply setup answers and explicit conversion approval in `jevify.config.yaml`, then run:
+- [Manual installation for Codex and Claude Code](skills/jevify/INSTALL.md)
+- [Headless configuration and approvals](skills/jevify/references/configuration.md)
+- [API keys and Vercel access notes](skills/jevify/references/credentials.md)
+- [Pinned corpus](corpus/README.md) · [Frozen evaluation protocol](eval/README.md)
+- [Official TypeSafe reference provenance](skills/jevify/references/official/SOURCES.json)
 
 ```sh
 codex exec 'Use jevify with jevify.config.yaml'
 claude -p 'Use jevify with jevify.config.yaml'
 ```
 
-Missing answers are not permission to guess. [Configuration reference →](skills/jevify/references/configuration.md)
-
-</details>
-
-<details>
-<summary><strong>For contributors: corpus, evaluation, and references</strong></summary>
-
-- [Corpus](corpus/README.md): six DEV and two HELD-OUT workflows from three upstream repositories at pinned commits.
-- [Evaluation protocol](eval/README.md): frozen grader, prewritten labels, retained transcripts, and independent review.
-- [Official TypeSafe references](skills/jevify/references/official/SOURCES.json): unmodified upstream snapshots with provenance; live docs win.
-- [Demo source and rendering](docs/demos/README.md): recorded inputs, outputs, request IDs, and reproducible videos.
-
-Development checks require Python 3.10+, Node 18+, and the evaluation dependencies (`cd eval && npm ci`):
+Development checks (Python 3.10+, Node 18+, and `npm ci` in `eval/`):
 
 ```sh
 python3 -m unittest discover -s eval -p 'test_*.py'
 python3 eval/freeze.py --verify
 ```
 
-The skill helpers use only Python's standard library. Vendored upstream material retains its own licenses and notices.
+Skill helpers use Python's standard library. Vendored material retains its upstream licenses.
 
 </details>
-
----
-
-**Find your first Jev opportunity.** Install the skill, ask for an audit, and decide what to convert.
