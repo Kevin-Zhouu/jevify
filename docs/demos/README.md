@@ -1,39 +1,51 @@
-# Claude vs Jev
+# Claude vs Jev: long structured JSON
 
-[Watch the 20-second comparison](claude-vs-jev.mp4)
+[Watch the video](claude-vs-jev.mp4)
 
-Two minimal side-by-side scenes: **route a ticket**, then **clear a six-ticket inbox**. Both show Claude Haiku 4.5 on the left and Jev 1.13 on the right, with large timers and visible completion states.
+The same 12 support tickets and Choice questions go to Claude Haiku 4.5 and Jev. Claude writes the JSON progressively; Jev returns the decision object in one response. The video shows 136 lines of structured JSON, large timers, and the actual arrival of Claude's stream.
 
-| Scene | Video | What it shows |
-| --- | --- | --- |
-| Route one ticket | [8 seconds](01-ticket-race.mp4) | A billing question, with the same category returned by both models |
-| Clear the inbox | [12 seconds](02-inbox-race.mp4) | Six different categories, with tickets completing at their recorded request durations |
+| Fresh paired capture | Time to full response |
+| --- | ---: |
+| Jev `typesafe/jev-1.13-20260917` | 0.441 seconds |
+| Claude `anthropic/claude-haiku-4.5` | 5.108 seconds |
 
-## Data, not invented speed
+All **12/12 category choices match**. Probability distributions and confidence values differ. The observed completion-time ratio is **11.6×** for this one synthetic example.
 
-These are visual replays of previously recorded live requests. No new calls were made. Timers run at **1×** after a two-second introduction; completed results stay visible for readability. The source calls were measured separately, not filmed simultaneously.
+## What the task asks for
 
-- Claude: `anthropic/claude-haiku-4.5` through the authorized OpenRouter baseline adapter.
-- Jev: `typesafe/jev-1.13-20260917` through OpenRouter.
-- Source: [archived JEV_PARITY.json](../../eval/results/dev-03/anthropic_classification-codex-headless/original/JEV_PARITY.json).
-- Exact selected rows, full inputs, raw responses, request IDs, source hash, and total durations: [manifest.json](manifest.json).
-- Original validation method: [conversion report](../../eval/results/dev-03/anthropic_classification-codex-headless/original/JEV_CONVERSION_REPORT.md).
+For each synthetic ticket, choose billing, technical, sales, or account. Each result has the same fields: `type`, `choice`, `probabilities`, and `confidence`. Both models receive identical ticket text, questions, and criteria. Claude additionally receives JSON-format instructions and an example output shape; Jev uses its native Choice API. Claude's confidence is a self-estimate, not a claim of equivalent calibration to Jev's confidence.
 
-The queue selects the **first accepted, matching repository fixture for each of the first six distinct categories**, in source order. The single-ticket scene uses the billing-inquiry member. Selection is intended to illustrate speed on successful decisions, not to estimate overall accuracy or average savings. The billing ticket is a particularly favorable latency example; it is not the median request.
+This is **long structured decision output**, not arbitrary JSON generation. Jev does not write free-form text. The JSON envelopes and pretty-printing are application serialization, not prose generation by Jev.
 
-The queue animation assumes **one request in flight per model**. Queue totals are sums of the separately measured durations, not live batch throughput or a concurrency benchmark. The shortened ticket previews are human-written display captions; the models received the full original input strings retained in the manifest. All final categories are actual recorded answers.
+## Recording and playback
 
-The complete source set had **21/22 accepted matches and 14/36 fallbacks** at a preset 0.90 threshold. One accepted answer disagreed with Claude. The selected scenes do not show those disagreements or fallbacks. Agreement is not ground-truth accuracy, and these clips do not establish a production speed guarantee.
+Both calls were launched concurrently from the same local Python process through OpenRouter. Each duration begins immediately before its HTTP request. The Jev timer stops after its JSON body is received and decoded; Claude's stops at the stream's completion. There is no artificial delay, reasoning-mode inflation, or replay-speed adjustment.
 
-The Claude **model baseline** here is separate from the Claude Code **coding-agent evaluation**, which still has known failures. See [the full report](../../REPORT.md).
+Claude's **152 recorded content deltas** include their arrival timestamps. The video replays those events at **1×** after a two-second intro. Jev's entire answer object appears at its measured completion time. Claude's code panel follows the newest lines while streaming and returns to the top on completion; Jev's panel is complete from arrival. Mini-maps indicate how much JSON is available. At 30 fps, visible state transitions are quantized to video frames.
 
-## Official Jev demos
+Claude included a markdown code fence despite instructions to return bare JSON. Only that wrapper is stripped for parsing and display; the raw stream is retained. Before publishing, both outputs were checked for all question IDs, allowed labels, probability keys, bounded values, and probability sums. Matching categories do not establish ground-truth accuracy or identical probability estimates.
 
-TypeSafe's [launch article](https://typesafe.ai/blog/introducing-system-one-models-and-jev) includes a structured-decision comparison, Doom, and Wikiracing. Its structured-decision comparison uses GPT-5.6 Terra, so we link it with its original attribution rather than relabeling it as Claude. The Doom agent receives structured textual state, not game images. These are TypeSafe's demos, not Jevify conversion results.
+The first recording attempt failed at local JSON parsing before a capture was saved. The recorder was fixed to preserve raw outputs and tolerate the markdown wrapper, then the paired run was repeated once. The displayed run is that second attempt; it was not selected from repeated speed trials. No first-attempt timing claim is made.
 
-## Rebuild
+## Inspect or reproduce
 
-Outputs: two MP4s, the combined MP4, PNG stills, a README GIF, and the provenance manifest. Video: 1280 × 720, 30 fps, H.264, silent. The preview GIF uses 10 fps.
+- [Exact requests and synthetic inputs](json-data/requests.json)
+- [Complete paired capture and stream events](json-data/capture.json)
+- [Unmodified Claude text and timestamps](json-data/claude-stream-raw.json)
+- [Raw Jev response and elapsed time](json-data/jev-raw.json)
+- [Rendering manifest and source hash](manifest.json)
+- [Recorder](../../tools/record_json_demo.py)
+- [Renderer](../../tools/render_demos.py)
+
+Record a new pair using an OpenRouter key passed through the hidden-input launcher (no credentials are written to the captures):
+
+```sh
+python3 tools/with_jev_key.py --provider openrouter -- python3 tools/record_json_demo.py
+```
+
+This overwrites the local capture files and makes two paid API calls. Check the resulting measurements before publishing a newly rendered video. The frozen corpus and skill evaluator are separate and unchanged.
+
+Render without making API calls:
 
 ```sh
 python3 -m venv /tmp/jevify-demo-render
@@ -41,4 +53,10 @@ python3 -m venv /tmp/jevify-demo-render
 /tmp/jevify-demo-render/bin/python tools/render_demos.py
 ```
 
-The default fonts are macOS Arial and Arial Bold. Elsewhere, set `JEVIFY_DEMO_FONTS` to a directory containing equivalent licensed fonts named `Arial.ttf` and `Arial Bold.ttf`. Rendering dependencies are separate from skill runtime dependencies. The renderer makes no API calls. Upstream inputs retain the [vendored workflow license](../../corpus/anthropic_classification/LICENSE.upstream).
+Video: 1280 × 720, 30 fps, H.264, silent. Defaults use macOS Arial and Menlo. For other systems, set `JEVIFY_DEMO_FONTS` to a directory with `Arial.ttf` and `Arial Bold.ttf`, and `JEVIFY_DEMO_MONO` to an equivalent monospace font. Rendering dependencies are separate from the skill runtime.
+
+## Limits
+
+One small synthetic batch, one gateway route, one machine, no warmup or statistical latency study. This demo does not prove general speed, quality, calibrated Claude confidence, production reliability, or skill conversion correctness. The Claude model comparison is separate from Claude Code's coding-agent evaluation. See the [full skill report](../../REPORT.md), including remaining failures and unopened HELD-OUT.
+
+TypeSafe also publishes [official structured-decision, Doom, and Wikiracing demos](https://typesafe.ai/blog/introducing-system-one-models-and-jev). Those remain attributed to TypeSafe and are not represented as Jevify results.

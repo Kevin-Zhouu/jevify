@@ -2,9 +2,9 @@
 
 # jevify
 
-### Let Jev handle the decisions. Keep your LLM for the rest.
+### Bring Jev to your existing AI agents and workflows.
 
-Turn suitable LLM calls into fast, typed decisions—without rewriting your agent.
+Find the decision steps. Convert them with your approval. Keep the rest of your workflow.
 
 **Review the plan. Approve the changes. Keep a fallback.**
 
@@ -22,15 +22,13 @@ It is an agent skill you run inside **Codex or Claude Code**. It audits your exi
 
 ## See the speed difference
 
-[![Claude versus Jev: watch the same ticket and inbox get routed side by side](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
+[![Claude streams a long JSON response while Jev returns all structured decisions at once](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
 
-**[Watch Claude vs Jev →](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)** · 20 seconds · one ticket, then a six-ticket inbox
+**[Watch Claude vs Jev →](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)** · 12 questions · 136 lines of JSON
 
-Same decisions. Two timers. Watch Jev finish first.
+**Jev: 0.44s. Claude Haiku 4.5: 5.11s.** All 12 category choices match.
 
-<sub>Replay of recorded API timings, using selected matching decisions. Queue times sum separate calls; ticket previews are shortened. [Measurements and limitations](docs/demos/README.md).</sub>
-
-Want to see Jev playing Doom or racing through Wikipedia? [Watch TypeSafe's official demos →](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+<sub>Fresh API captures replayed at 1×, including Claude's actual stream events. One synthetic support-ticket example via OpenRouter; not a general benchmark. Probabilities and confidence values differ. [Raw data and method](docs/demos/README.md).</sub>
 
 ## Try it in your repo
 

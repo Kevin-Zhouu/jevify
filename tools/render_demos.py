@@ -1,92 +1,62 @@
 #!/usr/bin/env python3
-"""Minimal, data-backed latency replays. No new inference or fabricated answers."""
-import hashlib, json, math, os, subprocess
+"""Render actual Claude stream events alongside Jev's complete JSON response."""
+import hashlib,json,math,os,subprocess,textwrap
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image,ImageDraw,ImageFont
 import imageio_ffmpeg
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'docs/demos'
-SOURCE=ROOT/'eval/results/dev-03/anthropic_classification-codex-headless/original/JEV_PARITY.json'
-rows=json.loads(SOURCE.read_text())['sites'][0]['rows']
-# First accepted, matching repo fixture in each distinct category, in source order.
-queue=[]; seen=set()
-for r in rows:
-    if r['provenance']=='repo' and not r['fallback_taken'] and r['jev_answer']==r['original_answer'] and r['jev_answer'] not in seen:
-        queue.append(r); seen.add(r['jev_answer'])
-    if len(queue)==6: break
-billing=next(r for r in queue if r['jev_answer']=='Billing Inquiries')
-captions={'Claims Assistance':'My parked car was hit.','Quotes and Proposals':'Can you beat my current quote?',
-'Account Management':"I can’t sign in.",'Billing Inquiries':'Why is my bill higher?',
-'Billing Disputes':'I don’t recognize this charge.','Claims Disputes':'Why was my claim denied?'}
-W,H,FPS=1280,720,30
-BG='#0c1010'; WHITE='#eef3ef'; MUTED='#8b9890'; GREEN='#c4fa72'; CORAL='#e6ae94'
-FD=Path(os.environ.get('JEVIFY_DEMO_FONTS','/System/Library/Fonts/Supplemental'))
-fonts={}
-def font(n,b=False):
-    key=(n,b)
-    if key not in fonts: fonts[key]=ImageFont.truetype(str(FD/('Arial Bold.ttf' if b else 'Arial.ttf')),n)
-    return fonts[key]
-def frame(batch,mode,t):
-    im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
-    def text(x,y,s,n=22,c=WHITE,b=False): d.text((x,y),s,font=font(n,b),fill=c)
-    def center(x,y,s,n=22,c=WHITE,b=False): text(x-d.textlength(s,font=font(n,b))/2,y,s,n,c,b)
-    def box(x,y,x2,y2,c,outline=None): d.rounded_rectangle((x,y,x2,y2),radius=18,fill=c,outline=outline,width=2)
-    text(42,28,'jevify',24,b=True); text(1044,31,'MEASURED REPLAY',15,MUTED)
-    center(640,79,'Route one ticket.' if mode=='single' else 'Clear the inbox.',38,b=True)
-    if mode=='single':
-        center(640,135,'“Why is my bill higher?”',25,MUTED)
-    else: center(640,135,'6 tickets. Same decisions.',25,MUTED)
-    elapsed=max(0,t-2)
-    totals=[]
-    for side,x in enumerate((42,658)):
-        accent=CORAL if side==0 else GREEN
-        times=[r['original_latency_ms' if side==0 else 'latency_ms']/1000 for r in batch]
-        total=sum(times); totals.append(total)
-        cumulative=[]; acc=0
-        for n in times: acc+=n; cumulative.append(acc)
-        completed=sum(elapsed>=v for v in cumulative)
-        done=completed==len(batch)
-        box(x,198,x+580,611,'#151c19',accent if done else '#2c3530')
-        center(x+290,217,'CLAUDE' if side==0 else 'JEV',42,accent,True)
-        center(x+290,273,'Haiku 4.5' if side==0 else '1.13',17,MUTED)
-        center(x+290,312,f'{min(elapsed,total):.2f}s',88,WHITE,True)
-        if mode=='single':
-            # Envelope becomes a routed card; no artificial token streaming.
-            box(x+82,432,x+498,513,'#243023' if done else '#202824')
-            center(x+290,456,'Billing Inquiries' if done else ('Ready' if t<2 else 'Routing…'),27,accent if done else MUTED,True)
-        else:
-            center(x+290,417,f'{completed} / {len(batch)} routed',27,accent,True)
-            for j in range(len(batch)):
-                xx=x+64+j*78
-                box(xx,474,xx+63,520,accent if j<completed else '#263029')
-                center(xx+31,484,str(j+1),22,BG if j<completed else MUTED,True)
-            active=batch[min(completed,len(batch)-1)]
-            center(x+290,543,'Inbox empty' if done else captions[active['jev_answer']],21,accent if done else MUTED)
-        if mode=='single': center(x+290,546,'Routed' if done else '',20,accent)
-    if elapsed>=max(totals):
-        center(640,637,f'{totals[0]/totals[1]:.1f}× faster'+(' on this ticket' if mode=='single' else ' in this selected queue'),28,GREEN,True)
-    else: center(640,637,'Same input. Same start.' if t<2 else '',23,MUTED)
-    center(640,688,'1× timing replay • OpenRouter • Selected cases • Shortened ticket previews',15,MUTED)
-    return im
-
-OUT.mkdir(parents=True,exist_ok=True); ffmpeg=imageio_ffmpeg.get_ffmpeg_exe()
-scenes=[('01-ticket-race',[billing],'single',8),('02-inbox-race',queue,'queue',12)]
-manifest={'kind':'visual replay of archived live API timings; not a fresh recording',
-'source':str(SOURCE.relative_to(ROOT)),'source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
-'new_api_calls':False,'selection':'first accepted matching repository fixture for each of first six distinct categories; single-ticket scene uses the billing-inquiry member',
-'previews':'Human-written shortened previews; models received the full original inputs in the rows below.',
-'queue':'Illustrative serial replay of separately measured calls, one in flight per model. Totals are sums, not measured batch throughput.',
-'full_set':'21/22 accepted matches, 14/36 fallbacks; these scenes select accepted matching cases only.',
-'scenes':[]}
-for name,batch,mode,seconds in scenes:
-    p=subprocess.Popen([ffmpeg,'-y','-loglevel','error','-f','rawvideo','-vcodec','rawvideo','-s',f'{W}x{H}','-pix_fmt','rgb24','-r',str(FPS),'-i','-','-an','-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(OUT/f'{name}.mp4')],stdin=subprocess.PIPE)
-    for n in range(FPS*seconds): p.stdin.write(frame(batch,mode,n/FPS).tobytes())
-    p.stdin.close()
-    if p.wait(): raise RuntimeError('ffmpeg failed')
-    frame(batch,mode,seconds-1).save(OUT/f'{name}.png')
-    manifest['scenes'].append({'file':f'{name}.mp4','seconds':seconds,'rows':batch,
-      'claude_total_ms':sum(r['original_latency_ms'] for r in batch),'jev_total_ms':sum(r['latency_ms'] for r in batch)})
-    print(name,flush=True)
-concat=OUT/'concat.txt'; concat.write_text(''.join(f"file '{name}.mp4'\n" for name,*_ in scenes))
-subprocess.run([ffmpeg,'-y','-loglevel','error','-f','concat','-safe','0','-i',str(concat),'-c','copy','-movflags','+faststart',str(OUT/'claude-vs-jev.mp4')],check=True); concat.unlink()
-subprocess.run([ffmpeg,'-y','-loglevel','error','-i',str(OUT/'claude-vs-jev.mp4'),'-filter_complex','fps=10,scale=800:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer','-loop','0',str(OUT/'preview.gif')],check=True)
-(OUT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'docs/demos';SOURCE=OUT/'json-data/capture.json'
+data=json.loads(SOURCE.read_text());j=data['jev'];c=data['claude']
+W,H,FPS=1280,720,30;DURATION=math.ceil(2+max(j['elapsed_s'],c['elapsed_s'])+3)
+BG='#0b1010';WHITE='#edf5ef';MUTED='#82938a';GREEN='#c5fc77';CORAL='#efb69b'
+FD=Path(os.environ.get('JEVIFY_DEMO_FONTS','/System/Library/Fonts/Supplemental'));fonts={}
+def f(n,b=False,mono=False):
+ key=(n,b,mono)
+ if key not in fonts: fonts[key]=ImageFont.truetype(os.environ.get('JEVIFY_DEMO_MONO','/System/Library/Fonts/Menlo.ttc') if mono else str(FD/('Arial Bold.ttf' if b else 'Arial.ttf')),n)
+ return fonts[key]
+def frame(t):
+ im=Image.new('RGB',(W,H),BG);d=ImageDraw.Draw(im);elapsed=max(0,t-2)
+ def text(x,y,s,n=20,color=WHITE,b=False,mono=False):d.text((x,y),s,font=f(n,b,mono),fill=color)
+ def center(x,y,s,n=20,color=WHITE,b=False):text(x-d.textlength(s,font=f(n,b))/2,y,s,n,color,b)
+ def box(x,y,x2,y2,color,outline=None):d.rounded_rectangle((x,y,x2,y2),radius=15,fill=color,outline=outline,width=1)
+ text(35,23,'jevify',23,b=True);center(640,27,'12 tickets → structured JSON',23);text(1034,29,'LIVE CAPTURE / REPLAY',14,MUTED)
+ for side,x in enumerate((35,655)):
+  accent=CORAL if side==0 else GREEN;end=c['elapsed_s'] if side==0 else j['elapsed_s'];done=elapsed>=end
+  center(x+295,83,'CLAUDE' if side==0 else 'JEV',36,accent,True)
+  center(x+295,129,'Haiku 4.5' if side==0 else '1.13',15,MUTED)
+  center(x+295,156,f'{min(elapsed,end):.2f}s',67,WHITE,True)
+  if side==0:
+   raw=''.join(e['text'] for e in c['events'] if e['at_s']<=elapsed)
+   # Remove only markdown wrapper for JSON display; never invent streaming deltas.
+   if raw.startswith('```'):
+    raw=raw.partition('\n')[2]
+    if raw.rstrip().endswith('```'):raw=raw.rstrip()[:-3].rstrip()
+  else:raw=j['display'] if done else ''
+  lines=raw.splitlines();total=len(j['display'].splitlines()) if side else len(c['raw_text'].strip().removeprefix('```json').removesuffix('```').strip().splitlines())
+  status=f'COMPLETE · {total} lines' if done else ('READY' if t<2 else 'STREAMING' if raw else 'WAITING')
+  box(x,249,x+590,638,'#141d18','#33442e' if done else '#253029')
+  text(x+18,264,status,14,accent if done else MUTED,True)
+  # Claude follows its actual growing text. Jev's entire object is ready at once.
+  visible=lines[-16:] if side==0 and not done else lines[:16]
+  for n,line in enumerate(visible):
+   color=accent if '"choice"' in line else '#b8c9bd' if ':' in line else '#708577'
+   text(x+20,296+n*20,line[:61],15,color,mono=True)
+  if not raw:center(x+270,429,'{ … }',42,'#405148')
+  # Mini-map shows actual response availability, not artificial typing.
+  for n in range(total):
+   yy=296+n*2.25
+   if yy>612:break
+   width=6+(n*13%23)
+   d.line((x+547,yy,x+547+width,yy),fill=accent if n<len(lines) else '#26352a',width=1)
+ if elapsed>=max(j['elapsed_s'],c['elapsed_s']):center(640,652,f"{c['elapsed_s']/j['elapsed_s']:.1f}× faster · 12/12 category choices match",25,GREEN,True)
+ elif elapsed>=j['elapsed_s']:center(640,652,'Jev is done. Claude is still writing JSON.',25,GREEN,True)
+ else:center(640,652,'Same questions. Same output fields.',23,MUTED)
+ center(640,695,'Actual stream replay at 1× · OpenRouter · One synthetic example · Not a general benchmark',14,MUTED)
+ return im
+ffmpeg=imageio_ffmpeg.get_ffmpeg_exe()
+p=subprocess.Popen([ffmpeg,'-y','-loglevel','error','-f','rawvideo','-vcodec','rawvideo','-s',f'{W}x{H}','-pix_fmt','rgb24','-r',str(FPS),'-i','-','-an','-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(OUT/'claude-vs-jev.mp4')],stdin=subprocess.PIPE)
+for n in range(DURATION*FPS):p.stdin.write(frame(n/FPS).tobytes())
+p.stdin.close();assert p.wait()==0
+frame(4).save(OUT/'json-race.png');frame(DURATION-1).save(OUT/'json-complete.png')
+subprocess.run([ffmpeg,'-y','-loglevel','error','-i',str(OUT/'claude-vs-jev.mp4'),'-filter_complex','fps=12,scale=960:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer','-loop','0',str(OUT/'preview.gif')],check=True)
+(OUT/'manifest.json').write_text(json.dumps({'source':'json-data/capture.json','source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'duration_seconds':DURATION,'fps':FPS,'request_start_video_seconds':2,'speed':1,'claude_seconds':c['elapsed_s'],'jev_seconds':j['elapsed_s'],'ratio':c['elapsed_s']/j['elapsed_s'],'agreement':data['agreement'],'input_provenance':'synthetic','rendering':'actual timestamped Claude SSE text; Jev JSON appears on response completion; markdown fences removed only for display'},indent=2)+'\n')
+print('Rendered',DURATION,'seconds')

@@ -1,0 +1,930 @@
+{
+  "recorded_at_utc": "2026-09-23T04:27:12Z",
+  "provider": "OpenRouter",
+  "kind": "one fresh paired API run; synthetic inputs",
+  "jev": {
+    "elapsed_s": 0.44063379196450114,
+    "raw_response": {
+      "model": "typesafe/jev-1.13-20260917",
+      "answers": {
+        "ticket_01": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "sales": 0,
+            "technical": 0,
+            "billing": 1,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_02": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "sales": 0,
+            "technical": 1,
+            "billing": 0,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_03": {
+          "type": "choice",
+          "choice": "sales",
+          "probabilities": {
+            "sales": 1,
+            "technical": 0,
+            "billing": 0,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_04": {
+          "type": "choice",
+          "choice": "account",
+          "probabilities": {
+            "sales": 0,
+            "technical": 0,
+            "billing": 0,
+            "account": 1
+          },
+          "confidence": 1
+        },
+        "ticket_05": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "sales": 0,
+            "technical": 0,
+            "billing": 1,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_06": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "sales": 0,
+            "technical": 1,
+            "billing": 0,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_07": {
+          "type": "choice",
+          "choice": "sales",
+          "probabilities": {
+            "sales": 1,
+            "technical": 0,
+            "billing": 0,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_08": {
+          "type": "choice",
+          "choice": "account",
+          "probabilities": {
+            "sales": 0,
+            "technical": 0,
+            "billing": 0,
+            "account": 1
+          },
+          "confidence": 1
+        },
+        "ticket_09": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "sales": 0,
+            "technical": 0,
+            "billing": 1,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_10": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "sales": 0,
+            "technical": 1,
+            "billing": 0,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_11": {
+          "type": "choice",
+          "choice": "sales",
+          "probabilities": {
+            "sales": 1,
+            "technical": 0,
+            "billing": 0,
+            "account": 0
+          },
+          "confidence": 1
+        },
+        "ticket_12": {
+          "type": "choice",
+          "choice": "account",
+          "probabilities": {
+            "sales": 0,
+            "technical": 0,
+            "billing": 0,
+            "account": 1
+          },
+          "confidence": 1
+        }
+      },
+      "usage": {
+        "input_tokens": 1732,
+        "output_tokens": 543,
+        "cost": 7.2744e-05
+      },
+      "id": "gen-dec-1790137627-bhG8oynhyilN8nKA6tjA",
+      "provider": "TypeSafe"
+    },
+    "display": "{\n  \"answers\": {\n    \"ticket_01\": {\n      \"type\": \"choice\",\n      \"choice\": \"billing\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 0,\n        \"billing\": 1,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_02\": {\n      \"type\": \"choice\",\n      \"choice\": \"technical\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 1,\n        \"billing\": 0,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_03\": {\n      \"type\": \"choice\",\n      \"choice\": \"sales\",\n      \"probabilities\": {\n        \"sales\": 1,\n        \"technical\": 0,\n        \"billing\": 0,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_04\": {\n      \"type\": \"choice\",\n      \"choice\": \"account\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 0,\n        \"billing\": 0,\n        \"account\": 1\n      },\n      \"confidence\": 1\n    },\n    \"ticket_05\": {\n      \"type\": \"choice\",\n      \"choice\": \"billing\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 0,\n        \"billing\": 1,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_06\": {\n      \"type\": \"choice\",\n      \"choice\": \"technical\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 1,\n        \"billing\": 0,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_07\": {\n      \"type\": \"choice\",\n      \"choice\": \"sales\",\n      \"probabilities\": {\n        \"sales\": 1,\n        \"technical\": 0,\n        \"billing\": 0,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_08\": {\n      \"type\": \"choice\",\n      \"choice\": \"account\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 0,\n        \"billing\": 0,\n        \"account\": 1\n      },\n      \"confidence\": 1\n    },\n    \"ticket_09\": {\n      \"type\": \"choice\",\n      \"choice\": \"billing\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 0,\n        \"billing\": 1,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_10\": {\n      \"type\": \"choice\",\n      \"choice\": \"technical\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 1,\n        \"billing\": 0,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_11\": {\n      \"type\": \"choice\",\n      \"choice\": \"sales\",\n      \"probabilities\": {\n        \"sales\": 1,\n        \"technical\": 0,\n        \"billing\": 0,\n        \"account\": 0\n      },\n      \"confidence\": 1\n    },\n    \"ticket_12\": {\n      \"type\": \"choice\",\n      \"choice\": \"account\",\n      \"probabilities\": {\n        \"sales\": 0,\n        \"technical\": 0,\n        \"billing\": 0,\n        \"account\": 1\n      },\n      \"confidence\": 1\n    }\n  }\n}"
+  },
+  "claude": {
+    "elapsed_s": 5.107793458038941,
+    "events": [
+      {
+        "at_s": 1.677040166221559,
+        "text": "```"
+      },
+      {
+        "at_s": 1.6770916660316288,
+        "text": "json\n{\n  \"answers"
+      },
+      {
+        "at_s": 1.6771214581094682,
+        "text": "\": {"
+      },
+      {
+        "at_s": 1.6771327080205083,
+        "text": "\n    \"ticket_01\": {"
+      },
+      {
+        "at_s": 1.7477935831993818,
+        "text": "\n      \"type\": \"choice\","
+      },
+      {
+        "at_s": 1.7478324580006301,
+        "text": "\n      \"choice\": \"billing"
+      },
+      {
+        "at_s": 1.7478515000548214,
+        "text": "\",\n      \"probabilities\": {"
+      },
+      {
+        "at_s": 1.7478702911175787,
+        "text": "\n        \"billing\": 0."
+      },
+      {
+        "at_s": 1.8807714581489563,
+        "text": "95"
+      },
+      {
+        "at_s": 1.8808103331830353,
+        "text": ",\n        \"technical\": 0"
+      },
+      {
+        "at_s": 1.880831708200276,
+        "text": ".02"
+      },
+      {
+        "at_s": 1.8808514580596238,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 1.9155248750466853,
+        "text": ".02"
+      },
+      {
+        "at_s": 1.9155693331267685,
+        "text": ",\n        \"account\": 0"
+      },
+      {
+        "at_s": 1.9155918331816792,
+        "text": ".01"
+      },
+      {
+        "at_s": 1.9156134161166847,
+        "text": "\n      },\n      \"confidence\":"
+      },
+      {
+        "at_s": 2.0163718331605196,
+        "text": " 0.98"
+      },
+      {
+        "at_s": 2.016416166210547,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 2.016438791062683,
+        "text": "02\": {\n      \"type\":"
+      },
+      {
+        "at_s": 2.0164590831846,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 2.0478552910499275,
+        "text": " \"technical\",\n      \"probabilities"
+      },
+      {
+        "at_s": 2.0479068330023438,
+        "text": "\": {\n        \"billing\": "
+      },
+      {
+        "at_s": 2.0479345000348985,
+        "text": "0.01"
+      },
+      {
+        "at_s": 2.047959500225261,
+        "text": ",\n        \"technical\": 0"
+      },
+      {
+        "at_s": 2.2175727081485093,
+        "text": ".97"
+      },
+      {
+        "at_s": 2.217687583062798,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 2.2177212501410395,
+        "text": ".01,\n        \"account\":"
+      },
+      {
+        "at_s": 2.2177427080459893,
+        "text": " 0.01\n      },"
+      },
+      {
+        "at_s": 2.2383081251755357,
+        "text": "\n      \"confidence\": 0.99"
+      },
+      {
+        "at_s": 2.2384409999940544,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 2.2384678330272436,
+        "text": "03\": {\n      \"type\":"
+      },
+      {
+        "at_s": 2.2384912502020597,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 2.4432741252239794,
+        "text": " \"sales\",\n      \"probabilities"
+      },
+      {
+        "at_s": 2.4433406251482666,
+        "text": "\": {\n        \"billing\": "
+      },
+      {
+        "at_s": 2.443375333212316,
+        "text": "0.05"
+      },
+      {
+        "at_s": 2.4434087912086397,
+        "text": ",\n        \"technical\": 0"
+      },
+      {
+        "at_s": 2.4971657500136644,
+        "text": ".01"
+      },
+      {
+        "at_s": 2.4971952082123607,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 2.4972113750409335,
+        "text": ".93"
+      },
+      {
+        "at_s": 2.497218333184719,
+        "text": ",\n        \"account\": 0"
+      },
+      {
+        "at_s": 2.5733460411429405,
+        "text": ".01\n      },\n      \""
+      },
+      {
+        "at_s": 2.5734049580059946,
+        "text": "confidence\": 0.97"
+      },
+      {
+        "at_s": 2.573435000143945,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 2.5734622911550105,
+        "text": "04\": {\n      \"type\":"
+      },
+      {
+        "at_s": 2.5821845831815153,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 2.582212958019227,
+        "text": " \"account\",\n      \"probabilities"
+      },
+      {
+        "at_s": 2.582254500128329,
+        "text": "\": {\n        \"billing\": "
+      },
+      {
+        "at_s": 2.5822778751607984,
+        "text": "0.01,\n        \"technical"
+      },
+      {
+        "at_s": 2.744798833038658,
+        "text": "\": 0.02"
+      },
+      {
+        "at_s": 2.7448498331941664,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 2.7448690000455827,
+        "text": ".01,\n        \"account\":"
+      },
+      {
+        "at_s": 2.7448887079954147,
+        "text": " 0.96"
+      },
+      {
+        "at_s": 2.7650741660036147,
+        "text": "\n      },\n      \"confidence\":"
+      },
+      {
+        "at_s": 2.765132541069761,
+        "text": " 0.99\n    },"
+      },
+      {
+        "at_s": 2.7651534161996096,
+        "text": "\n    \"ticket_05\": {"
+      },
+      {
+        "at_s": 2.7652589580975473,
+        "text": "\n      \"type\": \"choice\","
+      },
+      {
+        "at_s": 2.9511701660230756,
+        "text": "\n      \"choice\": \"billing"
+      },
+      {
+        "at_s": 2.9511977080255747,
+        "text": "\",\n      \"probabilities\": {"
+      },
+      {
+        "at_s": 2.951270833145827,
+        "text": "\n        \"billing\": 0."
+      },
+      {
+        "at_s": 2.951278500026092,
+        "text": "94"
+      },
+      {
+        "at_s": 2.967289458028972,
+        "text": ",\n        \"technical\": 0"
+      },
+      {
+        "at_s": 2.967308250023052,
+        "text": ".02"
+      },
+      {
+        "at_s": 2.9673376251012087,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 2.967404541093856,
+        "text": ".02,\n        \"account\":"
+      },
+      {
+        "at_s": 3.1006628330796957,
+        "text": " 0.02"
+      },
+      {
+        "at_s": 3.1006860830821097,
+        "text": "\n      },\n      \"confidence\":"
+      },
+      {
+        "at_s": 3.1006972081959248,
+        "text": " 0.97"
+      },
+      {
+        "at_s": 3.1007121661677957,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 3.10975654120557,
+        "text": "06\": {\n      \"type\":"
+      },
+      {
+        "at_s": 3.1098043750971556,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 3.109910666011274,
+        "text": " \"technical"
+      },
+      {
+        "at_s": 3.10993295814842,
+        "text": "\",\n      \"probabilities\": {"
+      },
+      {
+        "at_s": 3.329793125158176,
+        "text": "\n        \"billing\": 0."
+      },
+      {
+        "at_s": 3.329831250011921,
+        "text": "01"
+      },
+      {
+        "at_s": 3.329850916052237,
+        "text": ",\n        \"technical\": 0"
+      },
+      {
+        "at_s": 3.329925750149414,
+        "text": ".97"
+      },
+      {
+        "at_s": 3.367276458069682,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 3.3673152080737054,
+        "text": ".01,\n        \"account\":"
+      },
+      {
+        "at_s": 3.3673355411738157,
+        "text": " 0.01\n      },"
+      },
+      {
+        "at_s": 3.3674000832252204,
+        "text": "\n      \"confidence\": 0.99"
+      },
+      {
+        "at_s": 3.5069075832143426,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 3.5069330411497504,
+        "text": "07\": {\n      \"type\":"
+      },
+      {
+        "at_s": 3.5069705001078546,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 3.50705379107967,
+        "text": " \"sales\",\n      \"probabilities"
+      },
+      {
+        "at_s": 3.5130032910965383,
+        "text": "\": {\n        \"billing\": "
+      },
+      {
+        "at_s": 3.5130330831743777,
+        "text": "0.05,\n        \"technical"
+      },
+      {
+        "at_s": 3.5130511661991477,
+        "text": "\": 0.01,\n        "
+      },
+      {
+        "at_s": 3.513066250132397,
+        "text": "\"sales\": 0.93"
+      },
+      {
+        "at_s": 3.7720344581175596,
+        "text": ",\n        \"account\": 0"
+      },
+      {
+        "at_s": 3.772056208224967,
+        "text": ".01\n      },\n      \""
+      },
+      {
+        "at_s": 3.7720886250026524,
+        "text": "confidence\": 0.96"
+      },
+      {
+        "at_s": 3.772107958095148,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 3.7721246250439435,
+        "text": "08\": {\n      \"type\":"
+      },
+      {
+        "at_s": 3.772153041092679,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 3.7721723332069814,
+        "text": " \"account"
+      },
+      {
+        "at_s": 3.772188125178218,
+        "text": "\",\n      \"probabilities\": {"
+      },
+      {
+        "at_s": 3.893965416122228,
+        "text": "\n        \"billing\": 0."
+      },
+      {
+        "at_s": 3.894003458088264,
+        "text": "01,\n        \"technical\": "
+      },
+      {
+        "at_s": 3.8940179580822587,
+        "text": "0.02,\n        \"sales"
+      },
+      {
+        "at_s": 3.8940292911138386,
+        "text": "\": 0.01,\n        "
+      },
+      {
+        "at_s": 3.917526125209406,
+        "text": "\"account\": 0.96"
+      },
+      {
+        "at_s": 3.917546291137114,
+        "text": "\n      },\n      \"confidence\": "
+      },
+      {
+        "at_s": 3.9176323330029845,
+        "text": "0.99\n    },\n    "
+      },
+      {
+        "at_s": 3.9176430001389235,
+        "text": "\"ticket_09\": {\n      "
+      },
+      {
+        "at_s": 4.042494625085965,
+        "text": "\"type\": \"choice\",\n      "
+      },
+      {
+        "at_s": 4.042578750057146,
+        "text": "\"choice\": \"billing"
+      },
+      {
+        "at_s": 4.0425888751633465,
+        "text": "\",\n      \"probabilities\": {"
+      },
+      {
+        "at_s": 4.042596833081916,
+        "text": "\n        \"billing\": 0."
+      },
+      {
+        "at_s": 4.060229708207771,
+        "text": "96"
+      },
+      {
+        "at_s": 4.060283500002697,
+        "text": ",\n        \"technical\": 0"
+      },
+      {
+        "at_s": 4.060308416141197,
+        "text": ".01"
+      },
+      {
+        "at_s": 4.060393457999453,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 4.299079583026469,
+        "text": ".02"
+      },
+      {
+        "at_s": 4.299353125039488,
+        "text": ",\n        \"account\": 0"
+      },
+      {
+        "at_s": 4.299411833053455,
+        "text": ".01\n      },\n      \""
+      },
+      {
+        "at_s": 4.299430916085839,
+        "text": "confidence\": 0.99"
+      },
+      {
+        "at_s": 4.299459625035524,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 4.299485125113279,
+        "text": "10\": {\n      \"type\":"
+      },
+      {
+        "at_s": 4.299510708078742,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 4.2995369581039995,
+        "text": " \"technical\",\n      \"probabilities"
+      },
+      {
+        "at_s": 4.448189083021134,
+        "text": "\": {\n        \"billing\": "
+      },
+      {
+        "at_s": 4.448245958192274,
+        "text": "0.01,\n        \"technical"
+      },
+      {
+        "at_s": 4.448293708031997,
+        "text": "\": 0.97,\n        "
+      },
+      {
+        "at_s": 4.448305583093315,
+        "text": "\"sales\": 0.01,"
+      },
+      {
+        "at_s": 4.479843541048467,
+        "text": "\n        \"account\": 0."
+      },
+      {
+        "at_s": 4.479870083043352,
+        "text": "01\n      },\n      \"confidence"
+      },
+      {
+        "at_s": 4.479881375096738,
+        "text": "\": 0.99\n    },"
+      },
+      {
+        "at_s": 4.481067416025326,
+        "text": "\n    \"ticket_11\": {"
+      },
+      {
+        "at_s": 4.605722458101809,
+        "text": "\n      \"type\": \"choice\","
+      },
+      {
+        "at_s": 4.605741250095889,
+        "text": "\n      \"choice\": \"sales"
+      },
+      {
+        "at_s": 4.605827666120604,
+        "text": "\",\n      \"probabilities\": {"
+      },
+      {
+        "at_s": 4.605837541166693,
+        "text": "\n        \"billing\": 0."
+      },
+      {
+        "at_s": 4.616327708121389,
+        "text": "01"
+      },
+      {
+        "at_s": 4.616359666222706,
+        "text": ",\n        \"technical\": 0"
+      },
+      {
+        "at_s": 4.616421375190839,
+        "text": ".02"
+      },
+      {
+        "at_s": 4.61642950004898,
+        "text": ",\n        \"sales\": 0"
+      },
+      {
+        "at_s": 4.820395291084424,
+        "text": ".96"
+      },
+      {
+        "at_s": 4.820435791043565,
+        "text": ",\n        \"account\": 0"
+      },
+      {
+        "at_s": 4.820494458079338,
+        "text": ".01\n      },\n      \""
+      },
+      {
+        "at_s": 4.820527750067413,
+        "text": "confidence\": 0.98"
+      },
+      {
+        "at_s": 4.8205627501010895,
+        "text": "\n    },\n    \"ticket_"
+      },
+      {
+        "at_s": 4.820581625215709,
+        "text": "12\": {\n      \"type\":"
+      },
+      {
+        "at_s": 4.820599750149995,
+        "text": " \"choice\",\n      \"choice\":"
+      },
+      {
+        "at_s": 4.820629833033308,
+        "text": " \"account\",\n      \"probabilities"
+      },
+      {
+        "at_s": 4.9690540411975235,
+        "text": "\": {\n        \"billing\": "
+      },
+      {
+        "at_s": 4.9691373750101775,
+        "text": "0.01,\n        \"technical"
+      },
+      {
+        "at_s": 4.969149916199967,
+        "text": "\": 0.02,\n        "
+      },
+      {
+        "at_s": 4.969158875057474,
+        "text": "\"sales\": 0.01,"
+      },
+      {
+        "at_s": 4.977189375087619,
+        "text": "\n        \"account\": 0."
+      },
+      {
+        "at_s": 4.97720650001429,
+        "text": "96\n      },\n      \"confidence"
+      },
+      {
+        "at_s": 4.977217125007883,
+        "text": "\": 0.99\n    }"
+      },
+      {
+        "at_s": 4.97726266621612,
+        "text": "\n  }\n}\n```"
+      }
+    ],
+    "raw_text": "```json\n{\n  \"answers\": {\n    \"ticket_01\": {\n      \"type\": \"choice\",\n      \"choice\": \"billing\",\n      \"probabilities\": {\n        \"billing\": 0.95,\n        \"technical\": 0.02,\n        \"sales\": 0.02,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.98\n    },\n    \"ticket_02\": {\n      \"type\": \"choice\",\n      \"choice\": \"technical\",\n      \"probabilities\": {\n        \"billing\": 0.01,\n        \"technical\": 0.97,\n        \"sales\": 0.01,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.99\n    },\n    \"ticket_03\": {\n      \"type\": \"choice\",\n      \"choice\": \"sales\",\n      \"probabilities\": {\n        \"billing\": 0.05,\n        \"technical\": 0.01,\n        \"sales\": 0.93,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.97\n    },\n    \"ticket_04\": {\n      \"type\": \"choice\",\n      \"choice\": \"account\",\n      \"probabilities\": {\n        \"billing\": 0.01,\n        \"technical\": 0.02,\n        \"sales\": 0.01,\n        \"account\": 0.96\n      },\n      \"confidence\": 0.99\n    },\n    \"ticket_05\": {\n      \"type\": \"choice\",\n      \"choice\": \"billing\",\n      \"probabilities\": {\n        \"billing\": 0.94,\n        \"technical\": 0.02,\n        \"sales\": 0.02,\n        \"account\": 0.02\n      },\n      \"confidence\": 0.97\n    },\n    \"ticket_06\": {\n      \"type\": \"choice\",\n      \"choice\": \"technical\",\n      \"probabilities\": {\n        \"billing\": 0.01,\n        \"technical\": 0.97,\n        \"sales\": 0.01,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.99\n    },\n    \"ticket_07\": {\n      \"type\": \"choice\",\n      \"choice\": \"sales\",\n      \"probabilities\": {\n        \"billing\": 0.05,\n        \"technical\": 0.01,\n        \"sales\": 0.93,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.96\n    },\n    \"ticket_08\": {\n      \"type\": \"choice\",\n      \"choice\": \"account\",\n      \"probabilities\": {\n        \"billing\": 0.01,\n        \"technical\": 0.02,\n        \"sales\": 0.01,\n        \"account\": 0.96\n      },\n      \"confidence\": 0.99\n    },\n    \"ticket_09\": {\n      \"type\": \"choice\",\n      \"choice\": \"billing\",\n      \"probabilities\": {\n        \"billing\": 0.96,\n        \"technical\": 0.01,\n        \"sales\": 0.02,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.99\n    },\n    \"ticket_10\": {\n      \"type\": \"choice\",\n      \"choice\": \"technical\",\n      \"probabilities\": {\n        \"billing\": 0.01,\n        \"technical\": 0.97,\n        \"sales\": 0.01,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.99\n    },\n    \"ticket_11\": {\n      \"type\": \"choice\",\n      \"choice\": \"sales\",\n      \"probabilities\": {\n        \"billing\": 0.01,\n        \"technical\": 0.02,\n        \"sales\": 0.96,\n        \"account\": 0.01\n      },\n      \"confidence\": 0.98\n    },\n    \"ticket_12\": {\n      \"type\": \"choice\",\n      \"choice\": \"account\",\n      \"probabilities\": {\n        \"billing\": 0.01,\n        \"technical\": 0.02,\n        \"sales\": 0.01,\n        \"account\": 0.96\n      },\n      \"confidence\": 0.99\n    }\n  }\n}\n```",
+    "parsed": {
+      "answers": {
+        "ticket_01": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.95,
+            "technical": 0.02,
+            "sales": 0.02,
+            "account": 0.01
+          },
+          "confidence": 0.98
+        },
+        "ticket_02": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.97,
+            "sales": 0.01,
+            "account": 0.01
+          },
+          "confidence": 0.99
+        },
+        "ticket_03": {
+          "type": "choice",
+          "choice": "sales",
+          "probabilities": {
+            "billing": 0.05,
+            "technical": 0.01,
+            "sales": 0.93,
+            "account": 0.01
+          },
+          "confidence": 0.97
+        },
+        "ticket_04": {
+          "type": "choice",
+          "choice": "account",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.02,
+            "sales": 0.01,
+            "account": 0.96
+          },
+          "confidence": 0.99
+        },
+        "ticket_05": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.94,
+            "technical": 0.02,
+            "sales": 0.02,
+            "account": 0.02
+          },
+          "confidence": 0.97
+        },
+        "ticket_06": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.97,
+            "sales": 0.01,
+            "account": 0.01
+          },
+          "confidence": 0.99
+        },
+        "ticket_07": {
+          "type": "choice",
+          "choice": "sales",
+          "probabilities": {
+            "billing": 0.05,
+            "technical": 0.01,
+            "sales": 0.93,
+            "account": 0.01
+          },
+          "confidence": 0.96
+        },
+        "ticket_08": {
+          "type": "choice",
+          "choice": "account",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.02,
+            "sales": 0.01,
+            "account": 0.96
+          },
+          "confidence": 0.99
+        },
+        "ticket_09": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.96,
+            "technical": 0.01,
+            "sales": 0.02,
+            "account": 0.01
+          },
+          "confidence": 0.99
+        },
+        "ticket_10": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.97,
+            "sales": 0.01,
+            "account": 0.01
+          },
+          "confidence": 0.99
+        },
+        "ticket_11": {
+          "type": "choice",
+          "choice": "sales",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.02,
+            "sales": 0.96,
+            "account": 0.01
+          },
+          "confidence": 0.98
+        },
+        "ticket_12": {
+          "type": "choice",
+          "choice": "account",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.02,
+            "sales": 0.01,
+            "account": 0.96
+          },
+          "confidence": 0.99
+        }
+      }
+    },
+    "model": "anthropic/claude-haiku-4.5",
+    "request_id": "gen-1790137627-ICAOR30LA3n3nUhXnMqX",
+    "usage": {
+      "prompt_tokens": 2104,
+      "completion_tokens": 1040,
+      "total_tokens": 3144,
+      "cost": 0.007304,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007304,
+        "upstream_inference_prompt_cost": 0.002104,
+        "upstream_inference_completions_cost": 0.0052
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "agreement": 12,
+  "questions": 12
+}

@@ -1,0 +1,158 @@
+{
+  "provenance": "synthetic support-ticket batch; created for this demonstration",
+  "jev": {
+    "model": "typesafe/jev-1.13-20260917",
+    "state": {
+      "ticket_01": "I was charged twice for my subscription.",
+      "ticket_02": "The app crashes every time I upload a PDF.",
+      "ticket_03": "Can we get pricing for a team of 200?",
+      "ticket_04": "Please reset my account password.",
+      "ticket_05": "My refund has not arrived after ten days.",
+      "ticket_06": "Our webhook returns a 500 error.",
+      "ticket_07": "Do you offer an annual enterprise plan?",
+      "ticket_08": "I need to change the email on my account.",
+      "ticket_09": "Please send an invoice for last month.",
+      "ticket_10": "The search endpoint times out.",
+      "ticket_11": "Can someone demonstrate your product to our team?",
+      "ticket_12": "Please enable two-factor authentication for my login."
+    },
+    "questions": {
+      "ticket_01": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_01?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_02": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_02?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_03": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_03?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_04": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_04?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_05": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_05?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_06": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_06?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_07": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_07?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_08": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_08?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_09": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_09?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_10": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_10?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_11": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_11?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      },
+      "ticket_12": {
+        "type": "choice",
+        "instructions": "Which department should handle ticket_12?",
+        "criteria": {
+          "billing": "Payments, refunds, invoices and charges.",
+          "technical": "Software failures, outages, API errors.",
+          "sales": "Purchases, plans, pricing and demos.",
+          "account": "Login, credentials and account settings."
+        }
+      }
+    }
+  },
+  "claude": {
+    "model": "anthropic/claude-haiku-4.5",
+    "temperature": 0,
+    "max_tokens": 6000,
+    "stream": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Evaluate every supplied Choice question against the supplied state. Return only valid JSON, no markdown. Use the exact question IDs and answer structure given. Each probabilities map must include every allowed option, with values from 0 to 1 summing to 1. choice must be an allowed option with maximum probability. confidence is your self-estimated confidence from 0 to 1. Do not copy the placeholder choice or numeric example values unless appropriate. These are decisions, not prose."
+      },
+      {
+        "role": "user",
+        "content": "{\"state\": {\"ticket_01\": \"I was charged twice for my subscription.\", \"ticket_02\": \"The app crashes every time I upload a PDF.\", \"ticket_03\": \"Can we get pricing for a team of 200?\", \"ticket_04\": \"Please reset my account password.\", \"ticket_05\": \"My refund has not arrived after ten days.\", \"ticket_06\": \"Our webhook returns a 500 error.\", \"ticket_07\": \"Do you offer an annual enterprise plan?\", \"ticket_08\": \"I need to change the email on my account.\", \"ticket_09\": \"Please send an invoice for last month.\", \"ticket_10\": \"The search endpoint times out.\", \"ticket_11\": \"Can someone demonstrate your product to our team?\", \"ticket_12\": \"Please enable two-factor authentication for my login.\"}, \"questions\": {\"ticket_01\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_01?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_02\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_02?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_03\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_03?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_04\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_04?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_05\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_05?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_06\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_06?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_07\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_07?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_08\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_08?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_09\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_09?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_10\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_10?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_11\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_11?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}, \"ticket_12\": {\"type\": \"choice\", \"instructions\": \"Which department should handle ticket_12?\", \"criteria\": {\"billing\": \"Payments, refunds, invoices and charges.\", \"technical\": \"Software failures, outages, API errors.\", \"sales\": \"Purchases, plans, pricing and demos.\", \"account\": \"Login, credentials and account settings.\"}}}, \"output_shape\": {\"answers\": {\"ticket_01\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_02\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_03\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_04\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_05\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_06\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_07\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_08\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_09\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_10\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_11\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}, \"ticket_12\": {\"type\": \"choice\", \"choice\": \"one of billing, technical, sales, account\", \"probabilities\": {\"billing\": 0.25, \"technical\": 0.25, \"sales\": 0.25, \"account\": 0.25}, \"confidence\": 0.0}}}}"
+      }
+    ]
+  }
+}

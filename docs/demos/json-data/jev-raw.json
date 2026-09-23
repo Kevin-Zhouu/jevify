@@ -1,0 +1,147 @@
+{
+  "elapsed_s": 0.44063379196450114,
+  "raw_response": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "ticket_01": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "sales": 0,
+          "technical": 0,
+          "billing": 1,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_02": {
+        "type": "choice",
+        "choice": "technical",
+        "probabilities": {
+          "sales": 0,
+          "technical": 1,
+          "billing": 0,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_03": {
+        "type": "choice",
+        "choice": "sales",
+        "probabilities": {
+          "sales": 1,
+          "technical": 0,
+          "billing": 0,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_04": {
+        "type": "choice",
+        "choice": "account",
+        "probabilities": {
+          "sales": 0,
+          "technical": 0,
+          "billing": 0,
+          "account": 1
+        },
+        "confidence": 1
+      },
+      "ticket_05": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "sales": 0,
+          "technical": 0,
+          "billing": 1,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_06": {
+        "type": "choice",
+        "choice": "technical",
+        "probabilities": {
+          "sales": 0,
+          "technical": 1,
+          "billing": 0,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_07": {
+        "type": "choice",
+        "choice": "sales",
+        "probabilities": {
+          "sales": 1,
+          "technical": 0,
+          "billing": 0,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_08": {
+        "type": "choice",
+        "choice": "account",
+        "probabilities": {
+          "sales": 0,
+          "technical": 0,
+          "billing": 0,
+          "account": 1
+        },
+        "confidence": 1
+      },
+      "ticket_09": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "sales": 0,
+          "technical": 0,
+          "billing": 1,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_10": {
+        "type": "choice",
+        "choice": "technical",
+        "probabilities": {
+          "sales": 0,
+          "technical": 1,
+          "billing": 0,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_11": {
+        "type": "choice",
+        "choice": "sales",
+        "probabilities": {
+          "sales": 1,
+          "technical": 0,
+          "billing": 0,
+          "account": 0
+        },
+        "confidence": 1
+      },
+      "ticket_12": {
+        "type": "choice",
+        "choice": "account",
+        "probabilities": {
+          "sales": 0,
+          "technical": 0,
+          "billing": 0,
+          "account": 1
+        },
+        "confidence": 1
+      }
+    },
+    "usage": {
+      "input_tokens": 1732,
+      "output_tokens": 543,
+      "cost": 7.2744e-05
+    },
+    "id": "gen-dec-1790137627-bhG8oynhyilN8nKA6tjA",
+    "provider": "TypeSafe"
+  }
+}
