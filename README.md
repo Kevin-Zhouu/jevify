@@ -16,13 +16,15 @@ An agent skill for **Codex & Claude Code**. Convert suitable LLM decision calls 
 npx skills add Kevin-Zhouu/jevify
 ```
 
-Then ask your coding agent:
+Then, in Claude Code:
 
 ```text
-Use jevify to convert this workflow to Jev. Show me the plan first.
+/jevify convert this workflow
 ```
 
-Just exploring? Ask for a **report-only audit**. No API key needed.
+In Codex: `$jevify convert this workflow`. Replace “this workflow” with a file, folder, or agent. Jevify asks for setup and shows a plan before editing.
+
+Just exploring? `/jevify audit this repo` — no API key needed.
 
 ## Claude vs Jev
 

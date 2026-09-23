@@ -7,6 +7,10 @@ description: Audit and selectively convert existing AI workflows or agents to Ty
 
 Jev supplies typed decisions; it does not generate prose, code, reasoning, or arbitrary extracted values. Preserve the existing workflow's public behavior. Follow these stages in order in any harness.
 
+## Invocation
+
+Accept a short request such as `/jevify convert this workflow` in Claude Code or `$jevify convert this workflow` in Codex. The text after the skill name is the task: a file, folder, named agent, or workflow in the current project. Preserve any explicit target scope; inspect dependencies and consumers only as needed to audit it. If the target is ambiguous, include a target clarification in the setup round rather than requiring a special prompt template. `audit this repo` requests report-only mode. A bare `convert` request starts setup and recommendations; it is not approval of specific conversions. Use ordinary task text/arguments supplied by the host, without depending on a harness-specific substitution variable.
+
 ## 0. Setup — before deep reads or writes
 
 Read only this entrypoint and an explicitly supplied config/arguments first. **Hard read boundary:** if any setup answer is missing, ask (or report missing answers headlessly) and END THE TURN immediately. Do not list source files, open source/provenance/fixtures, offer preliminary observations, or begin even a small audit. Ask one compact round for missing answers:

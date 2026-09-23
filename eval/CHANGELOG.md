@@ -31,3 +31,7 @@ the frozen primary matrix; they do not replace or inflate its scores.
 - Added supplemental automatic-discovery probes (migration request vs general Jev API question). These record real harness transcripts and filesystem changes separately; they do not modify the frozen primary grader, labels, corpus, thresholds or matrix.
 
 - DEV03 reporting adds a separate harness-completion status because the frozen grader does not require a successful CLI exit. One quota-interrupted run passes artifact checks; it is reported BLOCKED, not a completed pass. Frozen checks/thresholds remain unchanged.
+
+## 2026-09-23 — short invocation UX
+
+Added portable task/target interpretation to the skill entrypoint and documented `/jevify convert …` for Claude Code and `$jevify convert …` for Codex. Existing setup and plan-approval gates remain. No frozen grader, labels, corpus, or thresholds changed. This documentation/instruction adjustment was format-validated; it is not a new full evaluation round and the published DEV results remain historical.

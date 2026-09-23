@@ -4,11 +4,11 @@ The same `skills/jevify` folder is used in both harnesses. No harness-specific r
 
 ## Codex
 
-Copy `skills/jevify/` into your project's `.agents/skills/jevify/`, or into `~/.agents/skills/jevify/` for personal use. Invoke `$jevify`, or ask to migrate a workflow to Jev. These locations were checked against the [current Codex skill docs](https://learn.chatgpt.com/docs/build-skills) on 2026-09-23.
+Copy `skills/jevify/` into your project's `.agents/skills/jevify/`, or into `~/.agents/skills/jevify/` for personal use. Invoke `$jevify convert this workflow` (or name a file, folder, or agent). These locations were checked against the [current Codex skill docs](https://learn.chatgpt.com/docs/build-skills) on 2026-09-23.
 
 ## Claude Code
 
-Copy the same folder into `.claude/skills/jevify/` in a project, or `~/.claude/skills/jevify/` for personal use. Invoke `/jevify`. See [Claude Code skills](https://code.claude.com/docs/en/skills).
+Copy the same folder into `.claude/skills/jevify/` in a project, or `~/.claude/skills/jevify/` for personal use. Invoke `/jevify convert this workflow` (or `/jevify convert src/router.ts`). The remaining text is your task; Jevify asks for setup and approval without requiring a longer prompt. See [Claude Code skills](https://code.claude.com/docs/en/skills).
 
 Alternatively, install the repository's marketplace:
 
