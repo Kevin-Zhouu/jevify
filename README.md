@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/brand/jevify-logo.png" alt="jevify" width="300" />
+<img src="docs/brand/jevify-wordmark.png" alt="jevify" width="300" />
 
-### Turn your existing AI agents and workflows into Jev-powered workflows.
+### Turn your repo into a Jev-powered workflow.
 
-An agent skill for **Codex & Claude Code**. Convert suitable LLM decision calls to Jev—with your approval and an LLM fallback.
+Use it with **Codex or Claude Code**.
 
 [Install](#install) · [Watch the demo](#claude-vs-jev) · [Docs](skills/jevify/INSTALL.md) · [Results](REPORT.md)
 

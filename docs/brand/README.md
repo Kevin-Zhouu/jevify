@@ -1,5 +1,13 @@
 # Jevify logo
 
+## Current README wordmark
+
+[Download the high-contrast wordmark](jevify-wordmark.png). Black lettering on white with a lime underscore, created using the built-in image-generation tool for readable GitHub display.
+
+Prompt: Use case: logo-brand. Create a clean typographic logo for the developer skill named jevify. Exact text: "jevify" all lowercase, followed by a small electric-lime horizontal underscore. Confident black near-monospaced typography, tight optical spacing, contemporary developer-tool wordmark. Pure white opaque background so it reads crisply in a GitHub README. Wide horizontal canvas about 3:1, wordmark large with modest even padding. No separate symbol, no ribbon, no leaf, no icon, no gradients, no shadows, no texture, no mockup, no slogan, no 3D. Sharp flat vector-like edges, understated and professional.
+
+## Earlier dark-background concept
+
 [Download the transparent PNG](jevify-logo.png)
 
 Created with the built-in image-generation tool. The lime mark and light wordmark are intended for dark backgrounds. This is an independent Jevify identity, not TypeSafe's official logo.
