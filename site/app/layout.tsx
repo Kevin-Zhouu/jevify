@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   icons: { icon: '/media/jevify-logo.png' },
-  title: 'Jevify — Bring Jev to your AI agents and workflows',
+  title: 'Jevify — Get your agents running on Jev today',
   description: 'Find suitable LLM decision calls, approve a conversion to TypeSafe Jev, and validate the result. An agent skill for Codex and Claude Code.',
 };
 

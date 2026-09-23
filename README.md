@@ -2,7 +2,7 @@
 
 <img src="docs/brand/jevify-wordmark.png" alt="jevify" width="300" />
 
-### Turn your repo into a Jev-powered workflow.
+### Get your agents running on Jev today
 
 Use it with **Codex or Claude Code**.
 
