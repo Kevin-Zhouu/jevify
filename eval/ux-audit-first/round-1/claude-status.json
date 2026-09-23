@@ -1,0 +1,12 @@
+{
+  "command": [
+    "claude",
+    "-p",
+    "/jevify",
+    "--dangerously-skip-permissions",
+    "--output-format",
+    "json"
+  ],
+  "returncode": 0,
+  "git_status": ""
+}

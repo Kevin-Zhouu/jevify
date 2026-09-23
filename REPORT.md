@@ -1,5 +1,7 @@
 # Jevify — implementation published; evaluation stopped
 
+Current UX revision: audit-first invocation and combined approval were added after these evaluations. Results below describe the earlier setup-first skill, not validation of the current flow.
+
 Date: 2026-09-23. **The requested cross-harness proof is incomplete.** The portable `skills/jevify/` skill, key-entry launcher, pinned corpus, frozen grader, labels, configs and retained transcripts are published. This is not a claim that the skill works identically in Codex and Claude Code.
 
 The required stop condition was reached during DEV03: Claude Code began exiting headless runs with **“You're out of extra usage · resets 3:40pm (Australia/Melbourne)”**. No further evaluations were started after identifying the blocker. HELD-OUT remains unopened by the skill author and untested; no held-out repair round has been used.

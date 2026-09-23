@@ -1,0 +1,11 @@
+{
+  "command": [
+    "codex",
+    "exec",
+    "--json",
+    "--dangerously-bypass-approvals-and-sandbox",
+    "$jevify"
+  ],
+  "returncode": 0,
+  "git_status": ""
+}

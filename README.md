@@ -4,7 +4,7 @@
 
 ### Get your agents running on Jev today
 
-[![Your code → Jevify’s plan → converted code, from a real recorded run](docs/demos/jevify-story.svg)](docs/demos/jevify-session/README.md)
+[![Illustrative Jevify flow: one command, audit plan, approval, conversion](docs/demos/jevify-flow.gif)](docs/demos/jevify-flow.md)
 
 </div>
 
@@ -14,17 +14,17 @@
 npx skills add Kevin-Zhouu/jevify
 ```
 
-Based on a real Codex conversion. [Watch the recorded session](docs/demos/jevify-session.gif) · [Plan, diff, and report](docs/demos/jevify-session/README.md). No-key demo; live validation skipped.
-
 Then, in Claude Code (beta):
 
 ```text
-/jevify convert this workflow
+/jevify
 ```
 
-In Codex: `$jevify convert this workflow`. Replace “this workflow” with a file, folder, or agent. Jevify asks for setup and shows a plan before editing.
+In Codex: `$jevify`. Or say **“jevify this repo.”** Optional: `/jevify src/agents/triage.py`.
 
-Just exploring? `/jevify audit this repo` — no API key needed.
+See the audit first. Then choose a new branch, a separate copy, report only, or individual calls. No key or setup questions needed to see the plan.
+
+*The animation illustrates the flow; its files, counts and test results are examples.* [Demo details](docs/demos/jevify-flow.md) · [Real historical run](docs/demos/jevify-session/README.md)
 
 ## LLM vs Jev for decisions
 
@@ -36,7 +36,7 @@ All 12 category choices match. One synthetic example via OpenRouter, replayed fr
 
 ## How it works
 
-**Audit → Recommend → You approve → Convert → Validate**
+**One command → Audit → You approve scope + output → Convert → Validate**
 
 - **Your codebase:** finds call sites and traces how their outputs are used.
 - **Your choice:** new branch, separate clone, or report only.
@@ -63,7 +63,7 @@ No Jev key? Audit and approved code changes still work; live validation is skipp
 
 ## Status
 
-**Codex:** recorded DEV runs passed. **Claude Code:** beta; conversion validation failures remain. [Evaluation results →](REPORT.md)
+**Audit-first flow:** new; full cross-harness re-evaluation is pending. Historical Codex DEV runs passed; Claude Code remains beta with known conversion validation failures. [Evaluation results →](REPORT.md)
 
 <details>
 <summary><strong>Installation, headless usage, and development</strong></summary>
