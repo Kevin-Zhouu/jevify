@@ -1,0 +1,5 @@
+{
+  "name": "jevify-marketplace",
+  "owner": {"name": "Kevin Zhou"},
+  "plugins": [{"name": "jevify", "source": "./", "description": "Approved, measured Jev migrations for existing AI workflows."}]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "jevify",
+  "version": "0.1.0",
+  "description": "Audit and selectively migrate AI decisions to TypeSafe Jev with approval gates and parity checks.",
+  "author": {"name": "Kevin Zhou"},
+  "repository": "https://github.com/Kevin-Zhouu/jevify",
+  "license": "MIT"
+}
