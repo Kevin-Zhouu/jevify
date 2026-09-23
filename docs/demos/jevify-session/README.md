@@ -6,6 +6,10 @@ Recorded 2026-09-23 in Codex, using its configured model and the unchanged Jevif
 
 The GIF is 18.47 seconds / 568,285 bytes. All captured terminal output bytes are preserved: only timing is changed to shorten waits. `full.cast` retains original timing; `preview.cast` has the GIF timing. The plan is the actual agent output, including its limitations. Use the full recording to read at your own pace.
 
+## Three-panel overview
+
+The top-of-page [overview](../jevify-story.svg) is an editorial diagram, not a screenshot of either coding agent. It summarizes this single real conversion. Its code fragments are literal excerpts, with omissions marked, and its plan summary comes from JEV_CONVERSION_PLAN.md. `tools/render_jevify_story.py` checks those fragments against the committed output and generates the SVG. The original GIF remains available below the overview as a full-output recording. No multi-call conversion counts are invented.
+
 ## Evidence
 
 - `turn-*.jsonl`: complete Codex events; `prompts.json`: supplied user replies.

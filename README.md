@@ -4,7 +4,7 @@
 
 ### Get your agents running on Jev today
 
-[![Jevify in use: setup, audit, approval, and a real code diff](docs/demos/jevify-session.gif)](docs/demos/jevify-session/README.md)
+[![Your code → Jevify’s plan → converted code, from a real recorded run](docs/demos/jevify-story.svg)](docs/demos/jevify-session/README.md)
 
 </div>
 
@@ -14,7 +14,7 @@
 npx skills add Kevin-Zhouu/jevify
 ```
 
-Recorded in Codex with scripted user replies; waits trimmed. No-key demo: live validation skipped. [Full recording and code](docs/demos/jevify-session/README.md).
+Based on a real Codex conversion. [Watch the recorded session](docs/demos/jevify-session.gif) · [Plan, diff, and report](docs/demos/jevify-session/README.md). No-key demo; live validation skipped.
 
 Then, in Claude Code (beta):
 
