@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+<title id="title">Your code → Jevify’s plan → converted code</title>
+<desc id="desc">A diagram based on the real recorded Codex run. One support classifier gets a Jev Choice question, a provisional confidence gate, and its original LLM fallback. Offline checks passed; live validation was skipped.</desc>
+<rect width="1200" height="400" rx="12" fill="#101214"/>
+<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace} .label{font-size:13px;fill:#b1b9bd;letter-spacing:1px}.heading{font-family:system-ui,sans-serif;font-size:23px;font-weight:600;fill:#f1f5f4}.code{font-size:15px;fill:#d5dcdc}.small{font-size:12px;fill:#a5aeb1}.accent{fill:#c5fc77}</style>
+<text x="26" y="34" class="label" xml:space="preserve">01  YOUR CODE</text>
+<text x="26" y="70" class="heading" xml:space="preserve">A label from an LLM</text>
+<text x="422" y="34" class="label" xml:space="preserve">02  REVIEW THE PLAN</text>
+<text x="422" y="70" class="heading" xml:space="preserve">One decision call</text>
+<text x="818" y="34" class="label" xml:space="preserve">03  APPROVE → CONVERT</text>
+<text x="818" y="70" class="heading" xml:space="preserve">Jev + your fallback</text>
+<path d="M396 24V330" stroke="#30383b"/>
+<path d="M792 24V330" stroke="#30383b"/>
+<text x="26" y="110" class="small" xml:space="preserve">workflow.py</text>
+<text x="26" y="148" class="code" xml:space="preserve">response = client.messages.create(</text>
+<text x="26" y="175" class="code" xml:space="preserve">    …</text>
+<text x="26" y="202" class="code" xml:space="preserve">)</text>
+<text x="26" y="229" class="code" xml:space="preserve">result = response.content[0].text</text>
+<text x="26" y="256" class="code" xml:space="preserve">return result.strip()</text>
+<text x="26" y="304" class="small" xml:space="preserve">Existing prompt + category parser</text>
+<text x="422" y="110" class="small" xml:space="preserve">workflow.py:83 · Anthropic</text>
+<rect x="422" y="131" width="330" height="43" rx="5" fill="#203022"/>
+<text x="438" y="158" class="code accent" xml:space="preserve">DECISION  →  Jev Choice</text>
+<text x="422" y="209" class="code" xml:space="preserve">10 existing category labels</text>
+<text x="422" y="240" class="code" xml:space="preserve">Keep the original LLM fallback</text>
+<text x="422" y="271" class="code" xml:space="preserve">Wait for your approval</text>
+<text x="422" y="304" class="small" xml:space="preserve">Plan summary · not a UI screenshot</text>
+<text x="818" y="112" class="code" xml:space="preserve">MODEL = &quot;jev-1.13.0&quot;</text>
+<text x="818" y="136" class="code" xml:space="preserve">THRESHOLD = 0.95</text>
+<text x="818" y="160" class="code accent" xml:space="preserve">&quot;type&quot;: &quot;choice&quot;</text>
+<text x="818" y="184" class="code" xml:space="preserve">…</text>
+<text x="818" y="208" class="code accent" xml:space="preserve">if confidence_gate(confidence):</text>
+<text x="818" y="232" class="code" xml:space="preserve">    accepted = label</text>
+<text x="818" y="256" class="code" xml:space="preserve">…</text>
+<text x="818" y="280" class="code accent" xml:space="preserve">return original(ticket)</text>
+<path d="M26 334H1174" stroke="#30383b"/>
+<text x="26" y="363" class="small" xml:space="preserve">1 classifier converted · offline checks passed · branch jev-convert/demo</text>
+<text x="26" y="384" class="small" xml:space="preserve">Actual recorded run. Code excerpts; … marks omissions. Live validation skipped; Jev disabled until configured.</text>
+</svg>

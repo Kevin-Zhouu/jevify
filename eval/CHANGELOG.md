@@ -35,3 +35,7 @@ the frozen primary matrix; they do not replace or inflate its scores.
 ## 2026-09-23 — short invocation UX
 
 Added portable task/target interpretation to the skill entrypoint and documented `/jevify convert …` for Claude Code and `$jevify convert …` for Codex. Existing setup and plan-approval gates remain. No frozen grader, labels, corpus, or thresholds changed. This documentation/instruction adjustment was format-validated; it is not a new full evaluation round and the published DEV results remain historical.
+
+## 2026-09-23 — user-directed audit-first UX revision
+
+The user explicitly replaced the original setup-before-audit contract with a bare `/jevify` / `$jevify` read-only audit and one combined scope/output approval. Skill instructions and configuration now adopt that flow, conservative by default, keys deferred until validation. JEVIFY_REPORT.md is the handback name; the old report name remains a compatibility copy. No frozen grader, corpus, labels, thresholds or historical results changed. The old setup-gating checks describe the previous contract and must not be represented as proof of this revision. A new full cross-harness evaluation remains outstanding. The new promotional shell animation is explicitly illustrative; sample counts and test lines are not benchmark evidence.

@@ -27,7 +27,7 @@ When conservative fallback remains, the recorded `jev_answer` is the raw Jev dec
 
 ## Artifacts
 
-Write `JEV_CONVERSION_REPORT.md` with source revision, output mode, approvals, changed/unchanged sites, model/provider, test commands/results, input provenance, n, agreement curve, fallback rate, latency, cost assumptions, recommended threshold per site, faults, limitations, skipped work, and exact undo steps. Negative controls require the clear conclusion “No good Jev opportunities here” and no code/env/dependency edits.
+Write `JEVIFY_REPORT.md` and an identical `JEV_CONVERSION_REPORT.md` compatibility copy with source revision, output mode, approvals, changed/unchanged sites, model/provider, test commands/results, input provenance, n, agreement curve, fallback rate, latency, cost assumptions, recommended threshold per site, faults, limitations, skipped work, and exact undo steps. Negative controls require the clear conclusion “No good Jev opportunities here” and no code/env/dependency edits.
 
 For Choice/Score, save paired results to `JEV_PARITY.json`:
 

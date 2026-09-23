@@ -1,6 +1,6 @@
 # Providing a key without saving it
 
-Users choose a provider during setup, then supply its key through runtime environment. Never ask them to paste a secret into chat, a prompt, config, source code or a command argument. A shell export is an option only if they understand their shell's history policy. Prefer the included hidden-input launcher (Python 3.10+):
+The audit never requires a key. The approval plan names the provider; approved code can be written before a key is supplied. Explain key setup at handback as the next step for live validation, using the runtime environment. Never ask them to paste a secret into chat, a prompt, config, source code or a command argument. A shell export is an option only if they understand their shell's history policy. Prefer the included hidden-input launcher (Python 3.10+):
 
 ```sh
 python3 /path/to/jevify/scripts/with_jev_key.py --provider openrouter -- codex exec 'Use jevify with jevify.config.yaml'

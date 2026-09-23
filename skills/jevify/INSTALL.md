@@ -4,11 +4,11 @@ The same `skills/jevify` folder is used in both harnesses. No harness-specific r
 
 ## Codex
 
-Copy `skills/jevify/` into your project's `.agents/skills/jevify/`, or into `~/.agents/skills/jevify/` for personal use. Invoke `$jevify convert this workflow` (or name a file, folder, or agent). These locations were checked against the [current Codex skill docs](https://learn.chatgpt.com/docs/build-skills) on 2026-09-23.
+Copy `skills/jevify/` into your project's `.agents/skills/jevify/`, or into `~/.agents/skills/jevify/` for personal use. Invoke `$jevify` for the current repo (or `$jevify src/agents/triage.py` for one target). These locations were checked against the [current Codex skill docs](https://learn.chatgpt.com/docs/build-skills) on 2026-09-23.
 
 ## Claude Code
 
-Copy the same folder into `.claude/skills/jevify/` in a project, or `~/.claude/skills/jevify/` for personal use. Invoke `/jevify convert this workflow` (or `/jevify convert src/router.ts`). The remaining text is your task; Jevify asks for setup and approval without requiring a longer prompt. See [Claude Code skills](https://code.claude.com/docs/en/skills).
+Copy the same folder into `.claude/skills/jevify/` in a project, or `~/.claude/skills/jevify/` for personal use. Invoke `/jevify` for the current repo, or `/jevify src/router.ts`. Plain language such as “jevify this repo” also works. Jevify audits first, then asks once which changes to approve and where to put them. No API key or setup questionnaire is required to see the plan. See [Claude Code skills](https://code.claude.com/docs/en/skills).
 
 Alternatively, install the repository's marketplace:
 
@@ -29,7 +29,7 @@ Choose `jevify` and the target harness(es) in the installer. See the [skills CLI
 
 ## Headless and keys
 
-Use `jevify.config.yaml` as described in [configuration](references/configuration.md), supplying setup and explicit scope approval. Then:
+Use `jevify.config.yaml` as described in [configuration](references/configuration.md), supplying output and explicit scope approval. Then:
 
 ```sh
 codex exec 'Use jevify with jevify.config.yaml'

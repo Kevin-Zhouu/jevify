@@ -1,0 +1,23 @@
+commit f8e192e2aaa9afa8d9f78066b245195af85ceea0
+Author:     Kevin Zhou <bigsoupzhou@gmail.com>
+AuthorDate: Wed Sep 23 15:44:24 2026 +1000
+Commit:     Kevin Zhou <bigsoupzhou@gmail.com>
+CommitDate: Wed Sep 23 15:44:24 2026 +1000
+
+    Add gated Jev classifier with original fallback and offline proof
+
+commit b8f258035e0e9c46ea798e642cb3731159a31107
+Author:     Kevin Zhou <bigsoupzhou@gmail.com>
+AuthorDate: Wed Sep 23 15:44:24 2026 +1000
+Commit:     Kevin Zhou <bigsoupzhou@gmail.com>
+CommitDate: Wed Sep 23 15:44:24 2026 +1000
+
+    Document approved Jev classifier scope and audit
+
+commit 7c497d21099fc916692f1dd45b5a6107b03754d5
+Author:     Jevify Demo <demo@example.invalid>
+AuthorDate: Wed Sep 23 15:36:56 2026 +1000
+Commit:     Jevify Demo <demo@example.invalid>
+CommitDate: Wed Sep 23 15:36:56 2026 +1000
+
+    Pinned Anthropic classification workflow and unchanged Jevify skill

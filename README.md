@@ -4,11 +4,9 @@
 
 ### Get your agents running on Jev today
 
-**[Explore Jevify ↗](https://jevify.soupz11.chatgpt.site/)**
+**[Explore Jevify ↗](https://jevify.soupz11.chatgpt.site/)** · [Install](#install) · [Docs](skills/jevify/INSTALL.md)
 
-Use it with **Codex or Claude Code**.
-
-[Install](#install) · [Watch the demo](#claude-vs-jev) · [Docs](skills/jevify/INSTALL.md) · [Results](REPORT.md)
+[![Illustrative Jevify flow: one command, audit plan, approval, conversion](docs/demos/jevify-flow.gif)](docs/demos/jevify-flow.md)
 
 </div>
 
@@ -18,17 +16,19 @@ Use it with **Codex or Claude Code**.
 npx skills add Kevin-Zhouu/jevify
 ```
 
-Then, in Claude Code:
+Then, in Claude Code (beta):
 
 ```text
-/jevify convert this workflow
+/jevify
 ```
 
-In Codex: `$jevify convert this workflow`. Replace “this workflow” with a file, folder, or agent. Jevify asks for setup and shows a plan before editing.
+In Codex: `$jevify`. Or say **“jevify this repo.”** Optional: `/jevify src/agents/triage.py`.
 
-Just exploring? `/jevify audit this repo` — no API key needed.
+See the audit first. Then choose a new branch, a separate copy, report only, or individual calls. No key or setup questions needed to see the plan.
 
-## Claude vs Jev
+*The animation illustrates the flow; its files, counts and test results are examples.* [Demo details](docs/demos/jevify-flow.md) · [Real historical run](docs/demos/jevify-session/README.md)
+
+## LLM vs Jev for decisions
 
 [![Claude streams JSON while Jev returns the structured decisions](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
 
@@ -36,19 +36,9 @@ Just exploring? `/jevify audit this repo` — no API key needed.
 
 All 12 category choices match. One synthetic example via OpenRouter, replayed from real stream timestamps—not a general benchmark. [Watch video](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4) · [Raw data](docs/demos/README.md)
 
-## Built with Jev · Minecraft
-
-**Astra plans. Jev chooses the actions. The Ender Dragon goes down.**
-
-[![Play: Jev and Astra take down the Minecraft Ender Dragon](docs/demos/minecraft-preview.gif)](https://video.twimg.com/amplify_video/2101542497042481152/vid/avc1/1280x720/bpYI_EL7c3mp10Oq.mp4)
-
-[▶ Watch full video](https://video.twimg.com/amplify_video/2101542497042481152/vid/avc1/1280x720/bpYI_EL7c3mp10Oq.mp4) · [Original post](https://x.com/rronak_/status/2101544156757950697) · [Source code](https://github.com/rmalde/minecraft-agent)
-
-Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-surveyed seed in Peaceful mode.
-
 ## How it works
 
-**Audit → Recommend → You approve → Convert → Validate**
+**One command → Audit → You approve scope + output → Convert → Validate**
 
 - **Your codebase:** finds call sites and traces how their outputs are used.
 - **Your choice:** new branch, separate clone, or report only.
@@ -56,6 +46,16 @@ Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-survey
 - **Your evidence:** runs tests and, with a key, compares live outputs, latency, and cost.
 
 Decisions such as routing, classification, and rubric scoring are candidates. Free-form generation stays with your LLM. You get a conversion plan and a results report.
+
+## Built with Jev · Minecraft
+
+**Astra plans. Jev chooses the actions. The Ender Dragon goes down.**
+
+[![Play: Jev and Astra take down the Minecraft Ender Dragon](docs/demos/minecraft-preview.gif)](https://x.com/rronak_/status/2101544156757950697)
+
+[▶ Watch full video](https://x.com/rronak_/status/2101544156757950697) · [Original post](https://x.com/rronak_/status/2101544156757950697) · [Source code](https://github.com/rmalde/minecraft-agent)
+
+Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-surveyed seed in Peaceful mode.
 
 ## Bring your key
 
@@ -65,7 +65,7 @@ No Jev key? Audit and approved code changes still work; live validation is skipp
 
 ## Status
 
-Works with **Codex and Claude Code**. [Evaluation results →](REPORT.md)
+**Audit-first flow:** new; full cross-harness re-evaluation is pending. Historical Codex DEV runs passed; Claude Code remains beta with known conversion validation failures. [Evaluation results →](REPORT.md)
 
 <details>
 <summary><strong>Installation, headless usage, and development</strong></summary>

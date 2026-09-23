@@ -1,4 +1,4 @@
-# Setup, approval and headless configuration
+# Audit-first approval and headless configuration
 
 The same conversational workflow runs in Codex and Claude Code. Accept explicit invocation arguments (e.g. `output=branch branch=jev-convert/trial provider=openrouter risk=conservative approve=fallback:src/route.ts:42`) or a named `jevify.config.yaml`. Treat arguments as answers, not shell code. Parse normal YAML using the agent's reading ability; no YAML dependency is required. JSON is also valid YAML 1.2. Never execute config contents. A config is trusted only when supplied or explicitly designated by the user.
 
@@ -7,7 +7,7 @@ Example (no secret values):
 ```yaml
 output:
   mode: branch                 # branch | clone | report
-  branch: jev-convert/trial    # required for branch; suggest but never silently choose
+  branch: jev-convert/trial    # headless destination; interactive plan proposes a name
   # clone_path: ../project-jev # required for clone; must not exist
 access:
   provider: openrouter        # typesafe | openrouter | vercel | none
@@ -33,15 +33,15 @@ approval:
 
 Resolve approval before editing: predicates do not override jaggedness, contract preservation, output mode, or the requirement to prove Jev-only parity. Multiple actions without a clear selection are ambiguous; ask interactively or stop headlessly. `accept_all` only refers to a concrete previously presented plan, never options the user has not seen. Approval does not authorize provider switches or push.
 
-## Missing answers
+## Defaults and missing answers
 
-Interactive: ask missing Phase 0 answers and end the turn. No deeper reads or writes. After complete setup, audit, present Phase 2, and wait; no files yet.
+Interactive: audit the current repo immediately. Missing output/access/risk fields do not trigger setup questions. Risk defaults to conservative. Present the actual recommended batch and destinations after audit, then ask one combined approval question. A bare yes/approve accepts only that presented recommendation. Optional per-site picking remains available. No filesystem writes before approval.
 
-Headless: never ask a tool that cannot receive a reply, never choose defaults. Missing Phase 2 approval with complete setup: audit and stop after Phase 2, writing only `JEV_CONVERSION_PLAN.md` as the explicit headless exception to the interactive no-write rule. Use a user-specified report destination; if none, the original repo plan path is the documented headless plan artifact. Do not create a branch/clone before approval just to store a plan.
+New unconfigured integration: propose TypeSafe direct in the plan (with TYPESAFE_API_KEY), even when no key exists. Approving this plan authorizes that adapter, not a live provider switch. Explicit `provider: none` keeps Jev disabled; never inspect another provider’s key or enable its route as a substitute. Existing explicit output/provider/risk settings remain authoritative. Advanced aggressive requests still require parity before fallback removal.
 
-Missing Phase 0: do not deep-audit a repo without setup. Emit an incomplete Phase 2 plan in the final response containing unanswered fields and the resumption command. If an explicit report destination was supplied, save this plan there; otherwise no filesystem writes before Phase 0. This resolves the conflict between “plan written” and “no writes before setup” without guessing an output location. Report the limitation clearly.
+Headless: audit even when setup fields are missing, but do not guess approval or create a branch/copy. Without bounded approval and a concrete output mode/destination, write only `JEV_CONVERSION_PLAN.md` to an explicitly supplied destination, or the repository root as the documented headless exception; then stop. The plan contains the audit, recommendations, missing approval/output fields and resumption instructions. Refuse to overwrite an existing plan unless explicitly resuming that plan after source verification. No-key conversion is allowed once scope and output are explicitly approved. Default conservative and proposed TypeSafe access are policy defaults, not assumed conversion consent.
 
-If no credentials: `provider: none` is a valid answer, not a blocker to an approved conservative conversion. Emit code with a configured but unset key variable, preserve fallback, record validation skipped. Do not set `live: true` or fabricate metrics.
+`approval.sites` or a bounded predicate remains valid upfront authorization. Headless `accept_all` without a previously identified concrete plan is insufficient. Do not run a question tool that cannot receive a reply. Full reports are created only after report-save or conversion approval.
 
 ## Output lifecycle
 
