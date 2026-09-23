@@ -1,0 +1,35 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "simple_classify returns response.content[0].text.strip(); no local consumers",
+      "classification": "DECISION",
+      "fit": "CONDITIONAL",
+      "reason": "Ten fixed semantic labels; eligible for benign fixture trial only, no effective adversarial-input mitigation.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Avoid original generation on accepted decisions; likely cheaper/faster. Serial misses add Jev cost/latency.",
+          "risk": "Uncalibrated confidence and confident mistakes; retain original fallback.",
+          "scope": "Only classifier; approved"
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Unchanged cost and latency; no migration.",
+          "risk": "No migration risk; no savings.",
+          "scope": "Leave classifier unchanged"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ],
+  "provider": "none",
+  "live_validation": "skipped: no keys",
+  "source_revision": "7c497d21099fc916692f1dd45b5a6107b03754d5"
+}

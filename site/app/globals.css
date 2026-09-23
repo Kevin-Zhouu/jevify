@@ -9,3 +9,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 .code-evidence{background:#111;border:1px solid #282828;padding:20px;overflow-x:auto;font:12px/1.7 var(--font-geist-mono),monospace;color:#ccc;margin:20px 0}.evidence-caption{margin:0}.policy-details{margin-top:24px}.policy-details summary{cursor:pointer;font-size:14px;color:#bbb}.policy-details summary:hover{color:var(--primary)}.community-link{display:flex;flex-direction:column;gap:18px;padding:28px;background:#121212;border:1px solid #303030;border-radius:5px}.community-link span{font:12px var(--font-geist-mono),monospace;color:#999}.community-link strong{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:500}.note a{text-decoration:underline;text-underline-offset:3px}
+
+.session-preview{display:block;margin:22px 0 0;border:1px solid #333;border-radius:5px;overflow:hidden}.session-preview img{display:block;width:100%;height:auto}.intro .session-caption{font-size:11px;line-height:1.6;margin:10px 0 24px;color:#999}.session-caption a{text-decoration:underline;text-underline-offset:3px}

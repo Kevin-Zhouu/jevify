@@ -1,0 +1,26 @@
+{
+  "status": "live validation skipped",
+  "reason": "User selected neither key and explicitly requested no live validation",
+  "sites": [
+    {
+      "site_id": "workflow.py:83",
+      "primitive": "Choice",
+      "threshold": 0.95,
+      "rows": [],
+      "n": 0,
+      "agreement": null,
+      "confidence_curve": null,
+      "fallback_rate": null,
+      "latency_ms": null,
+      "cost_usd": null,
+      "faults": {
+        "below_threshold": true,
+        "error": true,
+        "timeout": true,
+        "rate_limit": true
+      },
+      "fault_evidence": "tests/offline_validation.py; gate-boundary rejection with sentinel only, transport error/TimeoutError/HTTPError(429); no simulated successful Jev response",
+      "accepted_path": "skipped: no genuine captured response"
+    }
+  ]
+}

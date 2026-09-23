@@ -1,0 +1,5 @@
+[
+  "$jevify convert workflow.py. Keep user-facing answers compact. Ask setup first.",
+  "New branch jev-convert/demo. Neither key; conservative with the original fallback. Audit workflow.py and show the options, then wait for my approval. Keep the plan compact.",
+  "Approve only the pure DECISION classifier with a confidence gate and original fallback. Proceed on jev-convert/demo. No keys: explicitly skip live validation. Run the offline project smoke at /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py against this repository with fixture anthropic_classification. Finish with a brief report summary. Do not push."
+]

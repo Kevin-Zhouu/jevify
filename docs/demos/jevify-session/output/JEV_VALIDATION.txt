@@ -1,0 +1,9 @@
+PASS: user-supplied offline project smoke, fixture anthropic_classification.
+Command: PYTHONDONTWRITEBYTECODE=1 python3 '/Users/bigsoup/Downloads/Jev Converter/eval/smoke.py' /private/tmp/jevify-recorded-session anthropic_classification
+Output: PASS: observable Python behavior and original-path fallback smoke
+
+PASS: PYTHONDONTWRITEBYTECODE=1 python3 tests/offline_validation.py
+Output: PASS: original AST/request/parser, stdout, exactly-once fallback/error identity, missing key, low-confidence gate boundary, generic error, timeout, HTTP 429, malformed response and confidence predicates
+Output: SKIPPED: live validation and accepted Jev response replay; no credentials or genuine captured response
+Additional assertion: oversized input bypasses Jev and calls original once.
+PASS: git diff --check

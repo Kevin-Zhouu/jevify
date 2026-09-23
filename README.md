@@ -4,9 +4,7 @@
 
 ### Get your agents running on Jev today
 
-Use it with **Codex or Claude Code**.
-
-[Install](#install) · [Watch the demo](#claude-vs-jev) · [Docs](skills/jevify/INSTALL.md) · [Results](REPORT.md)
+[![Jevify in use: setup, audit, approval, and a real code diff](docs/demos/jevify-session.gif)](docs/demos/jevify-session/README.md)
 
 </div>
 
@@ -16,7 +14,9 @@ Use it with **Codex or Claude Code**.
 npx skills add Kevin-Zhouu/jevify
 ```
 
-Then, in Claude Code:
+Recorded in Codex with scripted user replies; waits trimmed. No-key demo: live validation skipped. [Full recording and code](docs/demos/jevify-session/README.md).
+
+Then, in Claude Code (beta):
 
 ```text
 /jevify convert this workflow
@@ -26,23 +26,13 @@ In Codex: `$jevify convert this workflow`. Replace “this workflow” with a fi
 
 Just exploring? `/jevify audit this repo` — no API key needed.
 
-## Claude vs Jev
+## LLM vs Jev for decisions
 
 [![Claude streams JSON while Jev returns the structured decisions](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
 
 **12 questions. 136 lines of JSON. Jev: 0.44s. Claude Haiku 4.5: 5.11s.**
 
 All 12 category choices match. One synthetic example via OpenRouter, replayed from real stream timestamps—not a general benchmark. [Watch video](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4) · [Raw data](docs/demos/README.md)
-
-## Built with Jev · Minecraft
-
-**Astra plans. Jev chooses the actions. The Ender Dragon goes down.**
-
-[![Play: Jev and Astra take down the Minecraft Ender Dragon](docs/demos/minecraft-preview.gif)](https://video.twimg.com/amplify_video/2101542497042481152/vid/avc1/1280x720/bpYI_EL7c3mp10Oq.mp4)
-
-[▶ Watch full video](https://video.twimg.com/amplify_video/2101542497042481152/vid/avc1/1280x720/bpYI_EL7c3mp10Oq.mp4) · [Original post](https://x.com/rronak_/status/2101544156757950697) · [Source code](https://github.com/rmalde/minecraft-agent)
-
-Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-surveyed seed in Peaceful mode.
 
 ## How it works
 
@@ -55,6 +45,16 @@ Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-survey
 
 Decisions such as routing, classification, and rubric scoring are candidates. Free-form generation stays with your LLM. You get a conversion plan and a results report.
 
+## Built with Jev · Minecraft
+
+**Astra plans. Jev chooses the actions. The Ender Dragon goes down.**
+
+[![Play: Jev and Astra take down the Minecraft Ender Dragon](docs/demos/minecraft-preview.gif)](https://x.com/rronak_/status/2101544156757950697)
+
+[▶ Watch full video](https://x.com/rronak_/status/2101544156757950697) · [Original post](https://x.com/rronak_/status/2101544156757950697) · [Source code](https://github.com/rmalde/minecraft-agent)
+
+Community demo by **Ronak Malde**; not a Jevify conversion. Runs on a pre-surveyed seed in Peaceful mode.
+
 ## Bring your key
 
 Use `TYPESAFE_API_KEY` or `OPENROUTER_API_KEY` through your environment or the [hidden-input launcher](skills/jevify/references/credentials.md). Keep your original provider key for fallback.
@@ -63,7 +63,7 @@ No Jev key? Audit and approved code changes still work; live validation is skipp
 
 ## Status
 
-Works with **Codex and Claude Code**. [Evaluation results →](REPORT.md)
+**Codex:** recorded DEV runs passed. **Claude Code:** beta; conversion validation failures remain. [Evaluation results →](REPORT.md)
 
 <details>
 <summary><strong>Installation, headless usage, and development</strong></summary>

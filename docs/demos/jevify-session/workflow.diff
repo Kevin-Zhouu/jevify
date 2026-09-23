@@ -1,0 +1,23 @@
+diff --git a/workflow.py b/workflow.py
+index b839ccd..8d6b0a6 100644
+--- a/workflow.py
++++ b/workflow.py
+@@ -62,7 +62,7 @@ categories = textwrap.dedent("""<category>
+     </content>
+ </category>""")
+ 
+-def simple_classify(X):
++def _original_simple_classify(X):
+     prompt = (
+         textwrap.dedent("""
+     You will classify a customer support ticket into one of the following categories:
+@@ -94,3 +94,9 @@ def simple_classify(X):
+     # Extract the result from the response
+     result = response.content[0].text  # pyright: ignore[reportAttributeAccessIssue]
+     return result.strip()
++
++
++def simple_classify(X):
++    from jev_decisions import classify
++
++    return classify(X, _original_simple_classify, MODEL)
