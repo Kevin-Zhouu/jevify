@@ -19,7 +19,7 @@ Read these before recommending: building guide and coding-agents; Models and Con
 
 ## Table and artifacts
 
-Each row has an original `file:line` ID, provider, downstream use, class and fit. Give 1–3 options per site. Use action names `fallback`, `jev_only`, `decompose`, `router`, `leave`. Describe exact scope and primitive (Choice/Score/Noul or none). For each, state benefits, risk and economics:
+Each row has an original `file:line` ID, provider, downstream use, class and fit. Give 1–3 options per site. Use action names `fallback`, `jev_only`, `decompose`, `router`, `leave`. Every option needs nonempty string fields; use primitive `none` for leave (not null). Describe exact scope and primitive (Choice/Score/Noul or none). For each, state benefits, risk and economics:
 - Choice plus confidence fallback: likely cheaper accepted decisions; serial misses add Jev latency and cost before original inference. Expected cost = Jev cost + fallback fraction × original cost.
 - Jev-only: removes original cost only after representative parity is proven; residual errors and outage policy remain. Conservative posture excludes this option from selections.
 - Atomic questions combined in code: interpretable dimensions, potentially extra tokens/questions; preserve dependencies, do not invent arithmetic reasoning by Jev.

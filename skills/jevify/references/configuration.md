@@ -45,6 +45,11 @@ If no credentials: `provider: none` is a valid answer, not a blocker to an appro
 
 ## Output lifecycle
 
+`output.mode` is authoritative. Ignore `clone_path` when mode is branch/report, and ignore branch as a request to change the original repository when mode is clone. Never combine branch-in-current-repo with cloning simply because both fields exist. Record the resolved mode and exact output directory before any mutation; verify that location again before every write/commit.
+
+Run `python3 /path/to/jevify/scripts/preflight.py --repo . --mode branch --branch NAME --provider openrouter --key-env OPENROUTER_API_KEY` (adjust answered fields only). This checks git, collisions, cleanliness, and the presence of the selected key without exposing it. It never creates the output. A false key-presence result is evidence only for that process, not a license to claim all validation impossible when the user supplied another authorized route. A true result requires attempted live validation after conversion.
+
+
 Read-only preflight checks git and cleanliness, `git check-ref-format --branch NAME` and existing refs, or clone path existence. Existing artifacts from a prior invocation are not permission to overwrite them. Resume an explicitly identified plan only after checking its source revision and scope still match.
 
 After approval only:

@@ -10,3 +10,6 @@ eval/runs/**/original/.git/
 eval/runs/**/converted/.git/
 eval/runs/**/remote.git/
 .DS_Store
+
+# Live evaluation repos contain nested git databases; publish exported evidence.
+eval/runs/

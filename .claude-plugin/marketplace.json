@@ -1,5 +1,16 @@
 {
   "name": "jevify-marketplace",
-  "owner": {"name": "Kevin Zhou"},
-  "plugins": [{"name": "jevify", "source": "./", "description": "Approved, measured Jev migrations for existing AI workflows."}]
+  "owner": {
+    "name": "Kevin Zhou"
+  },
+  "plugins": [
+    {
+      "name": "jevify",
+      "source": "./",
+      "description": "Approved, measured Jev migrations for existing AI workflows."
+    }
+  ],
+  "metadata": {
+    "description": "A portable skill for approved, measured Jev migrations."
+  }
 }

@@ -1,10 +1,12 @@
-# Jevify — evaluation preparation in progress
+# Jevify — live evaluation in progress
 
 Date: 2026-09-23
 
 The skill and evaluation deliverables are **not complete**. OpenRouter live Jev access and both headless harnesses are now verified. Six DEV workflows and two unread HELD-OUT workflows have been vendored at pinned commits. DEV hand labels, grader, runner, and behavioral smoke checks are prepared. All six DEV baseline smokes and nine grader evidence-check tests pass.
 
-Pending user decisions: isolated blind HELD-OUT labeling, and authorization to route baseline models through OpenRouter for live parity. The grader has not yet been frozen; the skill has not yet been authored, preserving the requested labels-before-skill order. The skill is now named **jevify**, and the user authorized pushing the completed work to https://github.com/Kevin-Zhouu/jevify.git. The remote was empty when checked.
+The user authorized isolated HELD-OUT labeling and routing original baseline models through OpenRouter without changing production fallback providers. HELD-OUT labels were sealed by a separate labeling agent; the skill author has not read them. The evaluator, labels, config fixtures and corpus were frozen in commit `2d5bd71` before skill implementation in `489a5b3`.
+
+The portable `skills/jevify/` implementation now exists. Its skill format and Claude plugin/marketplace manifests validate. The hidden-key launcher passes four behavioral tests, including a real terminal echo check; all nine grader self-tests also pass. The first DEV iteration is running in Codex and Claude Code, with headless and three-turn simulated interactive scenarios. Results are not yet complete.
 
 ## Preflight results
 
@@ -32,25 +34,25 @@ OpenRouter's dated model ID appears in its official SDK guide and was echoed by 
 
 | Required result | Status |
 | --- | --- |
-| DEV workflow × harness matrix | Not run; corpus assembled and DEV labels prepared |
+| DEV workflow × harness matrix | DEV iteration 1 running; final scores pending |
 | HELD-OUT | Two workflows vendored but unread |
-| Frozen grader and preimplementation hand labels | Prepared; awaiting sealed HELD-OUT labels and freeze |
+| Frozen grader and preimplementation hand labels | Frozen before skill implementation |
 | Gating and output-mode behavior | Not tested |
 | Project tests after conversion | Not run; no conversions |
 | 30+ input parity per converted site | Not run |
 | Negative controls / bad-fit findings | Not evaluated |
 | Cross-harness consistency | Not evaluated |
 
-No DEV iterations or HELD-OUT repairs have been used. The single live access probe establishes neither parity nor a recommended confidence threshold.
+DEV iteration 1 is in progress; no HELD-OUT attempt or repair has been used. The single live access probe establishes neither parity nor a recommended confidence threshold.
 
 ## Key provisioning
 
 `tools/with_jev_key.py` is a Python 3.10+ launcher supporting TYPESAFE_API_KEY, OPENROUTER_API_KEY, and AI_GATEWAY_API_KEY. It uses an existing environment variable or hidden terminal input, does not save keys, and refuses headless prompting. The caller chooses the provider; no provider is silently switched.
 
-Checks passed for environment forwarding for all three providers and refusal to run a child when its key is missing in headless mode. See `KEY_SETUP.md`. This is preparatory tooling, not the completed converter skill.
+Checks passed for environment forwarding for all three providers and refusal to run a child when its key is missing in headless mode. See `KEY_SETUP.md`. The same launcher is included in the skill.
 
 ## Next steps
 
-Resolve the two evaluation decisions, seal HELD-OUT labels, freeze the grader, author skills/jevify, run the DEV loop in both harnesses, run the final HELD-OUT check, and publish the reviewed artifacts. No evaluations or conversion results are claimed before those runs occur.
+Finish the DEV loop in both harnesses, run the final HELD-OUT check, and publish the reviewed artifacts. No evaluations or conversion results are claimed before those runs occur.
 
 Sources: [OpenRouter TypeSafe SDK guide](https://openrouter.ai/docs/guides/community/typesafe-sdk), [TypeSafe Models](https://docs.typesafe.ai/models), [official TypeSafe skill](https://github.com/typesafe-ai/skills), [Gateway evaluation implementation](https://github.com/vercel/ai/blob/main/packages/gateway/src/gateway-evaluation-model.ts).
