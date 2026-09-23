@@ -18,6 +18,14 @@ Token usage and finish reasons are observable if returned or printed. Preserve t
 
 Aggressive Jev-only still needs an explicit failure policy approved by the user; do not remove fallback before parity has passed on an independent check set. Conservative approval never permits removal. New decomposition/router behavior must be included in the selected option, not slipped into a generic fallback migration.
 
+## Fallback structure to review before testing
+
+Keep the original call OUTSIDE the Jev try/catch. Gather an accepted decision inside the try; on rejection/error leave it unset; after the try return the accepted value or log and call the original once. In Python, calling the original inside the try can catch its exception and call it a second time. In JS, returning an original promise can differ from awaiting it; avoid that subtlety by moving the call outside the try entirely.
+
+All response parsing/validation belongs inside the protected Jev path. Check container types before accessing fields; a list where a usage dictionary is expected must fall back rather than throw. Reject Python bool as numeric confidence. Validate the returned model against the requested pin and primitive type before accepting. Keep bounded timeout active through reading/parsing the body, not only until response headers arrive.
+
+For an original-path log, `model` is the ORIGINAL model that answers (or is being attempted); put the attempted Jev pin in a separate `jev_model` field. Never omit the original model on missing-key/error paths, and never label the original path with the Jev model. Log bounded reason codes, not exception messages or unvalidated model output, which may contain private data.
+
 ## Provider and credentials
 
 Use the user-selected provider and credential variable. TypeSafe direct uses the versioned `jev-1.13.0`. OpenRouter has a distinct versioned catalog ID: `typesafe/jev-1.13-20260917`, verified for this release. Its System One route is `https://openrouter.ai/api/v1/systemone`; consult https://openrouter.ai/docs/guides/community/typesafe-sdk and official SDK configuration to avoid doubling `/v1` (SDK base `https://openrouter.ai/api`). A model-not-found response must not trigger trying another provider/model automatically.

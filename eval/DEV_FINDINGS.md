@@ -9,3 +9,7 @@ Iteration 1 uses skill commit 489a5b3; no grader thresholds or corpus code chang
 - Claude's enum interactive audit uses null instead of the required primitive string for leave; it also omits .env.example. Validate the complete deliverable checklist.
 
 These observations are provisional until independent reviews and grading finish. They motivate general skill corrections, not fixture-specific exceptions or edits to evaluation outputs.
+
+## DEV02
+
+14/24 full passes. Every Codex run passes; Claude passes routing headless and recipe headless. Remaining failures: source reads before Phase0, omitted shared wrapper, skipped requested branch, wrong artifact names or missing negative conclusion, duplicated evaluator policies, manually reconstructed baselines, invented successful inference fault payloads, 401 mislabeled 429, missing answering-model logs, malformed-response and exception propagation defects. Four Codex positive runs have valid live paired evidence; Claude positive measurements are retained but not accepted as proof. Version3 repairs only the skill.
