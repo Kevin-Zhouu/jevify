@@ -8,7 +8,7 @@ Turn suitable LLM calls into fast, typed decisions—without rewriting your agen
 
 **Review the plan. Approve the changes. Keep a fallback.**
 
-[Get started](#try-it-in-your-repo) · [Watch the demos](#see-claude-and-jev-side-by-side) · [Results](#what-weve-measured) · [Installation guide](skills/jevify/INSTALL.md)
+[Get started](#try-it-in-your-repo) · [Watch the demos](#see-the-speed-difference) · [Results](#what-weve-measured) · [Installation guide](skills/jevify/INSTALL.md)
 
 </div>
 
@@ -20,18 +20,17 @@ It is an agent skill you run inside **Codex or Claude Code**. It audits your exi
 
 > **Start small:** ask for a report-only audit. See where Jev could help before changing a line of application code. No API key is needed for the audit.
 
-## See Claude and Jev side by side
+## See the speed difference
 
-[![Two side-by-side Claude versus Jev comparisons: a confident decision and a fallback](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
+[![Claude versus Jev: watch the same ticket and inbox get routed side by side](docs/demos/preview.gif)](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)
 
-**[Watch or download the full comparison →](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)** · 36 seconds · two examples, each with both paths visible together
+**[Watch Claude vs Jev →](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/claude-vs-jev.mp4)** · 20 seconds · one ticket, then a six-ticket inbox
 
-| Demo | What you'll see | Video |
-| --- | --- | --- |
-| **1. A confident decision** | Both return “Claims Assistance.” Jev takes **327 ms**, versus **1,015 ms** for Claude Haiku 4.5 on this ticket. | [Watch →](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/01-confident-decision.mp4) |
-| **2. A useful fallback** | Jev proposes a different category with **0.45 confidence**. The **0.90 gate** rejects it and keeps Claude's answer, adding an estimated **353 ms**. | [Watch →](https://raw.githubusercontent.com/Kevin-Zhouu/jevify/main/docs/demos/02-confidence-fallback.mp4) |
+Same decisions. Two timers. Watch Jev finish first.
 
-These are **visual replays of recorded live API results**, not fresh API calls or screen recordings. Both examples come from the same public Anthropic insurance-classification workflow. Claude and Jev were measured separately through OpenRouter; fallback totals are estimates from those measurements. Selected examples illustrate behavior, not typical performance. [Data, models, and reproduction →](docs/demos/README.md)
+<sub>Replay of recorded API timings, using selected matching decisions. Queue times sum separate calls; ticket previews are shortened. [Measurements and limitations](docs/demos/README.md).</sub>
+
+Want to see Jev playing Doom or racing through Wikipedia? [Watch TypeSafe's official demos →](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 
 ## Try it in your repo
 
