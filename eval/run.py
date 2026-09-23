@@ -140,7 +140,7 @@ def main():
     before = snapshot(repo)
     original_bytes = snapshot(repo, include_git=True)
     branch = 'jev-convert/evaluation'
-    config = {'output':{'mode':args.mode,'branch':branch,'clone_path':str(clone)},'access':{'provider':'openrouter','key_env':'OPENROUTER_API_KEY','model':'typesafe/jev-1.13-20260917'},'risk':'conservative','headless':args.scenario=='headless','approval':{'actions':['fallback'],'scope':'Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields.'}}
+    config = {'output':{'mode':args.mode,'branch':branch,'clone_path':str(clone)},'access':{'provider':'openrouter','key_env':'OPENROUTER_API_KEY','model':'typesafe/jev-1.13-20260917'},'risk':'conservative','headless':args.scenario=='headless','approval':{'actions':['fallback'],'scope':'Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields.'},'validation':{'baseline_provider':'openrouter','baseline_routing_authorized':True,'scope':'Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model.'}}
     config_path = run / 'jevify.config.yaml'
     # JSON is a strict YAML 1.2 subset, readable without an extra parser.
     write_json(config_path, config)

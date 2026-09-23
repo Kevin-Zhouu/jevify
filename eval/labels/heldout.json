@@ -1,0 +1,30 @@
+{
+  "heldout_enum": {
+    "negative_control": false,
+    "must_convert": true,
+    "sites": [
+      {
+        "file": "workflow.ts",
+        "line": 6,
+        "classification": "DECISION",
+        "provider": "Google via @ai-sdk/google, gemini-1.5-pro-latest; ai.generateObject with output enum",
+        "downstream": "The awaited result.object is printed at line 16 as one of five fixed genre labels. result.usage and result.finishReason are printed at lines 18 and 19. No generated narrative is consumed; main errors reach console.error at line 22.",
+        "fit": "Good Jev fit: classify a supplied textual movie plot into the closed set action/comedy/drama/horror/sci-fi. This requires ordinary semantic classification, with no free-text generation, nontext processing, math/count/date comparison, or multi-hop reasoning. Preserve the exact label contract and explicitly account for the existing usage and finishReason logging when adapting the result."
+      }
+    ]
+  },
+  "heldout_generation": {
+    "negative_control": true,
+    "must_convert": false,
+    "sites": [
+      {
+        "file": "workflow.ts",
+        "line": 6,
+        "classification": "GENERATION",
+        "provider": "Google via @ai-sdk/google, gemini-1.5-flash-002; ai.generateText",
+        "downstream": "The awaited result.text is printed at line 11 as the requested invented holiday and traditions. result.usage and result.finishReason are printed at lines 13 and 14. main errors reach console.error at line 17.",
+        "fit": "No good Jev opportunity: the requested output is original open-ended prose inventing a holiday and describing its traditions. There is no closed-set decision or downstream decision-only consumer. Jev cannot replace this text generation; retain the generation provider."
+      }
+    ]
+  }
+}
