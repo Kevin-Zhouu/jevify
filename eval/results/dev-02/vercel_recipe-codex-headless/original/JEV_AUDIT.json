@@ -1,0 +1,23 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK generateObject / @ai-sdk/openai / gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "main() awaits result; line 24 prints JSON.stringify(result.object.recipe, null, 2); line 25 prints a blank line; lines 26\u201327 print result.usage and result.finishReason; line 30 forwards main rejection to console.error.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Recipe name, ingredient names and amounts, and cooking steps are unrestricted strings in a Zod schema. The fixed prompt asks for new content, not an enumerated decision or extraction from supplied candidates. Jev cannot generate this recipe while preserving the output contract.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Retains the original recipe, schema, prompt, model, usage and finish diagnostics. No added inference cost or latency; no speculative savings.",
+          "risk": "Existing generative-model variability and provider failure behavior remain. Replacing the call with bounded choices would change the workflow contract.",
+          "scope": "Leave workflow.ts:7 and every downstream consumer unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

@@ -1,0 +1,16 @@
+{
+  "case": "missing-setup",
+  "harness": "claude",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790133376362527000,
+    "ended_ns": 1790133433350298000
+  },
+  "output_relative": "original",
+  "original_sha": "e742e7c1ba748573f9c7fffb3e32a5a0884712a8",
+  "main_unchanged": true,
+  "branch": "main",
+  "changes": [],
+  "smoke": null,
+  "review_required": true
+}

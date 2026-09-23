@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 13,
+      "provider": "LangChain ChatOpenAI / OpenAI / gpt-3.5-turbo-0125",
+      "downstream": "Streamed text response returned directly to client via LangChainAdapter.toDataStreamResponse(); no parsing, routing, or decision extraction",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Pure streaming text generation from arbitrary user prompts. Jev returns typed decisions (Choice/Score/Noul), not generated prose or streamed content. Input is untrusted user text with no adversarial mitigation. No enumerated outputs or closed-set selection exists.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No speculative savings; the call is free-form text generation which Jev cannot perform",
+          "risk": "None — preserves current behavior unchanged"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

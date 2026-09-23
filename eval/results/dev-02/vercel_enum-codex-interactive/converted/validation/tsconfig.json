@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ES2022","module":"commonjs","moduleResolution":"node","strict":true,"skipLibCheck":true,"noEmit":true,"baseUrl":".","paths":{"ai":["node_modules/ai"],"@ai-sdk/openai":["node_modules/@ai-sdk/openai"]}},"include":["../workflow.ts","../jevDecisions.ts"]}

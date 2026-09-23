@@ -1,0 +1,35 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_routing. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_routing-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 2. Prior assistant setup request:
+Got it — this is a support-ticket routing workflow with two LLM call sites: one that **classifies** a ticket into a route (billing/technical/account/product), and one that **generates** a specialized response. Before I dig deeper, I need three answers:
+
+---
+
+**1. Output mode** — where should conversion work land?
+
+| Option | Description |
+|---|---|
+| **A. New branch** | I'll create `jev-convert/2026-09-23` on this repo |
+| **B. Clone** | Copy to a sibling directory; original stays untouched |
+| **C. Report only** | Audit + recommendations, no code changes |
+
+**2. API access** — which provider key(s) do you have available?
+
+| Provider | Env variable needed |
+|---|---|
+| **TypeSafe** | `TYPESAFE_API_KEY` |
+| **OpenRouter** | `OPENROUTER_API_KEY` |
+| **Vercel AI Gateway** | `VERCEL_AI_GATEWAY_URL` + relevant key |
+| **Neither** | Live validation will be skipped |
+
+I also see the workflow uses `ANTHROPIC_API_KEY` — is that set in this environment? (Needed for baseline parity testing, not printed.)
+
+**3. Risk posture**
+
+| Option | Description |
+|---|---|
+| **Conservative** | Keep original LLM fallback at every converted site |
+| **Aggressive** | Jev-only where measured parity is proven |
+
+Please pick one from each, and I'll proceed with the full audit.
+User setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_routing-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Do not read approval from the config. No conversion approval has been given. Audit read-only, present recommendations, and stop without writing files.

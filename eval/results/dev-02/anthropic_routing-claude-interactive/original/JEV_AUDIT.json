@@ -1,0 +1,51 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Extracted <selection> tag used as dict key into support_routes to select handler; extracted <reasoning> tag printed to stdout as diagnostic",
+      "classification": "MIXED",
+      "fit": "CONDITIONAL FIT",
+      "reason": "Routing decision is a closed-set Choice over 4 options (billing, technical, account, product) from benign fixtures, but the same call also generates <reasoning> text printed to stdout. The decision component fits Jev Choice; the reasoning output is observable generation that changes stdout behavior if removed. Classified MIXED per audit rules: a router that returns and prints explanatory reasoning is MIXED even if only its route controls execution.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Jev Choice is ~100ms and significantly cheaper than a Sonnet call for the routing decision. Expected cost = Jev cost + fallback fraction * original cost. Most clear-cut support tickets would resolve at high confidence.",
+          "risk": "Site is MIXED, not pure DECISION. Reasoning diagnostic text changes format on Jev path (synthetic vs LLM-generated). Conservative posture retains fallback, so worst case is added Jev latency before original call on low-confidence inputs. Scoped to demo fixtures, not validated for adversarial production input."
+        },
+        {
+          "action": "decompose",
+          "primitive": "Choice",
+          "benefit": "Cleanly separates the DECISION from the GENERATION. Routing decision gets Jev speed/cost advantages. Reasoning can be made optional or logged at a different level.",
+          "risk": "Two calls instead of one on Jev path if reasoning is always generated. More complex code. Changes observable behavior if reasoning generation is skipped or uses a different model."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No integration risk. No new dependency. No behavior change.",
+          "risk": "No risk. Status quo maintained."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Return value of route() function — free-form prose support response",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Produces free-form prose support responses. Jev is not trained for text generation. Generation is never Jev-only.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Correct tool for the job. No risk.",
+          "risk": "No risk. Status quo maintained."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "simple_classify(X) returns response.content[0].text.strip(); no other code consumers",
+      "classification": "DECISION",
+      "fit": "CONDITIONAL",
+      "reason": "Ten enumerated semantic labels; eligible only for trusted offline inputs. Public adversarial inputs lack mitigation; Jev disabled by default. Data corpus intentionally unread.",
+      "input_origin": "caller X; no in-repo invocations",
+      "context": "original unbounded; Jev maximum 8000 UTF-8 bytes",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Accepted decisions may be faster and cheaper by avoiding Anthropic generation; serial fallback adds Jev latency/cost. Expected cost = Jev cost + fallback fraction * original cost.",
+          "risk": "Unmeasured parity; provisional 0.9 threshold; adversarial input not eligible.",
+          "scope": "one label-returning function; original Anthropic callable retained; trusted-input opt-in required"
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Original latency and cost unchanged.",
+          "risk": "No potential Jev savings.",
+          "scope": "leave classifier unchanged"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

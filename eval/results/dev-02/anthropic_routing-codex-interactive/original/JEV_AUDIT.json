@@ -1,0 +1,56 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic Messages API / claude-sonnet-4-6",
+      "downstream": "XML reasoning is printed under Routing Analysis; selection is stripped/lowercased, printed and used to index routes and select the specialist prompt.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Choice cannot preserve the generated, observable routing explanation.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve selector prompt, XML parsing, reasoning and route diagnostics. Cost and latency unchanged because the original inference remains.",
+          "risk": "Replacing the whole call loses reasoning; retaining it while adding Jev adds cost and potential route/explanation disagreement."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic Messages API / claude-sonnet-4-6",
+      "downstream": "Selected specialist prompt and original input produce the free-form response returned by route().",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Specialist prose is generation, not an enumerated decision.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve the substantive specialist response and its return contract. Cost and latency unchanged because the original inference remains.",
+          "risk": "A typed label cannot replace the generated response."
+        }
+      ]
+    },
+    {
+      "file": "util.py",
+      "line": 23,
+      "provider": "Anthropic Messages API / claude-sonnet-4-6",
+      "downstream": "llm_call at util.py:9 returns response.content[0].text to both workflow.py:24 and workflow.py:34.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Shared Anthropic transport serves both mixed routing and prose generation.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve provider, model default, request parameters, first-block text return and exceptions. Cost and latency unchanged because the original inference remains.",
+          "risk": "Replacing the shared wrapper breaks both consumers and their output contracts."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

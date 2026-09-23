@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK / OpenAI gpt-4o-mini",
+      "downstream": "Full structured recipe object (name, ingredients[], steps[]) JSON-printed to stdout; usage and finishReason logged separately",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Every substantive output field is free-form creative content (recipe name, ingredient names/amounts, cooking steps). Structured JSON envelope does not make it a decision. Jev primitives (Choice, Score, Noul) cannot produce recipe prose. No decomposition yields a closed-set decision component.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No speculative savings; the workflow is purely generative and Jev cannot produce equivalent output. Preserves correctness.",
+          "risk": "None — status quo maintained."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

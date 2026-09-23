@@ -1,0 +1,28 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "simple_classify() returns one of 10 enumerated insurance category labels; consumed as a plain string by callers",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Closed-set classification selecting one of 10 fixed insurance categories over trusted customer support ticket text. No math, dates, multi-hop reasoning, generation, or adversarial input. Maps directly to Choice primitive.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Jev Choice is purpose-built for closed-set classification; accepted decisions are faster and cheaper than Claude Haiku. Expected cost = Jev cost + fallback_fraction x Anthropic cost.",
+          "risk": "Serial miss adds Jev latency before original inference. Conservative fallback always retained."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change, no risk.",
+          "risk": "No cost or latency improvement."
+        }
+      ]
+    }
+  ],
+  "converted_sites": ["workflow.py:83"]
+}

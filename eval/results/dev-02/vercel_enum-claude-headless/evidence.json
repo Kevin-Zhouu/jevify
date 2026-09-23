@@ -1,0 +1,39 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "claude",
+  "scenario": "headless",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_enum-claude-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132933486971000,
+      "ended_ns": 1790133487056129000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jevDecisions.ts",
+    "validate_parity.py",
+    "workflow.ts"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jevDecisions.ts",
+    "validate_parity.py",
+    "workflow.ts"
+  ],
+  "original_sha": "6013ff5396ee175c76aa5feddd7e93d903e667a7",
+  "git_log": "161fdf330b81d3ce71143215d8800b0f2f84188e 1790133461 Add live parity validation and conversion report\n750477b81ebf3fcd1df931ac21a6fdf7e887d1e1 1790133454 Convert workflow.ts:6 genre enum to Jev Choice with fallback\n23e82f38581c9d76479b85b257a99e32459552d5 1790133447 Add Jev conversion plan and audit for workflow.ts:6\n6013ff5396ee175c76aa5feddd7e93d903e667a7 1790132933 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": false,
+    "contracts": false,
+    "live_evidence": false,
+    "hygiene": false
+  }
+}

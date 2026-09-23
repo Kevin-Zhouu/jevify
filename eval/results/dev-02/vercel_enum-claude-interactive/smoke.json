@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "PASS: observable TypeScript behavior and original-path fallback smoke\n",
+  "stderr": "{\"path\":\"original\",\"reason\":\"error\",\"model\":\"typesafe/jev-1.13-20260917\"}\n"
+}

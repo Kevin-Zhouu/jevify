@@ -1,0 +1,18 @@
+{
+  "case": "missing-approval",
+  "harness": "claude",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790133433633366000,
+    "ended_ns": 1790133766804001000
+  },
+  "output_relative": "original",
+  "original_sha": "add45bfb9f8847b09c8b221494602da7992274a0",
+  "main_unchanged": true,
+  "branch": "main",
+  "changes": [
+    "JEV_CONVERSION_PLAN.md"
+  ],
+  "smoke": null,
+  "review_required": true
+}

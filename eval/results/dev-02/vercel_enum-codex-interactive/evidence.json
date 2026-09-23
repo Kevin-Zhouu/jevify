@@ -1,0 +1,57 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_enum-codex-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132933553259000,
+      "ended_ns": 1790132957208308000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132957209281000,
+      "ended_ns": 1790133057512249000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133057516120000,
+      "ended_ns": 1790133522808590000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jevDecisions.ts",
+    "validation/replay.cjs",
+    "validation/run.cjs",
+    "validation/summarize.py",
+    "workflow.ts"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    ".gitignore",
+    "jevDecisions.ts",
+    "validation/package-lock.json",
+    "validation/package.json",
+    "validation/replay.cjs",
+    "validation/run.cjs",
+    "validation/summarize.py",
+    "validation/tsconfig.json",
+    "workflow.ts"
+  ],
+  "original_sha": "6013ff5396ee175c76aa5feddd7e93d903e667a7",
+  "git_log": "0d0b6cceddfbba555ec41ac6ff4674c6754d3f7d 1790133514 Record 36 live enum comparisons and fallback contract checks\n46dd6ee14237c0fe35081242f14a280bc757c810 1790133409 Add confidence-gated Jev genre decisions with original fallback\n75eba41da6d90638bd782b5c730fd5ef99088df1 1790133152 Document approved enum fallback conversion scope\n6013ff5396ee175c76aa5feddd7e93d903e667a7 1790132933 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  }
+}

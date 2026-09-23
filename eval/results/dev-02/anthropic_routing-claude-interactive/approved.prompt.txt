@@ -1,0 +1,138 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_routing. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_routing-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_routing-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+Preflight passes: repo is clean, branch `jev-convert/evaluation` is available, and `OPENROUTER_API_KEY` is present. Now I have everything needed for the audit.
+
+---
+
+## Jev Audit — `anthropic_routing` workflow
+
+### Workflow overview
+
+This is a support-ticket routing workflow with **two LLM call sites**, both going through `llm_call()` in `util.py` (Anthropic SDK, `claude-sonnet-4-6`, temperature 0.1):
+
+| # | Location | Purpose |
+|---|---|---|
+| **Site A** | `workflow.py:24` | **Classify** a support ticket into one of 4 routes (`billing`, `technical`, `account`, `product`). Prompt asks for `<reasoning>` + `<selection>` in XML. |
+| **Site B** | `workflow.py:34` | **Generate** a specialized support response using the route-specific system prompt. |
+
+Both call through the shared wrapper `llm_call()` at `util.py:22`.
+
+---
+
+### Site-by-site analysis
+
+#### Site A — Route classifier (`workflow.py:24`)
+
+| Field | Value |
+|---|---|
+| **File:line** | `workflow.py:24` |
+| **SDK / provider / model** | Anthropic SDK / `claude-sonnet-4-6` |
+| **Input origin** | `input` string (ticket text) — benign demo fixtures, not public-facing |
+| **Downstream** | Extracted `<selection>` tag → used as dict key into `support_routes` to select handler. Extracted `<reasoning>` tag → printed to stdout as diagnostic. |
+| **Classification** | **MIXED** |
+| **Fit** | **CONDITIONAL FIT** — the routing decision is a pure Choice, but the prompt also requests `<reasoning>` text that is printed to stdout. The decision component maps perfectly to Jev Choice; the reasoning output is observable generation. |
+
+**Why MIXED, not DECISION:** The prompt asks for both `<reasoning>` (printed to stdout at line 29) and `<selection>` (used as route key). The reasoning is observable diagnostic output — removing it changes the workflow's stdout behavior. Per audit rules, "a router that returns and prints explanatory reasoning is MIXED even if only its route controls execution."
+
+**Why the decision component fits Jev:** The `<selection>` is a closed-set choice from exactly 4 options (`billing`, `technical`, `account`, `product`). No math, counting, date comparison, or multi-hop reasoning. Ticket text is from benign demo fixtures (not adversarial public input). This is the textbook intent-routing pattern from TypeSafe docs.
+
+**Context size:** Small — a single ticket plus route names. Well within Jev limits.
+
+#### Site B — Response generator (`workflow.py:34`)
+
+| Field | Value |
+|---|---|
+| **File:line** | `workflow.py:34` |
+| **SDK / provider / model** | Anthropic SDK / `claude-sonnet-4-6` |
+| **Input origin** | Route-specific system prompt + ticket text |
+| **Downstream** | Return value of `route()` — free-form prose response |
+| **Classification** | **GENERATION** |
+| **Fit** | **NOT A FIT** — produces free-form prose support responses. Jev is not trained for text generation. |
+
+---
+
+### Wrapper note
+
+`llm_call()` in `util.py` is used by both sites. Its classification across all observed usage is **MIXED** (serves both a mixed routing site and a pure generation site). The wrapper itself is not a separate conversion target — conversion acts on the call sites.
+
+---
+
+### Recommendation table
+
+| Site | File:line | Class | Fit | Options |
+|---|---|---|---|---|
+| **A** | `workflow.py:24` | MIXED | CONDITIONAL FIT | Option 1, Option 2, Option 3 |
+| **B** | `workflow.py:34` | GENERATION | NOT A FIT | Option 4 only |
+
+---
+
+### Options for Site A (`workflow.py:24` — route classifier)
+
+#### Option 1: `fallback` — Jev Choice with original LLM fallback
+
+**Primitive:** Choice (4 criteria: `billing`, `technical`, `account`, `product`)
+
+**What it does:** Call Jev first with a Choice question over the 4 route options. If confidence exceeds a tuned threshold, use the Jev answer for routing. Below threshold, or on error/timeout, fall back to the original `llm_call` + XML-parse path.
+
+**Reasoning diagnostic:** The original `<reasoning>` printed to stdout must be preserved. On the Jev path, emit a synthetic diagnostic (e.g., `"[Jev routing] Selected: billing (confidence: 0.97)"`) so stdout behavior remains informative. On fallback, the original reasoning prints as before.
+
+**Benefit:** Jev Choice is ~100ms and significantly cheaper than a Sonnet call. For high-confidence tickets (likely most of these clear-cut support tickets), latency drops from seconds to milliseconds. Expected cost = Jev cost + fallback fraction × original cost.
+
+**Risk:** Conservative posture retains fallback, so worst case is Jev latency added before original call on low-confidence inputs. Reasoning diagnostic text changes format on the Jev path (synthetic vs. LLM-generated), but content semantics are preserved. Scope limited to demo fixtures — not validated for adversarial production input.
+
+**Scope:** Add a `decisions.py` module with the Jev question definition. Modify `workflow.py:24` call site to try Jev first, fall back to existing path. Preserve `llm_call` and `extract_xml` unchanged for fallback and Site B.
+
+#### Option 2: `decompose` — Separate routing decision from reasoning generation
+
+**Primitive:** Choice for routing; original LLM for reasoning only when needed
+
+**What it does:** Split the current MIXED call into two independent paths: (1) Jev Choice for the route selection, (2) a separate, cheaper LLM call solely for generating the reasoning diagnostic, only when the Jev path is taken and reasoning diagnostics are desired.
+
+**Benefit:** Cleanly separates the DECISION from the GENERATION. The routing decision gets Jev speed/cost advantages. Reasoning can be made optional or logged at a different level.
+
+**Risk:** Two calls instead of one on the Jev path if reasoning is always generated. More complex code. Changes observable behavior if reasoning generation is skipped or uses a different model. Requires explicit decision about when to generate reasoning.
+
+**Scope:** Larger refactor — new decisions module, modified route function with conditional reasoning call, new prompt for reasoning-only generation.
+
+#### Option 3: `leave` — No conversion
+
+**Primitive:** none
+
+**What it does:** Keep the current implementation unchanged.
+
+**Benefit:** No integration risk. No new dependency. No behavior change.
+
+**Risk:** None — status quo maintained.
+
+**Scope:** No changes.
+
+---
+
+### Options for Site B (`workflow.py:34` — response generator)
+
+#### Option 4: `leave` — No conversion
+
+**Primitive:** none
+
+**What it does:** Keep the current generation call unchanged. This site produces free-form prose support responses — Jev is explicitly not designed for text generation.
+
+**Benefit:** Correct tool for the job. No risk.
+
+**Risk:** None.
+
+**Scope:** No changes.
+
+---
+
+### Summary
+
+This workflow has **one convertible opportunity** (the route-classification component of Site A) and **one site that must remain as-is** (Site B, pure generation). Site A is MIXED because it produces both a routing decision and printed reasoning; conversion must address the reasoning diagnostic.
+
+**Recommended path:** Option 1 (`fallback`) for Site A is the best fit for conservative risk posture — it captures the Jev cost/latency benefit on the routing decision while preserving the original path as fallback and maintaining observable stdout diagnostics.
+
+---
+
+No conversion approval has been given. I have not written any files, created branches, or made code changes. To proceed, select which option(s) you'd like for each site and I'll execute the conversion.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

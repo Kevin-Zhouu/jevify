@@ -1,0 +1,73 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_classification. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_classification-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_classification-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I now have a complete picture of the codebase. Here is the audit and recommendation.
+
+---
+
+## Jev Audit — `anthropic_classification`
+
+### Codebase Summary
+
+This workflow (extracted from the Anthropic cookbook) has a **single LLM call site** in `workflow.py:83–92`. The function `simple_classify(X)` uses the Anthropic SDK (`client.messages.create`) with `claude-haiku-4-5` to classify customer support tickets into one of **10 fixed categories**:
+
+> Billing Inquiries, Policy Administration, Claims Assistance, Coverage Explanations, Quotes and Proposals, Account Management, Billing Disputes, Claims Disputes, Policy Comparisons, General Inquiries
+
+Each category has a textual description embedded in the prompt. The model is constrained via stop sequences and assistant prefill to return only the label. The function strips whitespace and returns the label string.
+
+### Site Inventory
+
+| Site | Provider | Downstream | Classification | Fit |
+|---|---|---|---|---|
+| `workflow.py:83` | Anthropic SDK / `claude-haiku-4-5` | Return value: bare category label string consumed by caller | **DECISION** | **FIT** |
+
+### Classification Rationale
+
+**DECISION** — The model's substantive answer is one selection from a closed set of 10 labels. No reasoning, prose, or free-form content is returned. The prompt explicitly says "Respond with just the label." The assistant prefill `<category>` and stop sequence `</category>` enforce a constrained output. The downstream consumer receives only the stripped label string.
+
+### Fit Rationale
+
+**FIT** — This is a textbook Jev Choice use case:
+
+- **Closed option set**: 10 categories, well within Choice's 255-option limit
+- **Text-only input**: customer support ticket text, compatible with Jev's input modality
+- **No math/counting/dates/multi-hop**: pure semantic classification
+- **Catch-all present**: "General Inquiries" covers ambiguous cases (maps to an `other` option)
+- **Category descriptions available**: map directly to Choice `criteria` with structured `what`/`not_for` fields to disambiguate similar categories (e.g., "Billing Inquiries" vs "Billing Disputes")
+- **Input source**: support tickets — end-user authored but benign domain text, not adversarial. The workflow appears to be a cookbook example, not a public production service, so adversarial robustness is scoped to this distribution
+- **Jaggedness check**: no known jev-1.13 failure modes apply (no counting, no dates, no multi-hop, no generation)
+
+### Recommendations
+
+| # | Site | Option | Action | Primitive | Benefit | Risk | Scope |
+|---|---|---|---|---|---|---|---|
+| A | `workflow.py:83` | **Jev with fallback** | `fallback` | `Choice` | Lower per-decision cost (Jev input-only pricing at $0.042/M tokens vs Haiku's per-token cost); ~100ms latency vs typical LLM latency; typed confidence score enables downstream routing | Serial miss adds Jev latency before Anthropic fallback; expected cost = Jev cost + fallback_rate × original cost; requires `OPENROUTER_API_KEY` for Jev access | Add `typesafe-sdk` dependency; create decisions module with 10-option Choice mapping; wrap `simple_classify` with confidence-gated fallback to original Anthropic path |
+| B | `workflow.py:83` | **Jev only** | `jev_only` | `Choice` | Eliminates Anthropic dependency and cost entirely; simplest code path | Residual classification errors without fallback safety net; requires measured parity first; **excluded by conservative risk posture** | Replace `simple_classify` internals with Jev Choice call only |
+| C | `workflow.py:83` | **Leave unchanged** | `leave` | `none` | No migration risk; no new dependency | No cost/latency improvement; no confidence signal | No changes |
+
+### Option A Detail (Recommended)
+
+The conversion would:
+1. Add `typesafe-sdk` as a dependency
+2. Create a decisions module (`decisions.py`) containing:
+   - The 10 categories as Choice criteria with structured `what`/`not_for` descriptions to disambiguate overlapping categories (e.g., "Billing Inquiries" vs "Billing Disputes", "Claims Assistance" vs "Claims Disputes")
+   - Pinned model: `typesafe/jev-1.13-20260917` (OpenRouter dated pin)
+   - Confidence threshold (to be calibrated during validation)
+3. Wrap `simple_classify` to:
+   - Try Jev Choice first
+   - If confidence ≥ threshold → return the Jev answer
+   - If confidence < threshold, error, timeout, or malformed response → fall back to original Anthropic path
+   - Log which path was taken and model version (no secrets or input content)
+4. Preserve the function signature, return type, and all observable behavior
+
+### What Happens Next
+
+**No files will be written.** This is a read-only audit. To proceed with conversion:
+
+1. Select which option(s) you want per site (e.g., "Option A for `workflow.py:83`")
+2. Optionally adjust scope, thresholds, or other parameters
+3. I will then create the clone, write `JEV_CONVERSION_PLAN.md`, `JEV_AUDIT.json`, and implement the approved changes
+
+Awaiting your selections.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

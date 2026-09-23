@@ -1,0 +1,30 @@
+{
+  "fixture": "openai_demo",
+  "harness": "codex",
+  "scenario": "headless",
+  "mode": "report",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/openai_demo-codex-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790133636187453000,
+      "ended_ns": 1790133791074449000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "a2299db080d5e6c76260a685cef216030d1f0cd4",
+  "git_log": "a2299db080d5e6c76260a685cef216030d1f0cd4 1790133636 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI SDK / OpenAI / gpt-5.5",
+      "downstream": "Prints completion.choices[0].message.content at workflow.py:19.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The prompt requests generated text, not an enumerated decision.",
+      "input_origin": "Short hardcoded user message in workflow.py; no external inputs.",
+      "untrusted_input_mitigation": "None; assessment limited to benign fixed fixtures.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve the complete standard request and printed response. No cost or latency change; no speculative savings.",
+          "risk": "Existing generation behavior retained; Jev substitution would alter the public contract."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI SDK / OpenAI / gpt-5.5",
+      "downstream": "Iterates streamed chunks, skips empty choices, prints delta content at workflow.py:33\u201338.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Python advice/code requires free-form generation and observable streaming behavior.",
+      "input_origin": "Short hardcoded user message in workflow.py; no external inputs.",
+      "untrusted_input_mitigation": "None; assessment limited to benign fixed fixtures.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve streaming, empty-choice handling and output exactly. No cost or latency change; no speculative savings.",
+          "risk": "Existing generation behavior retained; Jev substitution would alter the public contract."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI SDK / OpenAI / gpt-5.5",
+      "downstream": "Parses raw response at workflow.py:51; prints response.request_id and generated content at lines 52\u201353.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Requires generated text and truthful transport request-ID diagnostics.",
+      "input_origin": "Short hardcoded user message in workflow.py; no external inputs.",
+      "untrusted_input_mitigation": "None; assessment limited to benign fixed fixtures.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve raw-response parsing, request ID and generated content. No cost or latency change; no speculative savings.",
+          "risk": "Existing generation behavior retained; Jev substitution would alter the public contract."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."
+  },
+  "matched_sites": [],
+  "source_revision": "dcb356deb748674782849bfd635f53e59688e275"
+}

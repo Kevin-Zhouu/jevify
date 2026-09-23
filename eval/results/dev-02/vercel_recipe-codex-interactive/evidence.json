@@ -1,0 +1,40 @@
+{
+  "fixture": "vercel_recipe",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_recipe-codex-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790133507665934000,
+      "ended_ns": 1790133527854599000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133527856238000,
+      "ended_ns": 1790133613790664000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133613795100000,
+      "ended_ns": 1790133711616252000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "b7be26901b589bb3b5773e7b7ac34cee0953dd84",
+  "git_log": "e61acf000121886ebb303387dff770ebc7f9944d 1790133703 Document Jev audit with no eligible decision sites\nb7be26901b589bb3b5773e7b7ac34cee0953dd84 1790133507 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  }
+}

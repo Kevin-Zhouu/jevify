@@ -1,0 +1,53 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY vercel_recipe. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_recipe-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_recipe-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+Preflight passes: repo is clean, branch `jev-convert/evaluation` is available, and `OPENROUTER_API_KEY` is present. Now I have everything needed for the audit.
+
+---
+
+## Jev Audit — `vercel_recipe`
+
+### Site inventory
+
+This repository contains a single file with a single LLM call site:
+
+| ID | Location | SDK / Provider / Model | Input | Downstream use | Classification | Fit |
+|---|---|---|---|---|---|---|
+| S1 | `workflow.ts:7` | Vercel AI SDK `generateObject` / OpenAI `gpt-4o-mini` | Fixed prompt: `"Generate a lasagna recipe."` | Full structured object (`name`, `ingredients[]`, `steps[]`) is JSON-printed to stdout; `usage` and `finishReason` metadata logged separately | **GENERATION** | **NOT A FIT** |
+
+### Classification rationale
+
+The call uses `generateObject` with a Zod schema to produce a recipe containing:
+- `recipe.name` — an open-ended string (recipe title)
+- `recipe.ingredients` — array of objects with free-form `name` and `amount` strings
+- `recipe.steps` — array of free-form instructional strings
+
+The structured JSON envelope does not change the nature of the output. Per the audit rules: *"Structured JSON does not make it a decision."* Every substantive field is **generative prose** — ingredient names, quantity descriptions, and cooking instructions are unbounded creative content, not labels, booleans, routes, or closed-set selections.
+
+The entire generated object is the product; nothing selects from it, routes on it, or uses it as a typed decision. Metadata fields (`usage`, `finishReason`) are envelope diagnostics, not decision outputs.
+
+### Fit rationale — NOT A FIT
+
+Jev is a System One model that returns **typed judgments** (Choice, Score, Noul). It explicitly does not generate prose, recipes, code, or arbitrary schema strings. From the jaggedness profile: *"Jev isn't designed for text generation and performs poorly when forced to generate."* From the coding-agents guide: *"Jev is not a drop-in replacement"* for generative models.
+
+There is no decomposition that rescues this site:
+- The recipe **name** is generated, not selected from a closed set.
+- **Ingredients** and **amounts** are creative content, not classification.
+- **Steps** are instructional prose.
+- No upstream candidates exist to select from; the entire point is generation from scratch.
+
+### Recommendations
+
+| Site | Option | Action | Primitive | Benefit | Risk | Scope |
+|---|---|---|---|---|---|---|
+| S1 `workflow.ts:7` | A | **leave** | `none` | No speculative savings; the workflow is purely generative and Jev cannot produce equivalent output. Preserves correctness. | None — status quo maintained. | No changes. |
+
+**No good Jev opportunities here.**
+
+This workflow asks an LLM to generate a complete recipe from a single prompt. Every output field is free-form creative content. Jev's primitives (Choice, Score, Noul) cannot produce recipe names, ingredient lists, or cooking steps. There is no decision, routing, classification, or extraction component to decompose out of this call. The only sound option is to leave it unchanged.
+
+---
+
+No conversion approval is needed since there is nothing to convert. I have not written any files or created any branches, per the read-only audit constraint.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

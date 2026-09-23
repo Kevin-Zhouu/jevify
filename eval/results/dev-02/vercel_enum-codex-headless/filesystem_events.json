@@ -1,0 +1,515 @@
+[
+  {
+    "time_ns": 1790133030041980000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/HEAD",
+    "before": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "after": "c6f08aedbfccc91f05293986347ddde528e073c23045dcc32f22b424213deca9",
+    "mtime_ns": 1790133029925753414
+  },
+  {
+    "time_ns": 1790133030042034000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "160bf6e1cb50fe8b4f43da527c9b8e83432577b758c62718024b6897177ce14b",
+    "after": "5002a8d58415afbb071320fa5fce129c1d936b15afa8145015eaa15f7bb79179",
+    "mtime_ns": 1790133029925827790
+  },
+  {
+    "time_ns": 1790133030042047000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "691067a04a60bbb5a1fc3de538a345b656296ddc05d48d8f5e7b104eee8ba456",
+    "mtime_ns": 1790133029925265282
+  },
+  {
+    "time_ns": 1790133030042058000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "0548ed9d800eb7a8fb0f7ef664822e796d1fcb205a28edceee7fb0047f0f9eb0",
+    "mtime_ns": 1790133029924309768
+  },
+  {
+    "time_ns": 1790133135123261000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "jevDecisions.ts",
+    "before": null,
+    "after": "fda2ebb76d596ddc9b37535e624f98a06a37bf6a3e9dded0b16d2c743ed790c2",
+    "mtime_ns": 1790133135077610666
+  },
+  {
+    "time_ns": 1790133135123288000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "workflow.ts",
+    "before": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+    "after": "27f04efebb581795001971143a52eda80e2c0b1d5ae3889243fbadc2c2e39b97",
+    "mtime_ns": 1790133135115450334
+  },
+  {
+    "time_ns": 1790133135336331000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".env.example",
+    "before": null,
+    "after": "4a51814155b471f4af876f0fcc816e1ff80f12e226234f60e3c7e13d10aaa46a",
+    "mtime_ns": 1790133135121822551
+  },
+  {
+    "time_ns": 1790133135336343000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_AUDIT.json",
+    "before": null,
+    "after": "a5d713987fc87a0b8b57fa8b9e5b56bd05824f34f314510090a06c5a0c1da28c",
+    "mtime_ns": 1790133135149801536
+  },
+  {
+    "time_ns": 1790133135336351000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_PLAN.md",
+    "before": null,
+    "after": "b00b418ec71901c9d8443f00b02871e1d470185e4c6d17b5ef36f0d8eb6197f8",
+    "mtime_ns": 1790133135155487076
+  },
+  {
+    "time_ns": 1790133268774315000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "validation/check.cjs",
+    "before": null,
+    "after": "997a09393f0b5ee7c1c22fb8adf435a66b583d1dfe0e1177885fb911316e1f60",
+    "mtime_ns": 1790133268738753431
+  },
+  {
+    "time_ns": 1790133278283528000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "validation/package.json",
+    "before": null,
+    "after": "0874232017a545ad5c869fd64514925b102abf4d834f1bfe5a0017e126d9c20c",
+    "mtime_ns": 1790133278164341175
+  },
+  {
+    "time_ns": 1790133279556958000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "validation/package-lock.json",
+    "before": null,
+    "after": "88877c0385008cf94ea03eb4dd647b0032a058ef21b8b569e19ddef9b67f90a1",
+    "mtime_ns": 1790133279369497536
+  },
+  {
+    "time_ns": 1790133288350896000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": null,
+    "after": "0af0ceb81ca0bc28ed12b007e0334b59bb4b24e1a71ce36ff399807b12133372",
+    "mtime_ns": 1790133288309668248
+  },
+  {
+    "time_ns": 1790133289637696000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "0af0ceb81ca0bc28ed12b007e0334b59bb4b24e1a71ce36ff399807b12133372",
+    "after": "d86af4b56e74e136852b35502f7b1f1d04ad2a1156fc202af41d9c10ea910119",
+    "mtime_ns": 1790133289422275983
+  },
+  {
+    "time_ns": 1790133290485324000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "d86af4b56e74e136852b35502f7b1f1d04ad2a1156fc202af41d9c10ea910119",
+    "after": "2caca406d3d15a29d88a8a5d1f9d985a217647574485af47b040c4788426431e",
+    "mtime_ns": 1790133290455798046
+  },
+  {
+    "time_ns": 1790133291568317000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "2caca406d3d15a29d88a8a5d1f9d985a217647574485af47b040c4788426431e",
+    "after": "09b92bad544d3bb1c6e7ca3f07d99f203dce1d19497001015d8e450f873dc789",
+    "mtime_ns": 1790133291487678629
+  },
+  {
+    "time_ns": 1790133292659012000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "09b92bad544d3bb1c6e7ca3f07d99f203dce1d19497001015d8e450f873dc789",
+    "after": "9041813230088dae0b69a91d5f42d25fefdbc43c94d51f86b185c3f310f90ef4",
+    "mtime_ns": 1790133292550708368
+  },
+  {
+    "time_ns": 1790133293963610000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "9041813230088dae0b69a91d5f42d25fefdbc43c94d51f86b185c3f310f90ef4",
+    "after": "15d31d0637bd542d143661fdf8762ca47a6b23008f7be5cadbd2c79d3d8d6238",
+    "mtime_ns": 1790133293769540008
+  },
+  {
+    "time_ns": 1790133295045564000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "15d31d0637bd542d143661fdf8762ca47a6b23008f7be5cadbd2c79d3d8d6238",
+    "after": "0aa4de318c02ca4dd67ed8b3c3583a30f6e81ad76cafc53517efa0a5876caffe",
+    "mtime_ns": 1790133294967240182
+  },
+  {
+    "time_ns": 1790133296152775000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "0aa4de318c02ca4dd67ed8b3c3583a30f6e81ad76cafc53517efa0a5876caffe",
+    "after": "006e261035e6d5a5195031d05c15b99dcde72e69c369d0d29e6553a0258a8453",
+    "mtime_ns": 1790133296054941780
+  },
+  {
+    "time_ns": 1790133298117335000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "006e261035e6d5a5195031d05c15b99dcde72e69c369d0d29e6553a0258a8453",
+    "after": "1a21f7cad6f78f50e3399c2d4834f28615fb0340cb8f91d7e11943e137e62c24",
+    "mtime_ns": 1790133298060369334
+  },
+  {
+    "time_ns": 1790133299227237000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "1a21f7cad6f78f50e3399c2d4834f28615fb0340cb8f91d7e11943e137e62c24",
+    "after": "fbeb67b69c7f7008b0fcce88330421313b306601297e7d82cbee955183f39cab",
+    "mtime_ns": 1790133299130619478
+  },
+  {
+    "time_ns": 1790133301590202000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "fbeb67b69c7f7008b0fcce88330421313b306601297e7d82cbee955183f39cab",
+    "after": "0054d544850c05cd1134280905b7a5992703ad9d71906e5adfc02d121b5ce2b8",
+    "mtime_ns": 1790133301541785734
+  },
+  {
+    "time_ns": 1790133302681236000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "0054d544850c05cd1134280905b7a5992703ad9d71906e5adfc02d121b5ce2b8",
+    "after": "ea60017d1ef96f37cf306599b42f1492206bf1d3effd22894d608f757569d969",
+    "mtime_ns": 1790133302627482227
+  },
+  {
+    "time_ns": 1790133304393961000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "ea60017d1ef96f37cf306599b42f1492206bf1d3effd22894d608f757569d969",
+    "after": "04db55011c4ac06891d66a4ba6e3cfa2ef4abf5ebaf17d01c1e7ee96ef6bf5c5",
+    "mtime_ns": 1790133304264994597
+  },
+  {
+    "time_ns": 1790133305664837000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "04db55011c4ac06891d66a4ba6e3cfa2ef4abf5ebaf17d01c1e7ee96ef6bf5c5",
+    "after": "2e105a2af4abede1e71816d58343ed1b6450f776a9b125a72cfdfc1064b6b4e7",
+    "mtime_ns": 1790133305453804281
+  },
+  {
+    "time_ns": 1790133306726689000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "2e105a2af4abede1e71816d58343ed1b6450f776a9b125a72cfdfc1064b6b4e7",
+    "after": "e62f5719b05f7d195f1faa18916902b0cbe262acea69d589f147999d2cf716bb",
+    "mtime_ns": 1790133306517796007
+  },
+  {
+    "time_ns": 1790133308435509000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "e62f5719b05f7d195f1faa18916902b0cbe262acea69d589f147999d2cf716bb",
+    "after": "ed641777645193bb7dd20118292a9aa59377b1ef4660c5feefce2ac490df2d76",
+    "mtime_ns": 1790133308388907567
+  },
+  {
+    "time_ns": 1790133309514559000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "ed641777645193bb7dd20118292a9aa59377b1ef4660c5feefce2ac490df2d76",
+    "after": "ea3b1f3e3efde0b296a1edb235f68a822385a26f94e302ce1c91226d149a013f",
+    "mtime_ns": 1790133309422383857
+  },
+  {
+    "time_ns": 1790133310810685000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "ea3b1f3e3efde0b296a1edb235f68a822385a26f94e302ce1c91226d149a013f",
+    "after": "6e4eb995810b2726fd3e727dcaac0148caffe8add2a930014871c339f298eb8a",
+    "mtime_ns": 1790133310628231872
+  },
+  {
+    "time_ns": 1790133312505151000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "6e4eb995810b2726fd3e727dcaac0148caffe8add2a930014871c339f298eb8a",
+    "after": "ea5f59cb7cd78676c6f5cf8e47e2814a7be60e25c357b3c2a4a34f735df8d47f",
+    "mtime_ns": 1790133312284461395
+  },
+  {
+    "time_ns": 1790133314213616000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "ea5f59cb7cd78676c6f5cf8e47e2814a7be60e25c357b3c2a4a34f735df8d47f",
+    "after": "4d3f53f61001faa0576101d641a11a042b5ddd1c62ca82cf8388d8c3ca8754f2",
+    "mtime_ns": 1790133314095354387
+  },
+  {
+    "time_ns": 1790133315293856000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "4d3f53f61001faa0576101d641a11a042b5ddd1c62ca82cf8388d8c3ca8754f2",
+    "after": "1042ea5819c93ce5690f178be701e1f4182e157c663aea19a80986d817dd905f",
+    "mtime_ns": 1790133315193437774
+  },
+  {
+    "time_ns": 1790133316153790000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "1042ea5819c93ce5690f178be701e1f4182e157c663aea19a80986d817dd905f",
+    "after": "1df689def646c54c6ea00a837aa869929733cddbf514fb8bd4faa76ebf5c0be9",
+    "mtime_ns": 1790133316003795614
+  },
+  {
+    "time_ns": 1790133318072703000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "1df689def646c54c6ea00a837aa869929733cddbf514fb8bd4faa76ebf5c0be9",
+    "after": "1878d4d015ad3cdec3b287189dbca139db53c4f38baa0eb1623e1bb0816e93f0",
+    "mtime_ns": 1790133317881888366
+  },
+  {
+    "time_ns": 1790133319793722000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "1878d4d015ad3cdec3b287189dbca139db53c4f38baa0eb1623e1bb0816e93f0",
+    "after": "ca07a9940e334bbd7de0b264a2cfb87a96498f75af9236c4864b2540086ba122",
+    "mtime_ns": 1790133319707984580
+  },
+  {
+    "time_ns": 1790133321094127000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "ca07a9940e334bbd7de0b264a2cfb87a96498f75af9236c4864b2540086ba122",
+    "after": "125d7c3dfa138973ff1b379fbcea19cbc633fb4fcfd8c45e7f172e74e6a4bd60",
+    "mtime_ns": 1790133320944868504
+  },
+  {
+    "time_ns": 1790133322813910000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "125d7c3dfa138973ff1b379fbcea19cbc633fb4fcfd8c45e7f172e74e6a4bd60",
+    "after": "ef2661c5c4b13cd3de4f9b5614f92e4b31804736c8b0de6692a313599a15f433",
+    "mtime_ns": 1790133322641646280
+  },
+  {
+    "time_ns": 1790133323675639000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "ef2661c5c4b13cd3de4f9b5614f92e4b31804736c8b0de6692a313599a15f433",
+    "after": "0bfe6172d68217ab8993de311a8f8aabca15b6a266704fbf09525a5322d8f1bc",
+    "mtime_ns": 1790133323610516064
+  },
+  {
+    "time_ns": 1790133324737845000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "0bfe6172d68217ab8993de311a8f8aabca15b6a266704fbf09525a5322d8f1bc",
+    "after": "42cf623da9f98c7dc6779803553f53065fd1015c3b721c4ef3f9d4ec4cf272dd",
+    "mtime_ns": 1790133324681664318
+  },
+  {
+    "time_ns": 1790133326444178000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "42cf623da9f98c7dc6779803553f53065fd1015c3b721c4ef3f9d4ec4cf272dd",
+    "after": "99a7782bddfcdd61ebe4688995111b52798bcff65771389fea02f0505c5fc9f9",
+    "mtime_ns": 1790133326362395989
+  },
+  {
+    "time_ns": 1790133328147417000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "99a7782bddfcdd61ebe4688995111b52798bcff65771389fea02f0505c5fc9f9",
+    "after": "8031fd05648949d7cb73df1093433b3bbf3e8f5faf3161698436c46a85f2bdd2",
+    "mtime_ns": 1790133328037590707
+  },
+  {
+    "time_ns": 1790133329025532000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_PLAN.md",
+    "before": "b00b418ec71901c9d8443f00b02871e1d470185e4c6d17b5ef36f0d8eb6197f8",
+    "after": "f27fa3a95aae7c5e14c57ba679c7ae75692f50ce75266c5d602fb93b59e64b40",
+    "mtime_ns": 1790133328864889210
+  },
+  {
+    "time_ns": 1790133329457810000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "8031fd05648949d7cb73df1093433b3bbf3e8f5faf3161698436c46a85f2bdd2",
+    "after": "080e1987807540c3f75e2bc62f817478b01f83c85814997538b7623e52e51c49",
+    "mtime_ns": 1790133329343461165
+  },
+  {
+    "time_ns": 1790133331216550000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "080e1987807540c3f75e2bc62f817478b01f83c85814997538b7623e52e51c49",
+    "after": "89b351dbc5fd513dd20bbd3ac06b330114558ebbac02a4f61a0680cbf3f93102",
+    "mtime_ns": 1790133331005740823
+  },
+  {
+    "time_ns": 1790133332298039000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "89b351dbc5fd513dd20bbd3ac06b330114558ebbac02a4f61a0680cbf3f93102",
+    "after": "1b8dd4e0c852e7695ab2d19ff84ef5ee09de0b7d87ec63368717b0f29397b2f3",
+    "mtime_ns": 1790133332155704293
+  },
+  {
+    "time_ns": 1790133334425463000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "1b8dd4e0c852e7695ab2d19ff84ef5ee09de0b7d87ec63368717b0f29397b2f3",
+    "after": "f01149ddff2b65d7d834452d455b7442caa6ece2bd4574465e88d323fcc87bbf",
+    "mtime_ns": 1790133334294652254
+  },
+  {
+    "time_ns": 1790133335747029000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "f01149ddff2b65d7d834452d455b7442caa6ece2bd4574465e88d323fcc87bbf",
+    "after": "8bd3fc3267bb114ea8ac6a1b0db6502e8b35a2338d9338fe9bb46e7e7b912687",
+    "mtime_ns": 1790133335655565211
+  },
+  {
+    "time_ns": 1790133337260824000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": "8bd3fc3267bb114ea8ac6a1b0db6502e8b35a2338d9338fe9bb46e7e7b912687",
+    "after": "150762279786ff31aaa9884c35fb229c051d3494de13c5d8ffd4706198e63f43",
+    "mtime_ns": 1790133337095427467
+  },
+  {
+    "time_ns": 1790133406496030000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_REPORT.md",
+    "before": null,
+    "after": "aa9f3601eb646244329b9fda63054a013202514fdb0fb10df16696a621a5fd43",
+    "mtime_ns": 1790133406284220626
+  },
+  {
+    "time_ns": 1790133425727495000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "5002a8d58415afbb071320fa5fce129c1d936b15afa8145015eaa15f7bb79179",
+    "after": "28cc57ecde1eb52831e7dcce31a18fc2ba4936969d78a759c64cecb24659a4a5",
+    "mtime_ns": 1790133425616428446
+  },
+  {
+    "time_ns": 1790133425727520000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "691067a04a60bbb5a1fc3de538a345b656296ddc05d48d8f5e7b104eee8ba456",
+    "after": "4f795d2f5e1478bbbbb0b3c526e9c8584946be7b862e507c0ecb5ad9167ace65",
+    "mtime_ns": 1790133425616461989
+  },
+  {
+    "time_ns": 1790133425727535000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "0548ed9d800eb7a8fb0f7ef664822e796d1fcb205a28edceee7fb0047f0f9eb0",
+    "after": "7d7f39bd9de93f018139f70e95a862eb6e9f37328439662556e386a6475d3bc2",
+    "mtime_ns": 1790133425616383862
+  },
+  {
+    "time_ns": 1790133425727547000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_REPORT.md",
+    "before": "aa9f3601eb646244329b9fda63054a013202514fdb0fb10df16696a621a5fd43",
+    "after": "418d683281748ae95ea8bd0dafa28699b0374f2371586a90b87ea501201d23c4",
+    "mtime_ns": 1790133425542781930
+  },
+  {
+    "time_ns": 1790133434972959000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "28cc57ecde1eb52831e7dcce31a18fc2ba4936969d78a759c64cecb24659a4a5",
+    "after": "d4764d61937851baeb5b44f534535f788df8782ab9b6dd8d9d5c9f7c711ed332",
+    "mtime_ns": 1790133434893950173
+  },
+  {
+    "time_ns": 1790133434972970000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "4f795d2f5e1478bbbbb0b3c526e9c8584946be7b862e507c0ecb5ad9167ace65",
+    "after": "3656c3f3046cf287161f70dfea76f5918d67e267f831a29d3822ecb402ace5d0",
+    "mtime_ns": 1790133434893987507
+  },
+  {
+    "time_ns": 1790133434972980000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "7d7f39bd9de93f018139f70e95a862eb6e9f37328439662556e386a6475d3bc2",
+    "after": "81ab8be4ab8091300c3738aae9db6610bb819c5530bfb63dc29ae700d2b32611",
+    "mtime_ns": 1790133434893895630
+  }
+]

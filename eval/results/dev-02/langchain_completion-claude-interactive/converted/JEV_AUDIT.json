@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain / OpenAI (gpt-3.5-turbo-0125)",
+      "downstream": "model.stream(prompt) -> LangChainAdapter.toDataStreamResponse(stream) — raw streamed text returned to HTTP client",
+      "classification": "GENERATION",
+      "fit": "not a fit",
+      "reason": "Pure open-ended text completion endpoint. Arbitrary user prompt in, unconstrained streamed prose out. No decision, classification, extraction, or routing semantics. Jev is designed for typed judgments over bounded questions, none of which exist here. The jaggedness profile explicitly states generation is slow, ineffective, and explicitly discouraged.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No risk of behavioral regression; workflow continues to operate as designed for open-ended text generation",
+          "risk": "none"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

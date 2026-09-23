@@ -1,0 +1,40 @@
+{
+  "fixture": "anthropic_routing",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_routing-codex-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790133398900379000,
+      "ended_ns": 1790133418122016000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133418122712000,
+      "ended_ns": 1790133512231307000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133512232718000,
+      "ended_ns": 1790133635670101000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "6fa3fbbdfca247d087ec4a7454ae2990bb401330",
+  "git_log": "26d62e484e671d798c9b6b20e252a1dba38cc017 1790133625 Document Jev audit with no eligible approved conversion sites\n6fa3fbbdfca247d087ec4a7454ae2990bb401330 1790133398 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  }
+}

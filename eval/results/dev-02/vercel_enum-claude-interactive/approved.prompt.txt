@@ -1,0 +1,65 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY vercel_enum. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_enum-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_enum-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+Now I have everything I need. Here is the audit.
+
+---
+
+## Jevify Audit — `vercel_enum`
+
+### Repository summary
+
+Single-file workflow (`workflow.ts`, 22 lines). It uses the Vercel AI SDK (`ai` + `@ai-sdk/openai`) to call `generateObject` with `output: 'enum'` mode, classifying a movie plot into one of five fixed genres: `action`, `comedy`, `drama`, `horror`, `sci-fi`. The result object (the chosen genre string) and diagnostics (`usage`, `finishReason`) are printed to stdout.
+
+---
+
+### Site inventory
+
+| ID | File | Line | SDK / Provider / Model | Input origin | Downstream | Classification | Fit |
+|---|---|---|---|---|---|---|---|
+| S1 | `workflow.ts` | 6 | Vercel AI SDK `generateObject` / OpenAI / `gpt-4o-mini` | Hardcoded string (movie plot) | `result.object` printed to stdout (the genre label); `result.usage` and `result.finishReason` also printed | **DECISION** | **FIT** |
+
+#### Classification rationale
+
+The call's substantive answer is a single label from a closed enum of 5 genres. This is a textbook DECISION: one closed-set selection over trusted, fixed input. The `usage` and `finishReason` fields are envelope metadata — a separate contract concern per audit rules. They are printed but do not drive branching logic.
+
+#### Fit rationale
+
+- **Closed label set**: 5 genre options map directly to a Choice primitive with 5 criteria.
+- **Trusted input**: The prompt is a hardcoded string, not user-supplied. No adversarial input risk.
+- **No jaggedness concerns**: Simple semantic classification over a short English sentence — well within Jev 1.13's documented strengths. No math, date comparison, multi-hop reasoning, non-text input, or large context.
+- **Context size**: Tiny input, well under 32k state limit.
+
+---
+
+### Recommendations
+
+| Site | Classification | Fit | Option | Action | Primitive | Benefit | Risk | Scope |
+|---|---|---|---|---|---|---|---|---|
+| `workflow.ts:6` | DECISION | FIT | **A** | `fallback` | Choice | Jev Choice is likely cheaper ($0.042/Mtok input, output free) and faster than gpt-4o-mini for a 5-option genre classification. Expected cost = Jev cost + (fallback fraction × original gpt-4o-mini cost). For high-confidence inputs (likely most, given hardcoded benign text), nearly all decisions resolve on the Jev path. | Serial miss adds Jev latency before original inference. Diagnostics adapter must faithfully map `usage` and `finishReason` for stdout output — `finishReason: "stop"` is a documented adapter-owned status for a successful decision; `usage` must reflect real Jev token counts, not copied original values. Conservative posture retains gpt-4o-mini fallback permanently. | Convert `generateObject` call to attempt Jev Choice first; on low confidence, error, timeout, or missing key, fall back to the original `generateObject` call unchanged. Preserve all printed fields. |
+| `workflow.ts:6` | DECISION | FIT | **B** | `leave` | none | No change, no risk. Original behavior preserved exactly. | No cost/latency savings. | No conversion needed. Reason to leave: if this is purely a demo/example and conversion overhead isn't justified, or if the diagnostics contract (`usage` token counts, `finishReason`) must remain native OpenAI values with no adapter mapping. |
+
+### Option details
+
+**Option A — `fallback` with Choice primitive:**
+- A single `jevDecisions.ts` module would hold the Jev model pin (`typesafe/jev-1.13-20260917` via OpenRouter), question definition, confidence threshold, and gate logic.
+- The Choice question: `"What genre is this movie plot?"` with criteria `{action: null, comedy: null, drama: null, horror: null, "sci-fi": null}`.
+- On confidence above threshold: return the Jev choice as `result.object`, real Jev usage as `result.usage`, and `"stop"` as `result.finishReason`.
+- On low confidence / error / missing key: call original `generateObject` exactly once and return its result.
+- Log path (`jev` or `original`) and model version to stderr on every call.
+
+**Option B — `leave`:**
+- No changes. Site remains as-is.
+
+---
+
+### What happens next
+
+No conversion approval has been given. I've completed the read-only audit and presented the recommendations above. To proceed, you would need to:
+
+1. **Select options** — tell me which option (A or B) you want for site `workflow.ts:6`
+2. **Explicitly approve conversion** — e.g., "Convert site workflow.ts:6 with option A"
+
+Until then, no files will be written, no dependencies installed, and no code changed.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

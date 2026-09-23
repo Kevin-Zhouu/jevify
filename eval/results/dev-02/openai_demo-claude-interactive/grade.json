@@ -1,0 +1,33 @@
+{
+  "fixture": "openai_demo",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "audit_agreement": 1.0,
+  "checks": {
+    "audit_agreement": true,
+    "audit_evidence": true,
+    "recommendations": true,
+    "fit_review": true,
+    "no_generation_jev_only": true,
+    "gating": true,
+    "output_mode": false,
+    "smoke": true,
+    "plan": false,
+    "report": false,
+    "negative_control": false,
+    "centralization": true,
+    "contracts": true,
+    "model_pinned": true,
+    "parity": true,
+    "hygiene": true,
+    "conversion_coverage": true
+  },
+  "failures": {
+    "output_mode": "Output isolation, original refs, or no-push invariant failed",
+    "plan": "Missing saved plan",
+    "report": "Missing report",
+    "negative_control": "Negative control changed non-report files or did not explicitly explain no opportunities"
+  },
+  "pass": false
+}

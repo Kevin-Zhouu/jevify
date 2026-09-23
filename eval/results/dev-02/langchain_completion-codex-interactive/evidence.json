@@ -1,0 +1,40 @@
+{
+  "fixture": "langchain_completion",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/langchain_completion-codex-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790133762982682000,
+      "ended_ns": 1790133785573882000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133785575231000,
+      "ended_ns": 1790133854366127000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133854367905000,
+      "ended_ns": 1790133955202456000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "065ae67041864cf75b11206448d251d8f7871ce9",
+  "git_log": "20def439419db8f75a1626cdfaddaffb909cd084 1790133948 Document Jev audit with no eligible approved decision sites\n065ae67041864cf75b11206448d251d8f7871ce9 1790133762 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  }
+}

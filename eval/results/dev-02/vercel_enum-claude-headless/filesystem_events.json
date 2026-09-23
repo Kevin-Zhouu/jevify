@@ -1,0 +1,209 @@
+[
+  {
+    "time_ns": 1790133054950650000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/HEAD",
+    "before": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "after": "c6f08aedbfccc91f05293986347ddde528e073c23045dcc32f22b424213deca9",
+    "mtime_ns": 1790133054793924234
+  },
+  {
+    "time_ns": 1790133054950708000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "160bf6e1cb50fe8b4f43da527c9b8e83432577b758c62718024b6897177ce14b",
+    "after": "09c8d012eb15e5bb628b9c4df1166a599fe2d019bae5deaad6f02fb21ce6632c",
+    "mtime_ns": 1790133054793984401
+  },
+  {
+    "time_ns": 1790133054950723000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "079a23028cac162f32aa5ee0a3e39522db37eb2a012531aaca43a15a52276742",
+    "mtime_ns": 1790133054793535812
+  },
+  {
+    "time_ns": 1790133054950736000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "0548ed9d800eb7a8fb0f7ef664822e796d1fcb205a28edceee7fb0047f0f9eb0",
+    "mtime_ns": 1790133054792741050
+  },
+  {
+    "time_ns": 1790133076903523000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_PLAN.md",
+    "before": null,
+    "after": "84a2e8635473f84faaa313d455ba7d4cbaf77691317b6178549ddf5caa8aa582",
+    "mtime_ns": 1790133076708492682
+  },
+  {
+    "time_ns": 1790133082087667000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_AUDIT.json",
+    "before": null,
+    "after": "64937ee5bc0e72d47fc0c77a165cf75d578dbb837f4f0d0b3b703fb3563ca9c7",
+    "mtime_ns": 1790133081877006944
+  },
+  {
+    "time_ns": 1790133114713838000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "jevDecisions.ts",
+    "before": null,
+    "after": "49253d67a83afb837c80a178f0163a96db1d7c5166e5d50b5b45c03efcc63d56",
+    "mtime_ns": 1790133114523733466
+  },
+  {
+    "time_ns": 1790133124404048000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "workflow.ts",
+    "before": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+    "after": "ba34240317d0c072836f8ff5c72af4ad9c4c9a27f71bcd5c7bdf8bdaff4e4e98",
+    "mtime_ns": 1790133124313138294
+  },
+  {
+    "time_ns": 1790133127595080000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".env.example",
+    "before": null,
+    "after": "047e097256db4922a2580079650ee76a7d2b50a34490728938f4708e6ebd7018",
+    "mtime_ns": 1790133127511975064
+  },
+  {
+    "time_ns": 1790133177290009000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "jevDecisions.ts",
+    "before": "49253d67a83afb837c80a178f0163a96db1d7c5166e5d50b5b45c03efcc63d56",
+    "after": "debd1d7b3a403ed8df70be3db458813d48f28194cb75d92c4f540e0fd4287f36",
+    "mtime_ns": 1790133177120673746
+  },
+  {
+    "time_ns": 1790133184832154000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "workflow.ts",
+    "before": "ba34240317d0c072836f8ff5c72af4ad9c4c9a27f71bcd5c7bdf8bdaff4e4e98",
+    "after": "dac61f04f7b5bc50d9d185cac2ff2c2424a42fa0039b1a90f27a920b9521c9bd",
+    "mtime_ns": 1790133184666645691
+  },
+  {
+    "time_ns": 1790133332944152000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "validate_parity.py",
+    "before": null,
+    "after": "9c006623368e70f8b72a6e680f812fc8aa39d1cd58568fcb93728bfc2bc4b434",
+    "mtime_ns": 1790133332733858803
+  },
+  {
+    "time_ns": 1790133369746103000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_PARITY.json",
+    "before": null,
+    "after": "52e71d244155138901696325c7b48b917b341926b7a9001317ff4f6fb71b2eca",
+    "mtime_ns": 1790133369686137200
+  },
+  {
+    "time_ns": 1790133433508265000,
+    "phase": "approved",
+    "tree": "original",
+    "file": "JEV_CONVERSION_REPORT.md",
+    "before": null,
+    "after": "0e709f1a4ff76a005b7046d4df5becd472e7d447f7ea02315167f1b0a85ffa44",
+    "mtime_ns": 1790133433299735030
+  },
+  {
+    "time_ns": 1790133448000841000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "09c8d012eb15e5bb628b9c4df1166a599fe2d019bae5deaad6f02fb21ce6632c",
+    "after": "9bd66f9a5140ea2a8552f719d85691e7a2a0be1a30a5c06c43d3ca3cc76940a2",
+    "mtime_ns": 1790133447951523931
+  },
+  {
+    "time_ns": 1790133448000854000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "079a23028cac162f32aa5ee0a3e39522db37eb2a012531aaca43a15a52276742",
+    "after": "ff3f14dfaf8e0c2d1c5efbe56d18808c52d9399b644f1ebe2eff8adcf74ce54c",
+    "mtime_ns": 1790133447951559223
+  },
+  {
+    "time_ns": 1790133448000866000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "0548ed9d800eb7a8fb0f7ef664822e796d1fcb205a28edceee7fb0047f0f9eb0",
+    "after": "f367069509d3c39102549b0d6db08474feaa6c6027f5f3208a9266025e8aa439",
+    "mtime_ns": 1790133447951480764
+  },
+  {
+    "time_ns": 1790133454810499000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "9bd66f9a5140ea2a8552f719d85691e7a2a0be1a30a5c06c43d3ca3cc76940a2",
+    "after": "528c1e9fbc1f6dde2660e2491c4a4f332c78dabe8737c64b1ba88cc6ea93e6af",
+    "mtime_ns": 1790133454723555553
+  },
+  {
+    "time_ns": 1790133454810519000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "ff3f14dfaf8e0c2d1c5efbe56d18808c52d9399b644f1ebe2eff8adcf74ce54c",
+    "after": "d7c18ef195062e5793857fe313f8fabda86c147681bd01a069a29ff079feb9af",
+    "mtime_ns": 1790133454723586387
+  },
+  {
+    "time_ns": 1790133454810529000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "f367069509d3c39102549b0d6db08474feaa6c6027f5f3208a9266025e8aa439",
+    "after": "233bb5c11df829dcb6b06259b0e932decd24ddf7dcc8a717fc43522028f47f0b",
+    "mtime_ns": 1790133454723518511
+  },
+  {
+    "time_ns": 1790133461365627000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/HEAD",
+    "before": "528c1e9fbc1f6dde2660e2491c4a4f332c78dabe8737c64b1ba88cc6ea93e6af",
+    "after": "9d1873cfc3897eb04ed9b6bf938c1cb9842ae3659ffaa7c37c13cb97e1a953a3",
+    "mtime_ns": 1790133461330583931
+  },
+  {
+    "time_ns": 1790133461365647000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "d7c18ef195062e5793857fe313f8fabda86c147681bd01a069a29ff079feb9af",
+    "after": "bd0730d4b10ea1aac5fa060519b432ab1ff9d31bf417e70d962bd01495806311",
+    "mtime_ns": 1790133461330615140
+  },
+  {
+    "time_ns": 1790133461365657000,
+    "phase": "approved",
+    "tree": "original",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "233bb5c11df829dcb6b06259b0e932decd24ddf7dcc8a717fc43522028f47f0b",
+    "after": "49a9b2316ba02d6a6719cc99b56bf7434a4d6ab28e473dfa4c36475130a26c8b",
+    "mtime_ns": 1790133461330536931
+  }
+]

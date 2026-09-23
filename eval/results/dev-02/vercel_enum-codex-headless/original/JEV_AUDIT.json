@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "Vercel AI SDK generateObject / @ai-sdk/openai / gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "main prints result.object, blank line, Token usage: result.usage and Finish reason: result.finishReason; main().catch(console.error) preserves error reporting.",
+      "classification": "DECISION",
+      "fit": "FIT for fixed benign fixture",
+      "reason": "One short English plot is classified into five closed genres. No generation, arithmetic, extraction, multimodal state or multi-hop reasoning. Diagnostics are metadata, not generated reasoning. Real Jev usage can map to the consumed token fields and completed decisions to adapter-owned generic stop. No adversarial mitigation exists; suitability does not extend to hostile public inputs.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Replace the one enum inference with confidence-gated Jev; accepted decisions may reduce latency/cost by avoiding generative inference. Expected cost is Jev cost plus fallback fraction times original cost; serial misses add latency and cost. Preserve all four stdout calls with truthful metadata.",
+          "risk": "Genre ambiguity and uncalibrated confidence can disagree with GPT-4o-mini. Keep original on missing key, low confidence, invalid metadata, transport error, timeout or rate limit. Initial threshold 0.9 is provisional."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve current model and diagnostics with no added call latency; no speculative savings.",
+          "risk": "No Jev savings; existing classification ambiguity remains."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.ts:6"
+  ]
+}

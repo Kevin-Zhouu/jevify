@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "returned label string selects one of 10 insurance support categories",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "bounded semantic classification over trusted benign text into a closed enumerated set; no math, dates, multi-hop reasoning, generation, or adversarial input",
+      "context_size": "small",
+      "untrusted_input_mitigation": "benign fixed dataset; scoped to this distribution",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "accepted Jev decisions are faster (~100 ms vs ~500+ ms) and cheaper ($0.042/M tokens input-only vs Haiku pricing); serial misses add Jev latency and cost before original inference",
+          "risk": "Jev may disagree on ambiguous boundary cases between similar categories; conservative fallback retains original for low-confidence answers",
+          "scope": "replace simple_classify entry point with classify that calls Jev Choice gated on confidence >= 0.7, falling back to original simple_classify on low confidence, missing key, errors, or timeouts"
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "no risk, no change",
+          "risk": "no cost or latency benefit",
+          "scope": "leave as-is"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

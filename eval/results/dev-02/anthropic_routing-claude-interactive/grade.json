@@ -1,0 +1,31 @@
+{
+  "fixture": "anthropic_routing",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "audit_agreement": 0.6666666666666666,
+  "checks": {
+    "audit_agreement": false,
+    "audit_evidence": true,
+    "recommendations": true,
+    "fit_review": true,
+    "no_generation_jev_only": true,
+    "gating": false,
+    "output_mode": true,
+    "smoke": true,
+    "plan": true,
+    "report": true,
+    "negative_control": true,
+    "centralization": true,
+    "contracts": true,
+    "model_pinned": true,
+    "parity": true,
+    "hygiene": true,
+    "conversion_coverage": true
+  },
+  "failures": {
+    "audit_agreement": "2/3 labels matched",
+    "gating": "Transcript/continuous filesystem/git evidence did not establish both gates"
+  },
+  "pass": false
+}

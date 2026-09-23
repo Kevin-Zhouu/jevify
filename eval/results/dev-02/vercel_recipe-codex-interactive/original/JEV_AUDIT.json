@@ -1,0 +1,33 @@
+{
+  "source_revision": "b7be26901b589bb3b5773e7b7ac34cee0953dd84",
+  "output_mode": "branch",
+  "output_repository": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_recipe-codex-interactive/original",
+  "branch": "jev-convert/evaluation",
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."
+  },
+  "selected_conversion_sites": [],
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK \u2192 OpenAI gpt-4o-mini",
+      "downstream": "Prints recipe JSON (name, ingredient names and amounts, steps), blank line, result.usage and result.finishReason; main().catch(console.error) handles errors.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The fixed prompt generates a lasagna recipe with arbitrary strings. A structured schema does not make these enumerated decisions. There are no pure DECISION sites matching approval.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "Preserves generation and all diagnostics; no change in model cost or latency.",
+          "risk": "No migration risk; existing provider behavior remains.",
+          "primitive": "none"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

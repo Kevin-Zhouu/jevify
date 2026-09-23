@@ -1,0 +1,26 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY openai_demo. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/openai_demo-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/openai_demo-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’ll use the installed jevify skill to audit this repository read-only. I’ll use your setup answers, ignore any approval in the config, and present recommendations without writing files or converting code.
+
+The workflow has three LLM calls, all producing text that is printed directly. One also streams output; another exposes the response request ID. I found no decision step suitable for Jev. Preflight passed: the repository is clean, the requested branch is unused, and `OPENROUTER_API_KEY` is present.
+
+**No good Jev opportunities here.** All three calls generate displayed text. Jev returns typed decisions and cannot preserve these generation contracts. [TypeSafe’s documented limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13.md#generation)
+
+All sites use the OpenAI SDK with `gpt-5.5`:
+
+| Original site | Classification | Downstream use and fit | Recommended option |
+|---|---|---|---|
+| `workflow.py:10` | GENERATION | Prints response content at line 19. **NOT A FIT:** “Say this is a test” requests generated text, not a classification. | **A — leave**, primitive `none`. Preserve the complete request and output. Cost/latency unchanged; avoids changing response semantics. |
+| `workflow.py:23` | GENERATION | Streams Python advice/code; skips empty choices and prints content deltas at lines 33–38. **NOT A FIT:** requires text generation and streaming behavior. | **B — leave**, primitive `none`. Preserve streaming and printing exactly. Cost/latency unchanged; avoids breaking chunk handling or replacing generated advice. |
+| `workflow.py:42` | GENERATION | Parses the raw response, then prints its request ID and generated content at lines 51–53. **NOT A FIT:** generation plus observable transport diagnostics. | **C — leave**, primitive `none`. Preserve raw-response handling and truthful request IDs. Cost/latency unchanged; avoids fabricated diagnostics or altered output. |
+
+The shared client serves these three calls; there are no additional application wrappers or decision consumers. Inputs are short, hardcoded text fixtures. No external-input mitigation exists or is needed for those fixtures; this assessment does not establish adversarial robustness.
+
+Preflight passed: clean repository on `main`, requested branch `jev-convert/evaluation` unused, and `OPENROUTER_API_KEY` present. Its value was neither printed nor saved.
+
+Recommendation: **A + B + C; convert nothing.** No source execution, smoke tests, or live parity measurements were performed. The config was not read. No branches or files were created, including audit, plan, report, or parity artifacts; `converted_sites` remains empty.
+
+Stopped at your requested read-only boundary. The [jevify skill](.agents/skills/jevify/SKILL.md) also requires: “Wait for explicit option selections, edits, or acceptance. Do not write files until the answer.”
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

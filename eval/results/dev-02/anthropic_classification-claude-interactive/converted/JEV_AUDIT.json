@@ -1,0 +1,36 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "Return value: bare category label string consumed by caller",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Closed 10-label classification over support ticket text; no math, counting, dates, multi-hop, or generation; General Inquiries serves as catch-all; benign domain text distribution",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Lower per-decision cost (Jev $0.042/M input tokens vs Haiku per-token pricing); ~100ms latency vs typical LLM latency; typed confidence score enables downstream routing",
+          "risk": "Serial miss adds Jev latency before Anthropic fallback; expected cost = Jev cost + fallback_rate * original cost; requires OPENROUTER_API_KEY for Jev access"
+        },
+        {
+          "action": "jev_only",
+          "primitive": "Choice",
+          "benefit": "Eliminates Anthropic dependency and cost entirely; simplest code path",
+          "risk": "Residual classification errors without fallback safety net; requires measured parity first; excluded by conservative risk posture"
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No migration risk; no new dependency",
+          "risk": "No cost/latency improvement; no confidence signal"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

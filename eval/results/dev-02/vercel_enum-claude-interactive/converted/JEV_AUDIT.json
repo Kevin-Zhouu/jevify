@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "Vercel AI SDK generateObject / OpenAI / gpt-4o-mini",
+      "downstream": "result.object (genre label) printed to stdout; result.usage and result.finishReason also printed",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Closed 5-option genre enum over trusted hardcoded input. Simple semantic classification well within Jev 1.13 strengths. No math, date comparison, multi-hop reasoning, non-text input, or large context.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Jev Choice is likely cheaper ($0.042/Mtok input, output free) and faster than gpt-4o-mini ($0.15/Mtok input, $0.60/Mtok output) for a 5-option genre classification. Expected cost = Jev cost + (fallback fraction × original gpt-4o-mini cost). For high-confidence inputs, nearly all decisions resolve on the Jev path.",
+          "risk": "Serial miss adds Jev latency before original inference. Diagnostics adapter must faithfully map usage and finishReason for stdout output. Conservative posture retains gpt-4o-mini fallback permanently."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change, no risk. Original behavior preserved exactly.",
+          "risk": "No cost/latency savings."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.ts:6"
+  ]
+}

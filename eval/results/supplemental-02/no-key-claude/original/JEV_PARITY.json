@@ -1,0 +1,17 @@
+{
+  "sites": [
+    {
+      "site_id": "workflow.py:83",
+      "threshold": 0.7,
+      "rows": [],
+      "faults": {
+        "below_threshold": false,
+        "error": false,
+        "timeout": false,
+        "rate_limit": false
+      },
+      "live_validation": "skipped: no TYPESAFE_API_KEY; provider=none",
+      "note": "No key supplied. Live validation skipped. Conservative fallback retained. Fault injection deferred to keyed run."
+    }
+  ]
+}

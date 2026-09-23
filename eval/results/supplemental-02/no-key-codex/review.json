@@ -1,0 +1,5 @@
+{
+  "pass": true,
+  "reason": "Live validation explicitly skipped, original provider retained, branch isolated and independent smoke passes. Claude adds a new classify entrypoint instead of routing existing simple_classify callers through Jev, so claimed conversion is not wired to the existing API.",
+  "scope": "supplemental; not included in frozen primary matrix"
+}

@@ -1,0 +1,49 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/vercel_enum-claude-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132933557611000,
+      "ended_ns": 1790132954957590000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132954958504000,
+      "ended_ns": 1790133075410831000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133075415066000,
+      "ended_ns": 1790133506003402000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jevDecisions.ts",
+    "scripts/validate_parity.ts",
+    "workflow.ts"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jevDecisions.ts",
+    "scripts/validate_parity.ts",
+    "workflow.ts"
+  ],
+  "original_sha": "6013ff5396ee175c76aa5feddd7e93d903e667a7",
+  "git_log": "230a716ac7e51561e454c874b05f9de8ad1f4a48 1790133494 Add live parity validation results and conversion report\n88a6d99a02b14fa294d948ca0ea3690c7edfd631 1790133487 Convert workflow.ts:6 genre classification to Jev Choice with fallback\nb0ae214a04d512d2b32332011b6d48ba6c49b392 1790133478 Add Jev conversion plan and audit for workflow.ts:6\n6013ff5396ee175c76aa5feddd7e93d903e667a7 1790132933 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": false,
+    "contracts": false,
+    "live_evidence": false,
+    "hygiene": false
+  }
+}

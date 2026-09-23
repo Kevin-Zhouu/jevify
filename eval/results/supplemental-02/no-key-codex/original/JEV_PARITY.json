@@ -1,0 +1,27 @@
+{
+  "status": "live validation skipped",
+  "reason": "provider none; TypeSafe and Anthropic process credentials absent",
+  "sites": [
+    {
+      "site_id": "workflow.py:83",
+      "primitive": "Choice",
+      "threshold": 0.9,
+      "rows": [],
+      "faults": {
+        "below_threshold": true,
+        "error": true,
+        "timeout": true,
+        "rate_limit": true
+      },
+      "fault_evidence": "test_jev_decisions.py; below_threshold is a pure gate assertion, transport faults verify exactly-once fallback",
+      "metrics": {
+        "n": 0,
+        "agreement": null,
+        "confidence_curve": null,
+        "fallback_rate": null,
+        "latency": null,
+        "cost": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "headless": true,
+  "output": {
+    "mode": "branch",
+    "branch": "jev-convert/no-key"
+  },
+  "access": {
+    "provider": "none"
+  },
+  "risk": "conservative",
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs, preserve behavior and original fallback provider."
+  }
+}

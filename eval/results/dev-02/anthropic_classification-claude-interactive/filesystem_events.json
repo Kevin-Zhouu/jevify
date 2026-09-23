@@ -1,0 +1,677 @@
+[
+  {
+    "time_ns": 1790133184999841000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/INSTALL.md",
+    "before": null,
+    "after": "c5a11eed49e0bd51b6516080fd774d3ff84874a2c4cac73722bfa061f20be786",
+    "mtime_ns": 1790133184916564572
+  },
+  {
+    "time_ns": 1790133184999882000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/SKILL.md",
+    "before": null,
+    "after": "d4afc98c2b51ad66a087950879d4ed3b7918e4d37d0eadb413b2d653267b27b4",
+    "mtime_ns": 1790133184916741741
+  },
+  {
+    "time_ns": 1790133184999895000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/audit.md",
+    "before": null,
+    "after": "7b6f5f0a0b6896d0472ca12a963b6b20836b85d11c087e0fdb3c16cca6d29d44",
+    "mtime_ns": 1790133184916943077
+  },
+  {
+    "time_ns": 1790133184999905000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/configuration.md",
+    "before": null,
+    "after": "0e1f393fd3486998c852b2b02489d9ee2fa8041e4f6ee22878ba0ca06244a6ca",
+    "mtime_ns": 1790133184917106955
+  },
+  {
+    "time_ns": 1790133184999915000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/conversion.md",
+    "before": null,
+    "after": "07c52192596de476abd7e71754958d5a5c6d5951bd2ffe6137ef42b273bcf57b",
+    "mtime_ns": 1790133184917309583
+  },
+  {
+    "time_ns": 1790133184999925000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/credentials.md",
+    "before": null,
+    "after": "99f910c2480869093d9c17ce86ab2215099571c7f5bf38555c817154f1b6d8b2",
+    "mtime_ns": 1790133184917491127
+  },
+  {
+    "time_ns": 1790133184999935000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/LICENSE",
+    "before": null,
+    "after": "835f233f1d6ed84a9b9a351aba0689b47644a4137d6316911fc7957bde523b02",
+    "mtime_ns": 1790133184917700172
+  },
+  {
+    "time_ns": 1790133184999944000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/SOURCES.json",
+    "before": null,
+    "after": "6b4d8e2c49ccf3d27009fe70fa857844a969ba35cc33e152f84a416707c265f7",
+    "mtime_ns": 1790133184917835090
+  },
+  {
+    "time_ns": 1790133184999954000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/api.md",
+    "before": null,
+    "after": "7ea1c82d9d16bd06e3d38885a5292548293f91e6d1ade4682c27398ced51a9e5",
+    "mtime_ns": 1790133184917974967
+  },
+  {
+    "time_ns": 1790133184999963000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/confidence.md",
+    "before": null,
+    "after": "97dafe98b77979906a2ad456013dd85a70dcecd109d0644b096817d910997ea5",
+    "mtime_ns": 1790133184918133595
+  },
+  {
+    "time_ns": 1790133184999973000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/models.md",
+    "before": null,
+    "after": "9d20bb3c90a0147532d0b20ddc4c64579391be7842e965543b27bad684eeb4d6",
+    "mtime_ns": 1790133184918326722
+  },
+  {
+    "time_ns": 1790133184999982000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/primitives-choice.md",
+    "before": null,
+    "after": "4c55085131f8f2d7ae1faefdec52b1c7b379d40657d701cd2c786021cfe9dac9",
+    "mtime_ns": 1790133184918548934
+  },
+  {
+    "time_ns": 1790133184999992000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/primitives-noul.md",
+    "before": null,
+    "after": "aa7bff0d04bd42614e0e851a9ad4917ccc6287c882bc5dece7689b085ef789e6",
+    "mtime_ns": 1790133184918746812
+  },
+  {
+    "time_ns": 1790133185000001000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/primitives-score.md",
+    "before": null,
+    "after": "5afe0db1d2d108c3bf35f73f5fddbfcd2b9ade2d3c6f553af8a02b2bfd005ae9",
+    "mtime_ns": 1790133184918998815
+  },
+  {
+    "time_ns": 1790133185000011000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/sdk-javascript.md",
+    "before": null,
+    "after": "25ba04f5b55819bee85e21d9184b7b8c807a81e95754baef4b05157240a2e1bb",
+    "mtime_ns": 1790133184919191443
+  },
+  {
+    "time_ns": 1790133185000020000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/sdk-python.md",
+    "before": null,
+    "after": "40d5c6a5fb9b6a8f68ec9f14343837bc0ea5a7fe09a3bfb9a07f52418e41f1a3",
+    "mtime_ns": 1790133184919381487
+  },
+  {
+    "time_ns": 1790133185000029000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/official/typesafe-skill.md",
+    "before": null,
+    "after": "71ea90d7906c6554c4f4c460ef7361b2d26f59116ccdae986dc6d997b9389f52",
+    "mtime_ns": 1790133184919571115
+  },
+  {
+    "time_ns": 1790133185000038000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/references/validation.md",
+    "before": null,
+    "after": "65df24c0e354f84685e197f646c1369b0491131ee15f0e6070ab636d339c7a56",
+    "mtime_ns": 1790133184919768951
+  },
+  {
+    "time_ns": 1790133185000047000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/scripts/check_artifacts.py",
+    "before": null,
+    "after": "8caebefeb652d30975c15a609defd0325b434f80811835f8180bd32ab9d512c6",
+    "mtime_ns": 1790133184919995788
+  },
+  {
+    "time_ns": 1790133185000057000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/scripts/preflight.py",
+    "before": null,
+    "after": "5a64e7486bda9730128d39e204d411d84059d4e800059984bc59aa8f531afef7",
+    "mtime_ns": 1790133184920165665
+  },
+  {
+    "time_ns": 1790133185000066000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".agents/skills/jevify/scripts/with_jev_key.py",
+    "before": null,
+    "after": "7ca71d8e5b0e34b80b573fb87114294a70d67a511008bd5bb9105e740e37a378",
+    "mtime_ns": 1790133184920346376
+  },
+  {
+    "time_ns": 1790133185000075000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/INSTALL.md",
+    "before": null,
+    "after": "c5a11eed49e0bd51b6516080fd774d3ff84874a2c4cac73722bfa061f20be786",
+    "mtime_ns": 1790133184920675214
+  },
+  {
+    "time_ns": 1790133185000084000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/SKILL.md",
+    "before": null,
+    "after": "d4afc98c2b51ad66a087950879d4ed3b7918e4d37d0eadb413b2d653267b27b4",
+    "mtime_ns": 1790133184921015178
+  },
+  {
+    "time_ns": 1790133185000093000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/audit.md",
+    "before": null,
+    "after": "7b6f5f0a0b6896d0472ca12a963b6b20836b85d11c087e0fdb3c16cca6d29d44",
+    "mtime_ns": 1790133184921306223
+  },
+  {
+    "time_ns": 1790133185000102000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/configuration.md",
+    "before": null,
+    "after": "0e1f393fd3486998c852b2b02489d9ee2fa8041e4f6ee22878ba0ca06244a6ca",
+    "mtime_ns": 1790133184921494893
+  },
+  {
+    "time_ns": 1790133185000111000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/conversion.md",
+    "before": null,
+    "after": "07c52192596de476abd7e71754958d5a5c6d5951bd2ffe6137ef42b273bcf57b",
+    "mtime_ns": 1790133184921678687
+  },
+  {
+    "time_ns": 1790133185000120000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/credentials.md",
+    "before": null,
+    "after": "99f910c2480869093d9c17ce86ab2215099571c7f5bf38555c817154f1b6d8b2",
+    "mtime_ns": 1790133184921828523
+  },
+  {
+    "time_ns": 1790133185000130000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/LICENSE",
+    "before": null,
+    "after": "835f233f1d6ed84a9b9a351aba0689b47644a4137d6316911fc7957bde523b02",
+    "mtime_ns": 1790133184922057359
+  },
+  {
+    "time_ns": 1790133185000139000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/SOURCES.json",
+    "before": null,
+    "after": "6b4d8e2c49ccf3d27009fe70fa857844a969ba35cc33e152f84a416707c265f7",
+    "mtime_ns": 1790133184922266654
+  },
+  {
+    "time_ns": 1790133185000148000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/api.md",
+    "before": null,
+    "after": "7ea1c82d9d16bd06e3d38885a5292548293f91e6d1ade4682c27398ced51a9e5",
+    "mtime_ns": 1790133184922423406
+  },
+  {
+    "time_ns": 1790133185000157000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/confidence.md",
+    "before": null,
+    "after": "97dafe98b77979906a2ad456013dd85a70dcecd109d0644b096817d910997ea5",
+    "mtime_ns": 1790133184922587325
+  },
+  {
+    "time_ns": 1790133185000167000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/models.md",
+    "before": null,
+    "after": "9d20bb3c90a0147532d0b20ddc4c64579391be7842e965543b27bad684eeb4d6",
+    "mtime_ns": 1790133184922755536
+  },
+  {
+    "time_ns": 1790133185000176000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/primitives-choice.md",
+    "before": null,
+    "after": "4c55085131f8f2d7ae1faefdec52b1c7b379d40657d701cd2c786021cfe9dac9",
+    "mtime_ns": 1790133184922975497
+  },
+  {
+    "time_ns": 1790133185000185000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/primitives-noul.md",
+    "before": null,
+    "after": "aa7bff0d04bd42614e0e851a9ad4917ccc6287c882bc5dece7689b085ef789e6",
+    "mtime_ns": 1790133184923377253
+  },
+  {
+    "time_ns": 1790133185000195000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/primitives-score.md",
+    "before": null,
+    "after": "5afe0db1d2d108c3bf35f73f5fddbfcd2b9ade2d3c6f553af8a02b2bfd005ae9",
+    "mtime_ns": 1790133184923587923
+  },
+  {
+    "time_ns": 1790133185000204000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/sdk-javascript.md",
+    "before": null,
+    "after": "25ba04f5b55819bee85e21d9184b7b8c807a81e95754baef4b05157240a2e1bb",
+    "mtime_ns": 1790133184923899011
+  },
+  {
+    "time_ns": 1790133185000213000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/sdk-python.md",
+    "before": null,
+    "after": "40d5c6a5fb9b6a8f68ec9f14343837bc0ea5a7fe09a3bfb9a07f52418e41f1a3",
+    "mtime_ns": 1790133184924064888
+  },
+  {
+    "time_ns": 1790133185000222000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/official/typesafe-skill.md",
+    "before": null,
+    "after": "71ea90d7906c6554c4f4c460ef7361b2d26f59116ccdae986dc6d997b9389f52",
+    "mtime_ns": 1790133184924240599
+  },
+  {
+    "time_ns": 1790133185000231000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/references/validation.md",
+    "before": null,
+    "after": "65df24c0e354f84685e197f646c1369b0491131ee15f0e6070ab636d339c7a56",
+    "mtime_ns": 1790133184924411935
+  },
+  {
+    "time_ns": 1790133185000241000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/scripts/check_artifacts.py",
+    "before": null,
+    "after": "8caebefeb652d30975c15a609defd0325b434f80811835f8180bd32ab9d512c6",
+    "mtime_ns": 1790133184924640688
+  },
+  {
+    "time_ns": 1790133185000250000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/scripts/preflight.py",
+    "before": null,
+    "after": "5a64e7486bda9730128d39e204d411d84059d4e800059984bc59aa8f531afef7",
+    "mtime_ns": 1790133184924785857
+  },
+  {
+    "time_ns": 1790133185000259000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".claude/skills/jevify/scripts/with_jev_key.py",
+    "before": null,
+    "after": "7ca71d8e5b0e34b80b573fb87114294a70d67a511008bd5bb9105e740e37a378",
+    "mtime_ns": 1790133184924958443
+  },
+  {
+    "time_ns": 1790133185000268000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/HEAD",
+    "before": null,
+    "after": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "mtime_ns": 1790133184913042980
+  },
+  {
+    "time_ns": 1790133185000277000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/HEAD",
+    "before": null,
+    "after": "eed863a2f925c35b3ce28281703ddf0fb2433ba2b64f7b70783ba12e916f4f65",
+    "mtime_ns": 1790133184913679989
+  },
+  {
+    "time_ns": 1790133185000286000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/refs/heads/main",
+    "before": null,
+    "after": "eed863a2f925c35b3ce28281703ddf0fb2433ba2b64f7b70783ba12e916f4f65",
+    "mtime_ns": 1790133184913830949
+  },
+  {
+    "time_ns": 1790133185000295000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/refs/remotes/origin/HEAD",
+    "before": null,
+    "after": "eed863a2f925c35b3ce28281703ddf0fb2433ba2b64f7b70783ba12e916f4f65",
+    "mtime_ns": 1790133184912720934
+  },
+  {
+    "time_ns": 1790133185000304000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/packed-refs",
+    "before": null,
+    "after": "4bbd6e529a284b11deb53e1bd3cfdf48b6275c96a510b8fc440c840ed7abb652",
+    "mtime_ns": 1790133184911533708
+  },
+  {
+    "time_ns": 1790133185000313000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/refs/heads/main",
+    "before": null,
+    "after": "46be4e3802caf485802de8e847a2b9a10aabb61c6d38e72d5c3b78d58f7243ff",
+    "mtime_ns": 1790133184913596654
+  },
+  {
+    "time_ns": 1790133185000322000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/refs/remotes/origin/HEAD",
+    "before": null,
+    "after": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+    "mtime_ns": 1790133184912008923
+  },
+  {
+    "time_ns": 1790133185000331000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".gitignore",
+    "before": null,
+    "after": "ee06cfa052f48633d73f15136607a97a099f64f875bd1d1b2d951a7523098f74",
+    "mtime_ns": 1790133184925100695
+  },
+  {
+    "time_ns": 1790133185000340000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "LICENSE.upstream",
+    "before": null,
+    "after": "d7a04bf11ce24a7b79cd44b4a78dcc9971eaeb3b565821de437e0ecb7723e634",
+    "mtime_ns": 1790133184925960249
+  },
+  {
+    "time_ns": 1790133185000349000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "PROVENANCE.json",
+    "before": null,
+    "after": "724a674cb7d2ae22894b4e078d1b5cc45a5ae08ba68e8a3765cd27541285b23e",
+    "mtime_ns": 1790133184926099792
+  },
+  {
+    "time_ns": 1790133185000357000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "data/test.tsv",
+    "before": null,
+    "after": "a06e308384c153e3be2a95b577085d7a44e9dc4f9042729953dbbd2434b427e7",
+    "mtime_ns": 1790133184926552840
+  },
+  {
+    "time_ns": 1790133185000366000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "data/train.tsv",
+    "before": null,
+    "after": "1e37d6cc4bc5e3d769ca0bfaf134e5afcc40b5bf084f79687fa2fd0fd0671269",
+    "mtime_ns": 1790133184926769052
+  },
+  {
+    "time_ns": 1790133185000375000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "workflow.py",
+    "before": null,
+    "after": "51ffb2063fc4cbfc9a63fdc6a4c48456f313c34be9a1c2f78270037d50c96595",
+    "mtime_ns": 1790133184926928554
+  },
+  {
+    "time_ns": 1790133203181449000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/HEAD",
+    "before": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "after": "c6f08aedbfccc91f05293986347ddde528e073c23045dcc32f22b424213deca9",
+    "mtime_ns": 1790133203150550416
+  },
+  {
+    "time_ns": 1790133203181476000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/HEAD",
+    "before": "eed863a2f925c35b3ce28281703ddf0fb2433ba2b64f7b70783ba12e916f4f65",
+    "after": "0207c980fe754268af3c40c0d9999051d6ae13f3acb6bbf2c6a281f6e6fc9b8c",
+    "mtime_ns": 1790133203150618833
+  },
+  {
+    "time_ns": 1790133203181487000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "ff804329ca7899f505b10fb7d4caaf256c441d0f70da54fa5da1de931794fde2",
+    "mtime_ns": 1790133203150141785
+  },
+  {
+    "time_ns": 1790133203181497000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": null,
+    "after": "46be4e3802caf485802de8e847a2b9a10aabb61c6d38e72d5c3b78d58f7243ff",
+    "mtime_ns": 1790133203149469900
+  },
+  {
+    "time_ns": 1790133247894133000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "jev_decisions.py",
+    "before": null,
+    "after": "53c65ea5337038ac139bd760153d37c6c642827202dd70128c9752eb0af5300e",
+    "mtime_ns": 1790133247885228815
+  },
+  {
+    "time_ns": 1790133270717229000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "workflow.py",
+    "before": "51ffb2063fc4cbfc9a63fdc6a4c48456f313c34be9a1c2f78270037d50c96595",
+    "after": "1a7524a14ea3ab45da1db9d0913508926a94b91ddd68bf127fada34be16f1065",
+    "mtime_ns": 1790133270554942741
+  },
+  {
+    "time_ns": 1790133305110764000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "JEV_CONVERSION_PLAN.md",
+    "before": null,
+    "after": "0412fc2b852654a85975e136913da926399b7aa0026dc8b9fe0ec03a4d618f8a",
+    "mtime_ns": 1790133304973243718
+  },
+  {
+    "time_ns": 1790133315163636000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "JEV_AUDIT.json",
+    "before": null,
+    "after": "c5dde8ddb82e1e796c10e497ac762209b1221caabffb57e41849ab7cd5895384",
+    "mtime_ns": 1790133315152755315
+  },
+  {
+    "time_ns": 1790133316939761000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".env.example",
+    "before": null,
+    "after": "336de196296124a2207225f8a0cdcc362e5b70a08ca88aaacf5f11a526bf066e",
+    "mtime_ns": 1790133316803061338
+  },
+  {
+    "time_ns": 1790133412555815000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "scripts/validate_parity.py",
+    "before": null,
+    "after": "1042f5d96e4e3ba2435b05a67141ee28ea6e3fc306a26e70da3cd733c333e192",
+    "mtime_ns": 1790133412361297518
+  },
+  {
+    "time_ns": 1790133547157668000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "JEV_PARITY.json",
+    "before": null,
+    "after": "86a43fc8a26a797c2420a6a4363239ab49eb423c76929c9a90f8b5383d660a05",
+    "mtime_ns": 1790133547101055398
+  },
+  {
+    "time_ns": 1790133581572611000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "jev_decisions.py",
+    "before": "53c65ea5337038ac139bd760153d37c6c642827202dd70128c9752eb0af5300e",
+    "after": "4cf57948bd4d680f7cd5425dadcbc08c6d23305e63c6c9723f3573e5f9f2b6c3",
+    "mtime_ns": 1790133581464255150
+  },
+  {
+    "time_ns": 1790133597374391000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "JEV_PARITY.json",
+    "before": "86a43fc8a26a797c2420a6a4363239ab49eb423c76929c9a90f8b5383d660a05",
+    "after": "5c71d2333b533cc42d20731842cc37f135a8d6cd5bbaa740bbe5a75c3b3dbf8d",
+    "mtime_ns": 1790133597311191755
+  },
+  {
+    "time_ns": 1790133655811767000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": "JEV_CONVERSION_REPORT.md",
+    "before": null,
+    "after": "87a4b73f4f089e91ca4a8e123580f42a18c2f5f45f162e5b98f0ef927d787ed0",
+    "mtime_ns": 1790133655755544899
+  },
+  {
+    "time_ns": 1790133688998687000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/HEAD",
+    "before": "0207c980fe754268af3c40c0d9999051d6ae13f3acb6bbf2c6a281f6e6fc9b8c",
+    "after": "c7ab48588b7263700ca8397b43e70f4d3363922af9132e2533c1b60fa503bf14",
+    "mtime_ns": 1790133688991974595
+  },
+  {
+    "time_ns": 1790133688998730000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "ff804329ca7899f505b10fb7d4caaf256c441d0f70da54fa5da1de931794fde2",
+    "after": "b08c3ff4455fecd44c4d4923c9483a1930f27a12e03d8c81b7386c0900b66f9f",
+    "mtime_ns": 1790133688992009137
+  },
+  {
+    "time_ns": 1790133688998749000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "46be4e3802caf485802de8e847a2b9a10aabb61c6d38e72d5c3b78d58f7243ff",
+    "after": "58d0b46f9493465b5e29298ce96016be968d33a7a03e4db567b12eeda6d39523",
+    "mtime_ns": 1790133688991927303
+  },
+  {
+    "time_ns": 1790133695362936000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/HEAD",
+    "before": "c7ab48588b7263700ca8397b43e70f4d3363922af9132e2533c1b60fa503bf14",
+    "after": "b120bef89d3ab62cc96e39c79712192f7f179bfdc4254c1ea112e307c27bca41",
+    "mtime_ns": 1790133695304984459
+  },
+  {
+    "time_ns": 1790133695362949000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/logs/refs/heads/jev-convert/evaluation",
+    "before": "b08c3ff4455fecd44c4d4923c9483a1930f27a12e03d8c81b7386c0900b66f9f",
+    "after": "34b2a82c9b801f0938295f210145cc8aa9ebb934874ead48eb9fbd6dd239e317",
+    "mtime_ns": 1790133695305024418
+  },
+  {
+    "time_ns": 1790133695362959000,
+    "phase": "approved",
+    "tree": "converted",
+    "file": ".git/refs/heads/jev-convert/evaluation",
+    "before": "58d0b46f9493465b5e29298ce96016be968d33a7a03e4db567b12eeda6d39523",
+    "after": "12930baf7518450000c5d3108046f9c4a354b863c4fbef12ed8e29e93a905088",
+    "mtime_ns": 1790133695304927041
+  }
+]

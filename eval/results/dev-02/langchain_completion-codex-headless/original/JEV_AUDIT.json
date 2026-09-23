@@ -1,0 +1,27 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain ChatOpenAI / OpenAI / gpt-3.5-turbo-0125",
+      "downstream": "POST(req) reads req.json().prompt at line 8; model.stream(prompt) at line 15 yields the stream passed unchanged to LangChainAdapter.toDataStreamResponse(stream) at line 17, whose Response is returned to the HTTP caller.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Unrestricted completion text is the substantive output. No enumerated answer set, classification parser, or decision consumer exists. Jev typed judgments cannot preserve free-form generation and its streaming response contract.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves the original model, prompt forwarding, streaming response and error behavior; unchanged inference cost and latency, with no speculative savings.",
+          "risk": "No migration risk introduced; existing provider availability, cost and model limitations remain.",
+          "scope": "Leave all of workflow.ts unchanged."
+        }
+      ],
+      "input_origin": "Untrusted HTTP JSON prompt; forwarded unchanged, no runtime schema validation.",
+      "context_size": "Caller-controlled; no local token/length bound or filtering.",
+      "untrusted_input_mitigation": "None present; confidence would not establish injection resistance.",
+      "wrapper_relationship": "POST at line 7 is the sole local wrapper; constructor at line 10 configures the call; adapter at line 17 consumes it and is not another inference site."
+    }
+  ],
+  "converted_sites": []
+}

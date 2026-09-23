@@ -1,0 +1,74 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic SDK / claude-sonnet-4-6 (default)",
+      "downstream": "XML reasoning is printed at lines 28\u201329; selection is stripped/lowercased and printed at line 30, indexes routes at line 33, then drives the specialist call at line 34.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "The same response supplies a closed route and observable generated reasoning. Choice cannot preserve the reasoning contract.",
+      "input_origin": "caller input and runtime route keys",
+      "context": "Short repository ticket fixtures; public callable has no length bound. Exact token size not measured.",
+      "untrusted_input": "Caller text is directly interpolated; no effective adversarial-input mitigation is present. Benign fixtures do not establish production robustness.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves upstream output, diagnostics and exception behavior. Latency and cost remain unchanged because no calls are added or removed.",
+          "risk": "Retains existing model cost, parsing failures and input-injection exposure; introduces no conversion risk.",
+          "scope": "Leave this site and its prompt/provider/parsing unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic SDK / claude-sonnet-4-6 (default)",
+      "downstream": "Selected specialist prompt plus original input produces the string returned by route().",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Specialist response contains open-ended explanations and instructions, not a bounded selection.",
+      "input_origin": "caller input and selected runtime specialist prompt",
+      "context": "Short repository ticket fixtures; public callable has no length bound. Exact token size not measured.",
+      "untrusted_input": "Caller text is directly interpolated; no effective adversarial-input mitigation is present. Benign fixtures do not establish production robustness.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves upstream output, diagnostics and exception behavior. Latency and cost remain unchanged because no calls are added or removed.",
+          "risk": "Retains existing model cost, parsing failures and input-injection exposure; introduces no conversion risk.",
+          "scope": "Leave this site and its prompt/provider/parsing unchanged."
+        }
+      ]
+    },
+    {
+      "file": "util.py",
+      "line": 23,
+      "provider": "Anthropic SDK / claude-sonnet-4-6 (default)",
+      "downstream": "llm_call returns response.content[0].text at line 30 to both workflow.py:24 and workflow.py:34; route consumes XML reasoning/selection and returns specialist prose.",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Shared transport serves MIXED routing and GENERATION. Replacing the wrapper would break both text contracts; this is not an additional independent inference site.",
+      "input_origin": "prompt, optional system_prompt and model arguments",
+      "context": "Short repository ticket fixtures; public callable has no length bound. Exact token size not measured.",
+      "untrusted_input": "Caller text is directly interpolated; no effective adversarial-input mitigation is present. Benign fixtures do not establish production robustness.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves upstream output, diagnostics and exception behavior. Latency and cost remain unchanged because no calls are added or removed.",
+          "risk": "Retains existing model cost, parsing failures and input-injection exposure; introduces no conversion risk.",
+          "scope": "Leave this site and its prompt/provider/parsing unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "output_mode": "report",
+  "source_revision": "6d194f3d9298d11d74499307d7db36848493d0d8",
+  "approval_resolution": {
+    "eligible_sites": [],
+    "reason": "No pure DECISION sites; report mode prohibits source conversion."
+  }
+}

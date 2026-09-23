@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "measured": false,
+  "reason": "No sites were converted. Parity measurement is not applicable when there are zero Jev-converted call sites.",
+  "results": []
+}

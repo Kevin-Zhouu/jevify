@@ -1,0 +1,30 @@
+{
+  "fixture": "langchain_completion",
+  "harness": "claude",
+  "scenario": "headless",
+  "mode": "report",
+  "audit_agreement": 1.0,
+  "checks": {
+    "audit_agreement": true,
+    "audit_evidence": true,
+    "recommendations": true,
+    "fit_review": true,
+    "no_generation_jev_only": true,
+    "gating": true,
+    "output_mode": true,
+    "smoke": true,
+    "plan": true,
+    "report": true,
+    "negative_control": false,
+    "centralization": true,
+    "contracts": true,
+    "model_pinned": true,
+    "parity": true,
+    "hygiene": true,
+    "conversion_coverage": true
+  },
+  "failures": {
+    "negative_control": "Negative control changed non-report files or did not explicitly explain no opportunities"
+  },
+  "pass": false
+}

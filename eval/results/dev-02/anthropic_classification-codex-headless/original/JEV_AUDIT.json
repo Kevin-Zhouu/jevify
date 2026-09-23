@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic messages / claude-haiku-4-5",
+      "downstream": "simple_classify(X): response.content[0].text -> strip() -> returned string; no repository callers or exposed metadata",
+      "classification": "DECISION",
+      "fit": "FIT for supplied benign English ticket distribution; unvalidated for hostile production input",
+      "reason": "Ten enumerated insurance categories including General Inquiries; no generation, arithmetic or multi-hop reasoning. Input comes from caller; fixtures are short benign text. No existing adversarial mitigation; confidence is not an injection defense.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Selected: one bounded Choice with original fallback. Accepted requests can reduce inference cost and latency; expected cost is Jev cost plus fallback fraction times original cost.",
+          "risk": "Misclassification, especially overlapping billing categories; serial fallback adds Jev latency/cost. Preserve synchronous string output, original exceptions and unchanged Anthropic fallback. Scope: benign example distribution."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Retains original semantics and cost without added latency.",
+          "risk": "No potential Jev savings; retains original classification uncertainty."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

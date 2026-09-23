@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic / claude-haiku-4-5",
+      "downstream": "simple_classify(X) returns response.content[0].text.strip(); no repository consumers",
+      "classification": "DECISION",
+      "fit": "CONDITIONAL: benign support-ticket distribution",
+      "reason": "Ten enumerated labels and descriptions; arbitrary untrusted inputs lack an effective adversarial defense. Oversized inputs bypass Jev without truncation. Wrapper at line 65 and transport at 83 are one site.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Accepted decisions avoid Claude inference and may reduce cost and latency. Expected cascade cost is Jev plus fallback fraction times original.",
+          "risk": "Confident disagreement; serial fallback adds latency and cost. No adversarial robustness claim."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No added latency or migration work.",
+          "risk": "Retains current inference costs."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

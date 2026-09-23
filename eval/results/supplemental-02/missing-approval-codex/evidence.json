@@ -1,0 +1,18 @@
+{
+  "case": "missing-approval",
+  "harness": "codex",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790133401919322000,
+    "ended_ns": 1790133558190547000
+  },
+  "output_relative": "original",
+  "original_sha": "90a9bb0d35c42c38811b53b458d8396a67202cf9",
+  "main_unchanged": true,
+  "branch": "main",
+  "changes": [
+    "JEV_CONVERSION_PLAN.md"
+  ],
+  "smoke": null,
+  "review_required": true
+}

@@ -1,0 +1,49 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "codex",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_classification-codex-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132933574932000,
+      "ended_ns": 1790132953718839000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132953720035000,
+      "ended_ns": 1790133056154574000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133056158040000,
+      "ended_ns": 1790133398417255000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jev_decisions.py",
+    "validate_jev.py",
+    "workflow.py"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jev_decisions.py",
+    "validate_jev.py",
+    "workflow.py"
+  ],
+  "original_sha": "eff84f8f58d676d6b3b2eb21ae7b906300e2ef1b",
+  "git_log": "39aafae181adebfd1a49a8ea0b519cb48ef97c1d 1790133391 Add Jev Choice cascade with original fallback and measured validation\ne9463abc48c62434b069a1a87f6a48581f951fde 1790133391 Document approved support classification fallback conversion\neff84f8f58d676d6b3b2eb21ae7b906300e2ef1b 1790132933 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  }
+}

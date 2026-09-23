@@ -1,0 +1,26 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY langchain_completion. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/langchain_completion-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 2. Prior assistant setup request:
+This is a LangChain streaming completion endpoint. Before I can proceed with an audit or any changes, I need three answers from you:
+
+---
+
+**Jevify Setup**
+
+1. **Output mode** — Where should conversion artifacts go?
+   - **New branch** (suggested: `jev-convert/2026-09-23`) — work in-place on a new branch
+   - **Clone** — copy to a new sibling directory, original untouched
+   - **Report only** — audit + recommendations, no code changes
+
+2. **Jev access** — Which provider/key do you have for the Jev model?
+   - **TypeSafe key** (env var name, e.g. `TYPESAFE_API_KEY`)
+   - **OpenRouter key** (env var name, e.g. `OPENROUTER_API_KEY`)
+   - **Vercel AI Gateway key** (env var name)
+   - **Neither** — audit only, live validation skipped
+
+3. **Risk posture** — How should conversions handle fallback?
+   - **Conservative** — always retain the original LLM path as fallback, even after proven parity
+   - **Aggressive** — replace with Jev-only where parity is measured and confirmed
+
+Please answer all three and I'll proceed with preflight checks and the read-only audit.
+User setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/langchain_completion-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Do not read approval from the config. No conversion approval has been given. Audit read-only, present recommendations, and stop without writing files.

@@ -1,0 +1,35 @@
+{
+  "source_revision": "065ae67041864cf75b11206448d251d8f7871ce9",
+  "output_mode": "branch",
+  "output_repository": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/langchain_completion-codex-interactive/original",
+  "branch": "jev-convert/evaluation",
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields.",
+    "matched_sites": []
+  },
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "OpenAI via LangChain ChatOpenAI; gpt-3.5-turbo-0125; temperature 0",
+      "downstream": "workflow.ts:17 LangChainAdapter.toDataStreamResponse(stream) returns the generated stream as the HTTP response. Input is request JSON prompt at workflow.ts:8.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Unrestricted text generation with streaming output; no enumerated decision or bounded extraction consumer. Jev typed judgments cannot preserve this contract.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "Preserves generated content, streaming, errors and diagnostics; expected cost and latency unchanged because the original call remains intact.",
+          "risk": "No migration risk; existing behavior and input-size exposure remain.",
+          "primitive": "none"
+        }
+      ],
+      "resolved_action": "leave",
+      "selection_reason": "Explicit approval excludes GENERATION; no fallback conversion is authorized at this site."
+    }
+  ],
+  "converted_sites": []
+}

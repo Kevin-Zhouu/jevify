@@ -1,0 +1,47 @@
+{
+  "case": "no-key",
+  "harness": "codex",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790133558503206000,
+    "ended_ns": 1790133813737897000
+  },
+  "output_relative": "original",
+  "original_sha": "2160130f0ffe291eff8623e4f83bc38fef8499d5",
+  "main_unchanged": true,
+  "branch": "jev-convert/no-key",
+  "changes": [
+    ".env.example",
+    ".git/COMMIT_EDITMSG",
+    ".git/HEAD",
+    ".git/index",
+    ".git/logs/HEAD",
+    ".git/logs/refs/heads/jev-convert/no-key",
+    ".git/objects/05/7a0302a8008652c7dfdd54d2de049fbc383515",
+    ".git/objects/0f/e11923064340925eb91a5eb780d36ddfbacc0f",
+    ".git/objects/1f/a0b3bb229d89a28c60ab9249908dffc836a433",
+    ".git/objects/23/1d3c58a28104ae59163f31aa3e1e9a24ec98ce",
+    ".git/objects/2d/18f286acc637013957c6cc23ed0b343f107476",
+    ".git/objects/44/2b80071a6d157e0df92b181891040a08429bd7",
+    ".git/objects/6b/482d174878061705b9faf8589f050368cfd633",
+    ".git/objects/79/affee35c3ba5fe0c77d93c667aa8a7789f421b",
+    ".git/objects/82/e9b7bd77d869d598456237bcbf106aa6eed3c4",
+    ".git/objects/af/dadebb6fb743896456faf83b7afd03947e0f4e",
+    ".git/objects/de/742d04d7e3546bde5efaac2fa8a389d997c236",
+    ".git/objects/ee/7d24f1932b14ba374290d8f367606e3c8d1204",
+    ".git/refs/heads/jev-convert/no-key",
+    "JEV_AUDIT.json",
+    "JEV_CONVERSION_PLAN.md",
+    "JEV_CONVERSION_REPORT.md",
+    "JEV_PARITY.json",
+    "jev_decisions.py",
+    "test_jev_decisions.py",
+    "workflow.py"
+  ],
+  "smoke": {
+    "exit_code": 0,
+    "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+    "stderr": "path=original model=claude-haiku-4-5 jev_model=jev-1.13.0 reason=missing_key\n"
+  },
+  "review_required": true
+}

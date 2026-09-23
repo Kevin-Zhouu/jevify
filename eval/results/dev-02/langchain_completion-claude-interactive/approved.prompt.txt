@@ -1,0 +1,58 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY langchain_completion. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/langchain_completion-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/langchain_completion-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+Now I have everything needed for the audit. Here's the analysis and recommendation.
+
+---
+
+## Jevify Audit — `langchain_completion`
+
+### Preflight Summary
+
+| Check | Result |
+|---|---|
+| Repository | Clean, on `main` at `34f59ab` |
+| Output mode | Branch `jev-convert/evaluation` (unused) |
+| Provider | OpenRouter (`OPENROUTER_API_KEY` **present**) |
+| Risk posture | Conservative |
+
+### Site Inventory
+
+There is exactly **one LLM call site** in this repository:
+
+| ID | Provider | Downstream | Classification | Fit |
+|---|---|---|---|---|
+| `workflow.ts:15` | LangChain / `gpt-3.5-turbo-0125` | `model.stream(prompt)` → `LangChainAdapter.toDataStreamResponse(stream)` — raw streamed text returned to HTTP client | **GENERATION** | **NOT A FIT** |
+
+### Detailed Analysis
+
+**`workflow.ts:15`** — `const stream = await model.stream(prompt);`
+
+- **Input origin**: Arbitrary user-supplied `prompt` string from the HTTP request body (line 8). Completely unbounded — any text, any topic.
+- **Output**: Free-form streamed text generation. The raw LLM token stream is adapted directly into an HTTP streaming response via `LangChainAdapter.toDataStreamResponse`. There is no post-processing, no parsing, no structured extraction, no routing decision.
+- **Classification: GENERATION** — This is a pure open-ended text completion endpoint. The model receives an arbitrary prompt and generates unconstrained prose/text. There are no labels, booleans, routes, scores, or closed-set selections anywhere in the output path.
+- **Fit: NOT A FIT** — Jev is a System One model trained for typed decisions and probabilities, not text generation. The jaggedness profile explicitly states generation is "slow and ineffective" and "explicitly discouraged." The building guide says the model should appear "only where the system needs programmable common sense" — this endpoint needs open-ended language generation, which is the opposite of that.
+
+### Why no part of this is convertible
+
+1. **No decision semantics exist.** The endpoint is a transparent pass-through: user prompt in → generated text stream out. There is no classification, routing, scoring, or extraction step to decompose.
+2. **Streaming is required.** The endpoint uses `model.stream()` and returns a streaming HTTP response with a 30-second timeout. Jev's API returns structured JSON judgments, not token streams.
+3. **Unbounded input and output.** Both the prompt and the response are arbitrary user-controlled text. Jev requires bounded questions with defined criteria and returns typed answers from closed sets.
+
+### Options
+
+| Site | Option | Action | Primitive | Benefit | Risk |
+|---|---|---|---|---|---|
+| `workflow.ts:15` | **A (only)** | `leave` | `none` | No risk of behavioral regression | None — this is the correct outcome |
+
+There are no guardrail or router opportunities either: the endpoint has no content policy, topic restrictions, or routing logic that could benefit from a Jev pre-check. Adding one would be inventing scope beyond what the workflow does.
+
+---
+
+## **No good Jev opportunities here.**
+
+This is a pure text generation endpoint. The single LLM call streams arbitrary prose to the client with no decision, classification, extraction, or routing semantics. Jev is designed for typed judgments over bounded questions — none of which exist in this workflow. The correct action is to leave the workflow unchanged.
+
+No files have been written. Awaiting your acknowledgment or questions.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

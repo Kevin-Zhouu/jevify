@@ -1,0 +1,71 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "completion.choices[0].message.content is printed at line 19.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "A fixed request to say a sentence still produces unconstrained text; no enum parser or decision consumer exists.",
+      "input_origin": "Hardcoded user message in workflow.py",
+      "context": "One short text message: Say this is a test",
+      "untrusted_input": "No runtime user input in this fixed demo; no adversarial mitigation implemented or needed for these fixtures. No production robustness claim.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves generation and observable diagnostics; unchanged model cost and latency, no speculative savings.",
+          "risk": "No migration risk; existing OpenAI availability, cost, and generation variability remain.",
+          "scope": "Leave this call, prompt, model, parsing, printing, and exception behavior unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "Stream is iterated at lines 33\u201337; empty choices are skipped, delta.content is printed with end=\"\", then a newline at line 38.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generates Python advice/code as streamed prose. Typed answers cannot preserve the text or streaming behavior.",
+      "input_origin": "Hardcoded user message in workflow.py",
+      "context": "One short text message: How do I output all files in a directory using Python?",
+      "untrusted_input": "No runtime user input in this fixed demo; no adversarial mitigation implemented or needed for these fixtures. No production robustness claim.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves generation and observable diagnostics; unchanged model cost and latency, no speculative savings.",
+          "risk": "No migration risk; existing OpenAI availability, cost, and generation variability remain.",
+          "scope": "Leave this call, prompt, model, parsing, printing, and exception behavior unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "Raw response is parsed at line 51; response.request_id and completion text are printed at lines 52\u201353.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generates text and exposes original response identity. A typed decision cannot preserve generated content or substitute a truthful original request ID.",
+      "input_origin": "Hardcoded user message in workflow.py",
+      "context": "One short text message: Say this is a test",
+      "untrusted_input": "No runtime user input in this fixed demo; no adversarial mitigation implemented or needed for these fixtures. No production robustness claim.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves generation and observable diagnostics; unchanged model cost and latency, no speculative savings.",
+          "risk": "No migration risk; existing OpenAI availability, cost, and generation variability remain.",
+          "scope": "Leave this call, prompt, model, parsing, printing, and exception behavior unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "output_mode": "report",
+  "source_revision": "a2299db080d5e6c76260a685cef216030d1f0cd4",
+  "approved_conversion_sites": []
+}

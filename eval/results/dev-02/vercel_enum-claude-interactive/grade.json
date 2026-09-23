@@ -1,0 +1,33 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "clone",
+  "audit_agreement": 1.0,
+  "checks": {
+    "audit_agreement": true,
+    "audit_evidence": true,
+    "recommendations": true,
+    "fit_review": true,
+    "no_generation_jev_only": true,
+    "gating": true,
+    "output_mode": true,
+    "smoke": true,
+    "plan": true,
+    "report": true,
+    "negative_control": true,
+    "centralization": false,
+    "contracts": false,
+    "model_pinned": true,
+    "parity": false,
+    "hygiene": false,
+    "conversion_coverage": true
+  },
+  "failures": {
+    "centralization": "Independent review must verify one decisions module per language, including questions, criteria, thresholds and model",
+    "contracts": "Independent review must verify signatures, return types and downstream behavior",
+    "parity": "30 unique live inputs, >=90% above-threshold agreement, fault checks and independently checked live provenance required",
+    "hygiene": "Independent review must verify secrets, genuine Jev provenance and authorized providers"
+  },
+  "pass": false
+}

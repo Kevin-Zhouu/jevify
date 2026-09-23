@@ -1,0 +1,43 @@
+{
+  "case": "no-key",
+  "harness": "claude",
+  "outcome": {
+    "exit_code": 0,
+    "started_ns": 1790133767077967000,
+    "ended_ns": 1790134134271636000
+  },
+  "output_relative": "original",
+  "original_sha": "dcf0d680099815876708b8b6550bc2e5e8d10d9c",
+  "main_unchanged": true,
+  "branch": "jev-convert/no-key",
+  "changes": [
+    ".env.example",
+    ".git/COMMIT_EDITMSG",
+    ".git/HEAD",
+    ".git/index",
+    ".git/logs/HEAD",
+    ".git/logs/refs/heads/jev-convert/no-key",
+    ".git/objects/1d/6d67088314bc3d12cab407782a0d4da6c908f9",
+    ".git/objects/24/e301325799fc0d6a5c0d3eee7fb5b8de272e59",
+    ".git/objects/37/4ccc1e25dac15fa91b6e86f7eac72245d2d973",
+    ".git/objects/5b/58f503848697f527eba171163d7305813aa70c",
+    ".git/objects/6d/59ca48ba065c25faab465eacc1220f56b44daf",
+    ".git/objects/86/8ca8c7ccd448be051e55e17fe896ec55d1464b",
+    ".git/objects/96/3c7147a5d33f6a9ebdc5979676552916f1d546",
+    ".git/objects/a0/733b66e8ccdcfe8b10f59d7c595c629145901a",
+    ".git/objects/b1/bedffaaa7eb33bac21f1c3bab4965591ac06dc",
+    ".git/refs/heads/jev-convert/no-key",
+    "JEV_AUDIT.json",
+    "JEV_CONVERSION_PLAN.md",
+    "JEV_CONVERSION_REPORT.md",
+    "JEV_PARITY.json",
+    "jev_decisions.py",
+    "workflow.py"
+  ],
+  "smoke": {
+    "exit_code": 0,
+    "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+    "stderr": ""
+  },
+  "review_required": true
+}

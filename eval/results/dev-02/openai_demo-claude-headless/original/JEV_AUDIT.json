@@ -1,0 +1,56 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI SDK / gpt-5.5",
+      "downstream": "Printed to stdout as free-form text response to 'Say this is a test'",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form prose generation; no closed-set selection, routing, or classification. The model is asked to generate arbitrary text, which Jev cannot do.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; site produces free-form text that requires a generative model.",
+          "risk": "None — no conversion attempted."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI SDK / gpt-5.5 (streaming)",
+      "downstream": "Streamed token-by-token to stdout as a free-form tutorial answer to 'How do I output all files in a directory using Python?'",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form prose/code generation via streaming. The response is an explanatory tutorial printed incrementally. Jev does not generate text, code, or explanations, and does not support streaming.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; site requires streaming generative output.",
+          "risk": "None — no conversion attempted."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI SDK / gpt-5.5 (with_raw_response)",
+      "downstream": "Raw HTTP response metadata (request_id) printed to stdout, plus free-form text content from 'Say this is a test'",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form prose generation with raw HTTP response header access. The site exercises SDK response metadata (request_id), which is specific to the OpenAI transport. Jev does not generate text.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; site produces free-form text and exercises provider-specific response metadata.",
+          "risk": "None — no conversion attempted."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

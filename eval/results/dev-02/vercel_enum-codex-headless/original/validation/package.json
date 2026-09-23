@@ -1,0 +1,6 @@
+{
+  "name": "jev-enum-validation",
+  "private": true,
+  "scripts": { "check": "node check.cjs", "parity": "node check.cjs --live" },
+  "dependencies": { "ai": "4.3.19", "@ai-sdk/openai": "1.3.24", "zod": "3.25.76", "typescript": "5.9.3" }
+}

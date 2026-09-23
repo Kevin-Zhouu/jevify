@@ -1,0 +1,4109 @@
+{
+  "source_sha": "6013ff5396ee175c76aa5feddd7e93d903e667a7",
+  "status": "measured",
+  "baseline_adapter": "Original workflow executed with real installed AI SDK; same model via explicitly authorized OpenRouter transport; no production provider change.",
+  "sites": [
+    {
+      "site_id": "workflow.ts:6",
+      "threshold": 0.9,
+      "rows": [
+        {
+          "input": "A group of astronauts travel through a wormhole in search of a new habitable planet for humanity.",
+          "provenance": "repo",
+          "source": "workflow.ts:12-13",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133287-f6pW4sEuFSrnOkZZrf8s",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 382.572542,
+          "cost_usd": 0.0000147,
+          "usage": {
+            "input_tokens": 350,
+            "output_tokens": 60,
+            "cost": 0.0000147
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133287-nhDiXIxkJKMO3p8f6mKR",
+          "original_latency_ms": 752.145,
+          "original_cost_usd": 0.00001665,
+          "original_usage": {
+            "prompt_tokens": 83,
+            "completion_tokens": 7,
+            "total_tokens": 90,
+            "cost": 0.00001665,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001665,
+              "upstream_inference_prompt_cost": 0.00001245,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 1,
+                  "horror": 0,
+                  "action": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 350,
+              "output_tokens": 60,
+              "cost": 0.0000147
+            },
+            "id": "gen-dec-1790133287-f6pW4sEuFSrnOkZZrf8s",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A group of astronauts travel through a wormhole in search of a new habitable planet for humanity.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A retired soldier fights mercenaries to rescue hostages from a skyscraper.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133288-XbYceozsR7bQNwaIY288",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 350.15754200000015,
+          "cost_usd": 0.000014574,
+          "usage": {
+            "input_tokens": 347,
+            "output_tokens": 58,
+            "cost": 0.000014574
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133288-CSGuAKh2sXWMz4DmajPL",
+          "original_latency_ms": 757.8525829999999,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 79,
+            "completion_tokens": 5,
+            "total_tokens": 84,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001185,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "drama": 0,
+                  "action": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 347,
+              "output_tokens": 58,
+              "cost": 0.000014574
+            },
+            "id": "gen-dec-1790133288-XbYceozsR7bQNwaIY288",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A retired soldier fights mercenaries to rescue hostages from a skyscraper.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "Two incompetent friends accidentally swap suitcases and cause a string of hilarious misunderstandings.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133289-MT7JWkxn0zmMUhtt2u1B",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 338.11400000000003,
+          "cost_usd": 0.000014616,
+          "usage": {
+            "input_tokens": 348,
+            "output_tokens": 59,
+            "cost": 0.000014616
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133289-QvHjGxvdUNYPC37tymXs",
+          "original_latency_ms": 687.4578329999999,
+          "original_cost_usd": 0.00001545,
+          "original_usage": {
+            "prompt_tokens": 79,
+            "completion_tokens": 6,
+            "total_tokens": 85,
+            "cost": 0.00001545,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001545,
+              "upstream_inference_prompt_cost": 0.00001185,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "comedy": 1,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "drama": 0,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 348,
+              "output_tokens": 59,
+              "cost": 0.000014616
+            },
+            "id": "gen-dec-1790133289-MT7JWkxn0zmMUhtt2u1B",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"Two incompetent friends accidentally swap suitcases and cause a string of hilarious misunderstandings.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A grieving father and his estranged daughter slowly rebuild their relationship.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133290-Hc4PZW2xVuaa2L3DfLXa",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 260.0144580000001,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 59,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133290-pTLKrCKMK1z5VebNwHk2",
+          "original_latency_ms": 767.5856660000004,
+          "original_cost_usd": 0.000015,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "drama": 1,
+                  "action": 0,
+                  "comedy": 0,
+                  "horror": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 59,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133290-Hc4PZW2xVuaa2L3DfLXa",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A grieving father and his estranged daughter slowly rebuild their relationship.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A family moves into a house haunted by a murderous ghost.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133291-XvNHHCzgLUxeUcqPt8zJ",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 292.1497079999999,
+          "cost_usd": 0.000014322,
+          "usage": {
+            "input_tokens": 341,
+            "output_tokens": 60,
+            "cost": 0.000014322
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133291-lPqrD9dqiOR1LU9fv58j",
+          "original_latency_ms": 763.8980420000007,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "sci-fi": 0,
+                  "action": 0,
+                  "horror": 1,
+                  "comedy": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 341,
+              "output_tokens": 60,
+              "cost": 0.000014322
+            },
+            "id": "gen-dec-1790133291-XvNHHCzgLUxeUcqPt8zJ",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A family moves into a house haunted by a murderous ghost.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "An android discovers memories implanted by a corporation on a distant colony.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133292-iwhhyIcKnQbrHb46sIH6",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 257.1220000000003,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 60,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133292-kaeecbH9hZmNn6NV78dZ",
+          "original_latency_ms": 957.5805,
+          "original_cost_usd": 0.0000156,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 7,
+            "total_tokens": 83,
+            "cost": 0.0000156,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000156,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 1,
+                  "horror": 0,
+                  "drama": 0,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 60,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133292-iwhhyIcKnQbrHb46sIH6",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"An android discovers memories implanted by a corporation on a distant colony.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A stunt driver races through a city while evading armed criminals.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133293-vF0J5KTwt3R9FzDrCsjp",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 326.6391249999997,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 58,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133294-EfVSgrq0qEyEP29IiX71",
+          "original_latency_ms": 865.1883330000001,
+          "original_cost_usd": 0.0000144,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 5,
+            "total_tokens": 81,
+            "cost": 0.0000144,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000144,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "comedy": 0,
+                  "drama": 0,
+                  "action": 1,
+                  "sci-fi": 0,
+                  "horror": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 58,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133293-vF0J5KTwt3R9FzDrCsjp",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A stunt driver races through a city while evading armed criminals.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A shy accountant impersonates a celebrity at a chaotic wedding.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133294-dbHBrIwBHuU16ZPU2Box",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 383.07224999999926,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 59,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133295-82E3BceRzRtNejYBu92J",
+          "original_latency_ms": 700.3640420000011,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "comedy": 1,
+                  "drama": 0,
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 59,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133294-dbHBrIwBHuU16ZPU2Box",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A shy accountant impersonates a celebrity at a chaotic wedding.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A musician struggles with failure and reconciles with her mother.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133296-9X16bNpwKRSEtQUofq5O",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 304.560958,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 59,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133296-THZvnVYzroaW9Tnwfi2u",
+          "original_latency_ms": 1694.4602919999998,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "sci-fi": 0,
+                  "action": 0,
+                  "horror": 0,
+                  "comedy": 0,
+                  "drama": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 59,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133296-9X16bNpwKRSEtQUofq5O",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A musician struggles with failure and reconciles with her mother.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "Teenagers camping in the woods are stalked by a supernatural creature.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133298-sY6aH5iUB4pyMlbeGHmr",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 313.36120800000026,
+          "cost_usd": 0.000014448,
+          "usage": {
+            "input_tokens": 344,
+            "output_tokens": 60,
+            "cost": 0.000014448
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133298-1dz0dXHGWRlDpq0IZKEw",
+          "original_latency_ms": 751.9005830000006,
+          "original_cost_usd": 0.00001515,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "comedy": 0,
+                  "horror": 1,
+                  "action": 0,
+                  "drama": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 60,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790133298-sY6aH5iUB4pyMlbeGHmr",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"Teenagers camping in the woods are stalked by a supernatural creature.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A scientist builds a machine that opens a portal to a parallel universe.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133299-SUmMheGOmS1u1DH7czL2",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 403.79112499999974,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 60,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133299-W54ot1yrnYMlDOodrSiV",
+          "original_latency_ms": 2003.6780829999989,
+          "original_cost_usd": 0.00001575,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 7,
+            "total_tokens": 84,
+            "cost": 0.00001575,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001575,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "horror": 0,
+                  "comedy": 0,
+                  "sci-fi": 1,
+                  "action": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 60,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133299-SUmMheGOmS1u1DH7czL2",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A scientist builds a machine that opens a portal to a parallel universe.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A detective battles a gang to stop a bombing on a moving train.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133301-CWXgVMU47as5zPkESfUt",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 312.7453339999993,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 58,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133301-57pkWxC2MMKjDHrD4ZZh",
+          "original_latency_ms": 769.1577089999992,
+          "original_cost_usd": 0.00001455,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 5,
+            "total_tokens": 82,
+            "cost": 0.00001455,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001455,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "drama": 0,
+                  "action": 1,
+                  "comedy": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 58,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133301-CWXgVMU47as5zPkESfUt",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A detective battles a gang to stop a bombing on a moving train.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A disastrous amateur theater production becomes a series of comic mishaps.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133302-8kB4dYUQTkrybrIqq5Bv",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 316.0803340000002,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 59,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133302-K9opyYVFMpO24BcYHPtC",
+          "original_latency_ms": 1317.3075840000001,
+          "original_cost_usd": 0.000015,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "drama": 0,
+                  "action": 0,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "comedy": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 59,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133302-8kB4dYUQTkrybrIqq5Bv",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A disastrous amateur theater production becomes a series of comic mishaps.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "Two siblings argue over their childhood home after their parents die.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133304-xXCeCjhG7cjNODSshyeA",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 323.3400409999995,
+          "cost_usd": 0.000014322,
+          "usage": {
+            "input_tokens": 341,
+            "output_tokens": 59,
+            "cost": 0.000014322
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133304-d1CrpkpiMcJDdehApBQl",
+          "original_latency_ms": 862.1547920000012,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0,
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "action": 0,
+                  "drama": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 341,
+              "output_tokens": 59,
+              "cost": 0.000014322
+            },
+            "id": "gen-dec-1790133304-xXCeCjhG7cjNODSshyeA",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"Two siblings argue over their childhood home after their parents die.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A possessed doll terrorizes the residents of an isolated orphanage.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133305-xHQ9WcAdrN6EJTfpYwHG",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 303.1832080000022,
+          "cost_usd": 0.000014448,
+          "usage": {
+            "input_tokens": 344,
+            "output_tokens": 60,
+            "cost": 0.000014448
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133305-Kk6q8oUuqvy4s63EWXaf",
+          "original_latency_ms": 757.2842500000006,
+          "original_cost_usd": 0.000015,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "comedy": 0,
+                  "horror": 1,
+                  "sci-fi": 0,
+                  "drama": 0,
+                  "action": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 60,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790133305-xHQ9WcAdrN6EJTfpYwHG",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A possessed doll terrorizes the residents of an isolated orphanage.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A generation ship receives a signal from an extinct alien civilization.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133306-K1gUk0bY1JqcPzkfy7Ck",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 356.88129200000185,
+          "cost_usd": 0.000014322,
+          "usage": {
+            "input_tokens": 341,
+            "output_tokens": 60,
+            "cost": 0.000014322
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133306-YslsOTzlGLP8x81FqxV8",
+          "original_latency_ms": 1511.1364170000015,
+          "original_cost_usd": 0.00001545,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 7,
+            "total_tokens": 82,
+            "cost": 0.00001545,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001545,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "action": 0,
+                  "sci-fi": 1,
+                  "horror": 0,
+                  "comedy": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 341,
+              "output_tokens": 60,
+              "cost": 0.000014322
+            },
+            "id": "gen-dec-1790133306-K1gUk0bY1JqcPzkfy7Ck",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A generation ship receives a signal from an extinct alien civilization.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A bodyguard protects a diplomat during a relentless citywide pursuit.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133308-9cj5qbxNCcX8UhiZsIzH",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 354.66854199999943,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 58,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133308-EcdoBCUz5TPrwnFAtf7S",
+          "original_latency_ms": 674.452583000002,
+          "original_cost_usd": 0.0000144,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 5,
+            "total_tokens": 81,
+            "cost": 0.0000144,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000144,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "drama": 0,
+                  "action": 1,
+                  "comedy": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 58,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133308-9cj5qbxNCcX8UhiZsIzH",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A bodyguard protects a diplomat during a relentless citywide pursuit.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A chef and a food critic become accidental roommates with absurd consequences.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133309-dagGQidlLZuNSSdejUqs",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 325.6545409999999,
+          "cost_usd": 0.000014448,
+          "usage": {
+            "input_tokens": 344,
+            "output_tokens": 59,
+            "cost": 0.000014448
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133309-Fj85YO46VyCBYAAmDkK2",
+          "original_latency_ms": 878.2017080000005,
+          "original_cost_usd": 0.000015,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "comedy": 1,
+                  "action": 0,
+                  "drama": 0,
+                  "sci-fi": 0,
+                  "horror": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790133309-dagGQidlLZuNSSdejUqs",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A chef and a food critic become accidental roommates with absurd consequences.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A nurse cares for her aging mentor while facing a difficult family decision.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133310-oBya2sZRvJYorYPkg368",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 300.2037500000006,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 59,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133310-qgdncf6G33UNyT1Bi9y6",
+          "original_latency_ms": 1353.023624999998,
+          "original_cost_usd": 0.00001515,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "action": 0,
+                  "comedy": 0,
+                  "drama": 1,
+                  "horror": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 59,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133310-oBya2sZRvJYorYPkg368",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A nurse cares for her aging mentor while facing a difficult family decision.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "An ancient curse traps travelers in a village where nobody survives the night.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133312-z2Hq0im9ZNffzCqw9xm7",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 339.12216700000135,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 60,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133312-ybGUklnSw3HcX0298h3D",
+          "original_latency_ms": 1468.6653750000005,
+          "original_cost_usd": 0.00001515,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "comedy": 0,
+                  "drama": 0,
+                  "action": 0,
+                  "horror": 1,
+                  "sci-fi": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 60,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133312-z2Hq0im9ZNffzCqw9xm7",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"An ancient curse traps travelers in a village where nobody survives the night.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "Explorers on Mars uncover a machine that changes human memories.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133314-UX32znrAMy7cGvjUbKet",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 276.53158299999996,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 60,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133314-JkE7k1b1LuDS8b3PI1IZ",
+          "original_latency_ms": 817.4027920000008,
+          "original_cost_usd": 0.0000156,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 7,
+            "total_tokens": 83,
+            "cost": 0.0000156,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000156,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "comedy": 0,
+                  "horror": 0,
+                  "drama": 0,
+                  "action": 0,
+                  "sci-fi": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 60,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133314-UX32znrAMy7cGvjUbKet",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"Explorers on Mars uncover a machine that changes human memories.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A rescue team must fight pirates aboard a hijacked cargo vessel.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133315-7B8fRCZyG2oSCz3Kkirj",
+          "jev_answer": "action",
+          "original_answer": "action",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 257.79791599999953,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 58,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133315-IyZkAHyQK3V6cWU4rGVN",
+          "original_latency_ms": 548.429250000001,
+          "original_cost_usd": 0.0000144,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 5,
+            "total_tokens": 81,
+            "cost": 0.0000144,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000144,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.000003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "action",
+                "probabilities": {
+                  "action": 1,
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "comedy": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 58,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133315-7B8fRCZyG2oSCz3Kkirj",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A rescue team must fight pirates aboard a hijacked cargo vessel.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A competitive neighborhood gardening contest descends into slapstick sabotage.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133316-zHLtpAscOpHbdHpolump",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 284.33237499999814,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 59,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133316-ODJVZj8XWkjyL1zoCBvV",
+          "original_latency_ms": 1590.7898750000022,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "comedy": 1,
+                  "sci-fi": 0,
+                  "action": 0,
+                  "horror": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 59,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133316-zHLtpAscOpHbdHpolump",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A competitive neighborhood gardening contest descends into slapstick sabotage.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A divorced couple meet again to support their son through a personal crisis.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133317-EitK88eV4wAK62X7XYLO",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 304.14620899999863,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 59,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133318-8aZoUWu9sWxFhAmdfqiC",
+          "original_latency_ms": 1517.9709580000017,
+          "original_cost_usd": 0.00001515,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "horror": 0,
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "action": 0,
+                  "drama": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 59,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133317-EitK88eV4wAK62X7XYLO",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A divorced couple meet again to support their son through a personal crisis.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A sleep researcher is pursued by a monster that appears in her dreams.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133319-7XiUPcsODR2sgFzkimPD",
+          "jev_answer": "horror",
+          "original_answer": "horror",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 343.41083300000173,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 60,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133320-KnjoogH4ATPPKqXojF4X",
+          "original_latency_ms": 890.2768750000032,
+          "original_cost_usd": 0.00001515,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "horror",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "horror": 1,
+                  "action": 0,
+                  "drama": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 60,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133319-7XiUPcsODR2sgFzkimPD",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A sleep researcher is pursued by a monster that appears in her dreams.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "Human diplomats negotiate with artificial minds living inside a simulated world.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133321-nW5KWk7IXXsLCy6wyKjF",
+          "jev_answer": "sci-fi",
+          "original_answer": "sci-fi",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 830.7820829999982,
+          "cost_usd": 0.000014322,
+          "usage": {
+            "input_tokens": 341,
+            "output_tokens": 60,
+            "cost": 0.000014322
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133321-XIbQK6yh4yUG2bNYma90",
+          "original_latency_ms": 863.5120000000024,
+          "original_cost_usd": 0.00001545,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 7,
+            "total_tokens": 82,
+            "cost": 0.00001545,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001545,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "drama": 0,
+                  "action": 0,
+                  "horror": 0,
+                  "sci-fi": 1,
+                  "comedy": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 341,
+              "output_tokens": 60,
+              "cost": 0.000014322
+            },
+            "id": "gen-dec-1790133321-nW5KWk7IXXsLCy6wyKjF",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"Human diplomats negotiate with artificial minds living inside a simulated world.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "Clumsy vampire hunters bicker while trying to save a town from monsters.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133322-wYPDAKgbumBgnMKH3Ocp",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 0.94,
+          "fallback_taken": false,
+          "latency_ms": 340.1955420000013,
+          "cost_usd": 0.000014448,
+          "usage": {
+            "input_tokens": 344,
+            "output_tokens": 59,
+            "cost": 0.000014448
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133323-GEVVGOajoDcWvFZE0YLN",
+          "original_latency_ms": 624.4496250000011,
+          "original_cost_usd": 0.0000153,
+          "original_usage": {
+            "prompt_tokens": 78,
+            "completion_tokens": 6,
+            "total_tokens": 84,
+            "cost": 0.0000153,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000153,
+              "upstream_inference_prompt_cost": 0.0000117,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "action": 0.04,
+                  "comedy": 0.95,
+                  "sci-fi": 0,
+                  "horror": 0.01,
+                  "drama": 0
+                },
+                "confidence": 0.94
+              }
+            },
+            "usage": {
+              "input_tokens": 344,
+              "output_tokens": 59,
+              "cost": 0.000014448
+            },
+            "id": "gen-dec-1790133322-wYPDAKgbumBgnMKH3Ocp",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"Clumsy vampire hunters bicker while trying to save a town from monsters.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A soldier returning from war struggles to connect with his family.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133323-zEyAF5Xu226Qi2Vhg9Rc",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 333.2401250000039,
+          "cost_usd": 0.000014322,
+          "usage": {
+            "input_tokens": 341,
+            "output_tokens": 59,
+            "cost": 0.000014322
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133324-5Hw5w8Jeqynj7odwDaYI",
+          "original_latency_ms": 734.6020419999986,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "action": 0,
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "comedy": 0,
+                  "drama": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 341,
+              "output_tokens": 59,
+              "cost": 0.000014322
+            },
+            "id": "gen-dec-1790133323-zEyAF5Xu226Qi2Vhg9Rc",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A soldier returning from war struggles to connect with his family.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "An astronaut in a failing spaceship hears a terrifying voice from outside.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133324-bCRHODCKxyuKrFNjB8vB",
+          "jev_answer": "sci-fi",
+          "original_answer": "horror",
+          "confidence": 0.68,
+          "fallback_taken": true,
+          "latency_ms": 281.4638330000016,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 60,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133324-a8JVCapezPzWazKKqru4",
+          "original_latency_ms": 1396.0547920000026,
+          "original_cost_usd": 0.000015,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "sci-fi",
+                "probabilities": {
+                  "action": 0,
+                  "comedy": 0,
+                  "sci-fi": 0.75,
+                  "horror": 0.25,
+                  "drama": 0
+                },
+                "confidence": 0.68
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 60,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133324-bCRHODCKxyuKrFNjB8vB",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"An astronaut in a failing spaceship hears a terrifying voice from outside.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A documentary follows the seasonal migration of birds.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133326-qIyzLUNrGvyCXz8iABlB",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 0.99,
+          "fallback_taken": false,
+          "latency_ms": 279.6727499999979,
+          "cost_usd": 0.000014196,
+          "usage": {
+            "input_tokens": 338,
+            "output_tokens": 59,
+            "cost": 0.000014196
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133326-KQUFdBAZfwmyWaZUVyc2",
+          "original_latency_ms": 1392.842583000005,
+          "original_cost_usd": 0.0000144,
+          "original_usage": {
+            "prompt_tokens": 72,
+            "completion_tokens": 6,
+            "total_tokens": 78,
+            "cost": 0.0000144,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000144,
+              "upstream_inference_prompt_cost": 0.0000108,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0,
+                  "action": 0,
+                  "drama": 0.99,
+                  "sci-fi": 0.01,
+                  "horror": 0
+                },
+                "confidence": 0.99
+              }
+            },
+            "usage": {
+              "input_tokens": 338,
+              "output_tokens": 59,
+              "cost": 0.000014196
+            },
+            "id": "gen-dec-1790133326-qIyzLUNrGvyCXz8iABlB",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A documentary follows the seasonal migration of birds.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A person waits quietly at a bus stop.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133328-YNal2lEMrQSKStdWM23n",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 357.61725000000297,
+          "cost_usd": 0.000014196,
+          "usage": {
+            "input_tokens": 338,
+            "output_tokens": 59,
+            "cost": 0.000014196
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133328-ZyWySIHj9MXkJ2nCylwT",
+          "original_latency_ms": 943.8523330000025,
+          "original_cost_usd": 0.0000144,
+          "original_usage": {
+            "prompt_tokens": 72,
+            "completion_tokens": 6,
+            "total_tokens": 78,
+            "cost": 0.0000144,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000144,
+              "upstream_inference_prompt_cost": 0.0000108,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "horror": 0,
+                  "sci-fi": 0,
+                  "drama": 1,
+                  "action": 0,
+                  "comedy": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 338,
+              "output_tokens": 59,
+              "cost": 0.000014196
+            },
+            "id": "gen-dec-1790133328-YNal2lEMrQSKStdWM23n",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A person waits quietly at a bus stop.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A pair of thieves exchange jokes while escaping a heavily guarded vault.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133329-U8X29H2MaarhqQ3anxbP",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 0.54,
+          "fallback_taken": true,
+          "latency_ms": 254.54804100000183,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 59,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133329-WZ1uPWMSOw0RCiRZ54EB",
+          "original_latency_ms": 1402.777958000006,
+          "original_cost_usd": 0.000015,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "comedy": 0.64,
+                  "action": 0.36,
+                  "drama": 0,
+                  "horror": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 0.54
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 59,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133329-U8X29H2MaarhqQ3anxbP",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A pair of thieves exchange jokes while escaping a heavily guarded vault.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A ghost helps a lonely child reconnect with her grieving father.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133331-RxCKu6CuJYqEMFZBjRxR",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 0.99,
+          "fallback_taken": false,
+          "latency_ms": 371.1648750000022,
+          "cost_usd": 0.000014322,
+          "usage": {
+            "input_tokens": 341,
+            "output_tokens": 59,
+            "cost": 0.000014322
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133331-4UepJbwKKDtoK2G20nE1",
+          "original_latency_ms": 773.1501250000001,
+          "original_cost_usd": 0.00001485,
+          "original_usage": {
+            "prompt_tokens": 75,
+            "completion_tokens": 6,
+            "total_tokens": 81,
+            "cost": 0.00001485,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001485,
+              "upstream_inference_prompt_cost": 0.00001125,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0,
+                  "sci-fi": 0,
+                  "horror": 0,
+                  "drama": 1,
+                  "action": 0
+                },
+                "confidence": 0.99
+              }
+            },
+            "usage": {
+              "input_tokens": 341,
+              "output_tokens": 59,
+              "cost": 0.000014322
+            },
+            "id": "gen-dec-1790133331-RxCKu6CuJYqEMFZBjRxR",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A ghost helps a lonely child reconnect with her grieving father.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A robot comedian performs at a disastrous interplanetary talent show.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133332-bA9GaOTI2VhWHEzPEXWM",
+          "jev_answer": "comedy",
+          "original_answer": "comedy",
+          "confidence": 0.87,
+          "fallback_taken": true,
+          "latency_ms": 358.82566699999734,
+          "cost_usd": 0.000014364,
+          "usage": {
+            "input_tokens": 342,
+            "output_tokens": 59,
+            "cost": 0.000014364
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133332-cWEKFXIPsyqrztx4pQi8",
+          "original_latency_ms": 1775.1120420000007,
+          "original_cost_usd": 0.000015,
+          "original_usage": {
+            "prompt_tokens": 76,
+            "completion_tokens": 6,
+            "total_tokens": 82,
+            "cost": 0.000015,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000015,
+              "upstream_inference_prompt_cost": 0.0000114,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "comedy",
+                "probabilities": {
+                  "sci-fi": 0.1,
+                  "comedy": 0.9,
+                  "horror": 0,
+                  "action": 0,
+                  "drama": 0
+                },
+                "confidence": 0.87
+              }
+            },
+            "usage": {
+              "input_tokens": 342,
+              "output_tokens": 59,
+              "cost": 0.000014364
+            },
+            "id": "gen-dec-1790133332-bA9GaOTI2VhWHEzPEXWM",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A robot comedian performs at a disastrous interplanetary talent show.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A lawyer uncovers corruption and must decide whether to sacrifice her career.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "calibration",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133334-LnTayhDIi4Kfkr6H1kkw",
+          "jev_answer": "drama",
+          "original_answer": "drama",
+          "confidence": 1,
+          "fallback_taken": false,
+          "latency_ms": 346.20020799999475,
+          "cost_usd": 0.000014406,
+          "usage": {
+            "input_tokens": 343,
+            "output_tokens": 59,
+            "cost": 0.000014406
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133334-x6L6kI99kx3BnDi5G0dL",
+          "original_latency_ms": 1010.9964580000014,
+          "original_cost_usd": 0.00001515,
+          "original_usage": {
+            "prompt_tokens": 77,
+            "completion_tokens": 6,
+            "total_tokens": 83,
+            "cost": 0.00001515,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00001515,
+              "upstream_inference_prompt_cost": 0.00001155,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "drama": 1,
+                  "comedy": 0,
+                  "action": 0,
+                  "sci-fi": 0,
+                  "horror": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 343,
+              "output_tokens": 59,
+              "cost": 0.000014406
+            },
+            "id": "gen-dec-1790133334-LnTayhDIi4Kfkr6H1kkw",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A lawyer uncovers corruption and must decide whether to sacrifice her career.\""
+              }
+            ]
+          }
+        },
+        {
+          "input": "A chef prepares a meal with ingredients from the garden.",
+          "provenance": "synthetic",
+          "source": "validation/check.cjs plots",
+          "split": "confirmation",
+          "model": "typesafe/jev-1.13-20260917",
+          "live": true,
+          "request_id": "gen-dec-1790133335-FRD3jQM6iudqToqCKYIm",
+          "jev_answer": "drama",
+          "original_answer": "comedy",
+          "confidence": 0.95,
+          "fallback_taken": false,
+          "latency_ms": 355.71112500000163,
+          "cost_usd": 0.00001428,
+          "usage": {
+            "input_tokens": 340,
+            "output_tokens": 59,
+            "cost": 0.00001428
+          },
+          "original_model": "openai/gpt-4o-mini",
+          "original_request_id": "gen-1790133336-UGMGwYXoeNCSW3fEhSSu",
+          "original_latency_ms": 1070.8177080000023,
+          "original_cost_usd": 0.0000147,
+          "original_usage": {
+            "prompt_tokens": 74,
+            "completion_tokens": 6,
+            "total_tokens": 80,
+            "cost": 0.0000147,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000147,
+              "upstream_inference_prompt_cost": 0.0000111,
+              "upstream_inference_completions_cost": 0.0000036
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "genre": {
+                "type": "choice",
+                "choice": "drama",
+                "probabilities": {
+                  "comedy": 0.04,
+                  "horror": 0,
+                  "drama": 0.96,
+                  "action": 0,
+                  "sci-fi": 0
+                },
+                "confidence": 0.95
+              }
+            },
+            "usage": {
+              "input_tokens": 340,
+              "output_tokens": 59,
+              "cost": 0.00001428
+            },
+            "id": "gen-dec-1790133335-FRD3jQM6iudqToqCKYIm",
+            "provider": "TypeSafe"
+          },
+          "baseline_request": {
+            "model": "gpt-4o-mini",
+            "temperature": 0,
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "action",
+                        "comedy",
+                        "drama",
+                        "horror",
+                        "sci-fi"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "additionalProperties": false
+                },
+                "strict": true,
+                "name": "response"
+              }
+            },
+            "messages": [
+              {
+                "role": "user",
+                "content": "Classify the genre of this movie plot: \"A chef prepares a meal with ingredients from the garden.\""
+              }
+            ]
+          }
+        }
+      ],
+      "errors": [],
+      "faults": {
+        "error": true,
+        "timeout": true,
+        "rate_limit": true,
+        "server_error": true,
+        "malformed": true,
+        "invalid_schema": true,
+        "missing_key": true,
+        "below_threshold": true,
+        "original_request_and_stdout": true,
+        "accepted_diagnostics": true,
+        "invalid_live_response_variants": true
+      },
+      "metrics": {
+        "all": {
+          "n": 36,
+          "raw_agreement": 0.9444444444444444,
+          "curve": [
+            {
+              "threshold": 0,
+              "accepted": 36,
+              "selective_agreement": 0.9444444444444444,
+              "fallback_fraction": 0
+            },
+            {
+              "threshold": 0.5,
+              "accepted": 36,
+              "selective_agreement": 0.9444444444444444,
+              "fallback_fraction": 0
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 34,
+              "selective_agreement": 0.9705882352941176,
+              "fallback_fraction": 0.05555555555555558
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 34,
+              "selective_agreement": 0.9705882352941176,
+              "fallback_fraction": 0.05555555555555558
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 33,
+              "selective_agreement": 0.9696969696969697,
+              "fallback_fraction": 0.08333333333333337
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 32,
+              "selective_agreement": 0.96875,
+              "fallback_fraction": 0.11111111111111116
+            },
+            {
+              "threshold": 1,
+              "accepted": 29,
+              "selective_agreement": 1,
+              "fallback_fraction": 0.19444444444444442
+            }
+          ]
+        },
+        "calibration": {
+          "n": 18,
+          "raw_agreement": 0.9444444444444444,
+          "curve": [
+            {
+              "threshold": 0,
+              "accepted": 18,
+              "selective_agreement": 0.9444444444444444,
+              "fallback_fraction": 0
+            },
+            {
+              "threshold": 0.5,
+              "accepted": 18,
+              "selective_agreement": 0.9444444444444444,
+              "fallback_fraction": 0
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 17,
+              "selective_agreement": 1,
+              "fallback_fraction": 0.05555555555555558
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 17,
+              "selective_agreement": 1,
+              "fallback_fraction": 0.05555555555555558
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 17,
+              "selective_agreement": 1,
+              "fallback_fraction": 0.05555555555555558
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 16,
+              "selective_agreement": 1,
+              "fallback_fraction": 0.11111111111111116
+            },
+            {
+              "threshold": 1,
+              "accepted": 15,
+              "selective_agreement": 1,
+              "fallback_fraction": 0.16666666666666663
+            }
+          ]
+        },
+        "confirmation": {
+          "n": 18,
+          "raw_agreement": 0.9444444444444444,
+          "curve": [
+            {
+              "threshold": 0,
+              "accepted": 18,
+              "selective_agreement": 0.9444444444444444,
+              "fallback_fraction": 0
+            },
+            {
+              "threshold": 0.5,
+              "accepted": 18,
+              "selective_agreement": 0.9444444444444444,
+              "fallback_fraction": 0
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 17,
+              "selective_agreement": 0.9411764705882353,
+              "fallback_fraction": 0.05555555555555558
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 17,
+              "selective_agreement": 0.9411764705882353,
+              "fallback_fraction": 0.05555555555555558
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 16,
+              "selective_agreement": 0.9375,
+              "fallback_fraction": 0.11111111111111116
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 16,
+              "selective_agreement": 0.9375,
+              "fallback_fraction": 0.11111111111111116
+            },
+            {
+              "threshold": 1,
+              "accepted": 14,
+              "selective_agreement": 1,
+              "fallback_fraction": 0.2222222222222222
+            }
+          ]
+        },
+        "latency_ms": {
+          "jev_p50": 325.6545409999999,
+          "jev_p95": 403.79112499999974,
+          "original_p50": 865.1883330000001,
+          "original_p95": 1775.1120420000007,
+          "estimated_cascade_mean": 463.69498144444486
+        },
+        "cost_usd": {
+          "jev_mean": 0.0000143885,
+          "original_mean": 0.000015033333333333337,
+          "estimated_cascade_mean": 0.000015638500000000003
+        }
+      }
+    }
+  ]
+}

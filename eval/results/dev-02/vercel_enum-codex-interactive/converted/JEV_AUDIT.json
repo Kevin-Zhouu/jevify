@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "Vercel AI SDK / OpenAI gpt-4o-mini",
+      "downstream": "main prints object, blank line, usage and finishReason; main().catch(console.error)",
+      "classification": "DECISION",
+      "fit": "FIT for benign fixed fixture",
+      "reason": "One short fixed movie plot classified into five enumerated genres. No generation or wrappers. Not assessed for hostile user input.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Accepted decisions avoid original inference and may reduce latency/cost; serial fallback adds Jev cost and latency.",
+          "risk": "Confident wrong genres; adapter must preserve real token usage and generic completion status."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original behavior with no anticipated savings.",
+          "risk": "Retains original inference cost and latency."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.ts:6"
+  ]
+}

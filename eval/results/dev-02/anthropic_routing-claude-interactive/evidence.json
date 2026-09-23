@@ -1,0 +1,40 @@
+{
+  "fixture": "anthropic_routing",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-02/anthropic_routing-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790133486351540000,
+      "ended_ns": 1790133519963215000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133519964440000,
+      "ended_ns": 1790133635632934000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790133635635492000,
+      "ended_ns": 1790133762470669000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": false,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "b4191f3d46af9baed4293a1ccd4337556f7c6a74",
+  "git_log": "a66b69ed2981d6eaa9fb9553df6d4d5233bb8e89 1790133749 Add Jev audit artifacts \u2014 no sites converted\nb4191f3d46af9baed4293a1ccd4337556f7c6a74 1790133486 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true,
+    "hygiene": true
+  }
+}

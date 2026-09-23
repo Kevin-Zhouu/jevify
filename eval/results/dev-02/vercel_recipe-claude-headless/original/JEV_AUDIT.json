@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK / OpenAI / gpt-4o-mini",
+      "downstream": "Generated recipe object (name, ingredients, steps) is JSON-stringified to stdout; token usage and finish reason are printed as diagnostics",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "All schema fields are open-ended strings requiring free-form content generation (recipe name, ingredient names/amounts, cooking steps). Jev 1.13 cannot generate text; it returns typed decisions from closed option sets. Structured JSON output does not convert generation into a decision. No closed-set selection or routing is present.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; avoids forcing a decision model onto a generation task. Zero integration risk.",
+          "risk": "None. The site is fundamentally generative and cannot be served by a System One model."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

@@ -1,0 +1,3389 @@
+{
+  "sites": [
+    {
+      "site_id": "workflow.py:83",
+      "primitive": "Choice",
+      "threshold": 0.9,
+      "rows": [
+        {
+          "input": "I just got my auto policy renewal bill and the cost seems to be more than what I usually pay. Could you explain the reason for the increase?",
+          "provenance": "repo",
+          "source": "data/train.tsv:2",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133267-innVZPWeGgZ0FyPX0uOH",
+          "jev_answer": "Billing Inquiries",
+          "confidence": 0.92,
+          "original_answer": "Billing Inquiries",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133268-At7Fawdr44JNdQ1NxMAp",
+          "fallback_taken": false,
+          "latency_ms": 390.40849986486137,
+          "original_latency_ms": 1053.6765831056982,
+          "cost_usd": 3.1164e-05,
+          "original_cost_usd": 0.000717,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Inquiries",
+                "probabilities": {
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0,
+                  "Coverage Explanations": 0,
+                  "General Inquiries": 0,
+                  "Billing Inquiries": 0.93,
+                  "Policy Administration": 0,
+                  "Claims Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Billing Disputes": 0.07,
+                  "Policy Comparisons": 0
+                },
+                "confidence": 0.92
+              }
+            },
+            "usage": {
+              "input_tokens": 742,
+              "output_tokens": 114,
+              "cost": 3.1164e-05
+            },
+            "id": "gen-dec-1790133267-innVZPWeGgZ0FyPX0uOH",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 677,
+            "completion_tokens": 8,
+            "total_tokens": 685,
+            "cost": 0.000717,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000717,
+              "upstream_inference_prompt_cost": 0.000677,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "The premium for my car insurance renewal is higher than I expected. Can you clarify why there was a price increase compared to my previous policy?",
+          "provenance": "repo",
+          "source": "data/train.tsv:3",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133269-2La3L0Eds9SXnSyxWciA",
+          "jev_answer": "Billing Inquiries",
+          "confidence": 0.85,
+          "original_answer": "Billing Inquiries",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133269-Dj1bRqdY2Eb5xJ0VhL2T",
+          "fallback_taken": true,
+          "latency_ms": 315.96995797008276,
+          "original_latency_ms": 1074.3871668819338,
+          "cost_usd": 3.108e-05,
+          "original_cost_usd": 0.000716,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Inquiries",
+                "probabilities": {
+                  "Claims Assistance": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0.87,
+                  "Policy Administration": 0.04,
+                  "Coverage Explanations": 0,
+                  "Account Management": 0,
+                  "General Inquiries": 0,
+                  "Billing Disputes": 0.09,
+                  "Claims Disputes": 0,
+                  "Policy Comparisons": 0
+                },
+                "confidence": 0.85
+              }
+            },
+            "usage": {
+              "input_tokens": 740,
+              "output_tokens": 114,
+              "cost": 3.108e-05
+            },
+            "id": "gen-dec-1790133269-2La3L0Eds9SXnSyxWciA",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 676,
+            "completion_tokens": 8,
+            "total_tokens": 684,
+            "cost": 0.000716,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000716,
+              "upstream_inference_prompt_cost": 0.000676,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I would like to modify the coverage limits and deductibles on my homeowners insurance policy. What choices do I have available?",
+          "provenance": "repo",
+          "source": "data/train.tsv:5",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133269-7AjNzF5S7bgLm5EZ6uca",
+          "jev_answer": "Policy Administration",
+          "confidence": 0.72,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133269-emPW1F38pW10vwilQWnL",
+          "fallback_taken": true,
+          "latency_ms": 315.9222090616822,
+          "original_latency_ms": 1108.2126670517027,
+          "cost_usd": 3.0954e-05,
+          "original_cost_usd": 0.000698,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Administration",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Policy Comparisons": 0,
+                  "Coverage Explanations": 0.25,
+                  "General Inquiries": 0,
+                  "Billing Inquiries": 0,
+                  "Billing Disputes": 0,
+                  "Policy Administration": 0.75,
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 0.72
+              }
+            },
+            "usage": {
+              "input_tokens": 737,
+              "output_tokens": 112,
+              "cost": 3.0954e-05
+            },
+            "id": "gen-dec-1790133269-7AjNzF5S7bgLm5EZ6uca",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 673,
+            "completion_tokens": 5,
+            "total_tokens": 678,
+            "cost": 0.000698,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000698,
+              "upstream_inference_prompt_cost": 0.000673,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Can you tell me what my options are for changing the deductibles and coverage limits associated with my home insurance policy?",
+          "provenance": "repo",
+          "source": "data/train.tsv:6",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133269-tn3fS1OGJ42yljoYMti2",
+          "jev_answer": "Policy Administration",
+          "confidence": 0.9,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133269-XAwSrSVafPW9vx4vnVlJ",
+          "fallback_taken": false,
+          "latency_ms": 348.2616669498384,
+          "original_latency_ms": 1011.4745839964598,
+          "cost_usd": 3.0912e-05,
+          "original_cost_usd": 0.000696,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Administration",
+                "probabilities": {
+                  "Claims Assistance": 0,
+                  "Claims Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Comparisons": 0,
+                  "Policy Administration": 0.91,
+                  "Coverage Explanations": 0.09,
+                  "Billing Disputes": 0,
+                  "General Inquiries": 0,
+                  "Quotes and Proposals": 0,
+                  "Account Management": 0
+                },
+                "confidence": 0.9
+              }
+            },
+            "usage": {
+              "input_tokens": 736,
+              "output_tokens": 112,
+              "cost": 3.0912e-05
+            },
+            "id": "gen-dec-1790133269-tn3fS1OGJ42yljoYMti2",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 671,
+            "completion_tokens": 5,
+            "total_tokens": 676,
+            "cost": 0.000696,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000696,
+              "upstream_inference_prompt_cost": 0.000671,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Another vehicle hit my parked car, but I didn't get any information from the other driver. What's the process for submitting a claim in this situation?",
+          "provenance": "repo",
+          "source": "data/train.tsv:8",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133269-YBuCi7Ywa4yEeuY1Z5Ld",
+          "jev_answer": "Claims Assistance",
+          "confidence": 1,
+          "original_answer": "Claims Assistance",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133269-m0sJqDRX8c7BlU3rBwEK",
+          "fallback_taken": false,
+          "latency_ms": 359.1688328888267,
+          "original_latency_ms": 1472.846832824871,
+          "cost_usd": 3.1206e-05,
+          "original_cost_usd": 0.00071,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Assistance",
+                "probabilities": {
+                  "Billing Disputes": 0,
+                  "Account Management": 0,
+                  "Policy Comparisons": 0,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0,
+                  "Claims Disputes": 0,
+                  "Quotes and Proposals": 0,
+                  "Claims Assistance": 1,
+                  "General Inquiries": 0,
+                  "Policy Administration": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 743,
+              "output_tokens": 112,
+              "cost": 3.1206e-05
+            },
+            "id": "gen-dec-1790133269-YBuCi7Ywa4yEeuY1Z5Ld",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 680,
+            "completion_tokens": 6,
+            "total_tokens": 686,
+            "cost": 0.00071,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00071,
+              "upstream_inference_prompt_cost": 0.00068,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "My parked vehicle was damaged by another car, but I don't have the details of the other driver. How should I go about filing an insurance claim?",
+          "provenance": "repo",
+          "source": "data/train.tsv:9",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133270-nmvhvzsKyRyuPMOgX48e",
+          "jev_answer": "Claims Assistance",
+          "confidence": 1,
+          "original_answer": "Claims Assistance",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133271-rpElGIiAkwG3nFUL8PIf",
+          "fallback_taken": false,
+          "latency_ms": 331.1725000385195,
+          "original_latency_ms": 1008.7906660046428,
+          "cost_usd": 3.1206e-05,
+          "original_cost_usd": 0.000709,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Assistance",
+                "probabilities": {
+                  "Policy Comparisons": 0,
+                  "Billing Disputes": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "General Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Account Management": 0,
+                  "Claims Assistance": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 743,
+              "output_tokens": 112,
+              "cost": 3.1206e-05
+            },
+            "id": "gen-dec-1790133270-nmvhvzsKyRyuPMOgX48e",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 679,
+            "completion_tokens": 6,
+            "total_tokens": 685,
+            "cost": 0.000709,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000709,
+              "upstream_inference_prompt_cost": 0.000679,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I don't fully grasp the distinction between comprehensive and collision coverage on my auto policy. Could you explain what each type of coverage entails?",
+          "provenance": "repo",
+          "source": "data/train.tsv:11",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133270-4XmGTbCkApxckOQRh5O6",
+          "jev_answer": "Coverage Explanations",
+          "confidence": 0.97,
+          "original_answer": "Coverage Explanations",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133271-ePeIIouu2NP4oDQh6ppe",
+          "fallback_taken": false,
+          "latency_ms": 334.56112490966916,
+          "original_latency_ms": 1033.8962499517947,
+          "cost_usd": 3.1038e-05,
+          "original_cost_usd": 0.000711,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Coverage Explanations",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Policy Administration": 0,
+                  "Billing Disputes": 0,
+                  "Coverage Explanations": 0.97,
+                  "Policy Comparisons": 0.03,
+                  "Account Management": 0,
+                  "General Inquiries": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0,
+                  "Claims Assistance": 0
+                },
+                "confidence": 0.97
+              }
+            },
+            "usage": {
+              "input_tokens": 739,
+              "output_tokens": 114,
+              "cost": 3.1038e-05
+            },
+            "id": "gen-dec-1790133270-4XmGTbCkApxckOQRh5O6",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 676,
+            "completion_tokens": 7,
+            "total_tokens": 683,
+            "cost": 0.000711,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000711,
+              "upstream_inference_prompt_cost": 0.000676,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "What's the difference between collision and comprehensive car insurance? I'm not sure I understand what's included in each one.",
+          "provenance": "repo",
+          "source": "data/train.tsv:12",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133270-sCJ85YKisGW7wvIaVQ0b",
+          "jev_answer": "Policy Comparisons",
+          "confidence": 0.47,
+          "original_answer": "Coverage Explanations",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133271-IgdtPemqWSzxVP05zELq",
+          "fallback_taken": true,
+          "latency_ms": 413.63687510602176,
+          "original_latency_ms": 1013.8593749143183,
+          "cost_usd": 3.0912e-05,
+          "original_cost_usd": 0.000706,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Comparisons",
+                "probabilities": {
+                  "Policy Administration": 0,
+                  "Claims Assistance": 0,
+                  "Billing Disputes": 0,
+                  "Coverage Explanations": 0.47,
+                  "Claims Disputes": 0,
+                  "Policy Comparisons": 0.53,
+                  "General Inquiries": 0,
+                  "Billing Inquiries": 0,
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 0.47
+              }
+            },
+            "usage": {
+              "input_tokens": 736,
+              "output_tokens": 114,
+              "cost": 3.0912e-05
+            },
+            "id": "gen-dec-1790133270-sCJ85YKisGW7wvIaVQ0b",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 671,
+            "completion_tokens": 7,
+            "total_tokens": 678,
+            "cost": 0.000706,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000706,
+              "upstream_inference_prompt_cost": 0.000671,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm thinking about changing my insurance provider to your company. Would you be able to give me a quote that is equivalent to or better than my existing coverage?",
+          "provenance": "repo",
+          "source": "data/train.tsv:14",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133271-uBILTQVdDW6yd0UtJjUx",
+          "jev_answer": "Quotes and Proposals",
+          "confidence": 1,
+          "original_answer": "Quotes and Proposals",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133271-oFcAxG8rPSykSECHyWPB",
+          "fallback_taken": false,
+          "latency_ms": 292.53362491726875,
+          "original_latency_ms": 1025.5167079158127,
+          "cost_usd": 3.1248e-05,
+          "original_cost_usd": 0.000719,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Quotes and Proposals",
+                "probabilities": {
+                  "General Inquiries": 0,
+                  "Claims Assistance": 0,
+                  "Account Management": 0,
+                  "Quotes and Proposals": 1,
+                  "Claims Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Coverage Explanations": 0,
+                  "Policy Administration": 0,
+                  "Billing Inquiries": 0,
+                  "Billing Disputes": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 744,
+              "output_tokens": 114,
+              "cost": 3.1248e-05
+            },
+            "id": "gen-dec-1790133271-uBILTQVdDW6yd0UtJjUx",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 679,
+            "completion_tokens": 8,
+            "total_tokens": 687,
+            "cost": 0.000719,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000719,
+              "upstream_inference_prompt_cost": 0.000679,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm considering moving my insurance policies to your firm. Is it possible for you to provide a quote that offers the same or better coverage compared to what I currently have?",
+          "provenance": "repo",
+          "source": "data/train.tsv:15",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133272-06TzHQAX655bSlZw7nUp",
+          "jev_answer": "Quotes and Proposals",
+          "confidence": 0.99,
+          "original_answer": "Quotes and Proposals",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133272-OICZ5kJSZSlabC1V6M9e",
+          "fallback_taken": false,
+          "latency_ms": 319.1719998139888,
+          "original_latency_ms": 1078.6870408337563,
+          "cost_usd": 3.1332e-05,
+          "original_cost_usd": 0.000721,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Quotes and Proposals",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Billing Disputes": 0,
+                  "Coverage Explanations": 0,
+                  "Quotes and Proposals": 0.99,
+                  "Account Management": 0,
+                  "Policy Administration": 0,
+                  "Claims Assistance": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Comparisons": 0.01,
+                  "General Inquiries": 0
+                },
+                "confidence": 0.99
+              }
+            },
+            "usage": {
+              "input_tokens": 746,
+              "output_tokens": 114,
+              "cost": 3.1332e-05
+            },
+            "id": "gen-dec-1790133272-06TzHQAX655bSlZw7nUp",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 681,
+            "completion_tokens": 8,
+            "total_tokens": 689,
+            "cost": 0.000721,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000721,
+              "upstream_inference_prompt_cost": 0.000681,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I attempted to sign in to my online account, but it's saying my password isn't correct, even though I never changed it. What could be causing this problem?",
+          "provenance": "repo",
+          "source": "data/train.tsv:17",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133272-ZbbAlEUvWmuWaD5awB9l",
+          "jev_answer": "Account Management",
+          "confidence": 1,
+          "original_answer": "Account Management",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133272-4XCyItGcHUbJ6jaicJ4Z",
+          "fallback_taken": false,
+          "latency_ms": 323.12229089438915,
+          "original_latency_ms": 2628.8969579618424,
+          "cost_usd": 3.1332e-05,
+          "original_cost_usd": 0.000706,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Account Management",
+                "probabilities": {
+                  "Billing Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Assistance": 0,
+                  "Claims Disputes": 0,
+                  "General Inquiries": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Account Management": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 746,
+              "output_tokens": 112,
+              "cost": 3.1332e-05
+            },
+            "id": "gen-dec-1790133272-ZbbAlEUvWmuWaD5awB9l",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 681,
+            "completion_tokens": 5,
+            "total_tokens": 686,
+            "cost": 0.000706,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000706,
+              "upstream_inference_prompt_cost": 0.000681,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "When I tried logging into my web-based account, it told me my password was invalid, but I'm certain I didn't change it. Can you help me figure out why this is happening?",
+          "provenance": "repo",
+          "source": "data/train.tsv:18",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133272-Hvy5H06m7c1Of270RGXJ",
+          "jev_answer": "Account Management",
+          "confidence": 1,
+          "original_answer": "Account Management",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133272-jTuRJKpUPVF0LWkWkj61",
+          "fallback_taken": false,
+          "latency_ms": 338.80495792254806,
+          "original_latency_ms": 1024.6181248221546,
+          "cost_usd": 3.1542e-05,
+          "original_cost_usd": 0.000712,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Account Management",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Quotes and Proposals": 0,
+                  "Claims Assistance": 0,
+                  "Coverage Explanations": 0,
+                  "Policy Administration": 0,
+                  "General Inquiries": 0,
+                  "Account Management": 1,
+                  "Policy Comparisons": 0,
+                  "Billing Disputes": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 751,
+              "output_tokens": 112,
+              "cost": 3.1542e-05
+            },
+            "id": "gen-dec-1790133272-Hvy5H06m7c1Of270RGXJ",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 687,
+            "completion_tokens": 5,
+            "total_tokens": 692,
+            "cost": 0.000712,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000712,
+              "upstream_inference_prompt_cost": 0.000687,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "There's an unfamiliar charge from your company on my credit card statement that doesn't match my usual premium payment. Could you please investigate this for me?",
+          "provenance": "repo",
+          "source": "data/train.tsv:20",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133272-DCYyVR4H2GAT3nmCy4Pk",
+          "jev_answer": "Billing Disputes",
+          "confidence": 1,
+          "original_answer": "Billing Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133272-b0s4NNpS7zqdJMR73WR2",
+          "fallback_taken": false,
+          "latency_ms": 297.85570804961026,
+          "original_latency_ms": 1206.3548751175404,
+          "cost_usd": 3.1164e-05,
+          "original_cost_usd": 0.000714,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Disputes",
+                "probabilities": {
+                  "Billing Disputes": 1,
+                  "Billing Inquiries": 0,
+                  "General Inquiries": 0,
+                  "Policy Comparisons": 0,
+                  "Claims Assistance": 0,
+                  "Claims Disputes": 0,
+                  "Policy Administration": 0,
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0,
+                  "Coverage Explanations": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 742,
+              "output_tokens": 114,
+              "cost": 3.1164e-05
+            },
+            "id": "gen-dec-1790133272-DCYyVR4H2GAT3nmCy4Pk",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 679,
+            "completion_tokens": 7,
+            "total_tokens": 686,
+            "cost": 0.000714,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000714,
+              "upstream_inference_prompt_cost": 0.000679,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I've noticed a charge on my credit card from your business that I don't recognize, and it's a different amount than my typical insurance premium. Can you look into this and let me know what it's for?",
+          "provenance": "repo",
+          "source": "data/train.tsv:21",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133273-coqn0EMvsJ1YLAOvf7Pe",
+          "jev_answer": "Billing Disputes",
+          "confidence": 0.92,
+          "original_answer": "Billing Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133274-Whg1f5LpGEVX7oEzWA3p",
+          "fallback_taken": false,
+          "latency_ms": 579.8408749978989,
+          "original_latency_ms": 1021.6025828849524,
+          "cost_usd": 3.1752e-05,
+          "original_cost_usd": 0.000726,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Disputes",
+                "probabilities": {
+                  "Billing Disputes": 0.93,
+                  "Policy Comparisons": 0,
+                  "Claims Assistance": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "General Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Billing Inquiries": 0.07,
+                  "Quotes and Proposals": 0,
+                  "Account Management": 0
+                },
+                "confidence": 0.92
+              }
+            },
+            "usage": {
+              "input_tokens": 756,
+              "output_tokens": 114,
+              "cost": 3.1752e-05
+            },
+            "id": "gen-dec-1790133273-coqn0EMvsJ1YLAOvf7Pe",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 691,
+            "completion_tokens": 7,
+            "total_tokens": 698,
+            "cost": 0.000726,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000726,
+              "upstream_inference_prompt_cost": 0.000691,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Your company denied my claim for water damage in my kitchen, but I think it should be covered based on my policy. What's the process for appealing this decision?",
+          "provenance": "repo",
+          "source": "data/train.tsv:23",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133273-FfPc4jLCswBnEEd79rZp",
+          "jev_answer": "Claims Disputes",
+          "confidence": 1,
+          "original_answer": "Claims Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133274-Q4lSEWvf6EeRwj79k6pg",
+          "fallback_taken": false,
+          "latency_ms": 447.82775011844933,
+          "original_latency_ms": 1484.5198749098927,
+          "cost_usd": 3.129e-05,
+          "original_cost_usd": 0.000711,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Disputes",
+                "probabilities": {
+                  "Claims Disputes": 1,
+                  "Policy Comparisons": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Claims Assistance": 0,
+                  "Coverage Explanations": 0,
+                  "Account Management": 0,
+                  "General Inquiries": 0,
+                  "Billing Disputes": 0,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 745,
+              "output_tokens": 114,
+              "cost": 3.129e-05
+            },
+            "id": "gen-dec-1790133273-FfPc4jLCswBnEEd79rZp",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 681,
+            "completion_tokens": 6,
+            "total_tokens": 687,
+            "cost": 0.000711,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000711,
+              "upstream_inference_prompt_cost": 0.000681,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I filed a claim for water damage to my kitchen, but it was rejected even though I believe my policy covers it. Can you explain how I can dispute this denial and have my claim reconsidered?",
+          "provenance": "repo",
+          "source": "data/train.tsv:24",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133274-49Iho0NR4qs0rsB7BPfG",
+          "jev_answer": "Claims Disputes",
+          "confidence": 1,
+          "original_answer": "Claims Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133274-it7pP6RzCIYh03FZcfxn",
+          "fallback_taken": false,
+          "latency_ms": 341.28854097798467,
+          "original_latency_ms": 1044.1761668771505,
+          "cost_usd": 3.1626e-05,
+          "original_cost_usd": 0.000718,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Disputes",
+                "probabilities": {
+                  "Claims Assistance": 0,
+                  "Quotes and Proposals": 0,
+                  "Policy Administration": 0,
+                  "General Inquiries": 0,
+                  "Claims Disputes": 1,
+                  "Account Management": 0,
+                  "Billing Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Comparisons": 0,
+                  "Coverage Explanations": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 753,
+              "output_tokens": 114,
+              "cost": 3.1626e-05
+            },
+            "id": "gen-dec-1790133274-49Iho0NR4qs0rsB7BPfG",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 688,
+            "completion_tokens": 6,
+            "total_tokens": 694,
+            "cost": 0.000718,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000718,
+              "upstream_inference_prompt_cost": 0.000688,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm trying to decide between a high-deductible health plan and a traditional PPO for my insurance coverage. Can you explain the advantages and disadvantages of each option to help me choose?",
+          "provenance": "repo",
+          "source": "data/train.tsv:26",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133275-wVDxjMaZlvMvy66aOPrG",
+          "jev_answer": "Policy Comparisons",
+          "confidence": 1,
+          "original_answer": "Policy Comparisons",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133275-vHQRjXpNPfDfEsb5CckI",
+          "fallback_taken": false,
+          "latency_ms": 354.22645788639784,
+          "original_latency_ms": 1080.2757078781724,
+          "cost_usd": 3.1458e-05,
+          "original_cost_usd": 0.000722,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Comparisons",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Quotes and Proposals": 0,
+                  "Coverage Explanations": 0,
+                  "General Inquiries": 0,
+                  "Billing Inquiries": 0,
+                  "Account Management": 0,
+                  "Policy Administration": 0,
+                  "Billing Disputes": 0,
+                  "Policy Comparisons": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 749,
+              "output_tokens": 114,
+              "cost": 3.1458e-05
+            },
+            "id": "gen-dec-1790133275-wVDxjMaZlvMvy66aOPrG",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 687,
+            "completion_tokens": 7,
+            "total_tokens": 694,
+            "cost": 0.000722,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000722,
+              "upstream_inference_prompt_cost": 0.000687,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm considering two different health insurance plans - a high-deductible policy and a standard PPO. Could you outline the benefits and drawbacks of both to assist me in making a decision?",
+          "provenance": "repo",
+          "source": "data/train.tsv:27",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133275-RWPGCIrhURv4GfP9pDMI",
+          "jev_answer": "Policy Comparisons",
+          "confidence": 1,
+          "original_answer": "Policy Comparisons",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133275-xajHpBPVxYClRNDGzzAq",
+          "fallback_taken": false,
+          "latency_ms": 326.86233310960233,
+          "original_latency_ms": 1025.5490001291037,
+          "cost_usd": 3.1458e-05,
+          "original_cost_usd": 0.000722,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Comparisons",
+                "probabilities": {
+                  "Billing Disputes": 0,
+                  "Account Management": 0,
+                  "Policy Comparisons": 1,
+                  "Billing Inquiries": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "Quotes and Proposals": 0,
+                  "Policy Administration": 0,
+                  "General Inquiries": 0,
+                  "Claims Assistance": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 749,
+              "output_tokens": 114,
+              "cost": 3.1458e-05
+            },
+            "id": "gen-dec-1790133275-RWPGCIrhURv4GfP9pDMI",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 687,
+            "completion_tokens": 7,
+            "total_tokens": 694,
+            "cost": 0.000722,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000722,
+              "upstream_inference_prompt_cost": 0.000687,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I received some correspondence about modifications to my insurance policy, but I don't fully understand what they entail. Would you be able to provide more information about these changes?",
+          "provenance": "repo",
+          "source": "data/train.tsv:28",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133275-T1Qi0LzXFgCN1SBLCd1K",
+          "jev_answer": "Policy Administration",
+          "confidence": 0.78,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133275-U5tj07vlkGogwJQscX0c",
+          "fallback_taken": true,
+          "latency_ms": 399.2304999846965,
+          "original_latency_ms": 1010.306250071153,
+          "cost_usd": 3.129e-05,
+          "original_cost_usd": 0.000706,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Administration",
+                "probabilities": {
+                  "Quotes and Proposals": 0,
+                  "General Inquiries": 0.06,
+                  "Claims Disputes": 0,
+                  "Account Management": 0,
+                  "Policy Administration": 0.8,
+                  "Coverage Explanations": 0.14,
+                  "Claims Assistance": 0,
+                  "Billing Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Billing Inquiries": 0
+                },
+                "confidence": 0.78
+              }
+            },
+            "usage": {
+              "input_tokens": 745,
+              "output_tokens": 112,
+              "cost": 3.129e-05
+            },
+            "id": "gen-dec-1790133275-T1Qi0LzXFgCN1SBLCd1K",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 681,
+            "completion_tokens": 5,
+            "total_tokens": 686,
+            "cost": 0.000706,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000706,
+              "upstream_inference_prompt_cost": 0.000681,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Your company sent me a letter describing some adjustments to my policy, but the details are a bit unclear to me. Can you give me a better explanation of what these changes mean for my coverage?",
+          "provenance": "repo",
+          "source": "data/train.tsv:29",
+          "split": "calibration",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133275-3bTsCdbvdkrIm2EJi8LO",
+          "jev_answer": "Coverage Explanations",
+          "confidence": 0.95,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133275-HAo5YFd9ilkyemrg2rJJ",
+          "fallback_taken": false,
+          "latency_ms": 364.1522089019418,
+          "original_latency_ms": 1242.630791850388,
+          "cost_usd": 3.1542e-05,
+          "original_cost_usd": 0.000712,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Coverage Explanations",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Billing Disputes": 0,
+                  "Coverage Explanations": 0.96,
+                  "Account Management": 0,
+                  "General Inquiries": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0.04,
+                  "Quotes and Proposals": 0,
+                  "Claims Assistance": 0
+                },
+                "confidence": 0.95
+              }
+            },
+            "usage": {
+              "input_tokens": 751,
+              "output_tokens": 114,
+              "cost": 3.1542e-05
+            },
+            "id": "gen-dec-1790133275-3bTsCdbvdkrIm2EJi8LO",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 687,
+            "completion_tokens": 5,
+            "total_tokens": 692,
+            "cost": 0.000712,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000712,
+              "upstream_inference_prompt_cost": 0.000687,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm confused about a charge on my recent auto insurance bill that's higher than my usual premium payment. Can you clarify what this extra fee is for and why it was added?",
+          "provenance": "repo",
+          "source": "data/test.tsv:2",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133276-4X14SWcak01O4Hcd7aQt",
+          "jev_answer": "Billing Inquiries",
+          "confidence": 0.91,
+          "original_answer": "Billing Inquiries",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133276-CVMIgLg1ErYOoYoWRX6a",
+          "fallback_taken": false,
+          "latency_ms": 389.98191710561514,
+          "original_latency_ms": 989.4938750658184,
+          "cost_usd": 3.1416e-05,
+          "original_cost_usd": 0.000724,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Inquiries",
+                "probabilities": {
+                  "Claims Assistance": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0.92,
+                  "Policy Administration": 0,
+                  "Coverage Explanations": 0,
+                  "Account Management": 0,
+                  "General Inquiries": 0,
+                  "Billing Disputes": 0.08,
+                  "Claims Disputes": 0,
+                  "Policy Comparisons": 0
+                },
+                "confidence": 0.91
+              }
+            },
+            "usage": {
+              "input_tokens": 748,
+              "output_tokens": 114,
+              "cost": 3.1416e-05
+            },
+            "id": "gen-dec-1790133276-4X14SWcak01O4Hcd7aQt",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 684,
+            "completion_tokens": 8,
+            "total_tokens": 692,
+            "cost": 0.000724,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000724,
+              "upstream_inference_prompt_cost": 0.000684,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "My latest car insurance statement includes a charge that I don't recognize, and it's made my total payment go up quite a bit. Could you look into this and explain what the additional cost is related to?",
+          "provenance": "repo",
+          "source": "data/test.tsv:3",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133276-wDxYwrQc1GVB4Z05i5AW",
+          "jev_answer": "Billing Disputes",
+          "confidence": 0.68,
+          "original_answer": "Billing Inquiries",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133276-lszVsxG7rDjhRjaeTj0P",
+          "fallback_taken": true,
+          "latency_ms": 362.41229088045657,
+          "original_latency_ms": 1436.712124850601,
+          "cost_usd": 3.1668e-05,
+          "original_cost_usd": 0.000729,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Disputes",
+                "probabilities": {
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Disputes": 0.72,
+                  "Claims Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0.28,
+                  "Policy Comparisons": 0,
+                  "General Inquiries": 0,
+                  "Policy Administration": 0
+                },
+                "confidence": 0.68
+              }
+            },
+            "usage": {
+              "input_tokens": 754,
+              "output_tokens": 114,
+              "cost": 3.1668e-05
+            },
+            "id": "gen-dec-1790133276-wDxYwrQc1GVB4Z05i5AW",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 689,
+            "completion_tokens": 8,
+            "total_tokens": 697,
+            "cost": 0.000729,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000729,
+              "upstream_inference_prompt_cost": 0.000689,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'd like to make some changes to the deductibles and coverage options on my home insurance policy. Can you outline the different choices I have and help me decide which ones might be best for my situation?",
+          "provenance": "repo",
+          "source": "data/test.tsv:5",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133276-LhZboB8HRoLeIwSYx2I7",
+          "jev_answer": "Policy Administration",
+          "confidence": 0.63,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133277-0u6k0aE1A53jCbaWILIE",
+          "fallback_taken": true,
+          "latency_ms": 354.2879580054432,
+          "original_latency_ms": 993.4904160909355,
+          "cost_usd": 3.1668e-05,
+          "original_cost_usd": 0.000714,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Administration",
+                "probabilities": {
+                  "Billing Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Comparisons": 0.18,
+                  "General Inquiries": 0,
+                  "Claims Assistance": 0,
+                  "Claims Disputes": 0,
+                  "Policy Administration": 0.67,
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0,
+                  "Coverage Explanations": 0.15
+                },
+                "confidence": 0.63
+              }
+            },
+            "usage": {
+              "input_tokens": 754,
+              "output_tokens": 112,
+              "cost": 3.1668e-05
+            },
+            "id": "gen-dec-1790133276-LhZboB8HRoLeIwSYx2I7",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 689,
+            "completion_tokens": 5,
+            "total_tokens": 694,
+            "cost": 0.000714,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000714,
+              "upstream_inference_prompt_cost": 0.000689,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm thinking about adjusting the coverage limits and deductibles associated with my homeowners insurance. What alternatives are available to me, and can you provide some guidance on selecting the most appropriate options?",
+          "provenance": "repo",
+          "source": "data/test.tsv:6",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133277-hmFLBap9CWdVZK9RxpHo",
+          "jev_answer": "Coverage Explanations",
+          "confidence": 0.36,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133277-PJeF9zEI69qYFX2Mbtkk",
+          "fallback_taken": true,
+          "latency_ms": 376.0526671539992,
+          "original_latency_ms": 1467.9733328521252,
+          "cost_usd": 3.15e-05,
+          "original_cost_usd": 0.000712,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Coverage Explanations",
+                "probabilities": {
+                  "Account Management": 0,
+                  "Claims Assistance": 0,
+                  "Claims Disputes": 0,
+                  "Coverage Explanations": 0.43,
+                  "Billing Inquiries": 0,
+                  "General Inquiries": 0,
+                  "Policy Comparisons": 0.19,
+                  "Quotes and Proposals": 0,
+                  "Billing Disputes": 0,
+                  "Policy Administration": 0.38
+                },
+                "confidence": 0.36
+              }
+            },
+            "usage": {
+              "input_tokens": 750,
+              "output_tokens": 114,
+              "cost": 3.15e-05
+            },
+            "id": "gen-dec-1790133277-hmFLBap9CWdVZK9RxpHo",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 687,
+            "completion_tokens": 5,
+            "total_tokens": 692,
+            "cost": 0.000712,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000712,
+              "upstream_inference_prompt_cost": 0.000687,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I came out to my car after shopping and found that another vehicle had hit it, but the driver was nowhere to be found. What should my next steps be in terms of filing an insurance claim for the damage?",
+          "provenance": "repo",
+          "source": "data/test.tsv:8",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133277-Z37xJGvGmz0INRA9rnP7",
+          "jev_answer": "Claims Assistance",
+          "confidence": 1,
+          "original_answer": "Claims Assistance",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133278-W0uwm6IBkLLCJX9g5cFr",
+          "fallback_taken": false,
+          "latency_ms": 334.4637912232429,
+          "original_latency_ms": 1198.7689170055091,
+          "cost_usd": 3.171e-05,
+          "original_cost_usd": 0.00072,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Assistance",
+                "probabilities": {
+                  "Claims Assistance": 1,
+                  "Billing Disputes": 0,
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "General Inquiries": 0,
+                  "Policy Comparisons": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 755,
+              "output_tokens": 112,
+              "cost": 3.171e-05
+            },
+            "id": "gen-dec-1790133277-Z37xJGvGmz0INRA9rnP7",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 690,
+            "completion_tokens": 6,
+            "total_tokens": 696,
+            "cost": 0.00072,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00072,
+              "upstream_inference_prompt_cost": 0.00069,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Someone apparently crashed into my parked car while I was away from it, but I have no information about who did it. Can you guide me through the process of submitting a claim in this type of hit-and-run scenario?",
+          "provenance": "repo",
+          "source": "data/test.tsv:9",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133278-vc1HP0aF0WAjg6Apxg7C",
+          "jev_answer": "Claims Assistance",
+          "confidence": 1,
+          "original_answer": "Claims Assistance",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133278-AgIDET9vdGtyhmQxJTJ4",
+          "fallback_taken": false,
+          "latency_ms": 328.53762502782047,
+          "original_latency_ms": 1072.0794170629233,
+          "cost_usd": 3.1752e-05,
+          "original_cost_usd": 0.000725,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Assistance",
+                "probabilities": {
+                  "General Inquiries": 0,
+                  "Claims Assistance": 1,
+                  "Billing Inquiries": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "Quotes and Proposals": 0,
+                  "Account Management": 0,
+                  "Billing Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Policy Administration": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 756,
+              "output_tokens": 112,
+              "cost": 3.1752e-05
+            },
+            "id": "gen-dec-1790133278-vc1HP0aF0WAjg6Apxg7C",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 695,
+            "completion_tokens": 6,
+            "total_tokens": 701,
+            "cost": 0.000725,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000725,
+              "upstream_inference_prompt_cost": 0.000695,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm a bit puzzled about what the difference is between collision and comprehensive coverage for car insurance. Would you be able to clarify the distinction and explain what each type of coverage protects against?",
+          "provenance": "repo",
+          "source": "data/test.tsv:11",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133278-ZrUiyYGHFox07QW3pBvs",
+          "jev_answer": "Coverage Explanations",
+          "confidence": 0.83,
+          "original_answer": "Coverage Explanations",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133278-4ZdKqOOzezB32yZv1Fg0",
+          "fallback_taken": true,
+          "latency_ms": 396.7603330966085,
+          "original_latency_ms": 1703.2363340258598,
+          "cost_usd": 3.1458e-05,
+          "original_cost_usd": 0.000722,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Coverage Explanations",
+                "probabilities": {
+                  "Quotes and Proposals": 0,
+                  "Policy Administration": 0,
+                  "General Inquiries": 0,
+                  "Billing Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Claims Disputes": 0,
+                  "Coverage Explanations": 0.85,
+                  "Policy Comparisons": 0.15,
+                  "Account Management": 0,
+                  "Claims Assistance": 0
+                },
+                "confidence": 0.83
+              }
+            },
+            "usage": {
+              "input_tokens": 749,
+              "output_tokens": 114,
+              "cost": 3.1458e-05
+            },
+            "id": "gen-dec-1790133278-ZrUiyYGHFox07QW3pBvs",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 687,
+            "completion_tokens": 7,
+            "total_tokens": 694,
+            "cost": 0.000722,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000722,
+              "upstream_inference_prompt_cost": 0.000687,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Can you help me better understand the nuances between auto collision and comprehensive insurance? I want to make sure I'm clear on what kinds of situations and damages fall under the scope of each one.",
+          "provenance": "repo",
+          "source": "data/test.tsv:12",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133278-He3z9QpkXATK54j2LKOr",
+          "jev_answer": "Coverage Explanations",
+          "confidence": 0.81,
+          "original_answer": "Coverage Explanations",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133279-ItgdBaWjlrjlPoITPoyM",
+          "fallback_taken": true,
+          "latency_ms": 377.9181658755988,
+          "original_latency_ms": 1243.8121668528765,
+          "cost_usd": 3.15e-05,
+          "original_cost_usd": 0.000721,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Coverage Explanations",
+                "probabilities": {
+                  "Account Management": 0,
+                  "Claims Disputes": 0,
+                  "Billing Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Coverage Explanations": 0.83,
+                  "Quotes and Proposals": 0,
+                  "Policy Comparisons": 0.17,
+                  "Claims Assistance": 0,
+                  "General Inquiries": 0
+                },
+                "confidence": 0.81
+              }
+            },
+            "usage": {
+              "input_tokens": 750,
+              "output_tokens": 114,
+              "cost": 3.15e-05
+            },
+            "id": "gen-dec-1790133278-He3z9QpkXATK54j2LKOr",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 686,
+            "completion_tokens": 7,
+            "total_tokens": 693,
+            "cost": 0.000721,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000721,
+              "upstream_inference_prompt_cost": 0.000686,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm in the process of shopping around for new insurance and am interested in seeing what your company can offer. Can you provide me with a quote that is competitive with or better than the coverage I currently have elsewhere?",
+          "provenance": "repo",
+          "source": "data/test.tsv:14",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133279-pSjNh0DKNCZ89wswap8i",
+          "jev_answer": "Quotes and Proposals",
+          "confidence": 1,
+          "original_answer": "Quotes and Proposals",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133280-AaOLdi18ghYzlFsauK1Y",
+          "fallback_taken": false,
+          "latency_ms": 579.9992501270026,
+          "original_latency_ms": 1196.0989579092711,
+          "cost_usd": 3.171e-05,
+          "original_cost_usd": 0.00073,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Quotes and Proposals",
+                "probabilities": {
+                  "Policy Comparisons": 0,
+                  "Quotes and Proposals": 1,
+                  "Policy Administration": 0,
+                  "General Inquiries": 0,
+                  "Account Management": 0,
+                  "Claims Disputes": 0,
+                  "Billing Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 755,
+              "output_tokens": 114,
+              "cost": 3.171e-05
+            },
+            "id": "gen-dec-1790133279-pSjNh0DKNCZ89wswap8i",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 690,
+            "completion_tokens": 8,
+            "total_tokens": 698,
+            "cost": 0.00073,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00073,
+              "upstream_inference_prompt_cost": 0.00069,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "As I compare insurance options from different providers, I'm curious to know how your company's rates and coverage stack up against my existing policy. Would you be able to prepare a quote that meets or beats what I have now?",
+          "provenance": "repo",
+          "source": "data/test.tsv:15",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133279-6HZxebvNU9klZJ1bHmPg",
+          "jev_answer": "Quotes and Proposals",
+          "confidence": 0.98,
+          "original_answer": "Quotes and Proposals",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133280-196QYrwGp4hPEIqEv10X",
+          "fallback_taken": false,
+          "latency_ms": 531.3458750024438,
+          "original_latency_ms": 1197.709625121206,
+          "cost_usd": 3.1794e-05,
+          "original_cost_usd": 0.000732,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Quotes and Proposals",
+                "probabilities": {
+                  "Account Management": 0,
+                  "Claims Assistance": 0,
+                  "General Inquiries": 0,
+                  "Quotes and Proposals": 0.98,
+                  "Coverage Explanations": 0,
+                  "Policy Administration": 0,
+                  "Billing Disputes": 0,
+                  "Claims Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Comparisons": 0.02
+                },
+                "confidence": 0.98
+              }
+            },
+            "usage": {
+              "input_tokens": 757,
+              "output_tokens": 114,
+              "cost": 3.1794e-05
+            },
+            "id": "gen-dec-1790133279-6HZxebvNU9klZJ1bHmPg",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 692,
+            "completion_tokens": 8,
+            "total_tokens": 700,
+            "cost": 0.000732,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000732,
+              "upstream_inference_prompt_cost": 0.000692,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm having trouble signing in to my online insurance account portal. When I enter my password, it says it's incorrect even though I know I'm using the right one. Can you help me troubleshoot this login issue?",
+          "provenance": "repo",
+          "source": "data/test.tsv:17",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133280-zSIoyp0Zvtt6LaUnZKjl",
+          "jev_answer": "Account Management",
+          "confidence": 1,
+          "original_answer": "Account Management",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133281-KOEMfbfEV3PQ8wnKmzZc",
+          "fallback_taken": false,
+          "latency_ms": 533.5225421003997,
+          "original_latency_ms": 1073.182958876714,
+          "cost_usd": 3.1878e-05,
+          "original_cost_usd": 0.000718,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Account Management",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Disputes": 0,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0,
+                  "General Inquiries": 0,
+                  "Claims Assistance": 0,
+                  "Policy Comparisons": 0,
+                  "Policy Administration": 0,
+                  "Account Management": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 759,
+              "output_tokens": 112,
+              "cost": 3.1878e-05
+            },
+            "id": "gen-dec-1790133280-zSIoyp0Zvtt6LaUnZKjl",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 693,
+            "completion_tokens": 5,
+            "total_tokens": 698,
+            "cost": 0.000718,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000718,
+              "upstream_inference_prompt_cost": 0.000693,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Every time I attempt to access my insurance account on your website, I get an error message indicating that my password is invalid. I haven't changed it recently, so I'm not sure what the problem could be. Can you assist me in resolving this?",
+          "provenance": "repo",
+          "source": "data/test.tsv:18",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133280-EQJySiTAC1uNX7QZaDJU",
+          "jev_answer": "Account Management",
+          "confidence": 1,
+          "original_answer": "Account Management",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133281-aZWSAwiWIHH1yi31qHTB",
+          "fallback_taken": false,
+          "latency_ms": 531.8964589387178,
+          "original_latency_ms": 1070.384374819696,
+          "cost_usd": 3.2046e-05,
+          "original_cost_usd": 0.000724,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Account Management",
+                "probabilities": {
+                  "Billing Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Assistance": 0,
+                  "General Inquiries": 0,
+                  "Claims Disputes": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Account Management": 1
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 763,
+              "output_tokens": 112,
+              "cost": 3.2046e-05
+            },
+            "id": "gen-dec-1790133280-EQJySiTAC1uNX7QZaDJU",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 699,
+            "completion_tokens": 5,
+            "total_tokens": 704,
+            "cost": 0.000724,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000724,
+              "upstream_inference_prompt_cost": 0.000699,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "There's a mysterious charge from your insurance company on my recent credit card statement that doesn't coincide with my regular premium payment. Can you investigate the nature of this charge and clarify why it was applied to my account?",
+          "provenance": "repo",
+          "source": "data/test.tsv:20",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133281-cEokhFZT3cOub2axiRyw",
+          "jev_answer": "Billing Disputes",
+          "confidence": 0.74,
+          "original_answer": "Billing Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133281-eApQlcm6tjf6dHw2y3kx",
+          "fallback_taken": true,
+          "latency_ms": 539.732958888635,
+          "original_latency_ms": 991.2522500380874,
+          "cost_usd": 3.171e-05,
+          "original_cost_usd": 0.000727,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Disputes",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "General Inquiries": 0,
+                  "Policy Comparisons": 0,
+                  "Quotes and Proposals": 0,
+                  "Account Management": 0,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0.23,
+                  "Claims Assistance": 0,
+                  "Billing Disputes": 0.77,
+                  "Policy Administration": 0
+                },
+                "confidence": 0.74
+              }
+            },
+            "usage": {
+              "input_tokens": 755,
+              "output_tokens": 114,
+              "cost": 3.171e-05
+            },
+            "id": "gen-dec-1790133281-cEokhFZT3cOub2axiRyw",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 692,
+            "completion_tokens": 7,
+            "total_tokens": 699,
+            "cost": 0.000727,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000727,
+              "upstream_inference_prompt_cost": 0.000692,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I've encountered an odd fee from your company on my latest credit card bill, and it's not the same as my typical insurance premium amount. Could you do some digging to find out what this charge represents and why I'm being billed for it?",
+          "provenance": "repo",
+          "source": "data/test.tsv:21",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133281-e7mdOtD3DirJiDifXkSP",
+          "jev_answer": "Billing Inquiries",
+          "confidence": 0.44,
+          "original_answer": "Billing Inquiries",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133281-BN406TAsxriGJgZkNE6z",
+          "fallback_taken": true,
+          "latency_ms": 515.5215000268072,
+          "original_latency_ms": 1141.4303749334067,
+          "cost_usd": 3.2004e-05,
+          "original_cost_usd": 0.000739,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Inquiries",
+                "probabilities": {
+                  "General Inquiries": 0,
+                  "Claims Assistance": 0,
+                  "Account Management": 0,
+                  "Quotes and Proposals": 0,
+                  "Claims Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Policy Administration": 0,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0.5,
+                  "Billing Disputes": 0.5
+                },
+                "confidence": 0.44
+              }
+            },
+            "usage": {
+              "input_tokens": 762,
+              "output_tokens": 114,
+              "cost": 3.2004e-05
+            },
+            "id": "gen-dec-1790133281-e7mdOtD3DirJiDifXkSP",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 699,
+            "completion_tokens": 8,
+            "total_tokens": 707,
+            "cost": 0.000739,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000739,
+              "upstream_inference_prompt_cost": 0.000699,
+              "upstream_inference_completions_cost": 4e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I recently filed a claim for some water damage that occurred in my kitchen, but I was surprised to learn that it was denied. I believe this type of incident should be covered under my homeowners policy, so how can I go about appealing the denial?",
+          "provenance": "repo",
+          "source": "data/test.tsv:23",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133281-sdWwQE3If0839xiOH48Z",
+          "jev_answer": "Claims Disputes",
+          "confidence": 1,
+          "original_answer": "Claims Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133282-xsIxUK4nfS1aOwoLiVxj",
+          "fallback_taken": false,
+          "latency_ms": 337.16183295473456,
+          "original_latency_ms": 1536.909457994625,
+          "cost_usd": 3.2004e-05,
+          "original_cost_usd": 0.000729,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Disputes",
+                "probabilities": {
+                  "Billing Disputes": 0,
+                  "Account Management": 0,
+                  "Policy Comparisons": 0,
+                  "Billing Inquiries": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 1,
+                  "Quotes and Proposals": 0,
+                  "Policy Administration": 0,
+                  "General Inquiries": 0,
+                  "Claims Assistance": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 762,
+              "output_tokens": 114,
+              "cost": 3.2004e-05
+            },
+            "id": "gen-dec-1790133281-sdWwQE3If0839xiOH48Z",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 699,
+            "completion_tokens": 6,
+            "total_tokens": 705,
+            "cost": 0.000729,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000729,
+              "upstream_inference_prompt_cost": 0.000699,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "After submitting a claim for water-related damage to my kitchen, I was dismayed to receive a rejection notice stating that it wasn't covered. However, I feel strongly that my policy should apply to this situation. What recourse do I have to challenge this decision and get my claim approved?",
+          "provenance": "repo",
+          "source": "data/test.tsv:24",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133282-saX4g8SL7okQULpY1HM1",
+          "jev_answer": "Claims Disputes",
+          "confidence": 1,
+          "original_answer": "Claims Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133282-Kf1ngh7z1kn727XoVDyP",
+          "fallback_taken": false,
+          "latency_ms": 389.5407500676811,
+          "original_latency_ms": 1005.9695418458432,
+          "cost_usd": 3.2382e-05,
+          "original_cost_usd": 0.000737,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Disputes",
+                "probabilities": {
+                  "General Inquiries": 0,
+                  "Quotes and Proposals": 0,
+                  "Policy Comparisons": 0,
+                  "Billing Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Account Management": 0,
+                  "Claims Disputes": 1,
+                  "Policy Administration": 0,
+                  "Billing Inquiries": 0,
+                  "Coverage Explanations": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 771,
+              "output_tokens": 114,
+              "cost": 3.2382e-05
+            },
+            "id": "gen-dec-1790133282-saX4g8SL7okQULpY1HM1",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 707,
+            "completion_tokens": 6,
+            "total_tokens": 713,
+            "cost": 0.000737,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000737,
+              "upstream_inference_prompt_cost": 0.000707,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I'm wavering between a high-deductible health plan and a more traditional PPO option, and I could use some assistance in weighing the relative merits and drawbacks of each. Can you offer a comparison of these two choices to help inform my decision?",
+          "provenance": "repo",
+          "source": "data/test.tsv:26",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133282-kDNlDGLEQnv0xVCV5eap",
+          "jev_answer": "Policy Comparisons",
+          "confidence": 1,
+          "original_answer": "Policy Comparisons",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133283-g4mkylGNUQ9BXXfo2wwS",
+          "fallback_taken": false,
+          "latency_ms": 365.3285000473261,
+          "original_latency_ms": 1816.944875055924,
+          "cost_usd": 3.2004e-05,
+          "original_cost_usd": 0.000737,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Comparisons",
+                "probabilities": {
+                  "Policy Comparisons": 1,
+                  "Account Management": 0,
+                  "General Inquiries": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Billing Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 762,
+              "output_tokens": 114,
+              "cost": 3.2004e-05
+            },
+            "id": "gen-dec-1790133282-kDNlDGLEQnv0xVCV5eap",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 702,
+            "completion_tokens": 7,
+            "total_tokens": 709,
+            "cost": 0.000737,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000737,
+              "upstream_inference_prompt_cost": 0.000702,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Choosing between a health insurance policy with a high deductible and a standard PPO plan has me feeling uncertain. Could you provide an overview of the key differences I should consider as I try to determine which one is the better fit for me?",
+          "provenance": "repo",
+          "source": "data/test.tsv:27",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133282-HywVlfOQnSdLWokDIGMH",
+          "jev_answer": "Policy Comparisons",
+          "confidence": 1,
+          "original_answer": "Policy Comparisons",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133283-WtYnGZKWBo454dcxYtMa",
+          "fallback_taken": false,
+          "latency_ms": 556.1452088877559,
+          "original_latency_ms": 1021.1411248892546,
+          "cost_usd": 3.1836e-05,
+          "original_cost_usd": 0.000732,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Comparisons",
+                "probabilities": {
+                  "General Inquiries": 0,
+                  "Billing Disputes": 0,
+                  "Account Management": 0,
+                  "Policy Comparisons": 1,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0,
+                  "Claims Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 758,
+              "output_tokens": 114,
+              "cost": 3.1836e-05
+            },
+            "id": "gen-dec-1790133282-HywVlfOQnSdLWokDIGMH",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 697,
+            "completion_tokens": 7,
+            "total_tokens": 704,
+            "cost": 0.000732,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000732,
+              "upstream_inference_prompt_cost": 0.000697,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "I received a letter outlining some forthcoming adjustments to my insurance policy, but I'm having trouble deciphering exactly what they mean for my coverage. Would you be able to walk me through the changes in greater detail so I can fully understand their implications?",
+          "provenance": "repo",
+          "source": "data/test.tsv:28",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133283-K4QdBcS1Nh5QXPeL4vib",
+          "jev_answer": "Coverage Explanations",
+          "confidence": 0.91,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133283-JACdGvnUEmCukBmfsfvs",
+          "fallback_taken": false,
+          "latency_ms": 378.7446250207722,
+          "original_latency_ms": 1002.3647078778595,
+          "cost_usd": 3.2046e-05,
+          "original_cost_usd": 0.000725,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Coverage Explanations",
+                "probabilities": {
+                  "Claims Disputes": 0,
+                  "Coverage Explanations": 0.92,
+                  "General Inquiries": 0,
+                  "Policy Administration": 0.08,
+                  "Account Management": 0,
+                  "Billing Inquiries": 0,
+                  "Claims Assistance": 0,
+                  "Billing Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 0.91
+              }
+            },
+            "usage": {
+              "input_tokens": 763,
+              "output_tokens": 114,
+              "cost": 3.2046e-05
+            },
+            "id": "gen-dec-1790133283-K4QdBcS1Nh5QXPeL4vib",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 700,
+            "completion_tokens": 5,
+            "total_tokens": 705,
+            "cost": 0.000725,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000725,
+              "upstream_inference_prompt_cost": 0.0007,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "A piece of mail from your company arrived informing me of some impending updates to my insurance plan, but the specifics are a little hazy to me. Can you shed more light on what these modifications entail and how they will impact my policy moving forward?",
+          "provenance": "repo",
+          "source": "data/test.tsv:29",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133283-Kb7UB2haWEQhBOmygfbX",
+          "jev_answer": "Policy Administration",
+          "confidence": 0.91,
+          "original_answer": "Policy Administration",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133284-yzzdFCDYATEKnblFwj9d",
+          "fallback_taken": false,
+          "latency_ms": 298.336667008698,
+          "original_latency_ms": 1434.8661669064313,
+          "cost_usd": 3.2004e-05,
+          "original_cost_usd": 0.000726,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Policy Administration",
+                "probabilities": {
+                  "General Inquiries": 0.03,
+                  "Billing Disputes": 0,
+                  "Account Management": 0,
+                  "Policy Administration": 0.92,
+                  "Policy Comparisons": 0,
+                  "Claims Disputes": 0,
+                  "Billing Inquiries": 0,
+                  "Coverage Explanations": 0.05,
+                  "Claims Assistance": 0,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 0.91
+              }
+            },
+            "usage": {
+              "input_tokens": 762,
+              "output_tokens": 112,
+              "cost": 3.2004e-05
+            },
+            "id": "gen-dec-1790133283-Kb7UB2haWEQhBOmygfbX",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 701,
+            "completion_tokens": 5,
+            "total_tokens": 706,
+            "cost": 0.000726,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000726,
+              "upstream_inference_prompt_cost": 0.000701,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Can you explain my bill and help reset my password?",
+          "provenance": "synthetic",
+          "source": "validate_jev.py boundary cases",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133284-vQK08eBaBYyQklf2wzQO",
+          "jev_answer": "Billing Inquiries",
+          "confidence": 0.5,
+          "original_answer": "Account Management",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133284-eSqMSExmL1p7PhuTL08Z",
+          "fallback_taken": true,
+          "latency_ms": 387.56870897486806,
+          "original_latency_ms": 1062.9555000923574,
+          "cost_usd": 3.0366e-05,
+          "original_cost_usd": 0.000683,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Billing Inquiries",
+                "probabilities": {
+                  "Billing Disputes": 0,
+                  "Account Management": 0.24,
+                  "Policy Comparisons": 0,
+                  "Billing Inquiries": 0.55,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "Claims Assistance": 0,
+                  "Policy Administration": 0,
+                  "General Inquiries": 0.21,
+                  "Quotes and Proposals": 0
+                },
+                "confidence": 0.5
+              }
+            },
+            "usage": {
+              "input_tokens": 723,
+              "output_tokens": 114,
+              "cost": 3.0366e-05
+            },
+            "id": "gen-dec-1790133284-vQK08eBaBYyQklf2wzQO",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 658,
+            "completion_tokens": 5,
+            "total_tokens": 663,
+            "cost": 0.000683,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000683,
+              "upstream_inference_prompt_cost": 0.000658,
+              "upstream_inference_completions_cost": 2.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "Hello.",
+          "provenance": "synthetic",
+          "source": "validate_jev.py boundary cases",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133284-04uydDEhdrxLdPKEAdHv",
+          "jev_answer": "General Inquiries",
+          "confidence": 1,
+          "original_answer": "General Inquiries",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133285-UAVxhrJyqh4SVxR31IXL",
+          "fallback_taken": false,
+          "latency_ms": 362.2662089765072,
+          "original_latency_ms": 1454.7582080122083,
+          "cost_usd": 2.9988e-05,
+          "original_cost_usd": 0.000684,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "General Inquiries",
+                "probabilities": {
+                  "Claims Assistance": 0,
+                  "Billing Inquiries": 0,
+                  "Billing Disputes": 0,
+                  "Policy Comparisons": 0,
+                  "Account Management": 0,
+                  "Coverage Explanations": 0,
+                  "General Inquiries": 1,
+                  "Quotes and Proposals": 0,
+                  "Policy Administration": 0,
+                  "Claims Disputes": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 714,
+              "output_tokens": 114,
+              "cost": 2.9988e-05
+            },
+            "id": "gen-dec-1790133284-04uydDEhdrxLdPKEAdHv",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 649,
+            "completion_tokens": 7,
+            "total_tokens": 656,
+            "cost": 0.000684,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000684,
+              "upstream_inference_prompt_cost": 0.000649,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "What is the weather tomorrow?",
+          "provenance": "synthetic",
+          "source": "validate_jev.py boundary cases",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133284-yt7vl9IGFRDF1EX7VHLT",
+          "jev_answer": "General Inquiries",
+          "confidence": 1,
+          "original_answer": "General Inquiries",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133285-jXdKk9x8y3GK36xFfqW0",
+          "fallback_taken": false,
+          "latency_ms": 298.68962499313056,
+          "original_latency_ms": 943.9195829909295,
+          "cost_usd": 3.0156e-05,
+          "original_cost_usd": 0.000688,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "General Inquiries",
+                "probabilities": {
+                  "Policy Comparisons": 0,
+                  "Billing Disputes": 0,
+                  "Quotes and Proposals": 0,
+                  "Billing Inquiries": 0,
+                  "Coverage Explanations": 0,
+                  "Claims Disputes": 0,
+                  "General Inquiries": 1,
+                  "Account Management": 0,
+                  "Policy Administration": 0,
+                  "Claims Assistance": 0
+                },
+                "confidence": 1
+              }
+            },
+            "usage": {
+              "input_tokens": 718,
+              "output_tokens": 114,
+              "cost": 3.0156e-05
+            },
+            "id": "gen-dec-1790133284-yt7vl9IGFRDF1EX7VHLT",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 653,
+            "completion_tokens": 7,
+            "total_tokens": 660,
+            "cost": 0.000688,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000688,
+              "upstream_inference_prompt_cost": 0.000653,
+              "upstream_inference_completions_cost": 3.5e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        },
+        {
+          "input": "My claim was denied and I need to update my address.",
+          "provenance": "synthetic",
+          "source": "validate_jev.py boundary cases",
+          "split": "confirmation",
+          "live": true,
+          "model": "typesafe/jev-1.13-20260917",
+          "request_id": "gen-dec-1790133285-NAMCIAHETtCwV6QLVwbh",
+          "jev_answer": "Claims Disputes",
+          "confidence": 0.56,
+          "original_answer": "Claims Disputes",
+          "original_model": "anthropic/claude-haiku-4.5",
+          "original_request_id": "gen-1790133285-3yTNGvoXefASmpjtnQFK",
+          "fallback_taken": true,
+          "latency_ms": 338.3301249705255,
+          "original_latency_ms": 1117.623999947682,
+          "cost_usd": 3.0408e-05,
+          "original_cost_usd": 0.000689,
+          "cost_source": "provider-reported usage.cost",
+          "jev_response": {
+            "model": "typesafe/jev-1.13-20260917",
+            "answers": {
+              "category": {
+                "type": "choice",
+                "choice": "Claims Disputes",
+                "probabilities": {
+                  "Claims Assistance": 0.01,
+                  "Account Management": 0.33,
+                  "Policy Comparisons": 0,
+                  "Coverage Explanations": 0,
+                  "Billing Inquiries": 0,
+                  "Policy Administration": 0.01,
+                  "Billing Disputes": 0,
+                  "General Inquiries": 0.04,
+                  "Quotes and Proposals": 0,
+                  "Claims Disputes": 0.61
+                },
+                "confidence": 0.56
+              }
+            },
+            "usage": {
+              "input_tokens": 724,
+              "output_tokens": 114,
+              "cost": 3.0408e-05
+            },
+            "id": "gen-dec-1790133285-NAMCIAHETtCwV6QLVwbh",
+            "provider": "TypeSafe"
+          },
+          "original_usage": {
+            "prompt_tokens": 659,
+            "completion_tokens": 6,
+            "total_tokens": 665,
+            "cost": 0.000689,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000689,
+              "upstream_inference_prompt_cost": 0.000659,
+              "upstream_inference_completions_cost": 3e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "faults": {
+        "timeout": true,
+        "rate_limit": true,
+        "error": true,
+        "missing_key": true,
+        "malformed": true,
+        "gate_invalid_numbers": true,
+        "below_threshold": true,
+        "accepted_replay": true,
+        "invalid_response_fields": true,
+        "original_exception": true,
+        "oversize": true
+      },
+      "summary": {
+        "all": {
+          "n": 44,
+          "curve": [
+            {
+              "threshold": 0,
+              "accepted": 44,
+              "agreement": 0.8636363636363636,
+              "fallback_fraction": 0.0
+            },
+            {
+              "threshold": 0.5,
+              "accepted": 41,
+              "agreement": 0.9024390243902439,
+              "fallback_fraction": 0.06818181818181823
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 37,
+              "agreement": 0.9459459459459459,
+              "fallback_fraction": 0.15909090909090906
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 34,
+              "agreement": 0.9411764705882353,
+              "fallback_fraction": 0.2272727272727273
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 31,
+              "agreement": 0.9354838709677419,
+              "fallback_fraction": 0.2954545454545454
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 25,
+              "agreement": 0.96,
+              "fallback_fraction": 0.43181818181818177
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 22,
+              "agreement": 1.0,
+              "fallback_fraction": 0.5
+            },
+            {
+              "threshold": 1,
+              "accepted": 21,
+              "agreement": 1.0,
+              "fallback_fraction": 0.5227272727272727
+            }
+          ],
+          "jev_latency_ms": {
+            "p50": 362.3392499284819,
+            "p95": 556.1452088877559
+          },
+          "original_latency_ms": {
+            "p50": 1073.785062879324,
+            "p95": 1703.2363340258598
+          },
+          "estimated_cascade_mean_latency_ms": 736.9049195073206,
+          "estimated_cascade_mean_cost_usd": 0.00024192077272727273
+        },
+        "calibration": {
+          "n": 20,
+          "curve": [
+            {
+              "threshold": 0,
+              "accepted": 20,
+              "agreement": 0.9,
+              "fallback_fraction": 0.0
+            },
+            {
+              "threshold": 0.5,
+              "accepted": 19,
+              "agreement": 0.9473684210526315,
+              "fallback_fraction": 0.050000000000000044
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 19,
+              "agreement": 0.9473684210526315,
+              "fallback_fraction": 0.050000000000000044
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 17,
+              "agreement": 0.9411764705882353,
+              "fallback_fraction": 0.15000000000000002
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 16,
+              "agreement": 0.9375,
+              "fallback_fraction": 0.19999999999999996
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 13,
+              "agreement": 0.9230769230769231,
+              "fallback_fraction": 0.35
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 11,
+              "agreement": 1.0,
+              "fallback_fraction": 0.44999999999999996
+            },
+            {
+              "threshold": 1,
+              "accepted": 10,
+              "agreement": 1.0,
+              "fallback_fraction": 0.5
+            }
+          ],
+          "jev_latency_ms": {
+            "p50": 340.04674945026636,
+            "p95": 579.8408749978989
+          },
+          "original_latency_ms": {
+            "p50": 1048.9263749914244,
+            "p95": 2628.8969579618424
+          },
+          "estimated_cascade_mean_latency_ms": 570.0392186641693,
+          "estimated_cascade_mean_cost_usd": 0.0001725753
+        },
+        "confirmation": {
+          "n": 24,
+          "curve": [
+            {
+              "threshold": 0,
+              "accepted": 24,
+              "agreement": 0.8333333333333334,
+              "fallback_fraction": 0.0
+            },
+            {
+              "threshold": 0.5,
+              "accepted": 22,
+              "agreement": 0.8636363636363636,
+              "fallback_fraction": 0.08333333333333337
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 18,
+              "agreement": 0.9444444444444444,
+              "fallback_fraction": 0.25
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 17,
+              "agreement": 0.9411764705882353,
+              "fallback_fraction": 0.29166666666666663
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 15,
+              "agreement": 0.9333333333333333,
+              "fallback_fraction": 0.375
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 12,
+              "agreement": 1.0,
+              "fallback_fraction": 0.5
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 11,
+              "agreement": 1.0,
+              "fallback_fraction": 0.5416666666666667
+            },
+            {
+              "threshold": 1,
+              "accepted": 11,
+              "agreement": 1.0,
+              "fallback_fraction": 0.5416666666666667
+            }
+          ],
+          "jev_latency_ms": {
+            "p50": 378.3313954481855,
+            "p95": 556.1452088877559
+          },
+          "original_latency_ms": {
+            "p50": 1129.5271874405444,
+            "p95": 1703.2363340258598
+          },
+          "estimated_cascade_mean_latency_ms": 875.9596702099467,
+          "estimated_cascade_mean_cost_usd": 0.0002997086666666667
+        }
+      }
+    }
+  ],
+  "planned_inputs": 44,
+  "attempted_inputs": 44,
+  "baseline_adapter": "Unchanged original callable; evaluation-only Anthropic transport mapped to authorized OpenRouter same-model route, with stop_sequences renamed stop; AST equality asserted.",
+  "threshold_policy": "0.9 fixed before confirmation; calibration and confirmation reported separately; no tuning on confirmation.",
+  "status": "measured"
+}
