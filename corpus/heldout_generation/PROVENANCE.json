@@ -1,0 +1,15 @@
+{
+  "id": "heldout_generation",
+  "split": "HELD-OUT",
+  "repository": "https://github.com/vercel/ai",
+  "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+  "source_path": "examples/ai-core/src/generate-text/google.ts",
+  "entrypoint": "workflow.ts",
+  "notebook_cells": null,
+  "selection": null,
+  "upstream_sha256": "3b3682762a4baf1d4b401b7899e7a4fe62dadee86b5b38fca52cd50593cee4e5",
+  "files": {
+    "workflow.ts": "3b3682762a4baf1d4b401b7899e7a4fe62dadee86b5b38fca52cd50593cee4e5",
+    "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+  }
+}

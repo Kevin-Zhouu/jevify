@@ -1,0 +1,15 @@
+{
+  "id": "heldout_enum",
+  "split": "HELD-OUT",
+  "repository": "https://github.com/vercel/ai",
+  "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+  "source_path": "examples/ai-core/src/generate-object/google-enum.ts",
+  "entrypoint": "workflow.ts",
+  "notebook_cells": null,
+  "selection": null,
+  "upstream_sha256": "e453316fce6d86f891b45ffd3b1f92aef9cda6db4fbf30f0f4b291a465ed0bb2",
+  "files": {
+    "workflow.ts": "e453316fce6d86f891b45ffd3b1f92aef9cda6db4fbf30f0f4b291a465ed0bb2",
+    "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "anthropic_classification": {
+    "negative_control": false,
+    "sites": [
+      {
+        "file": "workflow.py",
+        "line": 83,
+        "classification": "DECISION",
+        "provider": "Anthropic SDK",
+        "downstream": "response.content[0].text is stripped and returned as one of ten insurance-ticket labels",
+        "fit": "FIT for trusted dataset inputs; add and evaluate explicit adversarial-input mitigation for public traffic"
+      }
+    ],
+    "must_convert": true
+  },
+  "anthropic_routing": {
+    "negative_control": false,
+    "sites": [
+      {
+        "file": "workflow.py",
+        "line": 24,
+        "classification": "MIXED",
+        "provider": "Anthropic via llm_call",
+        "downstream": "XML selection selects support_routes; XML reasoning is printed and is observable free text",
+        "fit": "NOT A FIT for full replacement: preserving printed reasoning requires generation"
+      },
+      {
+        "file": "workflow.py",
+        "line": 34,
+        "classification": "GENERATION",
+        "provider": "Anthropic via llm_call",
+        "downstream": "specialist prose is returned to caller",
+        "fit": "NOT A FIT: generation"
+      },
+      {
+        "file": "util.py",
+        "line": 23,
+        "classification": "MIXED",
+        "provider": "Anthropic SDK",
+        "downstream": "shared wrapper supplies both selector reasoning/label and specialist prose",
+        "fit": "NOT A FIT for blanket wrapper replacement"
+      }
+    ]
+  },
+  "vercel_enum": {
+    "negative_control": false,
+    "sites": [
+      {
+        "file": "workflow.ts",
+        "line": 6,
+        "classification": "DECISION",
+        "provider": "Vercel AI SDK / OpenAI",
+        "downstream": "result.object is a closed-set movie genre, printed; usage and finishReason are also observable",
+        "fit": "FIT; preserve diagnostic result fields truthfully"
+      }
+    ],
+    "must_convert": true
+  },
+  "vercel_recipe": {
+    "negative_control": true,
+    "sites": [
+      {
+        "file": "workflow.ts",
+        "line": 7,
+        "classification": "GENERATION",
+        "provider": "Vercel AI SDK / OpenAI",
+        "downstream": "recipe name, ingredients, quantities, and free-text steps printed as JSON",
+        "fit": "NOT A FIT: JSON schema does not make recipe generation a decision"
+      }
+    ]
+  },
+  "openai_demo": {
+    "negative_control": true,
+    "sites": [
+      {
+        "file": "workflow.py",
+        "line": 10,
+        "classification": "GENERATION",
+        "provider": "OpenAI SDK",
+        "downstream": "message.content printed",
+        "fit": "NOT A FIT: prose"
+      },
+      {
+        "file": "workflow.py",
+        "line": 23,
+        "classification": "GENERATION",
+        "provider": "OpenAI SDK",
+        "downstream": "delta.content streamed to stdout",
+        "fit": "NOT A FIT: code explanation and streaming text"
+      },
+      {
+        "file": "workflow.py",
+        "line": 42,
+        "classification": "GENERATION",
+        "provider": "OpenAI SDK raw response",
+        "downstream": "parsed message.content printed with request ID",
+        "fit": "NOT A FIT: prose"
+      }
+    ]
+  },
+  "langchain_completion": {
+    "negative_control": true,
+    "sites": [
+      {
+        "file": "workflow.ts",
+        "line": 15,
+        "classification": "GENERATION",
+        "provider": "LangChain ChatOpenAI",
+        "downstream": "stream becomes HTTP data-stream response through LangChainAdapter",
+        "fit": "NOT A FIT: open-ended streaming content"
+      }
+    ]
+  }
+}

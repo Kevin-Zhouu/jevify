@@ -1,0 +1,38 @@
+[
+  {
+    "fixture": "anthropic_classification",
+    "exit_code": 0,
+    "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "anthropic_routing",
+    "exit_code": 0,
+    "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "vercel_enum",
+    "exit_code": 0,
+    "stdout": "PASS: observable TypeScript behavior and original-path fallback smoke\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "vercel_recipe",
+    "exit_code": 0,
+    "stdout": "PASS: observable TypeScript behavior and original-path fallback smoke\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "openai_demo",
+    "exit_code": 0,
+    "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+    "stderr": ""
+  },
+  {
+    "fixture": "langchain_completion",
+    "exit_code": 0,
+    "stdout": "PASS: observable TypeScript behavior and original-path fallback smoke\n",
+    "stderr": ""
+  }
+]

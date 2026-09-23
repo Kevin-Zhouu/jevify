@@ -1,0 +1,133 @@
+[
+  {
+    "id": "anthropic_classification",
+    "split": "DEV",
+    "repository": "https://github.com/anthropics/anthropic-cookbook",
+    "commit": "a4b0d89061bc65769fea7947c080b3b11d938515",
+    "source_path": "capabilities/classification/guide.ipynb",
+    "entrypoint": "workflow.py",
+    "notebook_cells": [
+      3,
+      16,
+      18
+    ],
+    "selection": null,
+    "upstream_sha256": "6ac13ac74bf66574db1338b46446e3b676179af4a6def971dbfbd2ef8099078b",
+    "files": {
+      "LICENSE.upstream": "d7a04bf11ce24a7b79cd44b4a78dcc9971eaeb3b565821de437e0ecb7723e634",
+      "workflow.py": "51ffb2063fc4cbfc9a63fdc6a4c48456f313c34be9a1c2f78270037d50c96595",
+      "data/train.tsv": "1e37d6cc4bc5e3d769ca0bfaf134e5afcc40b5bf084f79687fa2fd0fd0671269",
+      "data/test.tsv": "a06e308384c153e3be2a95b577085d7a44e9dc4f9042729953dbbd2434b427e7"
+    }
+  },
+  {
+    "id": "anthropic_routing",
+    "split": "DEV",
+    "repository": "https://github.com/anthropics/anthropic-cookbook",
+    "commit": "a4b0d89061bc65769fea7947c080b3b11d938515",
+    "source_path": "patterns/agents/basic_workflows.ipynb",
+    "entrypoint": "workflow.py",
+    "notebook_cells": [
+      1,
+      2,
+      6
+    ],
+    "selection": "cell 2: route function; cell 6: assignments only; cell 1 unchanged",
+    "upstream_sha256": "afa06eb29b3409f66069510dbdfbb8c97f52e8860e74eba93f95d6fb29faa56a",
+    "files": {
+      "util.py": "123739b67792cf61d328971286df18a0e05d5e92afb57c2b7d937aa633914415",
+      "LICENSE.upstream": "d7a04bf11ce24a7b79cd44b4a78dcc9971eaeb3b565821de437e0ecb7723e634",
+      "workflow.py": "a9f8b77d6bcba1e549345828808b8c6dcf40aa321627287d649986999a941175"
+    }
+  },
+  {
+    "id": "vercel_enum",
+    "split": "DEV",
+    "repository": "https://github.com/vercel/ai",
+    "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+    "source_path": "examples/ai-core/src/generate-object/openai-enum.ts",
+    "entrypoint": "workflow.ts",
+    "notebook_cells": null,
+    "selection": null,
+    "upstream_sha256": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+    "files": {
+      "workflow.ts": "61ec99d2c9a374c02da205261e691211e14b2a5aec9c0ae0b86361e0c65b14ec",
+      "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+    }
+  },
+  {
+    "id": "vercel_recipe",
+    "split": "DEV",
+    "repository": "https://github.com/vercel/ai",
+    "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+    "source_path": "examples/ai-core/src/generate-object/openai.ts",
+    "entrypoint": "workflow.ts",
+    "notebook_cells": null,
+    "selection": null,
+    "upstream_sha256": "233ea83b535240b819ba0de411c5199609dc70a44fa64f6cc5f2a0e8a36d3b1a",
+    "files": {
+      "workflow.ts": "233ea83b535240b819ba0de411c5199609dc70a44fa64f6cc5f2a0e8a36d3b1a",
+      "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+    }
+  },
+  {
+    "id": "openai_demo",
+    "split": "DEV",
+    "repository": "https://github.com/openai/openai-python",
+    "commit": "cbde8a5691f9aef5d268bd506cd46f9fabec0ced",
+    "source_path": "examples/demo.py",
+    "entrypoint": "workflow.py",
+    "notebook_cells": null,
+    "selection": null,
+    "upstream_sha256": "245a051d360a187e25df51ff0131de235310dd182f31045bf1178543da31c870",
+    "files": {
+      "LICENSE.upstream": "636eb7d79da9bb6d515a4b3fd417aa26679eb3cf16396ddab4bc55fa74e616e4",
+      "workflow.py": "245a051d360a187e25df51ff0131de235310dd182f31045bf1178543da31c870"
+    }
+  },
+  {
+    "id": "langchain_completion",
+    "split": "DEV",
+    "repository": "https://github.com/vercel/ai",
+    "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+    "source_path": "examples/next-langchain/app/api/completion/route.ts",
+    "entrypoint": "workflow.ts",
+    "notebook_cells": null,
+    "selection": null,
+    "upstream_sha256": "0b7af1efa74e3c9b7bcb53b90a71fa5a6100e4f6db2ccf60c24ade492cc21847",
+    "files": {
+      "workflow.ts": "0b7af1efa74e3c9b7bcb53b90a71fa5a6100e4f6db2ccf60c24ade492cc21847",
+      "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+    }
+  },
+  {
+    "id": "heldout_enum",
+    "split": "HELD-OUT",
+    "repository": "https://github.com/vercel/ai",
+    "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+    "source_path": "examples/ai-core/src/generate-object/google-enum.ts",
+    "entrypoint": "workflow.ts",
+    "notebook_cells": null,
+    "selection": null,
+    "upstream_sha256": "e453316fce6d86f891b45ffd3b1f92aef9cda6db4fbf30f0f4b291a465ed0bb2",
+    "files": {
+      "workflow.ts": "e453316fce6d86f891b45ffd3b1f92aef9cda6db4fbf30f0f4b291a465ed0bb2",
+      "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+    }
+  },
+  {
+    "id": "heldout_generation",
+    "split": "HELD-OUT",
+    "repository": "https://github.com/vercel/ai",
+    "commit": "05c2da505b4564074456ab9c544c9266cdd2244a",
+    "source_path": "examples/ai-core/src/generate-text/google.ts",
+    "entrypoint": "workflow.ts",
+    "notebook_cells": null,
+    "selection": null,
+    "upstream_sha256": "3b3682762a4baf1d4b401b7899e7a4fe62dadee86b5b38fca52cd50593cee4e5",
+    "files": {
+      "workflow.ts": "3b3682762a4baf1d4b401b7899e7a4fe62dadee86b5b38fca52cd50593cee4e5",
+      "LICENSE.upstream": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529"
+    }
+  }
+]

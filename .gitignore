@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.local
+.env.*.local
+*.key
+eval/runs/**/original/.git/
+eval/runs/**/converted/.git/
+eval/runs/**/remote.git/
+.DS_Store

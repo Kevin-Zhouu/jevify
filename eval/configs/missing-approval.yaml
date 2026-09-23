@@ -1,0 +1,13 @@
+{
+  "headless": true,
+  "output": {
+    "mode": "branch",
+    "branch": "jev-convert/example"
+  },
+  "access": {
+    "provider": "openrouter",
+    "key_env": "OPENROUTER_API_KEY",
+    "model": "typesafe/jev-1.13-20260917"
+  },
+  "risk": "conservative"
+}
