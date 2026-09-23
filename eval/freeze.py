@@ -11,7 +11,7 @@ TARGET = ROOT / 'eval/FROZEN.json'
 
 
 def current():
-    paths = [ROOT / 'eval' / p for p in ['grader.py','run.py','smoke.py','smoke.cjs','test_grader.py','package.json','package-lock.json','labels/dev.json','labels/heldout.json']]
+    paths = [ROOT / 'eval' / p for p in ['grader.py','suite.py','run.py','smoke.py','smoke.cjs','test_grader.py','package.json','package-lock.json','labels/dev.json','labels/heldout.json']]
     paths += sorted((ROOT / 'eval/configs').glob('*.yaml'))
     paths += sorted(p for p in (ROOT / 'corpus').rglob('*') if p.is_file())
     return {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}

@@ -3,13 +3,32 @@
 import argparse
 import hashlib
 import json
+import math
 import pathlib
-import re
 
 MIN_AGREEMENT = 0.90
 MIN_PARITY_INPUTS = 30
 PINNED_MODELS = {'jev-1.13.0', 'typesafe/jev-1.13-20260917'}
-DOC_EXTENSIONS = {'.md', '.json', '.yaml', '.yml'}
+
+
+def nonnegative_number(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) and value >= 0
+
+
+def valid_live_row(row):
+    confidence=row.get('confidence')
+    return (
+        row.get('provenance') in {'repo','synthetic'}
+        and row.get('model') in PINNED_MODELS
+        and row.get('live') is True
+        and bool(row.get('request_id'))
+        and row.get('jev_answer') is not None
+        and row.get('original_answer') is not None
+        and nonnegative_number(confidence) and confidence <= 1
+        and all(nonnegative_number(row.get(k)) for k in ['latency_ms','cost_usd','original_latency_ms','original_cost_usd'])
+        and isinstance(row.get('fallback_taken'), bool)
+        and bool(row.get('original_model'))
+    )
 
 
 def read(path):
@@ -20,7 +39,7 @@ def grade(run, labels):
     evidence = read(run / 'evidence.json')
     fixture = evidence['fixture']
     gold = labels[fixture]
-    output = pathlib.Path(evidence['output'])
+    output = run / evidence['output_relative'] if evidence.get('output_relative') else pathlib.Path(evidence['output'])
     checks = {}
     reasons = {}
 
@@ -55,7 +74,7 @@ def grade(run, labels):
     changes = evidence.get('code_changes', [])
     if gold.get('negative_control'):
         report = (output / 'JEV_CONVERSION_REPORT.md').read_text() if (output / 'JEV_CONVERSION_REPORT.md').exists() else ''
-        check('negative_control', not changes and 'no good jev opportunities' in report.lower(), 'Negative control changed code or did not explicitly explain no opportunities')
+        check('negative_control', not changes and not evidence.get('non_report_changes', []) and 'no good jev opportunities' in report.lower(), 'Negative control changed non-report files or did not explicitly explain no opportunities')
     else:
         checks['negative_control'] = True
     converted = audit.get('converted_sites', [])
@@ -72,13 +91,13 @@ def grade(run, labels):
             item = by_site.get(site, {})
             rows = item.get('rows', [])
             threshold = item.get('threshold')
-            if not isinstance(threshold, (int, float)) or not 0 <= threshold <= 1:
+            if not nonnegative_number(threshold) or threshold > 1:
                 parity_ok = False
                 continue
             unique = {hashlib.sha256(json.dumps(r.get('input'),sort_keys=True).encode()).hexdigest() for r in rows}
             accepted = [r for r in rows if isinstance(r.get('confidence'), (int,float)) and r['confidence'] >= threshold and not r.get('error')]
             accuracy = sum(r.get('jev_answer') == r.get('original_answer') for r in accepted) / len(accepted) if accepted else 0
-            complete = all(r.get('provenance') in {'repo', 'synthetic'} and r.get('model') in PINNED_MODELS and r.get('live') is True and r.get('request_id') and isinstance(r.get('latency_ms'), (int,float)) and isinstance(r.get('cost_usd'), (int,float)) and 'original_answer' in r for r in rows)
+            complete = all(valid_live_row(r) and r['fallback_taken'] == (r['confidence'] < threshold or bool(r.get('error'))) for r in rows)
             faults = item.get('faults', {})
             parity_ok &= len(unique) >= MIN_PARITY_INPUTS and accuracy >= MIN_AGREEMENT and complete and all(faults.get(k) is True for k in ['below_threshold', 'error', 'timeout', 'rate_limit'])
         check('parity', parity_ok and evidence.get('independent_review', {}).get('live_evidence') is True, '30 unique live inputs, >=90% above-threshold agreement, fault checks and independently checked live provenance required')

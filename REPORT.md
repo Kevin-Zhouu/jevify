@@ -2,7 +2,7 @@
 
 Date: 2026-09-23
 
-The skill and evaluation deliverables are **not complete**. OpenRouter live Jev access and both headless harnesses are now verified. Six DEV workflows and two unread HELD-OUT workflows have been vendored at pinned commits. DEV hand labels, grader, runner, and behavioral smoke checks are prepared. All six DEV baseline smokes and six grader evidence-check tests pass.
+The skill and evaluation deliverables are **not complete**. OpenRouter live Jev access and both headless harnesses are now verified. Six DEV workflows and two unread HELD-OUT workflows have been vendored at pinned commits. DEV hand labels, grader, runner, and behavioral smoke checks are prepared. All six DEV baseline smokes and nine grader evidence-check tests pass.
 
 Pending user decisions: isolated blind HELD-OUT labeling, and authorization to route baseline models through OpenRouter for live parity. The grader has not yet been frozen; the skill has not yet been authored, preserving the requested labels-before-skill order. The skill is now named **jevify**, and the user authorized pushing the completed work to https://github.com/Kevin-Zhouu/jevify.git. The remote was empty when checked.
 

@@ -4,7 +4,8 @@ import pathlib
 import tempfile
 import unittest
 
-from grader import grade
+from grader import grade, valid_live_row
+from suite import summarize
 
 
 class GraderTests(unittest.TestCase):
@@ -43,6 +44,10 @@ class GraderTests(unittest.TestCase):
         self.evidence['code_changes']=['app.py']
         self.assertFalse(self.evaluate()['checks']['negative_control'])
 
+    def test_dependency_changes_are_changes_even_without_source_edits(self):
+        self.evidence['non_report_changes']=['package.json']
+        self.assertFalse(self.evaluate()['checks']['negative_control'])
+
     def test_missing_independent_evidence_fails_closed(self):
         self.evidence['gating_verified']=False
         self.evidence['independent_review']={}
@@ -55,6 +60,17 @@ class GraderTests(unittest.TestCase):
         self.labels['test']['negative_control']=False
         self.audit['converted_sites']=['app.py:1']
         self.assertFalse(self.evaluate()['checks']['parity'])
+
+    def test_unsupported_parity_metrics_fail_closed(self):
+        # These are incomplete evidence records, not simulated Jev responses.
+        for evidence in [{},{'confidence':True},{'latency_ms':float('nan')},{'cost_usd':-1},{'jev_answer':None,'original_answer':None}]:
+            self.assertFalse(valid_live_row(evidence))
+
+    def test_empty_suite_cannot_pass(self):
+        result=summarize(self.root,self.labels)
+        self.assertFalse(result['pass'])
+        self.assertEqual(result['required_runs'],4)
+        self.assertEqual(result['observed_runs'],0)
 
 
 if __name__=='__main__':

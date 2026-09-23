@@ -100,11 +100,24 @@ def main():
     parser.add_argument('--mode', choices=['branch','clone','report'], required=True)
     parser.add_argument('--iteration', required=True)
     parser.add_argument('--allow-heldout', action='store_true')
+    parser.add_argument('--heldout-round', type=int, choices=[0,1,2])
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'corpus/manifest.json').read_text())
     entry = next(e for e in manifest if e['id'] == args.fixture)
     if entry['split'] == 'HELD-OUT' and not args.allow_heldout:
         parser.error('HELD-OUT is sealed; final-check authorization required')
+    if entry['split'] == 'HELD-OUT':
+        if args.heldout_round is None:
+            parser.error('A HELD-OUT attempt must name round 0, 1 or 2')
+        if args.heldout_round:
+            lesson=ROOT/'eval/repairs'/f'round-{args.heldout_round}.md'
+            if not lesson.exists() or not lesson.read_text().strip():
+                parser.error('A repair requires a recorded general lesson before retrying HELD-OUT')
+        claims=ROOT/'eval/heldout-claims'/f'round-{args.heldout_round}'
+        claims.mkdir(parents=True,exist_ok=True)
+        claim=claims/f'{args.fixture}-{args.harness}-{args.scenario}.json'
+        with claim.open('x') as stream:
+            json.dump({'started_ns':time.time_ns(),'iteration':args.iteration},stream)
     run = ROOT / 'eval/runs' / args.iteration / f'{args.fixture}-{args.harness}-{args.scenario}'
     run.mkdir(parents=True, exist_ok=False)
     repo = run / 'original'
@@ -170,10 +183,12 @@ def main():
     output=clone if args.mode=='clone' and clone.exists() else repo
     after=snapshot(output)
     code_changes=[p for p in set(before)|set(after) if before.get(p)!=after.get(p) and pathlib.Path(p).suffix in {'.py','.ts','.tsx','.js','.cjs','.mjs'} and not p.startswith(('.agents/','.claude/'))]
+    report_names={'JEV_AUDIT.json','JEV_CONVERSION_PLAN.md','JEV_CONVERSION_REPORT.md','JEV_PARITY.json'}
+    non_report_changes=[p for p in set(before)|set(after) if before.get(p)!=after.get(p) and p not in report_names and not p.startswith(('.agents/','.claude/'))]
     mode_verified=git(repo,'rev-parse','main')==original_sha and git(remote,'show-ref')==remote_before
     if args.mode=='clone':mode_verified &= clone.exists() and snapshot(repo,include_git=True)==original_bytes
     if args.mode=='branch':mode_verified &= git(repo,'branch','--show-current')==branch
-    if args.mode=='report':mode_verified &= not code_changes and git(repo,'branch','--show-current')=='main'
+    if args.mode=='report':mode_verified &= not non_report_changes and git(repo,'branch','--show-current')=='main'
     smoke=['node',str(ROOT/'eval/smoke.cjs'),str(output),args.fixture] if entry['entrypoint'].endswith('.ts') else [sys.executable,str(ROOT/'eval/smoke.py'),str(output),args.fixture]
     try:
         s=subprocess.run(smoke,capture_output=True,text=True,timeout=60,env=env)
@@ -182,7 +197,7 @@ def main():
         smoke_result={'exit_code':124,'stderr':'Smoke timeout'}
     write_json(run/'smoke.json',smoke_result)
     write_json(run/'filesystem_events.json',events)
-    evidence={'fixture':args.fixture,'harness':args.harness,'scenario':args.scenario,'mode':args.mode,'output':str(output),'outcomes':outcomes,'mode_verified':bool(mode_verified),'gating_verified':False,'preapproval_filesystem_clean':not any(e['phase'] in {'phase0_unanswered','phase2_unapproved'} for e in events),'smoke_exit_code':smoke_result['exit_code'],'code_changes':sorted(code_changes),'original_sha':original_sha,'git_log':git(output,'log','--format=%H %ct %s'),'independent_review':{}}
+    evidence={'fixture':args.fixture,'harness':args.harness,'scenario':args.scenario,'mode':args.mode,'output':str(output),'output_relative':output.name,'outcomes':outcomes,'mode_verified':bool(mode_verified),'gating_verified':False,'preapproval_filesystem_clean':not any(e['phase'] in {'phase0_unanswered','phase2_unapproved'} for e in events),'smoke_exit_code':smoke_result['exit_code'],'code_changes':sorted(code_changes),'non_report_changes':sorted(non_report_changes),'original_sha':original_sha,'git_log':git(output,'log','--format=%H %ct %s'),'independent_review':{}}
     write_json(run/'evidence.json',evidence)
     write_json(run/'before.json',before);write_json(run/'after.json',after)
     print(json.dumps({'run':str(run),'harness_outcomes':outcomes,'smoke':smoke_result['exit_code'],'mode_verified':bool(mode_verified)}))
