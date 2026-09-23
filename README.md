@@ -4,6 +4,8 @@
 
 ### Get your agents running on Jev today
 
+**[Explore Jevify ↗](https://jevify.soupz11.chatgpt.site/)** · [Install](#install) · [Docs](skills/jevify/INSTALL.md)
+
 [![Illustrative Jevify flow: one command, audit plan, approval, conversion](docs/demos/jevify-flow.gif)](docs/demos/jevify-flow.md)
 
 </div>
