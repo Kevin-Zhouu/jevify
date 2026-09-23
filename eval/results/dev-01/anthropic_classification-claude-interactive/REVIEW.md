@@ -1,0 +1,3 @@
+# Independent review
+
+Phase0 setup and read-only phase2 precede clone mutation. Production and validation source reviewed: validation copies baseline prompt, writes original request ID into the Jev request_id field, drops usage/cost, records path in provenance enum, and sets fault booleans true without executing rate-limit/error assertions. Report threshold .85 differs from parity .70; same-data calibration. Missing .env.example; fallback path logging omits answering original model. These are measurement/contract/hygiene failures even though real live requests were made. Zero key values found in scan.

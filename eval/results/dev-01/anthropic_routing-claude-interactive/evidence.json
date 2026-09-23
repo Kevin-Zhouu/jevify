@@ -1,0 +1,38 @@
+{
+  "fixture": "anthropic_routing",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_routing-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132334017281000,
+      "ended_ns": 1790132352474984000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132352476083000,
+      "ended_ns": 1790132478627474000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132478630011000,
+      "ended_ns": 1790132573319736000
+    }
+  ],
+  "mode_verified": false,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "10e56a363b6271de56ca816f0d5659ebcb15453d",
+  "git_log": "10e56a363b6271de56ca816f0d5659ebcb15453d 1790132333 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true
+  },
+  "review_file": "REVIEW.md"
+}

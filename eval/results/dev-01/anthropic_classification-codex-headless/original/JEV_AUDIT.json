@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "simple_classify(X) returns response.content[0].text.strip(); no repository callers or observable envelope diagnostics",
+      "classification": "DECISION",
+      "fit": "FIT (benign fixture distribution only)",
+      "reason": "Ten enumerated insurance categories, short text, no arithmetic or generation. Arbitrary public adversarial tickets lack a proven mitigation.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Accepted decisions avoid generative inference; expected cost = Jev cost + fallback fraction * original cost. Likely lower accepted-path latency; misses add serial latency.",
+          "risk": "Confident misclassification, overlapping categories, injection on hostile tickets; provisional 0.90 threshold and original fallback retained."
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change in cost, latency or behavior.",
+          "risk": "Retains original inference costs and parser behavior."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

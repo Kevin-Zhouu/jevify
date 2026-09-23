@@ -1,0 +1,28 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "Vercel AI SDK / OpenAI gpt-4o-mini",
+      "downstream": "result.object (genre label) logged to stdout; result.usage and result.finishReason also logged",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Closed-set enum selection over 5 fixed genre labels from a hardcoded trusted prompt. No math, date logic, multi-hop reasoning, generation, or adversarial input. Small focused context well within Jev limits.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Jev Choice is purpose-built for closed-set label selection. Expected lower per-request cost than gpt-4o-mini for accepted decisions. Cascade cost = Jev cost + (fallback fraction × original cost). Latency: Jev p50 likely faster than gpt-4o-mini for single-label classification; serial miss adds Jev latency before original.",
+          "risk": "Conservative fallback retained; worst case is added Jev latency on low-confidence inputs before original path runs. No behavior change on fallback."
+        },
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No change; no integration risk.",
+          "risk": "No cost or latency improvement."
+        }
+      ]
+    }
+  ],
+  "converted_sites": ["workflow.ts:6"]
+}

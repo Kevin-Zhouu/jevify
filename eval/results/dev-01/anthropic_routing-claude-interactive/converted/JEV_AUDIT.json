@@ -1,0 +1,62 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Route key indexes routes dict to select handler prompt; reasoning text is printed to stdout (lines 28-29)",
+      "classification": "MIXED",
+      "fit": "CONDITIONAL",
+      "reason": "Decision component (4-option routing) is a strong Choice fit, but reasoning text is printed to stdout making this MIXED. Approval scope excludes MIXED sites.",
+      "options": [
+        {
+          "action": "decompose",
+          "primitive": "Choice",
+          "benefit": "Jev Choice replaces routing decision on high-confidence answers; saves ~4K tokens per routed ticket. Jev cost ~$0.042/Mtok vs Sonnet significantly higher. Expected cost = Jev cost + fallback% x original cost.",
+          "risk": "Reasoning text lost on Jev-answered path — observable behavior change. Conservative posture mandates retaining original LLM path as fallback."
+        },
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No change, no risk. Current behavior preserved entirely.",
+          "risk": "None."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Full prose support response returned to caller",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form text generation. Jev cannot generate prose.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No change, no risk. Generation cannot be replaced by Jev.",
+          "risk": "None."
+        }
+      ]
+    },
+    {
+      "file": "util.py",
+      "line": 9,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Transport wrapper serving both MIXED (S1) and GENERATION (S2) consumers",
+      "classification": "MIXED",
+      "fit": "NOT INDEPENDENTLY CONVERTIBLE",
+      "reason": "Shared wrapper; conversion would happen at call sites, not here. Serves both MIXED and GENERATION consumers.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "Transport wrapper; conversion is at call sites.",
+          "risk": "None."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

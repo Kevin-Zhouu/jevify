@@ -1,0 +1,63 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI SDK / OpenAI / gpt-5.5",
+      "downstream": "Prints completion.choices[0].message.content at workflow.py:19.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Even the fixed request to say this is a test is consumed as generated text, not an enumerated decision.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve the standard generated response. Cost and latency remain unchanged because no additional model call is introduced; no speculative savings.",
+          "risk": "No migration risk; existing behavior retained."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI SDK / OpenAI / gpt-5.5",
+      "downstream": "Iterates streamed chunks at workflow.py:33-37, skips empty choices, prints delta.content with no separator and a final newline at line 38.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generates open-ended Python guidance; typed judgments cannot preserve streamed content.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve generated guidance and streaming behavior. Cost and latency remain unchanged because no additional model call is introduced; no speculative savings.",
+          "risk": "No migration risk; existing behavior retained."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI SDK / OpenAI / gpt-5.5",
+      "downstream": "Parses raw response at workflow.py:51, prints actual response.request_id at line 52 and generated content at line 53.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generates text and exposes the actual provider request ID; replacing it would change content or observable diagnostics.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserve generated content and truthful request diagnostics. Cost and latency remain unchanged because no additional model call is introduced; no speculative savings.",
+          "risk": "No migration risk; existing behavior retained."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "approval": {
+    "actions": [
+      "fallback"
+    ],
+    "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."
+  },
+  "selected_sites": []
+}

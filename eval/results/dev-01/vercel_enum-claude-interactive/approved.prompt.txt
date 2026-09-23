@@ -1,0 +1,58 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY vercel_enum. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_enum-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_enum-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+Repo is clean. Here is the read-only audit and recommendation.
+
+---
+
+## Jevify Audit — `vercel_enum`
+
+### Preflight
+- Repo clean, single commit on `main`
+- One source file: `workflow.ts` (22 lines)
+- Runtime: Vercel AI SDK (`ai`, `@ai-sdk/openai`), TypeScript
+
+### Site inventory
+
+There is **one LLM call site**:
+
+| ID | Provider | Call | Input | Downstream |
+|---|---|---|---|---|
+| `workflow.ts:6` | OpenAI SDK / `gpt-4o-mini` via Vercel `generateObject` | `generateObject({ output: 'enum', enum: [...], prompt })` | Hardcoded movie-plot string (trusted, fixed) | `result.object` printed to console; `result.usage` and `result.finishReason` printed as diagnostics |
+
+### Classification
+
+**`workflow.ts:6` → DECISION**
+
+The model's substantive answer is exactly one label from a closed, enumerated set: `['action', 'comedy', 'drama', 'horror', 'sci-fi']`. No prose, no reasoning, no open-ended content is produced. The `usage` and `finishReason` fields are envelope metadata, not part of the decision semantics.
+
+### Fit verdict
+
+**FIT** — Bounded semantic classification over a fixed, trusted prompt selecting from 5 genres. No math, date comparison, multi-hop reasoning, generation, non-text input, adversarial exposure, or context-size concerns. This is a textbook Choice primitive match.
+
+### Downstream preservation requirements
+
+| Field | Role | Preservation |
+|---|---|---|
+| `result.object` | The genre label (e.g. `"sci-fi"`) | Maps directly to Jev Choice answer |
+| `result.usage` | Token counts (`{ promptTokens, completionTokens, totalTokens }`) | Envelope metadata — must log truthful Jev usage or clearly indicate source change |
+| `result.finishReason` | e.g. `"stop"` | Envelope metadata — must provide truthful diagnostic |
+
+### Options
+
+| # | Action | Primitive | Benefit | Risk | Scope |
+|---|---|---|---|---|---|
+| **A** | `fallback` | Choice | Jev Choice is purpose-built for closed-set selection; likely **lower latency and cost** ($42/B-tokens input-only vs GPT-4o-mini per-token pricing) for accepted decisions. Serial miss adds Jev latency before original inference. Expected cost = Jev cost + fallback-fraction × original cost. | Low — conservative fallback retains original path for low confidence, errors, timeouts, and rate limits. Diagnostics (`usage`, `finishReason`) must be adapted to reflect actual answering path. | Convert `generateObject` call to Jev Choice with confidence gate; retain original `generateObject` as fallback. Log answer path and model version. |
+| **B** | `leave` | — | No change, no risk. | None. | The site works today; Jev adds complexity for a single hardcoded classification. Appropriate if operational simplicity outweighs cost/latency savings. |
+
+> Option `jev_only` is excluded per conservative risk posture (requires measured parity + approval).
+
+### Recommendation
+
+Option **A (fallback)** is the natural fit. The call is a pure enum classification with a fixed prompt — the exact use case Jev's Choice primitive was designed for. The conservative fallback ensures zero behavior regression. Option B is valid if the overhead of adding a Jev dependency isn't justified for a single demo-style call.
+
+---
+
+**No files have been written.** This is a read-only audit. To proceed with conversion, select an option for `workflow.ts:6` (e.g. "A" or "B") and confirm approval. I will then clone the repo, write the conversion plan and audit JSON, and implement the approved changes.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

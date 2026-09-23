@@ -1,0 +1,29 @@
+{
+  "source_revision": "4ecb8ae6d541ae543e02e861f961dd18fe0caa79",
+  "output_mode": "report",
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain @langchain/openai ChatOpenAI / OpenAI / gpt-3.5-turbo-0125 (temperature 0)",
+      "downstream": "POST(req) at workflow.ts:7 reads req.json().prompt at line 8; model.stream(prompt) at line 15 yields a generation stream; line 17 passes that stream directly to ai LangChainAdapter.toDataStreamResponse and returns its HTTP Response to the caller.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Unconstrained text completion is the entire substantive result. There is no closed answer set, decision parser, routing branch, or separable decision consumer. Jev typed judgments cannot reproduce generated text or the streaming response contract.",
+      "input_origin": "HTTP request JSON prompt, forwarded unchanged",
+      "context_size": "No application bound, filtering, or token limit specified; runtime prompt length unknown.",
+      "untrusted_input_mitigation": "None visible; caller controls prompt. A proposed classifier would need a separately approved contract and effective adversarial-input mitigation.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Retains original generation, stream adaptation, error propagation and diagnostics; inference cost and latency remain unchanged because no additional model is called. No speculative savings.",
+          "risk": "Existing OpenAI availability, generation quality and unrestricted-input risks remain; substituting Jev would break the observable output contract.",
+          "scope": "Entire workflow.ts:15 call and its line 17 response adapter remain unchanged."
+        }
+      ]
+    }
+  ],
+  "approved_conversion_sites": [],
+  "converted_sites": []
+}

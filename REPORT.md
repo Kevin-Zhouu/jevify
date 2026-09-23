@@ -6,7 +6,7 @@ The skill and evaluation deliverables are **not complete**. OpenRouter live Jev 
 
 The user authorized isolated HELD-OUT labeling and routing original baseline models through OpenRouter without changing production fallback providers. HELD-OUT labels were sealed by a separate labeling agent; the skill author has not read them. The evaluator, labels, config fixtures and corpus were frozen in commit `2d5bd71` before skill implementation in `489a5b3`.
 
-The portable `skills/jevify/` implementation now exists. Its skill format and Claude plugin/marketplace manifests validate. The hidden-key launcher passes four behavioral tests, including a real terminal echo check; all nine grader self-tests also pass. The first DEV iteration is running in Codex and Claude Code, with headless and three-turn simulated interactive scenarios. Results are not yet complete.
+The portable `skills/jevify/` implementation now exists. Its skill format and Claude plugin/marketplace manifests validate. The hidden-key launcher passes four behavioral tests, including a real terminal echo check; all nine grader self-tests also pass. DEV-01 completed all 24 runs: 9 passed the full grader. Failed outputs and reviews are retained under `eval/results/dev-01/`. DEV-02 is a full rerun after general instruction/helper repairs. Results are not yet complete.
 
 ## Preflight results
 
@@ -34,7 +34,7 @@ OpenRouter's dated model ID appears in its official SDK guide and was echoed by 
 
 | Required result | Status |
 | --- | --- |
-| DEV workflow × harness matrix | DEV iteration 1 running; final scores pending |
+| DEV workflow × harness matrix | DEV-01: 9/24 pass; DEV-02 running |
 | HELD-OUT | Two workflows vendored but unread |
 | Frozen grader and preimplementation hand labels | Frozen before skill implementation |
 | Gating and output-mode behavior | Not tested |
@@ -43,7 +43,7 @@ OpenRouter's dated model ID appears in its official SDK guide and was echoed by 
 | Negative controls / bad-fit findings | Not evaluated |
 | Cross-harness consistency | Not evaluated |
 
-DEV iteration 1 is in progress; no HELD-OUT attempt or repair has been used. The single live access probe establishes neither parity nor a recommended confidence threshold.
+DEV-01 completed; DEV-02 is in progress. No HELD-OUT attempt or repair has been used. The single live access probe establishes neither parity nor a recommended confidence threshold.
 
 ## Key provisioning
 

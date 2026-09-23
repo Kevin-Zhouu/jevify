@@ -1,0 +1,40 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "codex",
+  "scenario": "headless",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_classification-codex-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790131930433605000,
+      "ended_ns": 1790132363526558000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jev_decisions.py",
+    "scripts/validate_jev.py",
+    "workflow.py"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jev_decisions.py",
+    "scripts/validate_jev.py",
+    "workflow.py"
+  ],
+  "original_sha": "9ad0ba53546ba42a9b50165c3fe51ec275a58d68",
+  "git_log": "629307c48e90579e526202998c8029afcb867e40 1790132356 Record paired Jev validation and conversion report\ne68611ffd08b85a144d7cdd52d003896d90789eb 1790132346 Add approved Jev classification with conservative Anthropic fallback\n9ad0ba53546ba42a9b50165c3fe51ec275a58d68 1790131930 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true,
+    "centralization": true,
+    "contracts": true,
+    "live_evidence": true
+  },
+  "review_file": "REVIEW.md"
+}

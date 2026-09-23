@@ -1,0 +1,28 @@
+{
+  "fixture": "vercel_recipe",
+  "harness": "codex",
+  "scenario": "headless",
+  "mode": "report",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_recipe-codex-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132402588967000,
+      "ended_ns": 1790132554734844000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "5403b2818cf05879a0f0750fd84750cfc91ee03b",
+  "git_log": "5403b2818cf05879a0f0750fd84750cfc91ee03b 1790132402 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true
+  },
+  "review_file": "REVIEW.md"
+}

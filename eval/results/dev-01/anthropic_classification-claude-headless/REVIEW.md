@@ -1,0 +1,3 @@
+# Independent review
+
+Headless setup/approval preceded clone edits. Live script actually calls both endpoints using copied original prompt and shared Jev question, but rewrites rather than executes original/production evaluators; response IDs discarded (empty header), row costs absent, provenance wrong. Threshold tuned on same data without confirmation. Fault tests invent successful Jev response payloads contrary to the skill; these are explicitly test doubles, not counted as live pairs. Infinity/out-of-range confidence and unhashable labels can bypass/break fallback; missing original-model logs on fallback paths. Mark contracts/live evidence/hygiene failed; do not accept reported 97.8% as complete validated parity.

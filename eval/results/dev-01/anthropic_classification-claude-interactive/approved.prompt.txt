@@ -1,0 +1,67 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_classification. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_classification-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_classification-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I now have everything needed for the audit. Here is the complete read-only analysis.
+
+---
+
+## Jev Audit — `anthropic_classification` workflow
+
+### Repository overview
+
+Single-file workflow (`workflow.py`) extracted from the Anthropic cookbook. It defines a `simple_classify()` function that classifies insurance support tickets into one of 10 fixed categories using Claude Haiku 4.5 via the Anthropic SDK.
+
+### LLM call-site inventory
+
+There is **one call site** in this repository:
+
+| ID | File | Line | SDK / Provider / Model | Input origin | Downstream path | Classification | Fit |
+|---|---|---|---|---|---|---|---|
+| **S1** | `workflow.py` | 83–92 | Anthropic SDK / `claude-haiku-4-5` | `X` argument (ticket text) passed via `simple_classify(X)` | Response `.content[0].text` is stripped and returned as a bare label string. Callers receive one of 10 category names. No metadata (usage, finish_reason, IDs) is consumed or returned. | **DECISION** | **FIT** |
+
+### Classification rationale
+
+**DECISION**: The model's substantive answer is a single label from a closed set of exactly 10 insurance categories. The prompt enforces output format via `<category>` prefill and `</category>` stop sequence. No prose, reasoning, code, or free-form text is generated or consumed. No envelope metadata is used downstream — only the stripped label string.
+
+Not GENERATION: output is constrained to one of 10 known labels, not free-form.
+Not MIXED: no reasoning, explanation, or prose is returned or logged.
+Not EXTRACTION: the task is semantic classification, not pulling values from text.
+
+### Fit analysis
+
+**FIT** — with high confidence. Reasons:
+
+1. **Closed label set**: Exactly 10 well-defined categories with descriptions — maps directly to a Choice primitive with 10 criteria.
+2. **Semantic task**: Requires understanding ticket intent and matching to a category — precisely what Jev is trained for. No math, date comparison, multi-hop reasoning, or counting.
+3. **Benign input distribution**: Insurance support tickets from a fixed dataset (train.tsv / test.tsv). Not a public adversarial surface.
+4. **Context size**: Individual tickets are short (1–3 sentences). Well within the 64k/32k limits. No context-rot risk.
+5. **No jaggedness concerns**: The 10-category insurance classification has no numeric, temporal, or multi-hop reasoning requirements.
+6. **No untrusted-input risk**: Fixed corpus, not a live public API.
+
+### Options
+
+#### Site S1: `workflow.py:83` — `client.messages.create()`
+
+| # | Action | Primitive | Benefit | Risk | Scope |
+|---|---|---|---|---|---|
+| **A** | `fallback` | Choice (10 options) | **Lower cost, lower latency on accepted decisions.** Jev input-token pricing ($0.042/Mtok) is substantially cheaper than Claude Haiku. Most tickets should classify at high confidence, avoiding the Claude call entirely. Expected cost = Jev cost + fallback_fraction × Claude cost. Latency improves on Jev-accepted decisions (single API call vs. generative decode). | Serial miss adds Jev latency before Claude fallback — total latency increases on low-confidence inputs. Jev and Claude may disagree on ambiguous tickets; threshold tuning needed on representative data. | Add Jev Choice call with 10 categories + confidence threshold. On high confidence → return Jev answer. On low confidence → fall through to existing Claude path unchanged. Conservative: fallback always retained. |
+| **B** | `jev_only` | Choice (10 options) | **Removes Claude dependency and cost entirely.** Maximum cost and latency savings. Simpler architecture (no fallback path). | Residual classification errors with no safety net. Requires measured parity on representative data before adoption. Not available under conservative risk posture. | Replace Claude call entirely with Jev Choice. *(Excluded by conservative risk posture.)* |
+| **C** | `leave` | — | No change, no risk. Original behavior preserved exactly. | No cost or latency improvement. Continued dependency on Claude Haiku API key and availability. | No code changes. |
+
+### Recommendation
+
+**Option A (fallback)** is the strong recommendation for this site under conservative risk posture. This is a textbook Jev Choice classification — 10 well-defined categories, short semantic inputs, benign distribution, no generation. The confidence-routing pattern (try Jev first, fall back to Claude on low confidence) gives cost savings on the majority of clear-cut tickets while preserving the original behavior as a safety net.
+
+Option B is excluded by the conservative risk setting. Option C is valid if no conversion is desired.
+
+### Summary
+
+| Sites found | DECISION | GENERATION | MIXED | EXTRACTION | Fit | No fit |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 0 | 0 | 0 | 1 | 0 |
+
+---
+
+**Audit complete. No files written.** Awaiting explicit approval to proceed with conversion. Please select an option for site S1 (A, B, or C), or provide edits to the recommendations, and I will proceed with the conversion plan and implementation.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

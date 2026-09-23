@@ -1,0 +1,24 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY openai_demo. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/openai_demo-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/openai_demo-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’ll use the installed jevify skill to audit the workflow read-only and present recommendations. I’ll treat your setup answers as authoritative, without reading approval from the config, changing files, or running a conversion.
+The workflow has three OpenAI calls, all used to print generated text; one also exposes the real request ID. None supplies a bounded decision Jev could replace while preserving behavior. The repository is clean, and `jev-convert/evaluation` is unused. I’m finishing the documentation checks before presenting the site-by-site recommendations.
+**No good Jev opportunities here.** All three calls produce text for display. Jev supplies typed judgments rather than generated text or code, so replacing these calls would change the example’s behavior. See [TypeSafe’s capability guidance](https://docs.typesafe.ai/introduction/coding-agents.md).
+
+All sites use the OpenAI SDK with `gpt-5.5`.
+
+| Original site | Classification / fit | Downstream behavior | Recommended option |
+|---|---|---|---|
+| `workflow.py:10` | GENERATION / NOT A FIT | Prints `message.content` at line 19. Even “Say this is a test” is consumed as generated text, not a label. | **A: `leave`**, primitive: none. Preserve the standard request; unchanged cost/latency, no migration risk. |
+| `workflow.py:23` | GENERATION / NOT A FIT | Streams Python guidance to stdout, skips chunks without choices, and prints a final newline. | **B: `leave`**, primitive: none. Preserve generation and streaming semantics; unchanged cost/latency, no migration risk. |
+| `workflow.py:42` | GENERATION / NOT A FIT | Parses the raw response, prints its actual request ID, then generated content. | **C: `leave`**, primitive: none. Preserve content and truthful diagnostics; unchanged cost/latency, no migration risk. |
+
+There are no repository-defined wrappers or additional consumers. Inputs are short, fixed text literals; no external untrusted input enters this example. Adding a router or guardrail would introduce new behavior and overhead without an existing decision to replace.
+
+Preflight passed: clean working tree on `main`; `jev-convert/evaluation` is unused. No branch was created. The config and credentials were not read.
+
+Recommendation: **A + B + C—leave all sites unchanged.** No smoke tests or live parity measurements were run. No files were written, including the requested JSON and plan/report artifacts; `converted_sites` is empty.
+
+Stopping at recommendations as requested. The [jevify skill](.agents/skills/jevify/SKILL.md) also requires: “Do not write files until the answer.”
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

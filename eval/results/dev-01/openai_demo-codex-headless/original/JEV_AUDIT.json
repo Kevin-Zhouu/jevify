@@ -1,0 +1,71 @@
+{
+  "source_revision": "2b8ff7b9c1cde431c889a2e6296305e18bb3d0e0",
+  "output_mode": "report",
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "completion.choices[0].message.content -> print at workflow.py:19",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "The substantive output is generated text, not a parsed enum. A fixed request to say a phrase does not turn this SDK generation demonstration into a decision.",
+      "input_origin": "Fixed literal: Say this is a test",
+      "context": "One short user message; no retrieved context. Token count not measured.",
+      "untrusted_input": "Only benign fixed repository literals; no runtime user input or adversarial mitigation. No public-input robustness claim.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original generation, provider calls, stdout and diagnostics. No cost or latency savings; request count remains unchanged.",
+          "risk": "Existing provider latency, cost and failure exposure remain. No new migration risk.",
+          "scope": "Leave workflow.py:10 and all its consumers unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "stream iterator -> skip empty choices at lines 34-35 -> print delta.content with end=\"\" at line 37 -> final newline at line 38",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Produces open-ended Python advice/code as streaming text. Jev decisions cannot preserve the generated content and stream contract.",
+      "input_origin": "Fixed literal: How do I output all files in a directory using Python?",
+      "context": "One short user message; no retrieved context. Token count not measured.",
+      "untrusted_input": "Only benign fixed repository literals; no runtime user input or adversarial mitigation. No public-input robustness claim.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original generation, provider calls, stdout and diagnostics. No cost or latency savings; request count remains unchanged.",
+          "risk": "Existing provider latency, cost and failure exposure remain. No new migration risk.",
+          "scope": "Leave workflow.py:23 and all its consumers unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI Python SDK / OpenAI / gpt-5.5",
+      "downstream": "raw response -> parse() at line 51 -> print response.request_id at line 52 -> print message.content at line 53",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Produces generated text and exposes the original raw-response request ID. Metadata is not a decision; replacing this with a label would change both content and SDK diagnostic semantics.",
+      "input_origin": "Fixed literal: Say this is a test",
+      "context": "One short user message; no retrieved context. Token count not measured.",
+      "untrusted_input": "Only benign fixed repository literals; no runtime user input or adversarial mitigation. No public-input robustness claim.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original generation, provider calls, stdout and diagnostics. No cost or latency savings; request count remains unchanged.",
+          "risk": "Existing provider latency, cost and failure exposure remain. No new migration risk.",
+          "scope": "Leave workflow.py:42 and all its consumers unchanged."
+        }
+      ]
+    }
+  ],
+  "approved_conversion_sites": [],
+  "converted_sites": []
+}

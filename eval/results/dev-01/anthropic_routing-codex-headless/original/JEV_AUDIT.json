@@ -1,0 +1,61 @@
+{
+  "source_revision": "6ad2f63dc4cf74cd89f71028115f855f528a2a83",
+  "output_mode": "report",
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "extract_xml(reasoning) -> stdout; extract_xml(selection).strip().lower() -> routes[route_key] -> specialist prompt -> workflow.py:34 -> returned prose",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "The same call generates observable routing reasoning and a route. Choice cannot preserve the printed explanation; retaining the original call for reasoning avoids no original inference.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves prompts, generated text, diagnostics and exceptions. No added latency or cost; no speculative savings.",
+          "risk": "Existing generative-model cost, latency and possible errors remain.",
+          "scope": "Leave this site and its observable contract unchanged."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Selected support prompt plus original input -> llm_call -> response.content[0].text -> route() return value",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Open-ended specialist advice, steps, explanations and documentation references require generated text.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves prompts, generated text, diagnostics and exceptions. No added latency or cost; no speculative savings.",
+          "risk": "Existing generative-model cost, latency and possible errors remain.",
+          "scope": "Leave this site and its observable contract unchanged."
+        }
+      ]
+    },
+    {
+      "file": "util.py",
+      "line": 23,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Shared llm_call wrapper (util.py:9) -> response.content[0].text -> workflow.py:24 and workflow.py:34",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Shared transport serves both routing-with-reasoning and specialist generation; a blanket typed-decision replacement breaks both consumers.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves prompts, generated text, diagnostics and exceptions. No added latency or cost; no speculative savings.",
+          "risk": "Existing generative-model cost, latency and possible errors remain.",
+          "scope": "Leave this site and its observable contract unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

@@ -1,0 +1,28 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "codex",
+  "scenario": "headless",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_enum-codex-headless/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790131951585271000,
+      "ended_ns": 1790132135830940000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "709e2e2a68c8c389ace54287a676237fe8b561f2",
+  "git_log": "e14c66dd2da73024c74cc37cc0d07078c0e7e019 1790132127 Document Jev audit and diagnostic contract blocker\n709e2e2a68c8c389ace54287a676237fe8b561f2 1790131951 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true
+  },
+  "review_file": "REVIEW.md"
+}

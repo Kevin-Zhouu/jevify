@@ -1,0 +1,59 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI SDK / gpt-5.5",
+      "downstream": "Response content printed to stdout via print(completion.choices[0].message.content)",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form text generation ('Say this is a test'). The prompt requests arbitrary prose, and the output is consumed as unstructured printed text. Jev does not generate prose.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; no speculative savings. Site produces free-form text which Jev cannot replace.",
+          "risk": "None — no change made.",
+          "scope": "N/A"
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI SDK / gpt-5.5",
+      "downstream": "Streamed response content printed token-by-token to stdout",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form text generation ('How do I output all files in a directory using Python?'). The prompt requests an explanatory how-to answer streamed to stdout. Jev does not generate explanations or code.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; no speculative savings. Site produces streamed free-form prose which Jev cannot replace.",
+          "risk": "None — no change made.",
+          "scope": "N/A"
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI SDK / gpt-5.5",
+      "downstream": "Raw response headers (request_id) and response content printed to stdout",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form text generation ('Say this is a test') with raw response header access. The output is consumed as unstructured printed text plus envelope metadata (request_id). Jev does not generate prose. Additionally, the site uses with_raw_response for HTTP-level metadata which has no Jev equivalent.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change; no speculative savings. Site produces free-form text and accesses HTTP envelope metadata which Jev cannot replace.",
+          "risk": "None — no change made.",
+          "scope": "N/A"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

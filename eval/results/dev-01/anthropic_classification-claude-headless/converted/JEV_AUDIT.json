@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "Returns stripped category label (one of 10 insurance categories) consumed by callers of simple_classify()",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Bounded semantic classification selecting one label from a closed, enumerated set of 10 categories. Text-only input. Trusted fixtures (train/test TSV data). No generation, no reasoning returned. Context well within limits.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Likely cheaper accepted decisions. Jev input-only pricing ~$0.042/Mtok vs Claude Haiku ~$0.80/Mtok input + $4/Mtok output. Serial misses add Jev latency and cost before original inference. Expected cost = Jev cost + fallback fraction * original cost.",
+          "risk": "Jev may disagree on ambiguous tickets; confidence gating sends uncertain cases to original path. Conservative fallback always retained."
+        },
+        {
+          "action": "jev_only",
+          "primitive": "Choice",
+          "benefit": "Removes original cost entirely after proven parity.",
+          "risk": "Conservative posture excludes this option."
+        },
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No speculative savings; no change.",
+          "risk": "No risk."
+        }
+      ]
+    }
+  ],
+  "converted_sites": ["workflow.py:83"]
+}

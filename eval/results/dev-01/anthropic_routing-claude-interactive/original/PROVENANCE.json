@@ -1,0 +1,20 @@
+{
+  "id": "anthropic_routing",
+  "split": "DEV",
+  "repository": "https://github.com/anthropics/anthropic-cookbook",
+  "commit": "a4b0d89061bc65769fea7947c080b3b11d938515",
+  "source_path": "patterns/agents/basic_workflows.ipynb",
+  "entrypoint": "workflow.py",
+  "notebook_cells": [
+    1,
+    2,
+    6
+  ],
+  "selection": "cell 2: route function; cell 6: assignments only; cell 1 unchanged",
+  "upstream_sha256": "afa06eb29b3409f66069510dbdfbb8c97f52e8860e74eba93f95d6fb29faa56a",
+  "files": {
+    "util.py": "123739b67792cf61d328971286df18a0e05d5e92afb57c2b7d937aa633914415",
+    "LICENSE.upstream": "d7a04bf11ce24a7b79cd44b4a78dcc9971eaeb3b565821de437e0ecb7723e634",
+    "workflow.py": "a9f8b77d6bcba1e549345828808b8c6dcf40aa321627287d649986999a941175"
+  }
+}

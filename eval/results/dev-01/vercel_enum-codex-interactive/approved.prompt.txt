@@ -1,0 +1,35 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: node /Users/bigsoup/Downloads/Jev Converter/eval/smoke.cjs OUTPUT_DIRECTORY vercel_enum. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_enum-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_enum-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’m using the installed jevify skill to audit the workflow and recommend a scope. I’ll keep this read-only, ignore any approval in the config, and stop before writing files or converting code.
+
+The repository has one inference call: a five-label movie-genre decision. Its token usage and finish reason are printed, so a conversion must preserve truthful diagnostics as well as the label. The repository is clean, and the requested output path and branch are unused.
+
+The read-only audit found **one conditional Jev opportunity**. No files were written, no clone or branch was created, and no workflow or live parity tests were run. I did not read the config.
+
+Preflight passed: the repository is clean, `jev-convert/evaluation` is unused, and the requested `converted` path does not exist. No repository `AGENTS.md`, dependency manifest, or project test command was found.
+
+| Original site | Provider/model | Classification | Downstream use | Fit |
+|---|---|---|---|---|
+| `workflow.ts:6` | Vercel AI SDK → OpenAI `gpt-4o-mini`, structured outputs enabled | DECISION | `main()` prints the selected genre, blank line, token usage, and finish reason; errors reach `console.error` | Good semantic fit; conversion conditional on preserving diagnostics |
+
+The input is a short, hardcoded English movie plot. The answer is exactly one of `action`, `comedy`, `drama`, `horror`, or `sci-fi`. There are no other inference sites or shared wrappers. Usage and finish reason are metadata, so this remains DECISION rather than MIXED.
+
+One **Choice** matches that bounded answer space. This verdict covers the benign fixture; the source has no mitigation for adversarial input, and Jev’s documentation identifies adversarial steering as a limitation. [Choice documentation](https://docs.typesafe.ai/primitives/choice), [Jev limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13).
+
+| Select | Action / primitive | Scope and expected benefit | Risk |
+|---|---|---|---|
+| **A — recommended, conditional** | `fallback` / Choice | Add Jev before this single call, using OpenRouter and `typesafe/jev-1.13-20260917`. Keep the exact original OpenAI call for low confidence, malformed responses, missing credentials, timeouts, and errors. Accepted decisions may reduce latency and cost by avoiding original inference. | High-confidence disagreement remains possible. Fallback requests add Jev latency and cost. Diagnostic compatibility must be established before enabling acceptance. |
+| **B — leave unchanged** | `leave` / none | Preserve the existing workflow in full. No latency or cost change. | No migration benefit; avoids adapter and behavior changes. |
+
+For A, expected inference cost is **Jev cost + fallback fraction × original cost**; savings are not yet measured.
+
+The key compatibility issue is `finishReason`. The documented Jev response includes real input/output token usage but no native finish reason. A conversion must establish a truthful, documented adapter mapping while retaining the printed diagnostics. It must not invent a provider finish reason or reuse original-model usage. If faithful mapping cannot be established, leave the site unchanged. [API response contract](https://docs.typesafe.ai/api).
+
+After approval, validation would include the supplied smoke command, forced fallback/error checks, and at least 30 unique paired inputs when access permits. The baseline would remain the **same `gpt-4o-mini`**, routed through OpenRouter only in isolated evaluation adapters with original prompts and parsing preserved. No parity, threshold, latency, or cost measurements are claimed.
+
+Select **A**, **B**, or an amended scope. The requested plan, report, and `JEV_AUDIT.json` remain unwritten; `converted_sites` is currently empty.
+
+This pause follows your explicit instruction and the [jevify skill](.agents/skills/jevify/SKILL.md): “Wait for explicit option selections, edits, or acceptance. Do not write files until the answer.”
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

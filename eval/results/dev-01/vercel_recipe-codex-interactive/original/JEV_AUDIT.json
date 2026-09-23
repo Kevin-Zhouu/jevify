@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK / OpenAI gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "result.object.recipe is printed as indented JSON, followed by a blank line, result.usage and result.finishReason; main rejection reaches console.error.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Fixed prompt requests a lasagna recipe with unrestricted recipe name, ingredient names/amounts, and preparation steps. There are no enumerated decision outputs or candidate values; a structured envelope does not change generation semantics.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "Preserves recipe generation and all diagnostics; cost and latency unchanged, with no speculative savings.",
+          "risk": "No migration risk; existing generation behavior and limitations remain.",
+          "primitive": "none"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

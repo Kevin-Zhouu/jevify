@@ -1,0 +1,74 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 24,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "XML-parsed <selection> selects handler key in support_routes dict; XML-parsed <reasoning> is printed to stdout",
+      "classification": "MIXED",
+      "fit": "CONDITIONAL",
+      "reason": "Route selection is a closed-set decision over 4 enumerated options (billing, technical, account, product), but the same LLM call also generates explanatory reasoning text that is printed to stdout (lines 28-29). The printed reasoning makes this MIXED. A decompose option could split routing from reasoning, but the approval scope excludes MIXED sites.",
+      "context_size": "Short ticket text (~50-150 words) plus route list; well within Jev limits",
+      "untrusted_input_mitigation": "None — input is user ticket text passed directly into prompt. Benign demo fixtures only; not a public production service.",
+      "options": [
+        {
+          "action": "decompose",
+          "primitive": "Choice",
+          "benefit": "Jev Choice for route selection would be faster and cheaper than a full Claude call for the routing decision alone. Jev input-only pricing at $0.042/Mtok vs Claude Sonnet ~$3/Mtok input + $15/Mtok output. Reasoning generation would still require a separate LLM call if the printed reasoning contract is preserved.",
+          "risk": "Changes observable stdout output (reasoning text format/content). Requires two calls instead of one if reasoning is preserved. Approval scope excludes MIXED sites, so this option is not selectable under current config."
+        },
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No risk. Preserves all observable behavior including printed reasoning text.",
+          "risk": "None — no change."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 34,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Return value of route() — free-form specialist support response prose",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Generates free-form prose support responses (billing advice, technical steps, account recovery guidance, product education). Generation is never Jev-suitable.",
+      "context_size": "Ticket text plus specialist system prompt; well within LLM limits",
+      "untrusted_input_mitigation": "None — demo fixture input only",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No risk. Generation must remain with a generative model.",
+          "risk": "None — no change."
+        }
+      ]
+    },
+    {
+      "file": "util.py",
+      "line": 21,
+      "provider": "Anthropic SDK / claude-sonnet-4-6",
+      "downstream": "Shared transport wrapper: llm_call() used by both workflow.py:24 (MIXED routing) and workflow.py:34 (GENERATION specialist response)",
+      "classification": "MIXED",
+      "fit": "NOT A FIT",
+      "reason": "Shared wrapper serving both MIXED and GENERATION consumers. Classification follows broadest observed usage. Wrapper itself is a transport concern, not a separate conversion target.",
+      "context_size": "Variable — depends on caller",
+      "untrusted_input_mitigation": "None",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "Wrapper serves generation consumers; cannot be replaced by Jev.",
+          "risk": "None — no change."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "wrapper_relationships": {
+    "util.py:21 (llm_call)": {
+      "consumers": ["workflow.py:24", "workflow.py:34"],
+      "note": "Single transport wrapper; do not double-count. Two distinct call sites with different classifications."
+    }
+  }
+}

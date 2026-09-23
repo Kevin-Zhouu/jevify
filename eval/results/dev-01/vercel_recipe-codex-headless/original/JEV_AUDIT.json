@@ -1,0 +1,30 @@
+{
+  "source_revision": "5403b2818cf05879a0f0750fd84750cfc91ee03b",
+  "output_mode": "report",
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK generateObject / @ai-sdk/openai / OpenAI gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "main awaits result; line 24 prints JSON.stringify(result.object.recipe, null, 2); line 25 prints a blank line; lines 26\u201327 print result.usage and result.finishReason; line 30 sends main rejection to console.error.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Recipe name, ingredient names and amounts, and cooking steps are unrestricted generated strings. JSON structure does not make them closed-set decisions. No source document or candidate catalog exists for extraction or Choice; replacing generation with selections would change semantics.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves original recipe generation and truthful usage/finish diagnostics. No latency or cost change and no speculative savings.",
+          "risk": "Retains existing generative-model cost and output variability; a Jev substitution would lose free-form recipe content.",
+          "scope": "Leave the entire generateObject call, schema, prompt, model, logging and error handling unchanged."
+        }
+      ],
+      "input_origin": "Fixed source literal: Generate a lasagna recipe.",
+      "context_size": "25-character prompt plus the small schema; exact SDK wire token count was not measured.",
+      "untrusted_input_mitigation": "No runtime user input or external document is consumed; assessment limited to this fixed fixture.",
+      "wrapper_relationship": "main is the only local wrapper and consumer; generateObject is the single inference site, counted once."
+    }
+  ],
+  "converted_sites": [],
+  "approved_conversion_sites": []
+}

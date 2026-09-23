@@ -1,0 +1,15 @@
+{
+  "faults": {
+    "timeout": true,
+    "rate_limit": true,
+    "error": true,
+    "below_threshold": true,
+    "nonfinite_and_unknown_option": true,
+    "malformed": true,
+    "invalid_json": true,
+    "missing_key": true,
+    "oversized": true,
+    "unsupported": true,
+    "original_exception": true
+  }
+}

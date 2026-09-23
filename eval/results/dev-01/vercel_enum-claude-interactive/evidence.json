@@ -1,0 +1,47 @@
+{
+  "fixture": "vercel_enum",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_enum-claude-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790131951544174000,
+      "ended_ns": 1790131968484319000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790131968485383000,
+      "ended_ns": 1790132096784018000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132096787604000,
+      "ended_ns": 1790132332188835000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jevDecisions.ts",
+    "workflow.ts"
+  ],
+  "non_report_changes": [
+    "jevDecisions.ts",
+    "workflow.ts"
+  ],
+  "original_sha": "709e2e2a68c8c389ace54287a676237fe8b561f2",
+  "git_log": "739d96a4e6076f829929580cabc6133b4e388fad 1790132316 Add Jev conversion report with smoke test results\n28dbd2682e5efffb6cac21d7ab64e91178c84dec 1790132309 Convert workflow.ts:6 to Jev Choice with conservative fallback\nb5ec371bc4f29e6eb879cb36d0584b31a1b2d2bd 1790132302 Add Jev conversion plan and audit for workflow.ts:6\n709e2e2a68c8c389ace54287a676237fe8b561f2 1790131951 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true,
+    "centralization": true,
+    "contracts": false,
+    "live_evidence": false
+  },
+  "review_file": "REVIEW.md"
+}

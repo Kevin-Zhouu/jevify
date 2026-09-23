@@ -1,0 +1,55 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY openai_demo. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/openai_demo-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/openai_demo-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+Now I have all the context needed. Let me analyze the workflow and present the audit.
+
+---
+
+## Audit — `workflow.py`
+
+I've completed the read-only audit of this repository. Here are my findings.
+
+### Repository overview
+
+The repo contains a single file, `workflow.py` (54 lines), which is a demo script from the `openai-python` SDK examples. It makes **three** `chat.completions.create` calls to `gpt-5.5` via the OpenAI Python SDK:
+
+| Site | Lines | Mode | Prompt | Downstream use |
+|---|---|---|---|---|
+| `workflow.py:10` | 10–18 | Non-streaming | `"Say this is a test"` | `completion.choices[0].message.content` → printed to stdout |
+| `workflow.py:23` | 23–32 | Streaming | `"How do I output all files in a directory using Python?"` | Each `chunk.choices[0].delta.content` → printed to stdout |
+| `workflow.py:42` | 42–53 | Raw response | `"Say this is a test"` | `response.request_id` and `completion.choices[0].message.content` → printed to stdout |
+
+### Classification and fit
+
+**All three sites are GENERATION — not a fit for Jev.**
+
+| Site ID | Provider | Classification | Fit | Reason |
+|---|---|---|---|---|
+| `workflow.py:10` | OpenAI SDK / gpt-5.5 | **GENERATION** | **NOT A FIT** | Prompt asks the model to "say" something — the substantive output is free-form text printed to the user. There is no closed set, no boolean, no ordered scale. |
+| `workflow.py:23` | OpenAI SDK / gpt-5.5 | **GENERATION** | **NOT A FIT** | Prompt asks for a how-to explanation of listing files in Python — the substantive output is a prose/code answer streamed to the user. This is generative content by definition. |
+| `workflow.py:42` | OpenAI SDK / gpt-5.5 | **GENERATION** | **NOT A FIT** | Same prompt as site 1 ("Say this is a test"). Additionally, the downstream use includes `response.request_id` (envelope metadata from OpenAI's raw response), which has no Jev equivalent. |
+
+### Additional factors
+
+- **Streaming**: Site 2 uses streaming. Jev's System One API returns structured typed answers, not streaming text deltas. There is no streaming equivalent.
+- **Raw response headers**: Site 3 exercises the `with_raw_response` API to access `request_id` — this is provider-specific envelope metadata, not a decision.
+- **No decision logic**: None of the three sites' outputs are consumed by branching logic, routing, scoring, or any programmatic decision. All outputs are printed directly to stdout as prose.
+- **Input type**: Jev is text-only (no images/audio), which is satisfied here, but that's a necessary condition, not sufficient — the outputs must be decisions.
+
+### Options per site
+
+| Site ID | Option | Action | Primitive | Benefit | Risk |
+|---|---|---|---|---|---|
+| `workflow.py:10` | 1 | **leave** | none | No speculative savings. Output is free-form text generation; Jev cannot generate prose. | None — preserves correct behavior. |
+| `workflow.py:23` | 1 | **leave** | none | No speculative savings. Output is a streaming prose/code explanation; Jev has no streaming or generation capability. | None — preserves correct behavior. |
+| `workflow.py:42` | 1 | **leave** | none | No speculative savings. Output is free-form text plus provider envelope metadata (`request_id`); Jev serves neither purpose. | None — preserves correct behavior. |
+
+---
+
+## Verdict: No good Jev opportunities here
+
+Every LLM call in this workflow produces **free-form generated text** that is printed directly to the user. Jev is a System One model that returns typed decisions (Choice, Score, Noul) — it does not generate prose, code, explanations, or arbitrary content. None of the three sites contain a decision, boolean, route, score, or closed-set selection.
+
+No conversion is recommended. No files will be written.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

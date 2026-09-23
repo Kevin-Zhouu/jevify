@@ -1,0 +1,32 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "Vercel AI SDK generateObject / OpenAI gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "main() prints result.object, a blank line, Token usage with result.usage, and Finish reason with result.finishReason; main().catch(console.error) handles rejection.",
+      "classification": "DECISION",
+      "fit": "NOT A FIT under required diagnostic contract",
+      "reason": "Closed five-label movie-genre decision is a semantic Choice fit for the fixed benign plot, but the printed finishReason has no documented faithful mapping from the Jev System One response. Approval requires preserving every observable field; no conversion is enabled.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Conditional: accepted Jev decisions could avoid original inference cost and latency; expected cost is Jev cost plus fallback fraction times original cost. No savings measured.",
+          "risk": "High-confidence disagreement; serial fallback adds latency and cost. Diagnostic compatibility condition failed.",
+          "selected": true,
+          "implemented": false
+        },
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "Preserves existing labels, usage, finish reason and error behavior; no cost or latency change.",
+          "risk": "No migration savings.",
+          "selected": false,
+          "implemented": false
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

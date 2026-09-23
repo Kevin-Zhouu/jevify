@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK / OpenAI gpt-4o-mini via generateObject",
+      "downstream": "Recipe object (name, ingredients[], steps[]) printed to stdout via JSON.stringify; token usage and finishReason logged to console",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Pure free-form content generation. The prompt asks the model to generate a lasagna recipe; all schema fields (name, ingredient names/amounts, steps) are open-ended strings. A schema with open-ended strings remains GENERATION per audit rules. Jev is a decision model that returns typed judgments from closed sets — it does not produce prose, creative content, or arbitrary text. No embedded decision, routing, classification, or selection component exists to decompose.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": "none",
+          "benefit": "No change, no risk. Original behavior preserved exactly.",
+          "risk": "N/A — generation is outside Jev's capability boundary."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+  "stderr": ""
+}

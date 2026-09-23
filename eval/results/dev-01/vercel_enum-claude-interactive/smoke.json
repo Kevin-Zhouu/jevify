@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "PASS: observable TypeScript behavior and original-path fallback smoke\n",
+  "stderr": "[jev] error, taking original path\n[jev] answered: path=original model=gpt-4o-mini\n"
+}

@@ -1,0 +1,56 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 10,
+      "provider": "OpenAI SDK / gpt-5.5",
+      "downstream": "completion.choices[0].message.content printed to stdout",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form text generation (\"Say this is a test\"); output is arbitrary prose printed directly, not a closed-set decision.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No speculative savings. Output is free-form text generation; Jev cannot generate prose.",
+          "risk": "None - preserves correct behavior."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 23,
+      "provider": "OpenAI SDK / gpt-5.5",
+      "downstream": "Streaming chunks printed to stdout via chunk.choices[0].delta.content",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Streaming prose/code explanation (\"How do I output all files in a directory using Python?\"); Jev has no streaming or generation capability.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No speculative savings. Output is a streaming prose/code explanation; Jev has no streaming or generation capability.",
+          "risk": "None - preserves correct behavior."
+        }
+      ]
+    },
+    {
+      "file": "workflow.py",
+      "line": 42,
+      "provider": "OpenAI SDK / gpt-5.5",
+      "downstream": "response.request_id and completion.choices[0].message.content printed to stdout",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form text generation (\"Say this is a test\") plus provider envelope metadata (request_id via with_raw_response). Jev cannot generate prose and has no equivalent for raw response headers.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No speculative savings. Output is free-form text plus provider envelope metadata; Jev serves neither purpose.",
+          "risk": "None - preserves correct behavior."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

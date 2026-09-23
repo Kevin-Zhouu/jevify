@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain ChatOpenAI / OpenAI / gpt-3.5-turbo-0125 (temperature=0)",
+      "downstream": "POST reads req.json().prompt, passes it unchanged to model.stream; LangChainAdapter.toDataStreamResponse(stream) at workflow.ts:17 returns the generated stream to the client.",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Unrestricted generated text has no enumerated output domain. Jev typed decisions cannot preserve arbitrary streaming content. Source sets no input length bound or adversarial-input mitigation.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "Preserves streaming behavior and original diagnostics; unchanged cost and latency, no speculative savings.",
+          "risk": "No migration risk; existing provider and input risks remain.",
+          "primitive": "none"
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

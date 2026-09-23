@@ -1,0 +1,49 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_classification-claude-interactive/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790131951585690000,
+      "ended_ns": 1790131981784855000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790131981785847000,
+      "ended_ns": 1790132145952757000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132145955928000,
+      "ended_ns": 1790132661941838000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jev_decisions.py",
+    "run_parity.py",
+    "workflow.py"
+  ],
+  "non_report_changes": [
+    "jev_decisions.py",
+    "run_parity.py",
+    "workflow.py"
+  ],
+  "original_sha": "fd78ebff05048c9ed2a20540f9f89cc7aeed09cb",
+  "git_log": "24c5048d22651cec81452c8abbf798bccbdebc30 1790132644 Add parity evidence and conversion report\n58e0510ba777035c76c1421b008790d8c481f1b3 1790132638 Add Jev Choice fallback for insurance ticket classification\nfd78ebff05048c9ed2a20540f9f89cc7aeed09cb 1790131951 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": false,
+    "centralization": true,
+    "contracts": false,
+    "live_evidence": false
+  },
+  "review_file": "REVIEW.md"
+}

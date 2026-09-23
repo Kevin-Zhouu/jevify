@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain / @langchain/openai / ChatOpenAI / gpt-3.5-turbo-0125",
+      "downstream": "Stream returned via LangChainAdapter.toDataStreamResponse() as HTTP streaming response to client; free-form text generation with no structured decision or closed-set selection",
+      "classification": "GENERATION",
+      "fit": "NOT_A_FIT",
+      "reason": "The call streams arbitrary prose/text from gpt-3.5-turbo to the client. Jev does not generate free-form text; it returns typed decisions from a closed set. There is no decision, label, route, bool, or ordered score in this workflow. The model output is unbounded generated text, not a selection from enumerated options.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "No speculative savings. The site is pure text generation with no decision component.",
+          "risk": "None. Leaving unchanged preserves correct behavior.",
+          "primitive": null
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

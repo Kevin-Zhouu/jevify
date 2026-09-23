@@ -1,0 +1,23 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 7,
+      "provider": "Vercel AI SDK / OpenAI gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "Recipe object (name, ingredients, steps) is JSON-stringified and printed to stdout; token usage and finish reason are logged separately",
+      "classification": "GENERATION",
+      "fit": "NOT_A_FIT",
+      "reason": "The call generates a complete lasagna recipe with free-form string fields: recipe name, ingredient names, ingredient amounts, and cooking steps. Structured JSON output does not make this a decision. All schema fields are open-ended z.string() values, not enumerated options. Jev does not generate prose, recipes, or arbitrary text content. No subset of this call's output is a closed-set selection or boolean judgment.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No speculative savings. The entire call output is generated prose content that Jev cannot produce.",
+          "risk": "None — preserves existing behavior unchanged.",
+          "economics": "Original cost only: gpt-4o-mini structured output pricing."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

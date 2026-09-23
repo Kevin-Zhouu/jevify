@@ -1,0 +1,3 @@
+# Independent review
+
+Live evidence reviewed: script invokes original function with unchanged prompt/prefill/parser via authorized same-model OpenRouter adapter; Jev comes from production decisions module. 44 real response IDs/usage pairs, 29/30 accepted agreement at 0.90; 14 executed fault assertions. Contract retained, including original exception propagation and logging. Grader correctly rejects provenance values containing source paths instead of enum repo/synthetic; do not normalize output after the run. Gating uses explicit upfront config; filesystem/git and transcript mutations follow approval.

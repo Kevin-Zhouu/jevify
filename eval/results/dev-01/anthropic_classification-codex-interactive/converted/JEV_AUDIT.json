@@ -1,0 +1,30 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic / claude-haiku-4-5",
+      "downstream": "simple_classify(X) returns response.content[0].text.strip(); no repository callers or diagnostics",
+      "classification": "DECISION",
+      "fit": "CONDITIONAL",
+      "reason": "Ten enumerated labels; short benign insurance tickets. Arbitrary/adversarial inputs unvalidated; confidence is not an injection defense.",
+      "options": [
+        {
+          "action": "fallback",
+          "benefit": "Accepted Choice decisions avoid Claude cost and latency; expected cost = Jev cost + fallback fraction * original cost.",
+          "risk": "Confident errors and serial fallback overhead; limited fixture distribution.",
+          "primitive": "Choice"
+        },
+        {
+          "action": "leave",
+          "benefit": "Preserves current behavior without migration.",
+          "risk": "Retains existing inference cost.",
+          "primitive": "none"
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.py:83"
+  ]
+}

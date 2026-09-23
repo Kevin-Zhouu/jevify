@@ -1,0 +1,31 @@
+Use the installed jevify skill at .agents/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_classification. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_classification-codex-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "clone", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_classification-codex-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I’ll use the installed jevify skill to assess this repository read-only. I’ll treat your setup answers as authoritative, present recommendations, and stop before writing files or converting code.
+I found one model call: `simple_classify` returns a stripped category label from Claude Haiku 4.5. It looks suitable for a Jev Choice with fallback on the repository’s ticket examples. Broader use needs separate validation because the function accepts arbitrary text and has no effective prompt-injection mitigation.
+The read-only audit found **one conditional Jev opportunity**. No files were written, no clone or branch was created, and the config was not read. Git is clean; the requested output path and local branch name are unused.
+
+| Original site | Provider | Classification and downstream use | Fit |
+|---|---|---|---|
+| `workflow.py:83` | Anthropic / `claude-haiku-4-5` | **DECISION**. Inside `simple_classify(X)` at line 65; reads `response.content[0].text`, strips whitespace, and returns it. No in-repository callers or emitted diagnostics. | Suitable for bounded ticket classification: ten defined categories, including “General Inquiries.” Conditional for arbitrary external input. |
+
+The repository’s ticket examples are short—up to 352 characters—plus fixed category definitions. The function itself has no input-length bound or effective adversarial-input mitigation. Jev’s documented [adversarial-content limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13) apply; confidence alone does not address them.
+
+| Selection | Action / primitive | Scope and expected benefit | Risk |
+|---|---|---|---|
+| **A — Recommended** | `fallback` / **Choice** | Add Jev classification using the exact ten labels and descriptions, scoped initially to benign tickets like these fixtures. Use OpenRouter’s `typesafe/jev-1.13-20260917`; retain the original Anthropic path for low confidence, invalid responses, errors, timeouts, rate limits, and oversized inputs. Accepted decisions could reduce cost and latency by avoiding Claude inference. | Confident misclassification remains possible, especially between overlapping categories. Serial fallback adds Jev cost and latency. Thresholds require measurement. |
+| **B** | `leave` / none | Keep the workflow unchanged. No added requests or migration work. | Retains current inference costs and prompt-and-parse behavior; no speculative savings. |
+
+A single [Choice](https://docs.typesafe.ai/primitives/choice) matches this flat classification task. Expected cost for A is **Jev cost + fallback fraction × original cost**; savings have not been measured.
+
+If A is approved, the plan is to preserve `simple_classify(X)`’s string interface and original fallback prompt, assistant prefill, stop sequence, parsing, exceptions, and diagnostics. The production fallback stays on Anthropic. Your authorized OpenRouter baseline route would be used only in isolated evaluation adapters with the **same original model**, without substitution.
+
+Validation would include the supplied smoke command, forced fallback cases, and at least 30 unique paired inputs where access permits. **No smoke tests or live parity measurements were performed.**
+
+`JEV_AUDIT.json`, `JEV_CONVERSION_PLAN.md`, and `JEV_CONVERSION_REPORT.md` remain unwritten under your read-only instruction. Currently, `converted_sites` is empty; any measured live evidence would go in `JEV_PARITY.json`.
+
+Select **A**, **B**, or amend the scope.
+
+I’m stopping for explicit selection because the installed [jevify skill](.agents/skills/jevify/SKILL.md) requires: “Wait for explicit option selections, edits, or acceptance. Do not write files until the answer.”
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

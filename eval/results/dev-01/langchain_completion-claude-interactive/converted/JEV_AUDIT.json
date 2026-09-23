@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 15,
+      "provider": "LangChain ChatOpenAI / OpenAI / gpt-3.5-turbo-0125",
+      "downstream": "Raw token stream returned to client via LangChainAdapter.toDataStreamResponse",
+      "classification": "GENERATION",
+      "fit": "NOT A FIT",
+      "reason": "Free-form streaming text completion from unconstrained user prompt. No closed-set selection, label, score, or routing decision. Output is piped directly as a token stream with no post-processing or branching. Jev produces typed decisions, not streaming prose.",
+      "options": [
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No action needed. Site is pure generation with no decision component to extract or decompose.",
+          "risk": "None. Leaving unchanged preserves current behavior."
+        }
+      ]
+    }
+  ],
+  "converted_sites": []
+}

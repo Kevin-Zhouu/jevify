@@ -1,0 +1,38 @@
+{
+  "fixture": "langchain_completion",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/langchain_completion-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132799225233000,
+      "ended_ns": 1790132816536708000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132816537778000,
+      "ended_ns": 1790132859764284000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132859767889000,
+      "ended_ns": 1790132969353193000
+    }
+  ],
+  "mode_verified": false,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "e721efbb5530b5ab771b674fb843055696d8b1c0",
+  "git_log": "e721efbb5530b5ab771b674fb843055696d8b1c0 1790132799 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true
+  },
+  "review_file": "REVIEW.md"
+}

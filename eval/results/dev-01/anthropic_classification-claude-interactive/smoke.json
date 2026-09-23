@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "PASS: observable Python behavior and original-path fallback smoke\n",
+  "stderr": "jev_decision_path=original reason=jev_error:TimeoutError\n"
+}

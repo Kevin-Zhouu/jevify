@@ -1,0 +1,38 @@
+{
+  "fixture": "vercel_recipe",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/vercel_recipe-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132542749843000,
+      "ended_ns": 1790132577775491000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132577777345000,
+      "ended_ns": 1790132699415510000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132699418553000,
+      "ended_ns": 1790132815436813000
+    }
+  ],
+  "mode_verified": false,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "ab53bd4eb4b37df6c05344c14c492bd4d8d36fac",
+  "git_log": "ab53bd4eb4b37df6c05344c14c492bd4d8d36fac 1790132542 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true
+  },
+  "review_file": "REVIEW.md"
+}

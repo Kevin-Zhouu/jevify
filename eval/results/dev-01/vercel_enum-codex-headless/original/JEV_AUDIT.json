@@ -1,0 +1,32 @@
+{
+  "source_revision": "709e2e2a68c8c389ace54287a676237fe8b561f2",
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "Vercel AI SDK generateObject / @ai-sdk/openai / OpenAI gpt-4o-mini (structuredOutputs: true)",
+      "downstream": "main(): result.object printed at line 16; blank line 17; result.usage printed at line 18; result.finishReason printed at line 19; rejected main promise passed to console.error at line 22.",
+      "classification": "DECISION",
+      "fit": "NOT A FIT",
+      "reason": "The genre is a closed-set semantic decision over a benign fixed plot, but result.usage and result.finishReason are printed. System One documents real token usage but no equivalent generation finish reason. A faithful full diagnostic mapping is not established; synthesizing stop, dropping the field, or borrowing baseline metadata would violate the approved preservation scope.",
+      "options": [
+        {
+          "action": "leave",
+          "benefit": "Preserves the complete original enum and diagnostic contract; no speculative latency or cost savings.",
+          "risk": "Original model latency and cost remain.",
+          "primitive": "none",
+          "scope": "Keep workflow.ts byte-for-byte unchanged."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [],
+  "approval_resolution": {
+    "predicate": "fallback only for pure DECISION sites with enumerated outputs while preserving every externally observable field",
+    "selected_conversions": [],
+    "unchanged_sites": [
+      "workflow.ts:6"
+    ],
+    "reason": "The sole syntactic candidate fails full contract preservation."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "fixture": "openai_demo",
+  "harness": "claude",
+  "scenario": "interactive",
+  "mode": "branch",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/openai_demo-claude-interactive/original",
+  "output_relative": "original",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790132628178240000,
+      "ended_ns": 1790132645920918000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132645921861000,
+      "ended_ns": 1790132814052815000
+    },
+    {
+      "exit_code": 0,
+      "started_ns": 1790132814056621000,
+      "ended_ns": 1790132916591375000
+    }
+  ],
+  "mode_verified": false,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [],
+  "non_report_changes": [],
+  "original_sha": "a7bb0145b1be5d03cc9212fc8eccf5589db83034",
+  "git_log": "a7bb0145b1be5d03cc9212fc8eccf5589db83034 1790132628 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": true
+  },
+  "review_file": "REVIEW.md"
+}

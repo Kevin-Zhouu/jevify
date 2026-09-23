@@ -1,0 +1,37 @@
+{
+  "source_revision": "709e2e2",
+  "sites": [
+    {
+      "file": "workflow.ts",
+      "line": 6,
+      "provider": "openai/gpt-4o-mini via Vercel AI SDK generateObject",
+      "downstream": [
+        "result.object printed to console (genre label)",
+        "result.usage printed to console (token counts)",
+        "result.finishReason printed to console (diagnostic)"
+      ],
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Closed 5-label genre classification over a fixed, trusted prompt. No prose generation, no reasoning, no multi-hop logic, no adversarial input. Textbook Choice primitive match.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Jev Choice is purpose-built for closed-set selection; expected lower latency and cost for accepted decisions. Conservative fallback retains original path for low confidence, errors, timeouts, and rate limits.",
+          "risk": "Low — serial miss adds Jev latency before original inference. Diagnostics (usage, finishReason) adapted to reflect actual answering path.",
+          "scope": "Convert generateObject call to Jev Choice with confidence gate; retain original generateObject as fallback. Log answer path and model version."
+        },
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No change, no risk.",
+          "risk": "None.",
+          "scope": "The site works today; Jev adds complexity for a single hardcoded classification."
+        }
+      ]
+    }
+  ],
+  "converted_sites": [
+    "workflow.ts:6"
+  ]
+}

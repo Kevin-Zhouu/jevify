@@ -1,0 +1,3 @@
+# Independent review
+
+Read phase0 and phase2 tool packet: only skill/setup then read-only source/git/docs, no mutations before turn3. Clone preserves original bytes. Inspected decisions module and validation source: same original function forwarded through authorized messages endpoint with same model, real pinned Jev calls, retained IDs/usage, 49 pairs with separate timeouts. 28/28 accepted agreement at preset 0.95. Fault assertions distinguish injected control flow from inference. Questions/threshold/pin centralized; fallback exception propagated once; source signature unchanged. Provenance strings are source paths instead of required category enum, so full parity evidence grade fails even though selective agreement succeeds.

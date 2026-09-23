@@ -1,0 +1,66 @@
+Use the installed jevify skill at .claude/skills/jevify/SKILL.md to assess and, only when approved, convert this workflow. This is a real skill evaluation. Restrict repository inspection to this repository; do not read eval labels, grader, other runs, or other corpus files. The upstream example has no project test command; an independent behavior smoke command is: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/bigsoup/Downloads/Jev Converter/eval/smoke.py OUTPUT_DIRECTORY anthropic_routing. Replace OUTPUT_DIRECTORY with the actual output repository path. You may read that smoke file to understand execution, but never edit it. Use Python 3.10+; this environment provides /opt/homebrew/opt/python@3.14/bin/python3.14. Preserve upstream source semantics and diagnostics. Do not push or create a PR. Never print or save credential values. JSON audit evidence requested: JEV_AUDIT.json with sites (file, line, provider, downstream, classification, fit, reason, options containing action, benefit, risk and primitive) and converted_sites (original file:line IDs). Also write the requested plan/report. Live parity evidence, if measured, goes in JEV_PARITY.json; do not claim measurements that you did not perform. Config path: /Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_routing-claude-interactive/jevify.config.yaml.
+Interactive simulation, turn 3. Setup answers: {"output": {"mode": "branch", "branch": "jev-convert/evaluation", "clone_path": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_routing-claude-interactive/converted"}, "access": {"provider": "openrouter", "key_env": "OPENROUTER_API_KEY", "model": "typesafe/jev-1.13-20260917"}, "risk": "conservative", "validation": {"baseline_provider": "openrouter", "baseline_routing_authorized": true, "scope": "Route the SAME original model through OpenRouter in isolated evaluation adapters only. Preserve original prompts and output parsing; do not switch production fallback providers or substitute a different baseline model."}}
+Prior recommendations:
+I've completed the read-only audit. Here are my findings:
+
+---
+
+## Jevify Audit — `anthropic_routing` workflow
+
+### Codebase overview
+
+| File | Purpose |
+|---|---|
+| `util.py` | Shared wrapper: `llm_call()` (Anthropic SDK → Claude Sonnet 4.6) and `extract_xml()` |
+| `workflow.py` | Support ticket routing: classify ticket → route to specialized prompt → generate response |
+
+### LLM call sites
+
+| ID | File:Line | SDK / Provider / Model | Input origin | Downstream | Classification | Fit |
+|---|---|---|---|---|---|---|
+| S1 | `workflow.py:24` | Anthropic SDK / `claude-sonnet-4-6` | Hardcoded test tickets | Route key indexes `routes` dict to select handler prompt; **reasoning text is printed to stdout** (lines 28–29) | **MIXED** | Conditional — decision part fits; generation part (reasoning) does not |
+| S2 | `workflow.py:34` | Anthropic SDK / `claude-sonnet-4-6` | Hardcoded test tickets + selected prompt | Return value: full prose support response | **GENERATION** | **NOT A FIT** — free-form text generation |
+| W1 | `util.py:9–30` | Anthropic SDK / `claude-sonnet-4-6` | Callers S1, S2 | Transport wrapper serving both MIXED and GENERATION consumers | **MIXED** (per wrapper rule) | Not independently convertible |
+
+### Detailed analysis
+
+**S1 — `workflow.py:24` (routing call)**
+
+The LLM is asked to select from `{billing, technical, account, product}` and provide chain-of-thought reasoning. The selection controls execution (which prompt handles the ticket), making the decision part a textbook Jev Choice. However, the reasoning is extracted and printed to stdout (lines 28–29), which is observable generated output. Per audit rules: *"A router that returns and prints explanatory reasoning is MIXED even if only its route controls execution."*
+
+The routing decision maps cleanly to Choice with 4 options. The input is hardcoded benign test fixtures (not a public API with untrusted input), so adversarial robustness is not a concern for this distribution. Context is well within Jev's 32k limit. The closed set `{billing, technical, account, product}` has clear semantic boundaries — a strong Jev fit for the decision component.
+
+**S2 — `workflow.py:34` (generation call)**
+
+Pure prose generation using a specialized support prompt. No decision component. Jev cannot generate text. Not a fit.
+
+**W1 — `util.py:9–30` (shared wrapper)**
+
+`llm_call()` is a thin Anthropic SDK wrapper. It serves both S1 (MIXED) and S2 (GENERATION). It is a transport site, not independently convertible — conversion happens at the call sites.
+
+---
+
+### Recommendations
+
+| Site | Class | Option | Action | Primitive | Benefit | Risk | Scope |
+|---|---|---|---|---|---|---|---|
+| S1 `workflow.py:24` | MIXED | **A** | `decompose` + `fallback` | Choice | Jev Choice replaces the routing decision on high-confidence answers. Skips one Claude Sonnet call per routed ticket (~4K tokens saved). Jev cost is ~$0.042/Mtok input-only vs Sonnet's significantly higher per-token cost. Expected cost = Jev cost + fallback% × original cost. | **Reasoning text is lost on the Jev-answered path** — this is an observable behavior change. The `route_key` lookup into `routes` dict must match exactly; Jev Choice guarantees this (returns one of the defined options), which is actually more reliable than XML parsing. Fallback path retains full original behavior. | Decision part only; generation (reasoning) is not convertible. |
+| S1 `workflow.py:24` | MIXED | **B** | `leave` | — | No change, no risk. | — | Current behavior preserved entirely. |
+| S2 `workflow.py:34` | GENERATION | **A** | `leave` | — | No change, no risk. Generation cannot be replaced by Jev. | — | — |
+| W1 `util.py:9–30` | MIXED | — | `leave` | — | Transport wrapper; conversion is at call sites. | — | — |
+
+### Key notes
+
+- **S1 Option A detail:** On the Jev path, the printed "Routing Analysis:" reasoning block (lines 28–29) would either be omitted or replaced with a static message like `"Routing Analysis: [high-confidence Jev decision — no reasoning generated]"`. This is an observable change. Conservative posture mandates retaining the original LLM path as fallback.
+- **No Jev-only option** is offered for S1 because (a) it is MIXED, (b) conservative risk posture excludes Jev-only, and (c) the reasoning text cannot be produced by Jev.
+- **S2 is generation-only.** No Jev opportunity exists.
+
+### Verdict
+
+**One conditional Jev opportunity** at S1 (the routing decision within a MIXED site). The decision component is a strong fit for Choice with confidence-gated fallback. The generation component (printed reasoning) and S2 (full response generation) are not convertible.
+
+---
+
+No conversion approval has been given. Awaiting your selection of options (or edits) before any files are written.
+User approval: {"actions": ["fallback"], "scope": "Only pure DECISION sites with enumerated outputs; leave MIXED and GENERATION unchanged. Preserve all externally observable fields."}
+Carry out only that approval and validate; all other options are declined.

@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "file": "workflow.py",
+      "line": 83,
+      "provider": "Anthropic SDK / claude-haiku-4-5",
+      "downstream": "response.content[0].text stripped and returned as bare label string; one of 10 insurance categories. No metadata (usage, finish_reason, IDs) consumed or returned.",
+      "classification": "DECISION",
+      "fit": "FIT",
+      "reason": "Closed 10-label classification over short insurance tickets from a benign fixed corpus. No math, date comparison, multi-hop reasoning, generation, or adversarial input. Semantic categorization is a textbook Jev Choice use case.",
+      "options": [
+        {
+          "action": "fallback",
+          "primitive": "Choice",
+          "benefit": "Lower cost and latency on accepted decisions. Jev input-token pricing ($0.042/Mtok) is substantially cheaper than Claude Haiku ($0.80/Mtok input). Most tickets should classify at high confidence, avoiding the Claude call entirely. Expected cost = Jev cost + fallback_fraction * Claude cost.",
+          "risk": "Serial miss adds Jev latency before Claude fallback — total latency increases on low-confidence inputs. Jev and Claude may disagree on ambiguous tickets; threshold tuning needed on representative data."
+        },
+        {
+          "action": "jev_only",
+          "primitive": "Choice",
+          "benefit": "Removes Claude dependency and cost entirely. Maximum cost and latency savings.",
+          "risk": "Residual classification errors with no safety net. Excluded by conservative risk posture."
+        },
+        {
+          "action": "leave",
+          "primitive": null,
+          "benefit": "No change, no risk. Original behavior preserved exactly.",
+          "risk": "No cost or latency improvement."
+        }
+      ]
+    }
+  ],
+  "converted_sites": ["workflow.py:83"]
+}

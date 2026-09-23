@@ -1,0 +1,9 @@
+2026-09-23T02:52:31.928422Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-09-23T02:52:31.928492Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-09-23T02:52:31.948845Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-23T02:52:31.953271Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-23T02:52:31.996012Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/bigsoup/.codex/shell_snapshots/01a0cc2d-8613-7123-aeb5-cfe4ff85ce48.1790131930684247000.sh": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-09-23T02:52:32.049902Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-23T02:52:33.477296Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-09-23T02:52:33.477324Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-09-23T02:55:34.719189Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf("/Users/bigsoup/.codex/shell_snapshots/01a0cc2d-d8df-7633-81e2-01e5295a13de.1790131951938081000.sh"): Os { code: 2, kind: NotFound, message: "No such file or directory" }

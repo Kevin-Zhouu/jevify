@@ -1,0 +1,42 @@
+{
+  "fixture": "anthropic_classification",
+  "harness": "claude",
+  "scenario": "headless",
+  "mode": "clone",
+  "output": "/Users/bigsoup/Downloads/Jev Converter/eval/runs/dev-01/anthropic_classification-claude-headless/converted",
+  "output_relative": "converted",
+  "outcomes": [
+    {
+      "exit_code": 0,
+      "started_ns": 1790131930433484000,
+      "ended_ns": 1790132557282989000
+    }
+  ],
+  "mode_verified": true,
+  "gating_verified": true,
+  "preapproval_filesystem_clean": true,
+  "smoke_exit_code": 0,
+  "code_changes": [
+    "jev_decisions.py",
+    "scripts/run_parity.py",
+    "scripts/test_faults.py",
+    "workflow.py"
+  ],
+  "non_report_changes": [
+    ".env.example",
+    "jev_decisions.py",
+    "scripts/run_parity.py",
+    "scripts/test_faults.py",
+    "workflow.py"
+  ],
+  "original_sha": "9ad0ba53546ba42a9b50165c3fe51ec275a58d68",
+  "git_log": "c7c70fbb33d06cb75ee5af3858488f889d676f56 1790132539 Add live parity validation and conversion report\nc236fcd992a263ce12b4f1d1db90f2522191daa1 1790132531 Add Jev Choice classification with confidence-gated fallback\n9ad0ba53546ba42a9b50165c3fe51ec275a58d68 1790131930 Baseline pinned upstream workflow and installed skill",
+  "independent_review": {
+    "fit": true,
+    "hygiene": false,
+    "centralization": true,
+    "contracts": false,
+    "live_evidence": false
+  },
+  "review_file": "REVIEW.md"
+}
