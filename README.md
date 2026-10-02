@@ -2,7 +2,7 @@
 
 <img src="docs/brand/jevify-wordmark.png" alt="jevify" width="300" />
 
-### Get your agents running on Jev today
+### Jevify Skill: Converts your LLM calls to Jev, where it fits.
 
 **[Explore Jevify ↗](https://jevify.soupz11.chatgpt.site/)** · [Install](#install) · [Docs](skills/jevify/INSTALL.md)
 
